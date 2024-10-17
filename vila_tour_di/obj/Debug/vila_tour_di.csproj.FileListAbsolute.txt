@@ -1,0 +1,13 @@
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\bin\Debug\vila_tour_di.exe.config
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\bin\Debug\vila_tour_di.exe
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\bin\Debug\vila_tour_di.pdb
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.csproj.AssemblyReference.cache
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.Form2.resources
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.Properties.Resources.resources
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.csproj.GenerateResource.cache
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.csproj.CoreCompileInputs.cache
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.exe
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.pdb
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.Form1.resources
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.panelLugares.resources
+C:\Users\dam_lco\Documents\GitHub\vila_tour_di\vila_tour_di\obj\Debug\vila_tour_di.panelFiestas.resources
