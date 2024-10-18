@@ -25,12 +25,14 @@ namespace vila_tour_di {
         /// </summary>
         private void InitializeComponent() {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonDelFiesta = new System.Windows.Forms.Button();
+            this.buttonSeeFiesta = new System.Windows.Forms.Button();
+            this.buttonModdFiesta = new System.Windows.Forms.Button();
             this.labelFiestas = new System.Windows.Forms.Label();
             this.buttonAddFiesta = new System.Windows.Forms.Button();
-            this.buttonModdFiesta = new System.Windows.Forms.Button();
-            this.buttonSeeFiesta = new System.Windows.Forms.Button();
-            this.buttonDelFiesta = new System.Windows.Forms.Button();
+            this.dataGridViewFestivals = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFestivals)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -43,6 +45,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.Controls.Add(this.buttonModdFiesta, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelFiestas, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonAddFiesta, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewFestivals, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -54,6 +57,42 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 555);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // buttonDelFiesta
+            // 
+            this.buttonDelFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDelFiesta.Location = new System.Drawing.Point(423, 464);
+            this.buttonDelFiesta.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonDelFiesta.Name = "buttonDelFiesta";
+            this.buttonDelFiesta.Size = new System.Drawing.Size(133, 71);
+            this.buttonDelFiesta.TabIndex = 8;
+            this.buttonDelFiesta.Text = "Elimninar Fiesta/Tradicion";
+            this.buttonDelFiesta.UseVisualStyleBackColor = true;
+            this.buttonDelFiesta.Click += new System.EventHandler(this.buttonDelFiesta_Click);
+            // 
+            // buttonSeeFiesta
+            // 
+            this.buttonSeeFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSeeFiesta.Location = new System.Drawing.Point(423, 353);
+            this.buttonSeeFiesta.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonSeeFiesta.Name = "buttonSeeFiesta";
+            this.buttonSeeFiesta.Size = new System.Drawing.Size(133, 71);
+            this.buttonSeeFiesta.TabIndex = 6;
+            this.buttonSeeFiesta.Text = "Ver Fiesta/Tradicion";
+            this.buttonSeeFiesta.UseVisualStyleBackColor = true;
+            this.buttonSeeFiesta.Click += new System.EventHandler(this.buttonSeeFiesta_Click);
+            // 
+            // buttonModdFiesta
+            // 
+            this.buttonModdFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonModdFiesta.Location = new System.Drawing.Point(423, 242);
+            this.buttonModdFiesta.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonModdFiesta.Name = "buttonModdFiesta";
+            this.buttonModdFiesta.Size = new System.Drawing.Size(133, 71);
+            this.buttonModdFiesta.TabIndex = 4;
+            this.buttonModdFiesta.Text = "Modificar Fiesta/Tradicion";
+            this.buttonModdFiesta.UseVisualStyleBackColor = true;
+            this.buttonModdFiesta.Click += new System.EventHandler(this.buttonModdFiesta_Click);
             // 
             // labelFiestas
             // 
@@ -78,39 +117,17 @@ namespace vila_tour_di {
             this.buttonAddFiesta.TabIndex = 1;
             this.buttonAddFiesta.Text = "Añadir Fiesta/Tradicion";
             this.buttonAddFiesta.UseVisualStyleBackColor = true;
+            this.buttonAddFiesta.Click += new System.EventHandler(this.buttonAddFiesta_Click);
             // 
-            // buttonModdFiesta
+            // dataGridViewFestivals
             // 
-            this.buttonModdFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModdFiesta.Location = new System.Drawing.Point(423, 242);
-            this.buttonModdFiesta.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonModdFiesta.Name = "buttonModdFiesta";
-            this.buttonModdFiesta.Size = new System.Drawing.Size(133, 71);
-            this.buttonModdFiesta.TabIndex = 4;
-            this.buttonModdFiesta.Text = "Modificar Fiesta/Tradicion";
-            this.buttonModdFiesta.UseVisualStyleBackColor = true;
-            // 
-            // buttonSeeFiesta
-            // 
-            this.buttonSeeFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSeeFiesta.Location = new System.Drawing.Point(423, 353);
-            this.buttonSeeFiesta.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonSeeFiesta.Name = "buttonSeeFiesta";
-            this.buttonSeeFiesta.Size = new System.Drawing.Size(133, 71);
-            this.buttonSeeFiesta.TabIndex = 6;
-            this.buttonSeeFiesta.Text = "Ver Fiesta/Tradicion";
-            this.buttonSeeFiesta.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelFiesta
-            // 
-            this.buttonDelFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDelFiesta.Location = new System.Drawing.Point(423, 464);
-            this.buttonDelFiesta.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonDelFiesta.Name = "buttonDelFiesta";
-            this.buttonDelFiesta.Size = new System.Drawing.Size(133, 71);
-            this.buttonDelFiesta.TabIndex = 8;
-            this.buttonDelFiesta.Text = "Elimninar Fiesta/Tradicion";
-            this.buttonDelFiesta.UseVisualStyleBackColor = true;
+            this.dataGridViewFestivals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFestivals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewFestivals.Location = new System.Drawing.Point(3, 114);
+            this.dataGridViewFestivals.Name = "dataGridViewFestivals";
+            this.tableLayoutPanel1.SetRowSpan(this.dataGridViewFestivals, 4);
+            this.dataGridViewFestivals.Size = new System.Drawing.Size(397, 438);
+            this.dataGridViewFestivals.TabIndex = 1;
             // 
             // panelFiestas
             // 
@@ -121,6 +138,7 @@ namespace vila_tour_di {
             this.Size = new System.Drawing.Size(576, 555);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFestivals)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -133,5 +151,6 @@ namespace vila_tour_di {
         private System.Windows.Forms.Button buttonDelFiesta;
         private System.Windows.Forms.Button buttonSeeFiesta;
         private System.Windows.Forms.Button buttonModdFiesta;
+        private System.Windows.Forms.DataGridView dataGridViewFestivals;
     }
 }

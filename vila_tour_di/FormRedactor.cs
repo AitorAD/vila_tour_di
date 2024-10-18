@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class Form2 : Form {
+    public partial class FormRedactor : Form {
 
-        public Form2() {
+        public FormRedactor() {
             InitializeComponent();
         }
 
@@ -30,6 +30,10 @@ namespace vila_tour_di {
             CargarUserControl(new panelFiestas());
         }
 
+        private void button3_Click(object sender, EventArgs e) {
+            CargarUserControl(new panelRecipes());
+        }
+
         private void label1_Click(object sender, EventArgs e) {
         }
 
@@ -40,5 +44,6 @@ namespace vila_tour_di {
         private void Form2_Load(object sender, EventArgs e) {
 
         }
+
     }
 }

@@ -25,12 +25,14 @@ namespace vila_tour_di {
         /// </summary>
         private void InitializeComponent() {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtaGridViewPlaces = new System.Windows.Forms.DataGridView();
             this.buttonDelPlace = new System.Windows.Forms.Button();
             this.buttonSeePlace = new System.Windows.Forms.Button();
             this.buttonModPLace = new System.Windows.Forms.Button();
             this.lblLugares = new System.Windows.Forms.Label();
             this.buttonAddPlace = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGridViewPlaces)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -38,6 +40,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.Controls.Add(this.dtaGridViewPlaces, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonDelPlace, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonSeePlace, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonModPLace, 1, 2);
@@ -55,6 +58,16 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 555);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // dtaGridViewPlaces
+            // 
+            this.dtaGridViewPlaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaGridViewPlaces.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtaGridViewPlaces.Location = new System.Drawing.Point(3, 114);
+            this.dtaGridViewPlaces.Name = "dtaGridViewPlaces";
+            this.tableLayoutPanel1.SetRowSpan(this.dtaGridViewPlaces, 4);
+            this.dtaGridViewPlaces.Size = new System.Drawing.Size(397, 438);
+            this.dtaGridViewPlaces.TabIndex = 1;
+            // 
             // buttonDelPlace
             // 
             this.buttonDelPlace.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -65,6 +78,7 @@ namespace vila_tour_di {
             this.buttonDelPlace.TabIndex = 8;
             this.buttonDelPlace.Text = "Eliminar Lugar";
             this.buttonDelPlace.UseVisualStyleBackColor = true;
+            this.buttonDelPlace.Click += new System.EventHandler(this.buttonDelPlace_Click);
             // 
             // buttonSeePlace
             // 
@@ -76,6 +90,7 @@ namespace vila_tour_di {
             this.buttonSeePlace.TabIndex = 6;
             this.buttonSeePlace.Text = "Ver detalles del Lugar";
             this.buttonSeePlace.UseVisualStyleBackColor = true;
+            this.buttonSeePlace.Click += new System.EventHandler(this.buttonSeePlace_Click);
             // 
             // buttonModPLace
             // 
@@ -87,6 +102,7 @@ namespace vila_tour_di {
             this.buttonModPLace.TabIndex = 4;
             this.buttonModPLace.Text = "Modificar Lugar";
             this.buttonModPLace.UseVisualStyleBackColor = true;
+            this.buttonModPLace.Click += new System.EventHandler(this.buttonModPLace_Click);
             // 
             // lblLugares
             // 
@@ -112,6 +128,7 @@ namespace vila_tour_di {
             this.buttonAddPlace.TabIndex = 1;
             this.buttonAddPlace.Text = "Añadir Lugar";
             this.buttonAddPlace.UseVisualStyleBackColor = true;
+            this.buttonAddPlace.Click += new System.EventHandler(this.buttonAddPlace_Click);
             // 
             // panelLugares
             // 
@@ -122,6 +139,7 @@ namespace vila_tour_di {
             this.Size = new System.Drawing.Size(576, 555);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGridViewPlaces)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +152,6 @@ namespace vila_tour_di {
         private System.Windows.Forms.Button buttonModPLace;
         private System.Windows.Forms.Label lblLugares;
         private System.Windows.Forms.Button buttonAddPlace;
+        private System.Windows.Forms.DataGridView dtaGridViewPlaces;
     }
 }

@@ -1,6 +1,6 @@
 ﻿
 namespace vila_tour_di {
-    partial class Form2 {
+    partial class FormRedactor {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -85,6 +85,7 @@ namespace vila_tour_di {
             this.button3.TabIndex = 4;
             this.button3.Text = "Adminisrar Recetas";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -137,13 +138,13 @@ namespace vila_tour_di {
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form2
+            // FormRedactor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form2";
+            this.Name = "FormRedactor";
             this.Text = "Redactor";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class panelFiestas : UserControl {
-        public panelFiestas() {
+    public partial class FormAddIngredient : Form {
+        public FormAddIngredient() {
             InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            // TODO que coja los datos del enum
         }
     }
 }
