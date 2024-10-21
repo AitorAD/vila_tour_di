@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace vila_tour_di
 {
-    public partial class Form3 : Form
+    public partial class FormAdmin : Form
     {
-        public Form3()
+        public FormAdmin()
         {
             InitializeComponent();
         }
@@ -52,7 +52,9 @@ namespace vila_tour_di
 
         private void btnAdminUsers_Click(object sender, EventArgs e)
         {
-
+            LoadUserControl(new panelUser());
         }
+
+       
     }
 }

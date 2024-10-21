@@ -25,11 +25,11 @@ namespace vila_tour_di {
         /// </summary>
         private void InitializeComponent() {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonDelFiesta = new System.Windows.Forms.Button();
+            this.buttonSeeFiesta = new System.Windows.Forms.Button();
+            this.buttonModdFiesta = new System.Windows.Forms.Button();
             this.labelFiestas = new System.Windows.Forms.Label();
             this.buttonAddFiesta = new System.Windows.Forms.Button();
-            this.buttonModdFiesta = new System.Windows.Forms.Button();
-            this.buttonSeeFiesta = new System.Windows.Forms.Button();
-            this.buttonDelFiesta = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,39 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 555);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // buttonDelFiesta
+            // 
+            this.buttonDelFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDelFiesta.Location = new System.Drawing.Point(423, 464);
+            this.buttonDelFiesta.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonDelFiesta.Name = "buttonDelFiesta";
+            this.buttonDelFiesta.Size = new System.Drawing.Size(133, 71);
+            this.buttonDelFiesta.TabIndex = 8;
+            this.buttonDelFiesta.Text = "Elimninar Fiesta/Tradicion";
+            this.buttonDelFiesta.UseVisualStyleBackColor = true;
+            // 
+            // buttonSeeFiesta
+            // 
+            this.buttonSeeFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSeeFiesta.Location = new System.Drawing.Point(423, 353);
+            this.buttonSeeFiesta.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonSeeFiesta.Name = "buttonSeeFiesta";
+            this.buttonSeeFiesta.Size = new System.Drawing.Size(133, 71);
+            this.buttonSeeFiesta.TabIndex = 6;
+            this.buttonSeeFiesta.Text = "Ver Fiesta/Tradicion";
+            this.buttonSeeFiesta.UseVisualStyleBackColor = true;
+            // 
+            // buttonModdFiesta
+            // 
+            this.buttonModdFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonModdFiesta.Location = new System.Drawing.Point(423, 242);
+            this.buttonModdFiesta.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonModdFiesta.Name = "buttonModdFiesta";
+            this.buttonModdFiesta.Size = new System.Drawing.Size(133, 71);
+            this.buttonModdFiesta.TabIndex = 4;
+            this.buttonModdFiesta.Text = "Modificar Fiesta/Tradicion";
+            this.buttonModdFiesta.UseVisualStyleBackColor = true;
+            // 
             // labelFiestas
             // 
             this.labelFiestas.AutoSize = true;
@@ -78,39 +111,6 @@ namespace vila_tour_di {
             this.buttonAddFiesta.TabIndex = 1;
             this.buttonAddFiesta.Text = "Añadir Fiesta/Tradicion";
             this.buttonAddFiesta.UseVisualStyleBackColor = true;
-            // 
-            // buttonModdFiesta
-            // 
-            this.buttonModdFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModdFiesta.Location = new System.Drawing.Point(423, 242);
-            this.buttonModdFiesta.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonModdFiesta.Name = "buttonModdFiesta";
-            this.buttonModdFiesta.Size = new System.Drawing.Size(133, 71);
-            this.buttonModdFiesta.TabIndex = 4;
-            this.buttonModdFiesta.Text = "Modificar Fiesta/Tradicion";
-            this.buttonModdFiesta.UseVisualStyleBackColor = true;
-            // 
-            // buttonSeeFiesta
-            // 
-            this.buttonSeeFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSeeFiesta.Location = new System.Drawing.Point(423, 353);
-            this.buttonSeeFiesta.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonSeeFiesta.Name = "buttonSeeFiesta";
-            this.buttonSeeFiesta.Size = new System.Drawing.Size(133, 71);
-            this.buttonSeeFiesta.TabIndex = 6;
-            this.buttonSeeFiesta.Text = "Ver Fiesta/Tradicion";
-            this.buttonSeeFiesta.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelFiesta
-            // 
-            this.buttonDelFiesta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDelFiesta.Location = new System.Drawing.Point(423, 464);
-            this.buttonDelFiesta.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonDelFiesta.Name = "buttonDelFiesta";
-            this.buttonDelFiesta.Size = new System.Drawing.Size(133, 71);
-            this.buttonDelFiesta.TabIndex = 8;
-            this.buttonDelFiesta.Text = "Elimninar Fiesta/Tradicion";
-            this.buttonDelFiesta.UseVisualStyleBackColor = true;
             // 
             // panelFiestas
             // 

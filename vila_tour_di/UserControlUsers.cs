@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace vila_tour_di {
-    public partial class panelFiestas : UserControl {
-        public panelFiestas() {
+namespace vila_tour_di
+{
+    public partial class panelUser : UserControl
+    {
+        public panelUser()
+        {
             InitializeComponent();
         }
-
     }
 }
