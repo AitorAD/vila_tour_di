@@ -12,6 +12,7 @@ namespace vila_tour_di {
     public partial class panelFiestas : UserControl {
         public panelFiestas() {
             InitializeComponent();
+            pictureBox1.Image = Image.FromFile(@"C:\Users\dam_lco\Documents\GitHub\vila_tour_di\Resources\magnifier.png"); // Cargar la imagens
         }
 
         private void buttonAddFiesta_Click(object sender, EventArgs e) {
