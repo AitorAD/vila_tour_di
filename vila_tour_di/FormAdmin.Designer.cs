@@ -1,7 +1,7 @@
 ﻿
 namespace vila_tour_di
 {
-    partial class Form3
+    partial class FormAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@ namespace vila_tour_di
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdminUsers = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnAdminPlace = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdminRoutes = new System.Windows.Forms.Button();
             this.btnAdminRecipes = new System.Windows.Forms.Button();
             this.btnAdminTraditions = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnAdminUsers = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,34 @@ namespace vila_tour_di
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.94253F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 561);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnAdminUsers
+            // 
+            this.btnAdminUsers.AutoSize = true;
+            this.btnAdminUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdminUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminUsers.Location = new System.Drawing.Point(10, 400);
+            this.btnAdminUsers.Margin = new System.Windows.Forms.Padding(10);
+            this.btnAdminUsers.Name = "btnAdminUsers";
+            this.btnAdminUsers.Size = new System.Drawing.Size(176, 63);
+            this.btnAdminUsers.TabIndex = 6;
+            this.btnAdminUsers.Text = "Usuarios";
+            this.btnAdminUsers.UseVisualStyleBackColor = true;
+            this.btnAdminUsers.Click += new System.EventHandler(this.btnAdminUsers_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.AutoSize = true;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(10, 483);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(10);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(176, 68);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Salir";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdminPlace
             // 
@@ -145,34 +173,6 @@ namespace vila_tour_di
             this.btnAdminTraditions.Text = "Fiestas y tradiciones";
             this.btnAdminTraditions.UseVisualStyleBackColor = true;
             this.btnAdminTraditions.Click += new System.EventHandler(this.btnAdminTraditions_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.AutoSize = true;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(10, 483);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(10);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(176, 68);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Salir";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAdminUsers
-            // 
-            this.btnAdminUsers.AutoSize = true;
-            this.btnAdminUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdminUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminUsers.Location = new System.Drawing.Point(10, 400);
-            this.btnAdminUsers.Margin = new System.Windows.Forms.Padding(10);
-            this.btnAdminUsers.Name = "btnAdminUsers";
-            this.btnAdminUsers.Size = new System.Drawing.Size(176, 63);
-            this.btnAdminUsers.TabIndex = 6;
-            this.btnAdminUsers.Text = "Usuarios";
-            this.btnAdminUsers.UseVisualStyleBackColor = true;
-            this.btnAdminUsers.Click += new System.EventHandler(this.btnAdminUsers_Click);
             // 
             // Form3
             // 
