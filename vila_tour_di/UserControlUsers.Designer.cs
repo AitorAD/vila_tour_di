@@ -30,12 +30,12 @@ namespace vila_tour_di
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonDeleteUser = new System.Windows.Forms.Button();
+            this.buttonDetailsUser = new System.Windows.Forms.Button();
+            this.buttonModifyUser = new System.Windows.Forms.Button();
+            this.buttonAddUser = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAddUser = new System.Windows.Forms.Button();
-            this.buttonModifyUser = new System.Windows.Forms.Button();
-            this.buttonDetailsUser = new System.Windows.Forms.Button();
-            this.buttonDeleteUser = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,50 @@ namespace vila_tour_di
             this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 555);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // buttonDeleteUser
+            // 
+            this.buttonDeleteUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDeleteUser.Location = new System.Drawing.Point(423, 464);
+            this.buttonDeleteUser.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonDeleteUser.Name = "buttonDeleteUser";
+            this.buttonDeleteUser.Size = new System.Drawing.Size(133, 71);
+            this.buttonDeleteUser.TabIndex = 5;
+            this.buttonDeleteUser.Text = "Eliminar";
+            this.buttonDeleteUser.UseVisualStyleBackColor = true;
+            // 
+            // buttonDetailsUser
+            // 
+            this.buttonDetailsUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDetailsUser.Location = new System.Drawing.Point(423, 353);
+            this.buttonDetailsUser.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonDetailsUser.Name = "buttonDetailsUser";
+            this.buttonDetailsUser.Size = new System.Drawing.Size(133, 71);
+            this.buttonDetailsUser.TabIndex = 4;
+            this.buttonDetailsUser.Text = "Ver detalles";
+            this.buttonDetailsUser.UseVisualStyleBackColor = true;
+            // 
+            // buttonModifyUser
+            // 
+            this.buttonModifyUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonModifyUser.Location = new System.Drawing.Point(423, 242);
+            this.buttonModifyUser.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonModifyUser.Name = "buttonModifyUser";
+            this.buttonModifyUser.Size = new System.Drawing.Size(133, 71);
+            this.buttonModifyUser.TabIndex = 3;
+            this.buttonModifyUser.Text = "Editar";
+            this.buttonModifyUser.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddUser
+            // 
+            this.buttonAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAddUser.Location = new System.Drawing.Point(423, 131);
+            this.buttonAddUser.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonAddUser.Name = "buttonAddUser";
+            this.buttonAddUser.Size = new System.Drawing.Size(133, 71);
+            this.buttonAddUser.TabIndex = 2;
+            this.buttonAddUser.Text = "Añadir nuevo";
+            this.buttonAddUser.UseVisualStyleBackColor = true;
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -84,50 +128,6 @@ namespace vila_tour_di
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView1, 4);
             this.dataGridView1.Size = new System.Drawing.Size(397, 438);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // buttonAddUser
-            // 
-            this.buttonAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddUser.Location = new System.Drawing.Point(423, 131);
-            this.buttonAddUser.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(133, 71);
-            this.buttonAddUser.TabIndex = 2;
-            this.buttonAddUser.Text = "Añadir nuevo";
-            this.buttonAddUser.UseVisualStyleBackColor = true;
-            // 
-            // buttonModifyUser
-            // 
-            this.buttonModifyUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModifyUser.Location = new System.Drawing.Point(423, 242);
-            this.buttonModifyUser.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonModifyUser.Name = "buttonModifyUser";
-            this.buttonModifyUser.Size = new System.Drawing.Size(133, 71);
-            this.buttonModifyUser.TabIndex = 3;
-            this.buttonModifyUser.Text = "Editar";
-            this.buttonModifyUser.UseVisualStyleBackColor = true;
-            // 
-            // buttonDetailsUser
-            // 
-            this.buttonDetailsUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDetailsUser.Location = new System.Drawing.Point(423, 353);
-            this.buttonDetailsUser.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonDetailsUser.Name = "buttonDetailsUser";
-            this.buttonDetailsUser.Size = new System.Drawing.Size(133, 71);
-            this.buttonDetailsUser.TabIndex = 4;
-            this.buttonDetailsUser.Text = "Ver detalles";
-            this.buttonDetailsUser.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteUser
-            // 
-            this.buttonDeleteUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDeleteUser.Location = new System.Drawing.Point(423, 464);
-            this.buttonDeleteUser.Margin = new System.Windows.Forms.Padding(20);
-            this.buttonDeleteUser.Name = "buttonDeleteUser";
-            this.buttonDeleteUser.Size = new System.Drawing.Size(133, 71);
-            this.buttonDeleteUser.TabIndex = 5;
-            this.buttonDeleteUser.Text = "Eliminar";
-            this.buttonDeleteUser.UseVisualStyleBackColor = true;
             // 
             // panelUser
             // 

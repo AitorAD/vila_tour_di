@@ -20,7 +20,6 @@ namespace vila_tour_di
         public void LoadUserControl(UserControl newControl)
         {
             panel1.Controls.Clear();
-
             newControl.Dock = DockStyle.Fill;
             panel1.Controls.Add(newControl);
         }
