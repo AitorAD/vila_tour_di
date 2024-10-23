@@ -15,6 +15,7 @@ namespace vila_tour_di {
             InitializeComponent();
         }
 
+        /*
         private void btnEntrar_Click(object sender, EventArgs e) {
             if (this.txtEmail.Text.Equals("redactor") && this.txtPassword.Text.Equals("redactor")) {
                 new Form2().Show();
@@ -26,6 +27,7 @@ namespace vila_tour_di {
                 MessageBox.Show("Error. Usuario o contraseña incorrectos");
             }
         }
+        */
 
         private void Form1_Paint(object sender, PaintEventArgs e) {
             this.BackColor = Color.Empty;
@@ -37,6 +39,38 @@ namespace vila_tour_di {
                 45f)) {
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e) {
+            if (txtPassword.Text == "Password") {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.White;
+            }
+        }
+
+        private void txtUser_Enter(object sender, EventArgs e) {
+            if (txtUser.Text == "User") {
+                txtUser.Text = "";
+                txtUser.ForeColor = Color.White;
+            }
+        }
+
+        private void txtUser_Leave(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(txtUser.Text)) {
+                txtUser.Text = "Usuario";
+                txtUser.ForeColor = Color.Gray; 
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(txtPassword.Text)) {
+                txtPassword.Text = "Password";
+                txtPassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e) {
+
         }
     }
 }
