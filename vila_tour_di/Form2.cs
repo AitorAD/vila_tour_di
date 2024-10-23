@@ -15,26 +15,30 @@ namespace vila_tour_di {
             InitializeComponent();
         }
 
-        public void LoadUserControl(UserControl newControl) {
+        public void CargarUserControl(UserControl nuevoControl) {
             panel1.Controls.Clear();
 
-            newControl.Dock = DockStyle.Fill;
-            panel1.Controls.Add(newControl);
+            nuevoControl.Dock = DockStyle.Fill;
+            panel1.Controls.Add(nuevoControl);
         }
 
-        private void btnAdminPlaces_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(new panelLugares());
+        private void button1_Click(object sender, EventArgs e) {
+            CargarUserControl(new panelLugares());
         }
 
-        private void btnAdminTraditions_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(new panelFiestas());
+        private void button2_Click(object sender, EventArgs e) {
+            CargarUserControl(new panelFiestas());
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
+        private void label1_Click(object sender, EventArgs e) {
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e) {
+
         }
     }
 }
