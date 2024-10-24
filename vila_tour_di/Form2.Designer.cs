@@ -85,6 +85,7 @@ namespace vila_tour_di {
             this.button3.TabIndex = 4;
             this.button3.Text = "Adminisrar Recetas";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -121,7 +122,6 @@ namespace vila_tour_di {
             this.label1.TabIndex = 1;
             this.label1.Text = "Bienvenido XXX:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
