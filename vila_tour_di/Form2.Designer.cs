@@ -36,6 +36,7 @@ namespace vila_tour_di {
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.7732F));
@@ -85,6 +86,7 @@ namespace vila_tour_di {
             this.button3.TabIndex = 4;
             this.button3.Text = "Adminisrar Recetas";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -121,7 +123,6 @@ namespace vila_tour_di {
             this.label1.TabIndex = 1;
             this.label1.Text = "Bienvenido XXX:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -141,6 +142,7 @@ namespace vila_tour_di {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form2";

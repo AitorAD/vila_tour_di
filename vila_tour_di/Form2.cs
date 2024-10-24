@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class Form2 : Form {
+    public partial class Form2 : BaseForm {
 
         public Form2() {
             InitializeComponent();
@@ -30,7 +31,8 @@ namespace vila_tour_di {
             CargarUserControl(new panelFiestas());
         }
 
-        private void label1_Click(object sender, EventArgs e) {
+        private void button3_Click(object sender, EventArgs e) {
+            CargarUserControl(new panelRecetas());
         }
 
         private void button4_Click(object sender, EventArgs e) {
