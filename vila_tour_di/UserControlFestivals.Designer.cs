@@ -73,7 +73,7 @@ namespace vila_tour_di {
             this.buttonDelFiesta.Name = "buttonDelFiesta";
             this.buttonDelFiesta.Size = new System.Drawing.Size(133, 72);
             this.buttonDelFiesta.TabIndex = 8;
-            this.buttonDelFiesta.Text = "Elimninar Fiesta/Tradicion";
+            this.buttonDelFiesta.Text = "Eliminar";
             this.buttonDelFiesta.UseVisualStyleBackColor = true;
             // 
             // buttonSeeFiesta
@@ -84,7 +84,7 @@ namespace vila_tour_di {
             this.buttonSeeFiesta.Name = "buttonSeeFiesta";
             this.buttonSeeFiesta.Size = new System.Drawing.Size(133, 71);
             this.buttonSeeFiesta.TabIndex = 6;
-            this.buttonSeeFiesta.Text = "Ver Fiesta/Tradicion";
+            this.buttonSeeFiesta.Text = "Ver detalles";
             this.buttonSeeFiesta.UseVisualStyleBackColor = true;
             // 
             // buttonModdFiesta
@@ -95,7 +95,7 @@ namespace vila_tour_di {
             this.buttonModdFiesta.Name = "buttonModdFiesta";
             this.buttonModdFiesta.Size = new System.Drawing.Size(133, 71);
             this.buttonModdFiesta.TabIndex = 4;
-            this.buttonModdFiesta.Text = "Modificar Fiesta/Tradicion";
+            this.buttonModdFiesta.Text = "Editar";
             this.buttonModdFiesta.UseVisualStyleBackColor = true;
             // 
             // labelFiestas
@@ -108,7 +108,7 @@ namespace vila_tour_di {
             this.labelFiestas.Name = "labelFiestas";
             this.labelFiestas.Size = new System.Drawing.Size(570, 55);
             this.labelFiestas.TabIndex = 0;
-            this.labelFiestas.Text = "Fietas y Tradiciones";
+            this.labelFiestas.Text = "Fiestas y Tradiciones";
             this.labelFiestas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAddFiesta
@@ -119,7 +119,7 @@ namespace vila_tour_di {
             this.buttonAddFiesta.Name = "buttonAddFiesta";
             this.buttonAddFiesta.Size = new System.Drawing.Size(133, 71);
             this.buttonAddFiesta.TabIndex = 1;
-            this.buttonAddFiesta.Text = "Añadir Fiesta/Tradicion";
+            this.buttonAddFiesta.Text = "Añadir nuevo";
             this.buttonAddFiesta.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2

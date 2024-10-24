@@ -1,5 +1,5 @@
 ﻿namespace vila_tour_di {
-    partial class FormAddIng {
+    partial class FormAddIngredient {
         /// <summary>
         /// Required designer variable.
         /// </summary>

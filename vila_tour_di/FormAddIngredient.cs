@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class FormAddIng : BaseForm {
-        public FormAddIng() {
+    public partial class FormAddIngredient : BaseForm {
+        public FormAddIngredient() {
             InitializeComponent();
 
             // Limpiar el campo de nombre
@@ -20,7 +20,7 @@ namespace vila_tour_di {
             //comboBoxTypeIng.SelectedIndex = 0;
         }
 
-        public FormAddIng(string name, string type) {
+        public FormAddIngredient(string name, string type) {
             InitializeComponent();
 
             // Asignar el nombre del ingrediente

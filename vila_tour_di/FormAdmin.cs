@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace vila_tour_di
 {
-    public partial class FormAdmin : Form
+    public partial class FormAdmin : BaseForm
     {
         public FormAdmin()
         {
@@ -20,40 +20,34 @@ namespace vila_tour_di
         public void LoadUserControl(UserControl newControl)
         {
             panel1.Controls.Clear();
+
             newControl.Dock = DockStyle.Fill;
             panel1.Controls.Add(newControl);
         }
 
-        private void btnAdminPlace_Click(object sender, EventArgs e)
+        private void btnPlaces_Click(object sender, EventArgs e)
         {
             LoadUserControl(new panelLugares());
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnAdminTraditions_Click(object sender, EventArgs e)
+        private void btnFestivals_Click(object sender, EventArgs e)
         {
             LoadUserControl(new panelFiestas());
         }
 
-        private void btnAdminRecipes_Click(object sender, EventArgs e)
+        private void btnRecipes_Click(object sender, EventArgs e)
         {
-
+            LoadUserControl(new panelRecetas());
         }
 
-        private void btnAdminRoutes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdminUsers_Click(object sender, EventArgs e)
+        private void btnUsers_Click(object sender, EventArgs e)
         {
             LoadUserControl(new panelUser());
         }
 
-       
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
