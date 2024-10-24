@@ -10,37 +10,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class Form2 : BaseForm {
+    public partial class FormRedactor : BaseForm {
 
-        public Form2() {
+        public FormRedactor() {
             InitializeComponent();
         }
 
-        public void CargarUserControl(UserControl nuevoControl) {
+        public void LoadUserControl(UserControl newControl) {
             panel1.Controls.Clear();
 
-            nuevoControl.Dock = DockStyle.Fill;
-            panel1.Controls.Add(nuevoControl);
+            newControl.Dock = DockStyle.Fill;
+            panel1.Controls.Add(newControl);
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            CargarUserControl(new panelLugares());
+            LoadUserControl(new panelLugares());
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            CargarUserControl(new panelFiestas());
+            LoadUserControl(new panelFiestas());
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            CargarUserControl(new panelRecetas());
+            LoadUserControl(new panelRecetas());
         }
 
         private void button4_Click(object sender, EventArgs e) {
             Close();
-        }
-
-        private void Form2_Load(object sender, EventArgs e) {
-
         }
     }
 }
