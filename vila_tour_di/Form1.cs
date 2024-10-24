@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class Form1 : Form {
+    public partial class Form1 : BaseForm {
         public Form1() {
             InitializeComponent();
         }
@@ -24,18 +24,6 @@ namespace vila_tour_di {
                 this.Hide();
             } else {
                 MessageBox.Show("Error. Usuario o contraseña incorrectos");
-            }
-        }
-
-        private void Form1_Paint(object sender, PaintEventArgs e) {
-            this.BackColor = Color.Empty;
-
-            using (LinearGradientBrush brush = new LinearGradientBrush(
-                this.ClientRectangle,
-                Color.FromArgb(191, 79, 195, 246),
-                Color.FromArgb(191, 1, 194, 169),
-                45f)) {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
         }
     }

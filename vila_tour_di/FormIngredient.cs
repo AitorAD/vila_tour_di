@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class FormIngredient : Form {
+    public partial class FormIngredient : BaseForm {
         public FormIngredient() {
             InitializeComponent();
         }

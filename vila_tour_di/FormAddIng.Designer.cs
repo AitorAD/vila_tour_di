@@ -31,8 +31,8 @@
             this.labelTypeIng = new System.Windows.Forms.Label();
             this.comboBoxTypeIng = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAddIng = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonAddIng = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -41,6 +41,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -144,17 +145,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(224, 66);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // buttonAddIng
-            // 
-            this.buttonAddIng.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddIng.Location = new System.Drawing.Point(10, 10);
-            this.buttonAddIng.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonAddIng.Name = "buttonAddIng";
-            this.buttonAddIng.Size = new System.Drawing.Size(92, 46);
-            this.buttonAddIng.TabIndex = 0;
-            this.buttonAddIng.Text = "Añadir";
-            this.buttonAddIng.UseVisualStyleBackColor = true;
-            // 
             // buttonExit
             // 
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -166,6 +156,17 @@
             this.buttonExit.Text = "Salir";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonAddIng
+            // 
+            this.buttonAddIng.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAddIng.Location = new System.Drawing.Point(10, 10);
+            this.buttonAddIng.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonAddIng.Name = "buttonAddIng";
+            this.buttonAddIng.Size = new System.Drawing.Size(92, 46);
+            this.buttonAddIng.TabIndex = 0;
+            this.buttonAddIng.Text = "Añadir";
+            this.buttonAddIng.UseVisualStyleBackColor = true;
             // 
             // FormAddIng
             // 

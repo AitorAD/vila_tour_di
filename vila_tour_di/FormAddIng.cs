@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class FormAddIng : Form {
+    public partial class FormAddIng : BaseForm {
         public FormAddIng() {
             InitializeComponent();
 

@@ -240,7 +240,6 @@ namespace vila_tour_di {
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Log In";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
