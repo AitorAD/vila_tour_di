@@ -30,7 +30,8 @@ namespace vila_tour_di {
             CargarUserControl(new panelFiestas());
         }
 
-        private void label1_Click(object sender, EventArgs e) {
+        private void button3_Click(object sender, EventArgs e) {
+            CargarUserControl(new panelRecetas());
         }
 
         private void button4_Click(object sender, EventArgs e) {
