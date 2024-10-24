@@ -16,5 +16,21 @@ namespace vila_tour_di
         {
             InitializeComponent();
         }
+
+        private void btnSearchImg_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Imagenes (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos (*.*)|*.*";
+            openFileDialog1.Title = "Selecciona una imagen";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtBoxPath.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
     }
 }

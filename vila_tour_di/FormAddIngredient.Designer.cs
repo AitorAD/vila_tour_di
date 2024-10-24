@@ -167,14 +167,15 @@
             this.buttonAddIng.TabIndex = 0;
             this.buttonAddIng.Text = "Añadir";
             this.buttonAddIng.UseVisualStyleBackColor = true;
+            this.buttonAddIng.Click += new System.EventHandler(this.buttonAddIng_Click);
             // 
-            // FormAddIng
+            // FormAddIngredient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 361);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormAddIng";
+            this.Name = "FormAddIngredient";
             this.Text = "Añadir Ingrediente";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

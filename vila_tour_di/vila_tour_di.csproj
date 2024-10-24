@@ -59,6 +59,24 @@
     <Compile Include="Class1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormAddRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddRecipe.Designer.cs">
+      <DependentUpon>FormAddRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddFestival.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddFestival.Designer.cs">
+      <DependentUpon>FormAddFestival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddIngredient.Designer.cs">
+      <DependentUpon>FormAddIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +94,6 @@
     </Compile>
     <Compile Include="FormRedactor.Designer.cs">
       <DependentUpon>FormRedactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormAddIng.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAddIng.Designer.cs">
-      <DependentUpon>FormAddIng.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIngredient.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,12 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddFestival.resx">
+      <DependentUpon>FormAddFestival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddIngredient.resx">
+      <DependentUpon>FormAddIngredient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRedactor.resx">
       <DependentUpon>FormRedactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAddIng.resx">
-      <DependentUpon>FormAddIng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIngredient.resx">
       <DependentUpon>FormIngredient.cs</DependentUpon>
