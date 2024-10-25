@@ -19,5 +19,12 @@ namespace vila_tour_di {
             formIngredient.StartPosition = FormStartPosition.CenterParent;
             formIngredient.ShowDialog();
         }
+
+        private void buttonAddRecipe_Click(object sender, EventArgs e)
+        {
+            FormAddRecipe formAddRecipe = new FormAddRecipe();
+            formAddRecipe.StartPosition = FormStartPosition.CenterParent;
+            formAddRecipe.ShowDialog();
+        }
     }
 }

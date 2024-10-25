@@ -121,6 +121,7 @@ namespace vila_tour_di {
             this.buttonAddFiesta.TabIndex = 1;
             this.buttonAddFiesta.Text = "Añadir nuevo";
             this.buttonAddFiesta.UseVisualStyleBackColor = true;
+            this.buttonAddFiesta.Click += new System.EventHandler(this.buttonAddFiesta_Click);
             // 
             // tableLayoutPanel2
             // 

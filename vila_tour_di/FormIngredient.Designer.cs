@@ -61,13 +61,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(584, 561);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(586, 561);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonExit
             // 
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonExit.Location = new System.Drawing.Point(428, 468);
+            this.buttonExit.Location = new System.Drawing.Point(430, 468);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(20);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(136, 73);
@@ -79,7 +79,7 @@
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Location = new System.Drawing.Point(428, 356);
+            this.button6.Location = new System.Drawing.Point(430, 356);
             this.button6.Margin = new System.Windows.Forms.Padding(20);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(136, 72);
@@ -91,7 +91,7 @@
             // buttonModIngredient
             // 
             this.buttonModIngredient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModIngredient.Location = new System.Drawing.Point(428, 244);
+            this.buttonModIngredient.Location = new System.Drawing.Point(430, 244);
             this.buttonModIngredient.Margin = new System.Windows.Forms.Padding(20);
             this.buttonModIngredient.Name = "buttonModIngredient";
             this.buttonModIngredient.Size = new System.Drawing.Size(136, 72);
@@ -108,7 +108,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(578, 56);
+            this.label1.Size = new System.Drawing.Size(580, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingredientes";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,13 +125,13 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(402, 50);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(404, 50);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(83, 15);
+            this.textBox1.Location = new System.Drawing.Point(84, 15);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(316, 20);
             this.textBox1.TabIndex = 0;
@@ -139,7 +139,7 @@
             // buttonAddIngredient
             // 
             this.buttonAddIngredient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddIngredient.Location = new System.Drawing.Point(428, 132);
+            this.buttonAddIngredient.Location = new System.Drawing.Point(430, 132);
             this.buttonAddIngredient.Margin = new System.Windows.Forms.Padding(20);
             this.buttonAddIngredient.Name = "buttonAddIngredient";
             this.buttonAddIngredient.Size = new System.Drawing.Size(136, 72);
@@ -155,7 +155,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView1, 4);
-            this.dataGridView1.Size = new System.Drawing.Size(402, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(404, 443);
             this.dataGridView1.TabIndex = 17;
             // 
             // FormIngredient

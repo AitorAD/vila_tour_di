@@ -16,5 +16,11 @@ namespace vila_tour_di {
             InitializeComponent();
         }
 
+        private void buttonAddFiesta_Click(object sender, EventArgs e)
+        {
+            FormAddFestival formAddFestival= new FormAddFestival();
+            formAddFestival.StartPosition = FormStartPosition.CenterParent;
+            formAddFestival.ShowDialog();
+        }
     }
 }

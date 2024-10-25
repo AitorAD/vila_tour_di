@@ -15,7 +15,7 @@ namespace vila_tour_di {
         }
 
         private void buttonAddIngredient_Click(object sender, EventArgs e) {
-            FormAddIng formAddIng = new FormAddIng();
+            FormAddIngredient formAddIng = new FormAddIngredient();
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
         }
@@ -33,7 +33,7 @@ namespace vila_tour_di {
                 string type = row.Cells["Type"].Value.ToString();
 
                 // Crear una nueva instancia de FormAddIng para modificar
-                FormAddIng formAdd = new FormAddIng(name, type);
+                FormAddIngredient formAdd = new FormAddIngredient(name, type);
                 formAdd.ShowDialog();  // Mostrar de manera modal
             } else {
                 MessageBox.Show("Selecciona un ingrediente para modificar.");

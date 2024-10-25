@@ -36,5 +36,10 @@ namespace vila_tour_di {
         private void buttonExit_Click(object sender, EventArgs e) {
             Dispose();
         }
+
+        private void buttonAddIng_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
