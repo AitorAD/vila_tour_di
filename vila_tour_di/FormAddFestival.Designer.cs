@@ -79,6 +79,7 @@ namespace vila_tour_di
             this.tableLayoutPanel1.Controls.Add(this.lblTitle, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.274288F));
@@ -88,7 +89,7 @@ namespace vila_tour_di
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.30832F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.30832F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.30832F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(556, 454);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(741, 559);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -99,21 +100,22 @@ namespace vila_tour_di
             this.tableLayoutPanel7.Controls.Add(this.buttonExit, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.buttonAddIng, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(58, 394);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(78, 486);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(438, 57);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(584, 69);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // buttonExit
             // 
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonExit.Location = new System.Drawing.Point(229, 10);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonExit.Location = new System.Drawing.Point(305, 12);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(199, 37);
+            this.buttonExit.Size = new System.Drawing.Size(266, 45);
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Salir";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -122,10 +124,10 @@ namespace vila_tour_di
             // buttonAddIng
             // 
             this.buttonAddIng.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddIng.Location = new System.Drawing.Point(10, 10);
-            this.buttonAddIng.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonAddIng.Location = new System.Drawing.Point(13, 12);
+            this.buttonAddIng.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.buttonAddIng.Name = "buttonAddIng";
-            this.buttonAddIng.Size = new System.Drawing.Size(199, 37);
+            this.buttonAddIng.Size = new System.Drawing.Size(266, 45);
             this.buttonAddIng.TabIndex = 0;
             this.buttonAddIng.Text = "Añadir";
             this.buttonAddIng.UseVisualStyleBackColor = true;
@@ -138,29 +140,32 @@ namespace vila_tour_di
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.textBox3, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(58, 214);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(78, 264);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(438, 54);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(584, 66);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 20);
+            this.label4.Location = new System.Drawing.Point(26, 25);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Dirección";
             // 
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(152, 17);
+            this.textBox3.Location = new System.Drawing.Point(204, 22);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 20);
+            this.textBox3.Size = new System.Drawing.Size(292, 22);
             this.textBox3.TabIndex = 4;
             // 
             // tableLayoutPanel5
@@ -175,57 +180,63 @@ namespace vila_tour_di
             this.tableLayoutPanel5.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(58, 274);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(78, 338);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(438, 54);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(584, 66);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(324, 7);
+            this.label3.Location = new System.Drawing.Point(436, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Fecha fin";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker2.Location = new System.Drawing.Point(266, 30);
+            this.dateTimePicker2.Location = new System.Drawing.Point(364, 38);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(168, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(205, 22);
             this.dateTimePicker2.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Location = new System.Drawing.Point(97, 30);
+            this.dateTimePicker1.Location = new System.Drawing.Point(130, 38);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(155, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(205, 22);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(142, 7);
+            this.label2.Location = new System.Drawing.Point(193, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Fecha inicio";
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.Location = new System.Drawing.Point(19, 20);
+            this.label5.Location = new System.Drawing.Point(25, 25);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.tableLayoutPanel5.SetRowSpan(this.label5, 2);
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(65, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Fechas";
             // 
@@ -237,29 +248,32 @@ namespace vila_tour_di
             this.tableLayoutPanel2.Controls.Add(this.labelNameIng, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxNameIng, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(58, 36);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(78, 44);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(438, 54);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(584, 66);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // labelNameIng
             // 
             this.labelNameIng.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelNameIng.AutoSize = true;
-            this.labelNameIng.Location = new System.Drawing.Point(21, 20);
+            this.labelNameIng.Location = new System.Drawing.Point(30, 25);
+            this.labelNameIng.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNameIng.Name = "labelNameIng";
-            this.labelNameIng.Size = new System.Drawing.Size(44, 13);
+            this.labelNameIng.Size = new System.Drawing.Size(56, 16);
             this.labelNameIng.TabIndex = 0;
             this.labelNameIng.Text = "Nombre";
             // 
             // textBoxNameIng
             // 
             this.textBoxNameIng.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxNameIng.Location = new System.Drawing.Point(152, 17);
+            this.textBoxNameIng.Location = new System.Drawing.Point(204, 22);
+            this.textBoxNameIng.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNameIng.Name = "textBoxNameIng";
-            this.textBoxNameIng.Size = new System.Drawing.Size(220, 20);
+            this.textBoxNameIng.Size = new System.Drawing.Size(292, 22);
             this.textBoxNameIng.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -270,31 +284,34 @@ namespace vila_tour_di
             this.tableLayoutPanel3.Controls.Add(this.labelTypeIng, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(58, 96);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(78, 118);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(438, 112);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 138);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // labelTypeIng
             // 
             this.labelTypeIng.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTypeIng.AutoSize = true;
-            this.labelTypeIng.Location = new System.Drawing.Point(12, 49);
+            this.labelTypeIng.Location = new System.Drawing.Point(18, 61);
+            this.labelTypeIng.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTypeIng.Name = "labelTypeIng";
-            this.labelTypeIng.Size = new System.Drawing.Size(63, 13);
+            this.labelTypeIng.Size = new System.Drawing.Size(79, 16);
             this.labelTypeIng.TabIndex = 1;
             this.labelTypeIng.Text = "Descripción";
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(152, 5);
+            this.textBox1.Location = new System.Drawing.Point(204, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(220, 102);
+            this.textBox1.Size = new System.Drawing.Size(292, 125);
             this.textBox1.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -303,26 +320,28 @@ namespace vila_tour_di
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtBoxPath, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnSearchImg, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(58, 334);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(78, 412);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(438, 54);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(584, 66);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 20);
+            this.label1.Location = new System.Drawing.Point(32, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Imagen";
             // 
@@ -330,17 +349,19 @@ namespace vila_tour_di
             // 
             this.txtBoxPath.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxPath.Enabled = false;
-            this.txtBoxPath.Location = new System.Drawing.Point(124, 17);
+            this.txtBoxPath.Location = new System.Drawing.Point(166, 22);
+            this.txtBoxPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxPath.Name = "txtBoxPath";
-            this.txtBoxPath.Size = new System.Drawing.Size(188, 20);
+            this.txtBoxPath.Size = new System.Drawing.Size(249, 22);
             this.txtBoxPath.TabIndex = 3;
             // 
             // btnSearchImg
             // 
             this.btnSearchImg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSearchImg.Location = new System.Drawing.Point(361, 15);
+            this.btnSearchImg.Location = new System.Drawing.Point(481, 19);
+            this.btnSearchImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchImg.Name = "btnSearchImg";
-            this.btnSearchImg.Size = new System.Drawing.Size(65, 23);
+            this.btnSearchImg.Size = new System.Drawing.Size(87, 28);
             this.btnSearchImg.TabIndex = 4;
             this.btnSearchImg.Text = "Examinar";
             this.btnSearchImg.UseVisualStyleBackColor = true;
@@ -351,9 +372,10 @@ namespace vila_tour_di
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(170, 4);
+            this.lblTitle.Location = new System.Drawing.Point(231, 5);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(214, 25);
+            this.lblTitle.Size = new System.Drawing.Size(278, 29);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Añadir fiesta o tradición";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,10 +386,11 @@ namespace vila_tour_di
             // 
             // FormAddFestival
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 454);
+            this.ClientSize = new System.Drawing.Size(741, 559);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FormAddFestival";
             this.Text = "Añadir fiestas y tradiciones";
             this.tableLayoutPanel1.ResumeLayout(false);
