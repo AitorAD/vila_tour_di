@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    static class Program {
+    static class ProgramMain {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -13,7 +13,7 @@ namespace vila_tour_di {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormLogin());
         }
     }
 }

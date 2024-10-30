@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace vila_tour_di {
-    public partial class Form1 : Form {
-        public Form1() {
+namespace vila_tour_di
+{
+    public partial class panelUser : UserControl
+    {
+        public panelUser()
+        {
             InitializeComponent();
         }
+
+       
     }
 }
