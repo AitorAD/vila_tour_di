@@ -3,40 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\FormManagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\FormLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\FormAdmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\programmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\programmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\ProgramMain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\ProgramMain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formredactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formredactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formredactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vila_tour_di\\formredactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,21 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config",
-              "RelativeDocumentMoniker": "vila_tour_di\\App.config",
-              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config",
-              "RelativeToolTip": "vila_tour_di\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-07T22:38:28.231Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -69,26 +56,14 @@
               "RelativeDocumentMoniker": "vila_tour_di\\FormManagement.cs",
               "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs",
               "RelativeToolTip": "vila_tour_di\\FormManagement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T21:01:50.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "vila_tour_di\\FormLogin.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T21:51:10.852Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs",
               "RelativeDocumentMoniker": "vila_tour_di\\FormLogin.cs",
@@ -101,19 +76,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "FormManagement.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs",
               "RelativeDocumentMoniker": "vila_tour_di\\FormManagement.cs",
               "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs [Dise\u00F1o]",
               "RelativeToolTip": "vila_tour_di\\FormManagement.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T19:52:37.673Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-07T19:52:37.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "FormAdmin.cs",
               "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
               "RelativeDocumentMoniker": "vila_tour_di\\FormAdmin.cs",
@@ -126,6 +100,29 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\FormLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T21:51:10.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config",
+              "RelativeDocumentMoniker": "vila_tour_di\\App.config",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config",
+              "RelativeToolTip": "vila_tour_di\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-07T22:38:28.231Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
               "Title": "FormAdmin.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
@@ -133,8 +130,7 @@
               "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs [Dise\u00F1o]",
               "RelativeToolTip": "vila_tour_di\\FormAdmin.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T21:03:58.799Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-07T21:03:58.799Z"
             },
             {
               "$type": "Document",
@@ -146,8 +142,7 @@
               "RelativeToolTip": "vila_tour_di\\ProgramMain.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T20:11:49.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T20:11:49.198Z"
             },
             {
               "$type": "Document",
@@ -158,8 +153,7 @@
               "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormRedactor.cs [Dise\u00F1o]",
               "RelativeToolTip": "vila_tour_di\\FormRedactor.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T21:54:42.139Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-07T21:54:42.139Z"
             }
           ]
         }
