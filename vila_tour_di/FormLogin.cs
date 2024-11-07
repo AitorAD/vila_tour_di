@@ -16,11 +16,14 @@ namespace vila_tour_di {
         }
 
         private void btnEntrar_Click(object sender, EventArgs e) {
+            FormManagement managementForm;
             if (this.txtEmail.Text.Equals("redactor") && this.txtPassword.Text.Equals("redactor")) {
-                new FormRedactor().Show();
+                managementForm = new FormManagement("redactor");
+                managementForm.Show();
                 this.Hide();
             } else if (this.txtEmail.Text.Equals("admin") && this.txtPassword.Text.Equals("admin")) {
-                new FormAdmin().Show();
+                managementForm = new FormManagement("admin");
+                managementForm.Show();
                 this.Hide();
             } else {
                 MessageBox.Show("Error. Usuario o contraseña incorrectos");

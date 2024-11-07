@@ -1,22 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\",
+  "WorkspaceRootPath": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\javii\\onedrive - conselleria d\u0027educaci\u00F3\\2dam\\desarrollo de interfaces\\afinal\\vila_tour_di\\vila_tour_di\\formaddrecipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formaddrecipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\javii\\onedrive - conselleria d\u0027educaci\u00F3\\2dam\\desarrollo de interfaces\\afinal\\vila_tour_di\\vila_tour_di\\formaddfestival.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formaddfestival.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\javii\\onedrive - conselleria d\u0027educaci\u00F3\\2dam\\desarrollo de interfaces\\afinal\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\javii\\onedrive - conselleria d\u0027educaci\u00F3\\2dam\\desarrollo de interfaces\\afinal\\vila_tour_di\\vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\programmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\programmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\formredactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\formredactor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,67 +46,119 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\FormAdmin.cs",
-              "ToolTip": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
-              "RelativeToolTip": "vila_tour_di\\FormAdmin.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAnwCUAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T12:02:32.743Z",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config",
+              "RelativeDocumentMoniker": "vila_tour_di\\App.config",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\App.config",
+              "RelativeToolTip": "vila_tour_di\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-07T22:38:28.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormAdmin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\FormAdmin.cs",
-              "ToolTip": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAdmin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "vila_tour_di\\FormAdmin.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "FormManagement.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormManagement.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs*",
+              "RelativeToolTip": "vila_tour_di\\FormManagement.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T12:02:29.515Z",
+              "WhenOpened": "2024-11-07T21:01:50.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\FormLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T21:51:10.852Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormLogin.cs",
+              "RelativeToolTip": "vila_tour_di\\FormLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T21:51:14.781Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormAddFestival.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAddFestival.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\FormAddFestival.cs",
-              "ToolTip": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAddFestival.cs [Dise\u00F1o]",
-              "RelativeToolTip": "vila_tour_di\\FormAddFestival.cs [Dise\u00F1o]",
+              "Title": "FormManagement.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormManagement.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormManagement.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "vila_tour_di\\FormManagement.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T11:15:42.751Z",
+              "WhenOpened": "2024-11-07T19:52:37.673Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormAddRecipe.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAddRecipe.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\FormAddRecipe.cs",
-              "ToolTip": "C:\\Users\\javii\\OneDrive - Conselleria d\u0027Educaci\u00F3\\2DAM\\Desarrollo de interfaces\\aFinal\\vila_tour_di\\vila_tour_di\\FormAddRecipe.cs [Dise\u00F1o]",
-              "RelativeToolTip": "vila_tour_di\\FormAddRecipe.cs [Dise\u00F1o]",
+              "DocumentIndex": 4,
+              "Title": "FormAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormAdmin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
+              "RelativeToolTip": "vila_tour_di\\FormAdmin.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAhwDEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T11:15:39.173Z",
+              "WhenOpened": "2024-11-07T21:04:05.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormAdmin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormAdmin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormAdmin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\FormAdmin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T21:03:58.799Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProgramMain.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\ProgramMain.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\ProgramMain.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\ProgramMain.cs",
+              "RelativeToolTip": "vila_tour_di\\ProgramMain.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T20:11:49.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormRedactor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormRedactor.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\FormRedactor.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\FormRedactor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\FormRedactor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T21:54:42.139Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
