@@ -12,9 +12,14 @@ namespace vila_tour_di {
     public partial class UserControl1 : UserControl {
         public UserControl1() {
             InitializeComponent();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e) {
 
         }
     }
