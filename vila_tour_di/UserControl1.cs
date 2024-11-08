@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
-    public partial class panelLugares : UserControl {
-        public panelLugares() {
+    public partial class UserControl1 : UserControl {
+        public UserControl1() {
             InitializeComponent();
         }
 
-        private void buttonAddPlace_Click(object sender, EventArgs e) {
+        private void textBox1_TextChanged(object sender, EventArgs e) {
 
         }
     }

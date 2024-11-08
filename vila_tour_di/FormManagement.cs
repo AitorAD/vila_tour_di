@@ -9,6 +9,8 @@ namespace vila_tour_di {
         private Guna2Button currentButton;
         private Guna2Button lastButton;
         private string rol;
+        private Size originalSize;
+        private Point originalLocation;
 
         public FormManagement(string rol) {
             InitializeComponent();
@@ -35,18 +37,29 @@ namespace vila_tour_di {
             if (lastButton != null) {
                 lastButton.ForeColor = button.ForeColor;
                 lastButton.FillColor = button.FillColor;
+                lastButton.Size = originalSize;
+                lastButton.Location = originalLocation;
             }
 
             if (button != null) {
                 button.ForeColor = Color.Black;
                 button.FillColor = Color.White;
+                originalSize = button.Size;
+                originalLocation = button.Location;
+
+                // Aplica los cambios al botón actual
+                button.ForeColor = Color.Black;
+                button.FillColor = Color.White;
+                button.Size = new Size(150, 50);
+                button.Location = new Point(sidePanel.Width+10 - button.Width, button.Location.Y);
             }
+
             lastButton = button;
         }
 
         private void btnPlaces_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
-            LoadUserControl(new panelLugares());
+            LoadUserControl(new UserControl1());
         }
 
         private void btnFestivals_Click(object sender, EventArgs e) {
@@ -78,5 +91,6 @@ namespace vila_tour_di {
                 Application.Exit();  // Cierra completamente la aplicación
             }
         }
+
     }
 }
