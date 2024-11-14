@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManagement));
+            System.Windows.Forms.PictureBox vila_tour_logo;
             this.sidePanel = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnPlaces = new Guna.UI2.WinForms.Guna2Button();
@@ -32,10 +33,10 @@
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnFestivals = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.vila_tour_logo = new System.Windows.Forms.PictureBox();
+            vila_tour_logo = new System.Windows.Forms.PictureBox();
             this.sidePanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vila_tour_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(vila_tour_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -173,13 +174,13 @@
             this.btnLogOut.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnLogOut.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnLogOut.HoverState.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.Location = new System.Drawing.Point(12, 500);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(35);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.PressedColor = System.Drawing.Color.White;
             this.btnLogOut.Size = new System.Drawing.Size(50, 50);
             this.btnLogOut.TabIndex = 16;
-            this.btnLogOut.Text = "Salir";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnFestivals
@@ -214,7 +215,7 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.vila_tour_logo);
+            this.mainPanel.Controls.Add(vila_tour_logo);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(227, 0);
             this.mainPanel.Name = "mainPanel";
@@ -223,16 +224,16 @@
             // 
             // vila_tour_logo
             // 
-            this.vila_tour_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            vila_tour_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.vila_tour_logo.Image = ((System.Drawing.Image)(resources.GetObject("vila_tour_logo.Image")));
-            this.vila_tour_logo.Location = new System.Drawing.Point(6, 134);
-            this.vila_tour_logo.Name = "vila_tour_logo";
-            this.vila_tour_logo.Size = new System.Drawing.Size(778, 270);
-            this.vila_tour_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.vila_tour_logo.TabIndex = 1;
-            this.vila_tour_logo.TabStop = false;
+            vila_tour_logo.Image = ((System.Drawing.Image)(resources.GetObject("vila_tour_logo.Image")));
+            vila_tour_logo.Location = new System.Drawing.Point(6, 134);
+            vila_tour_logo.Name = "vila_tour_logo";
+            vila_tour_logo.Size = new System.Drawing.Size(778, 270);
+            vila_tour_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            vila_tour_logo.TabIndex = 1;
+            vila_tour_logo.TabStop = false;
             // 
             // FormManagement
             // 
@@ -242,13 +243,16 @@
             this.ClientSize = new System.Drawing.Size(1023, 561);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sidePanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormManagement";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inicio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormManagement_FormClosing);
             this.sidePanel.ResumeLayout(false);
             this.sidePanel.PerformLayout();
             this.mainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vila_tour_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(vila_tour_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,7 +261,6 @@
 
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.PictureBox vila_tour_logo;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button btnPlaces;
         private Guna.UI2.WinForms.Guna2Button btnRecipes;

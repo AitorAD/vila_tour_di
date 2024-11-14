@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace vila_tour_di
 {
-    public partial class FormAddRecipe : BaseForm
+    public partial class FormAddRecipe : Form
     {
         public FormAddRecipe()
         {

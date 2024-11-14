@@ -59,12 +59,12 @@ namespace vila_tour_di {
 
         private void btnPlaces_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
-            LoadUserControl(new UserControl1());
+            LoadUserControl(new UserControlPlaces());
         }
 
         private void btnFestivals_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
-            LoadUserControl(new panelFiestas());
+            LoadUserControl(new UserControlFestivals());
 
         }
 
@@ -76,7 +76,7 @@ namespace vila_tour_di {
 
         private void btnUsers_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
-            LoadUserControl(new panelUser());
+            LoadUserControl(new UserControlUsers());
 
         }
 
