@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace vila_tour_di
 {
-    public partial class FormAddFestival : BaseForm
+    public partial class FormAddFestival : Form
     {
         public FormAddFestival()
         {

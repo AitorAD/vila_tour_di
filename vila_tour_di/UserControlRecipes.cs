@@ -14,7 +14,7 @@ namespace vila_tour_di {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnIngredients_Click(object sender, EventArgs e) {
             FormIngredient formIngredient = new FormIngredient();
             formIngredient.StartPosition = FormStartPosition.CenterParent;
             formIngredient.ShowDialog();
@@ -25,6 +25,10 @@ namespace vila_tour_di {
             FormAddRecipe formAddRecipe = new FormAddRecipe();
             formAddRecipe.StartPosition = FormStartPosition.CenterParent;
             formAddRecipe.ShowDialog();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e) {
+
         }
     }
 }
