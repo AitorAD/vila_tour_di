@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RestSharp.Serializers.Xml;
 
 namespace vila_tour_di {
     public partial class UserControlUsers : UserControl {
@@ -24,7 +25,7 @@ namespace vila_tour_di {
         }
 
         public DataTable LoadUsersData() {
-            string apiUrl = "http://127.0.0.1:8080/users"; // Ajusta tu URL
+            string apiUrl = "http://127.0.0.1:8080/users";
             var client = new RestClient(apiUrl, "GET");
             string jsonResponse = client.GetItem();
 
@@ -62,5 +63,89 @@ namespace vila_tour_di {
             formAddUser.StartPosition = FormStartPosition.CenterParent;
             formAddUser.ShowDialog();
         }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
+            {
+                var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
+
+                int idUser = (int)Convert.ToInt64(selectedRow.Cells[0].Value);
+
+                var confirmResult = MessageBox.Show("Está seguro de querer eliminar este usuario?",
+                                                    "Confirmar eliminación",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    string url = $"http://127.0.0.1:8080/users/{idUser}";
+                    RestClient client = new RestClient(url, "DELETE");
+
+                    string response = client.DeleteItem();
+
+                    if (!string.IsNullOrEmpty(response))
+                    {
+                        MessageBox.Show("Usuario eliminado exitosamente", "Éxito");
+                        LoadUsersData();
+                    } else
+                    {
+                        MessageBox.Show("Error al eliminar el usuario", "Error");
+                    }
+                }
+              
+            } else
+            {
+                MessageBox.Show("No se ha seleccionado ningún usuario");
+            }
+            gunaDataGridViewUsers.DataSource = LoadUsersData();
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
+            {
+                // Obtener el usuario seleccionado de la tabla
+                var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
+
+                User user = new User
+                {
+                    id = (int)selectedRow.Cells["ID"].Value,
+                    username = selectedRow.Cells["Usuario"].Value.ToString(),
+                    email = selectedRow.Cells["Email"].Value.ToString(),
+                    role = selectedRow.Cells["Rol"].Value.ToString(),
+                    name = selectedRow.Cells["Nombre"].Value.ToString(),
+                    surname = selectedRow.Cells["Apellidos"].Value.ToString()
+                };
+
+                // Abrir el formulario de edición
+                FormAddUser formEditUser = new FormAddUser(user);
+                formEditUser.StartPosition = FormStartPosition.CenterParent;
+
+                if (formEditUser.ShowDialog() == DialogResult.OK)
+                {
+                    // Enviar los datos actualizados al servidor
+                    string url = $"http://127.0.0.1:8080/users/{user.id}";
+                    RestClient client = new RestClient(url, "PUT");
+
+                    string datos = JsonConvert.SerializeObject(user); // Convertir a JSON
+                    string response = client.PutItem(datos);
+
+                    if (!string.IsNullOrEmpty(response))
+                    {
+                        MessageBox.Show("Usuario actualizado exitosamente", "Éxito");
+                        gunaDataGridViewUsers.DataSource = LoadUsersData(); // Recargar datos
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actualizar el usuario", "Error");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningún usuario");
+            }
+        }
+
     }
 }

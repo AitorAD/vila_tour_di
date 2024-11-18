@@ -18,6 +18,7 @@ namespace vila_tour_di {
             this.role = role;
             this.name = name;
             ValidaRol();
+            txtWelcome.Text = $"Bienvenido, {name}";
         }
 
         private void ValidaRol() {

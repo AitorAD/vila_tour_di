@@ -117,27 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="vila_tour_logo.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAActJREFUeF7tmj1KBDEUgAcrsZCtxMpSxDNYeBLxIN7Fg4iVJ7AQsRIry8VCtpLx
-        y+QNDGEzO7MmJpO8D96yk599730kxS7bKIqixKRt22fiNdN4lDLjQZINkSvvUmY8SKICbK4sUQFSZjxI
-        ogJsrixRAVJmPEhyTlwkiitijPgCUkKDp7ZPLypAlpYJDaoA26cXFSBLy4QGVYDt08v+Ath8QNwRxzKU
-        HdQWRwAbT4iH7iPadiXD2UFt4QWw6Zr47LZb6hDA4v7I/5idA8oXwMLhkXcpWwCL3CPvUqYAJn1H3qU8
-        AUyMHXmXsgQwuOvIu3wR60TxIWVvhfnpAniYeuRzYi3lb4X5aQJ4M+fI58TfBfAy98jnRBABN8R397g8
-        gl2BS+KlG1oWYQQYeDgi7rvh5RBOQA+Dt8RSrkR4AQYm5lyJM2KVKEZ/i2B+PwEGJqdeieK/DO26EmUL
-        MLBw7EqUL8DAYt+VqENAD5vcK1GXAAMbh1eiPgEGNvdXok4BS4AGVYDt04sKkKVlQoMqwPbpRQXI0jKh
-        wfQCSHKYMMxX9TH+RYD+U9TmyhIVIGXGgyQqwObKEhUgZcaDJNULeDOJMo0nKVNRlCppml9yD+WztybY
-        XQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="vila_tour_logo.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="vila_tour_logo.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <data name="vila_tour_logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI8AAACwCAYAAAA2Tz3rAAAABGdBTUEAALGPC/xhBQAAWr9JREFUeF7t
@@ -529,6 +512,20 @@
         3x9J2t0hpEfe6bg5wrYG2Ta+e3yYHeDSfX8K6RCOnVCyLGjfO+2KudMryddVfoht2MbDR48Mvw7PIf80
         2RlGrdDG9142r7N8l23YxvePX+Yuff/lwkXUc/miN+WbbMM2Hn38NT/KIF+0DduwDduwDduwDduwjf+6
         oVL9P8CcikHNmrCtAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAActJREFUeF7tmj1KBDEUgAcrsZCtxMpSxDNYeBLxIN7Fg4iVJ7AQsRIry8VCtpLx
+        y+QNDGEzO7MmJpO8D96yk599730kxS7bKIqixKRt22fiNdN4lDLjQZINkSvvUmY8SKICbK4sUQFSZjxI
+        ogJsrixRAVJmPEhyTlwkiitijPgCUkKDp7ZPLypAlpYJDaoA26cXFSBLy4QGVYDt08v+Ath8QNwRxzKU
+        HdQWRwAbT4iH7iPadiXD2UFt4QWw6Zr47LZb6hDA4v7I/5idA8oXwMLhkXcpWwCL3CPvUqYAJn1H3qU8
+        AUyMHXmXsgQwuOvIu3wR60TxIWVvhfnpAniYeuRzYi3lb4X5aQJ4M+fI58TfBfAy98jnRBABN8R397g8
+        gl2BS+KlG1oWYQQYeDgi7rvh5RBOQA+Dt8RSrkR4AQYm5lyJM2KVKEZ/i2B+PwEGJqdeieK/DO26EmUL
+        MLBw7EqUL8DAYt+VqENAD5vcK1GXAAMbh1eiPgEGNvdXok4BS4AGVYDt04sKkKVlQoMqwPbpRQXI0jKh
+        wfQCSHKYMMxX9TH+RYD+U9TmyhIVIGXGgyQqwObKEhUgZcaDJNULeDOJMo0nKVNRlCppml9yD+WztybY
+        XQAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
