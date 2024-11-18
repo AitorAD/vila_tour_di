@@ -1,5 +1,5 @@
 ﻿namespace vila_tour_di {
-    partial class panelRecetas {
+    partial class UserControlRecipes {
         /// <summary> 
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -24,9 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panelRecetas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlRecipes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridViewRecipes = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxSearchUsers = new System.Windows.Forms.TextBox();
@@ -39,13 +41,14 @@
             this.btnIngredients = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.gunaDataGridViewRecipes = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecipes)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewRecipes)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -54,7 +57,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.28347F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.71653F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridViewRecipes, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.gunaDataGridViewRecipes, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 1);
@@ -68,15 +71,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 657);
             this.tableLayoutPanel1.TabIndex = 16;
-            // 
-            // dataGridViewRecipes
-            // 
-            this.dataGridViewRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRecipes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewRecipes.Location = new System.Drawing.Point(28, 79);
-            this.dataGridViewRecipes.Name = "dataGridViewRecipes";
-            this.dataGridViewRecipes.Size = new System.Drawing.Size(799, 549);
-            this.dataGridViewRecipes.TabIndex = 11;
             // 
             // panel1
             // 
@@ -254,6 +248,60 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // gunaDataGridViewRecipes
+            // 
+            this.gunaDataGridViewRecipes.AllowUserToAddRows = false;
+            this.gunaDataGridViewRecipes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewRecipes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridViewRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gunaDataGridViewRecipes.ColumnHeadersHeight = 20;
+            this.gunaDataGridViewRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridViewRecipes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gunaDataGridViewRecipes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaDataGridViewRecipes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewRecipes.Location = new System.Drawing.Point(28, 79);
+            this.gunaDataGridViewRecipes.Name = "gunaDataGridViewRecipes";
+            this.gunaDataGridViewRecipes.ReadOnly = true;
+            this.gunaDataGridViewRecipes.RowHeadersVisible = false;
+            this.gunaDataGridViewRecipes.Size = new System.Drawing.Size(799, 549);
+            this.gunaDataGridViewRecipes.TabIndex = 16;
+            this.gunaDataGridViewRecipes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewRecipes.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gunaDataGridViewRecipes.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewRecipes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewRecipes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewRecipes.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewRecipes.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewRecipes.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewRecipes.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gunaDataGridViewRecipes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewRecipes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gunaDataGridViewRecipes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gunaDataGridViewRecipes.ThemeStyle.HeaderStyle.Height = 20;
+            this.gunaDataGridViewRecipes.ThemeStyle.ReadOnly = true;
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.Height = 22;
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // panelRecetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,13 +310,13 @@
             this.Name = "panelRecetas";
             this.Size = new System.Drawing.Size(970, 657);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecipes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewRecipes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,7 +324,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridViewRecipes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBoxSearchUsers;
@@ -289,5 +336,6 @@
         private Guna.UI2.WinForms.Guna2Button btnIngredients;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridViewRecipes;
     }
 }

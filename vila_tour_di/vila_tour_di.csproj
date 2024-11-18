@@ -96,7 +96,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryIngredient.cs" />
     <Compile Include="Guna\UI2\WinForms\Guna2ToolTip.cs" />
+    <Compile Include="Recipe.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="FormAddIngrediente.cs">
       <SubType>Form</SubType>

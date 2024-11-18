@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace vila_tour_di {
     class Ingredient {
-        private string type;
+        public int id { get; set; }
+        public string name { get; set; }
+        public CategoryIngredient categoryIngredient { get; set; }
 
-        public Ingredient(int idIngredient, string name, string type) {
-            this.idIngredient = idIngredient;
+        public Ingredient(int id, string name, CategoryIngredient categoryIngredient) {
+            this.id = id;
             this.name = name;
-            this.type = type;
+            this.categoryIngredient = categoryIngredient;
         }
 
         public Ingredient() {
             
         }
 
-
-        public int idIngredient { get; set; }
-        public string name { get; set; }
-        public string category { get; set; }
+        public override string ToString() {
+            return $"Name: {name}, Category: {categoryIngredient}";
+        }
     }
 }
