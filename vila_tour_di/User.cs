@@ -13,6 +13,7 @@ namespace vila_tour_di {
         public string name { get; set; }
         public string surname { get; set; }
         public string profilePicture { get; set; }
+        public string password { get; set; }
     }
 }
 

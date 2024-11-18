@@ -8,21 +8,22 @@ namespace vila_tour_di {
     public partial class FormManagement : Form {
         private Guna2Button currentButton;
         private Guna2Button lastButton;
-        private string rol;
+        private string role;
+        private string name;
         private Size originalSize;
         private Point originalLocation;
 
-        public FormManagement(string rol) {
+        public FormManagement(string role, string name) {
             InitializeComponent();
-            this.rol = rol;
+            this.role = role;
+            this.name = name;
             ValidaRol();
         }
 
         private void ValidaRol() {
-            MessageBox.Show("Rol actual: " + rol);
-            if (rol == "redactor") {
+            if (role == "EDITOR") {
                 btnUsers.Visible = false; 
-            } else if (rol == "admin") {
+            } else if (role == "ADMIN") {
                 btnUsers.Visible = true;  
             }
         }
