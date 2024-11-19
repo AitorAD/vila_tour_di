@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryIngredient.cs" />
+    <Compile Include="Recipe.cs" />
     <Compile Include="FormAddCategoryIngredient.cs">
       <SubType>Form</SubType>
     </Compile>

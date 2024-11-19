@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace vila_tour_di {
     class Ingredient {
 
-        public Ingredient(int idIngredient, string name, CategoryIngredient categoryIngredient) {
-            this.idIngredient = idIngredient;
+        public Ingredient(int id, string name, CategoryIngredient categoryIngredient) {
+            this.id = id;
             this.name = name;
             this.category = categoryIngredient;
         }
@@ -18,7 +18,7 @@ namespace vila_tour_di {
         }
 
 
-        public int idIngredient { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
         public CategoryIngredient category { get; set; }
     }

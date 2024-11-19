@@ -70,7 +70,7 @@ namespace vila_tour_di {
 
         private void btnRecipes_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
-            LoadUserControl(new panelRecetas());
+            LoadUserControl(new UserControlRecipes());
 
         }
 

@@ -36,7 +36,7 @@ namespace vila_tour_di {
                     var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
 
                     foreach (var ingredient in ingredients) {
-                        table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category);
+                        table.Rows.Add(ingredient.id, ingredient.name, ingredient.category);
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error al procesar los datos");

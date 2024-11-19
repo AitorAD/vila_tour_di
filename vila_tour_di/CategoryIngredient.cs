@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace vila_tour_di {
 
     public class CategoryIngredient {
-        private object p;
 
         public int id { get; set; }
         public string name { get; set; }
@@ -17,10 +16,6 @@ namespace vila_tour_di {
         }
         public CategoryIngredient() {
 
-        }
-
-        public CategoryIngredient(object p) {
-            this.p = p;
         }
     }
 }
