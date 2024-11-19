@@ -1,4 +1,6 @@
 ﻿using ClientRESTAPI;
+using Guna.UI2.WinForms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +19,14 @@ namespace vila_tour_di {
         public FormAddIngrediente() {
             InitializeComponent();
             labelTitle.Text = "Añadir ingrediente";
-            // Cargar las opciones traducidas en el ComboBox
-            guna2ComboBox1.DataSource = GetIngredientTypeTranslations();
-            guna2ComboBox1.DisplayMember = "Translation";  // Mostrar la traducción
-            guna2ComboBox1.ValueMember = "Type";           // Usar el valor original del enum
 
+            guna2ComboBoxCategory = LoadCategoriesIngredientsData();
+            /*
+            // Cargar las opciones traducidas en el ComboBox
+            guna2ComboBoxCategory.DataSource = GetIngredientTypeTranslations();
+            guna2ComboBoxCategory.DisplayMember = "Translation";  // Mostrar la traducción
+            guna2ComboBoxCategory.ValueMember = "Type";           // Usar el valor original del enum
+            */
             this.FormClosed += FormAddIngrediente_FormClosed; // Suscribirse al evento FormClosed
         }
 
@@ -35,15 +40,15 @@ namespace vila_tour_di {
             catIng = category;
 
             // Cargar las opciones traducidas en el ComboBox
-            guna2ComboBox1.DataSource = GetIngredientTypeTranslations();
-            guna2ComboBox1.DisplayMember = "Translation";  // Mostrar la traducción
-            guna2ComboBox1.ValueMember = "Type";
+            guna2ComboBoxCategory.DataSource = GetIngredientTypeTranslations();
+            guna2ComboBoxCategory.DisplayMember = "Translation";  // Mostrar la traducción
+            guna2ComboBoxCategory.ValueMember = "Type";
 
             // Asignar los valores de nombre y categoría al TextBox y ComboBox
-            guna2TextBox1.Text = nameIng; // Nombre del ingrediente
+            guna2TextBoxName.Text = nameIng; // Nombre del ingrediente
 
             // Seleccionar el tipo de ingrediente actual en el ComboBox
-            guna2ComboBox1.SelectedValue = Enum.Parse(typeof(IngredientType), catIng);
+            guna2ComboBoxCategory.SelectedValue = Enum.Parse(typeof(IngredientType), catIng);
 
             this.Text = "Editar ingrediente";
 
@@ -55,6 +60,8 @@ namespace vila_tour_di {
         }
 
         private void bttbAddIngredient_Click(object sender, EventArgs e) {
+            string name = guna2TextBoxName.Text;
+
             /*
 
                 // Obtener los datos del formulario
@@ -153,6 +160,34 @@ namespace vila_tour_di {
                 }
             */
 
+        }
+
+        private Guna2ComboBox LoadCategoriesIngredientsData() {
+            string apiUrl = "http://127.0.0.1:8080/categories"; // Ajusta tu URL
+            var client = new RestClient(apiUrl, "GET");
+            string jsonResponse = client.GetItem();
+            
+            Guna2ComboBox comboBox = new Guna2ComboBox();
+
+            if (jsonResponse != null) {
+                try {
+                    // Deserializar la respuesta JSON a una lista de usuarios
+                    var categories = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
+
+                    Console.WriteLine(jsonResponse);
+
+                    foreach (var category in categories) {
+                        comboBox.Items.Add(category.name);
+                    }
+                    
+                } catch (Exception ex) {
+                    MessageBox.Show("Error al procesar los datos: " + ex.Message);
+                }
+            } else {
+                MessageBox.Show("No se pudieron obtener los datos.");
+            }
+
+            return comboBox;
         }
 
         // Función para traducir el enum y devolver una lista de objetos

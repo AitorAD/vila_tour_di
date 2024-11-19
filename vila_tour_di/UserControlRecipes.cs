@@ -20,6 +20,8 @@ namespace vila_tour_di {
             originalDataTable = LoadRecipesData();
             gunaDataGridViewRecipes.DataSource = originalDataTable;
             gunaDataGridViewRecipes.AutoGenerateColumns = true;
+            gunaDataGridViewRecipes.AutoResizeColumnHeadersHeight();
+            gunaDataGridViewRecipes.AutoResizeColumns();
         }
 
         public DataTable LoadRecipesData() {
@@ -70,7 +72,6 @@ namespace vila_tour_di {
             } else {
                 MessageBox.Show("No se pudieron obtener los datos.");
             }
-
             return table;
         }
 

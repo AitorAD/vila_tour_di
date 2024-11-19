@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vila_tour_di {
     internal class CategoryIngredient {
-        private int id;
-        private string name;
+        public int id { get; set; }
+        public string name { get; set; }
     }
 }
