@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace vila_tour_di {
     public partial class FormAddIngrediente : Form {
         bool isEditing = false;
-        int idIng;
         string nameIng;
         string catIng;
 
@@ -30,7 +29,6 @@ namespace vila_tour_di {
 
             InitializeComponent();
             labelTitle.Text = "Editar ingrediente";
-            idIng = id;
             nameIng = name;
             catIng = category;
 
@@ -55,7 +53,7 @@ namespace vila_tour_di {
         }
 
 
-        private void bttbAddIngredient_Click(object sender, EventArgs e) {
+        /*private void bttbAddIngredient_Click(object sender, EventArgs e) {
             // Obtener los datos del formulario
             string nameIngredient = guna2TextBox1.Text;
             IngredientType categoryEnum = (IngredientType)guna2ComboBox1.SelectedValue;
@@ -67,7 +65,7 @@ namespace vila_tour_di {
                 // Crear el objeto Ingredient que será enviado en la actualización
                 Ingredient newIngredient = new Ingredient {
                     name = nameIngredient,
-                    category = categoryEnum.ToString()
+                    category = catIng;
                 };
 
                 // Serializar el objeto newIngredient a JSON
@@ -150,7 +148,7 @@ namespace vila_tour_di {
                 }
 
             }
-        }
+        }*/
 
         // Función para traducir el enum y devolver una lista de objetos
         private List<IngredientTypeTranslation> GetIngredientTypeTranslations() {

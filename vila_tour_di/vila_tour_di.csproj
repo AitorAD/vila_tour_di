@@ -96,6 +96,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryIngredient.cs" />
+    <Compile Include="FormAddCategoryIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCategoryIngredient.Designer.cs">
+      <DependentUpon>FormAddCategoryIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategoriesIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoriesIngredient.Designer.cs">
+      <DependentUpon>FormCategoriesIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guna\UI2\WinForms\Guna2ToolTip.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="FormAddIngrediente.cs">
@@ -169,11 +182,17 @@
     <Compile Include="UserControlRecipes.Designer.cs">
       <DependentUpon>UserControlRecipes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAddCategoryIngredient.resx">
+      <DependentUpon>FormAddCategoryIngredient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddIngrediente.resx">
       <DependentUpon>FormAddIngrediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoriesIngredient.resx">
+      <DependentUpon>FormCategoriesIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManagement.resx">
       <DependentUpon>FormManagement.cs</DependentUpon>
