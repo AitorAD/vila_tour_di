@@ -31,8 +31,8 @@ namespace vila_tour_di {
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -121,8 +121,8 @@ namespace vila_tour_di {
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.lblEmail);
-            this.flowLayoutPanel2.Controls.Add(this.txtEmail);
+            this.flowLayoutPanel2.Controls.Add(this.lblUsername);
+            this.flowLayoutPanel2.Controls.Add(this.txtUsername);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 75);
@@ -130,24 +130,24 @@ namespace vila_tour_di {
             this.flowLayoutPanel2.Size = new System.Drawing.Size(254, 66);
             this.flowLayoutPanel2.TabIndex = 13;
             // 
-            // lblEmail
+            // lblUsername
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(3, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(254, 20);
-            this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "Correo:";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(3, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(254, 20);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "Usuario:";
             // 
-            // txtEmail
+            // txtUsername
             // 
-            this.txtEmail.Location = new System.Drawing.Point(3, 23);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(254, 20);
-            this.txtEmail.TabIndex = 0;
+            this.txtUsername.Location = new System.Drawing.Point(3, 23);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(254, 20);
+            this.txtUsername.TabIndex = 0;
             // 
             // lblLogin
             // 
@@ -266,8 +266,8 @@ namespace vila_tour_di {
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
