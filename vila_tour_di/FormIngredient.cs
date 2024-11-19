@@ -87,6 +87,12 @@ namespace vila_tour_di {
             }
         }
 
+        private void btnCategoryIngredient_Click(object sender, EventArgs e) {
+            FormCategoriesIngredient formCategories = new FormCategoriesIngredient();
+            formCategories.StartPosition = FormStartPosition.CenterParent;
+            formCategories.ShowDialog();
+        }
+
         private void btnDelete_Click(object sender, EventArgs e) {
             // Verificar si hay una fila seleccionada
             if (guna2DataGridView1.SelectedRows.Count > 0) {
@@ -125,6 +131,7 @@ namespace vila_tour_di {
         private void guna2Button2_Click(object sender, EventArgs e) {
             Dispose();
         }
+
 
     }
 }

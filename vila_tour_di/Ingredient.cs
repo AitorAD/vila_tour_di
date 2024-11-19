@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace vila_tour_di {
     class Ingredient {
-        private string type;
 
-        public Ingredient(int idIngredient, string name, string type) {
+        public Ingredient(int idIngredient, string name, CategoryIngredient categoryIngredient) {
             this.idIngredient = idIngredient;
             this.name = name;
-            this.type = type;
+            this.category = categoryIngredient;
         }
 
         public Ingredient() {
@@ -21,6 +20,6 @@ namespace vila_tour_di {
 
         public int idIngredient { get; set; }
         public string name { get; set; }
-        public string category { get; set; }
+        public CategoryIngredient category { get; set; }
     }
 }
