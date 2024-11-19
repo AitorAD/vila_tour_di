@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace vila_tour_di {
-    public class User {
+    public class User
+    {
         public int id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
@@ -15,6 +16,7 @@ namespace vila_tour_di {
         public string profilePicture { get; set; }
         public string password { get; set; }
     }
+
 }
 
 
@@ -23,6 +25,7 @@ namespace vila_tour_di {
         "id": 1,
         "username": "omarllinares",
         "email": "email@gmail.com",
+        "password": "contraseña",
         "role": "USER",
         "name": "omar",
         "surname": "llinares",
