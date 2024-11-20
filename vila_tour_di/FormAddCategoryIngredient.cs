@@ -90,6 +90,7 @@ namespace vila_tour_di {
                         MessageBoxIcon.Error
                         );
                 }
+                Dispose();
             }
         }
       

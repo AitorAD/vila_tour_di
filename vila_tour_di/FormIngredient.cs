@@ -36,7 +36,7 @@ namespace vila_tour_di {
                     var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
                     
                     foreach (var ingredient in ingredients) {
-                        table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category.name);
+                        table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category?.name ?? "None");
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error al procesar los datos");
@@ -64,6 +64,7 @@ namespace vila_tour_di {
             formAddIng.Owner = this; // Establecer el formulario principal como propietario
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
+            LoadIngredientsInDataGridView();
         }
 
         // Editar Ingrediente
@@ -80,20 +81,22 @@ namespace vila_tour_di {
 
 
 
-                string apiUrl = "http://127.0.0.1:8080/ingredients";
+                string apiUrl = "http://127.0.0.1:8080/categories";
                 var client = new RestClient(apiUrl, "GET");
                 string jsonResponse = client.GetItem();
 
-                CategoryIngredient category = null;
+                CategoryIngredient newCategory = null;
                 if (jsonResponse != null) {
                     try {
-                        var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
+                        var categories = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
 
-                        foreach (var ingredient in ingredients) {
-                            if (category_string == ingredient.category.name) {
-                                category = ingredient.category;
-                            }
+                        if (category_string != "None") {
+                            foreach (var category in categories) {
+                                if (category_string == category.name) {
+                                    newCategory = category;
+                                }
                              
+                            }
                         }
                     } catch (Exception ex) {
                         MessageBox.Show("Error al procesar los datos");
@@ -101,21 +104,11 @@ namespace vila_tour_di {
                 } else {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
-
-
-
-
-
-
-
-
-
-
-
-                FormAddIngrediente formAddIng = new FormAddIngrediente(idIngredient, name, category);
+                FormAddIngrediente formAddIng = new FormAddIngrediente(idIngredient, name, newCategory);
                 formAddIng.StartPosition = FormStartPosition.CenterParent;
                 formAddIng.Owner = this; // Establecer el formulario principal como propietarIO
                 formAddIng.ShowDialog();
+                LoadIngredientsInDataGridView();
             } else {
                 MessageBox.Show("No se ha selecionado nigun ingrediente");
             }

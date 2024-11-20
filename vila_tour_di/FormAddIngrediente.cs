@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text.Json;
 using System.Windows.Forms;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 namespace vila_tour_di {
     public partial class FormAddIngrediente : Form {
         bool isEditing = false;
@@ -32,24 +33,23 @@ namespace vila_tour_di {
         }
 
         public FormAddIngrediente(int id, string name, CategoryIngredient category) {
+            InitializeComponent();
+
             isEditing = true;
 
-            InitializeComponent();
+            LoadCategoriesIngredientsData();
             labelTitle.Text = "Editar ingrediente";
             idIng = id;
             nameIng = name;
             catIng = category;
 
-            // Cargar las opciones traducidas en el ComboBox
-            guna2ComboBoxCategory.DataSource = GetIngredientTypeTranslations();
-            guna2ComboBoxCategory.DisplayMember = "Translation";  // Mostrar la traducción
-            guna2ComboBoxCategory.ValueMember = "Type";
-
             // Asignar los valores de nombre y categoría al TextBox y ComboBox
             guna2TextBoxName.Text = nameIng; // Nombre del ingrediente
 
-            // Seleccionar el tipo de ingrediente actual en el ComboBox
-            guna2ComboBoxCategory.SelectedValue = catIng;
+            // Seleccionar el tipo de categoria actual en el ComboBox
+            if (category != null) {
+                guna2ComboBoxCategory.SelectedValue = catIng.id;
+            }
 
             this.Text = "Editar ingrediente";
 
@@ -65,98 +65,96 @@ namespace vila_tour_di {
             string name = guna2TextBoxName.Text;
             CategoryIngredient category = guna2ComboBoxCategory.SelectedItem as CategoryIngredient;
             
-            /*
             if (isEditing) {
-                // Crear el objeto IngredientOriginal
-                Ingredient originalIngredient = new Ingredient(idIng, nameIng, catIng);
 
-                    // Crear el objeto Ingredient que será enviado en la actualización
-                    Ingredient newIngredient = new Ingredient {
-                        name = nameIngredient,
-                        categoryIngredient = categoryEnum.ToString()
-                    };
+                // Crear un objeto con los datos actualizados
+                Ingredient updatedIngredient = new Ingredient(idIng, name, category);
 
-                    // Serializar el objeto newIngredient a JSON
-                    string jsonBody = JsonSerializer.Serialize(newIngredient);
+                
+                // Serializar el objeto newIngredient a JSON
+                string jsonData = JsonSerializer.Serialize(updatedIngredient);
 
-                    // Configurar la URL para el endpoint de PUT con el ID correspondiente
-                    string url = $"http://127.0.0.1:8080/ingredients/{idIng}";
-                    RestClient r = new RestClient(url, "PUT");
+                // Configurar la URL para el endpoint de PUT con el ID correspondiente
+                string url = $"http://127.0.0.1:8080/ingredients/{idIng}";
+                RestClient restClient = new RestClient(url, "PUT");
 
-                    // Realizar la solicitud PUT usando el método putItem en el RestClient
-                    string response = r.PutItem(jsonBody);
+                // Realizar la solicitud PUT usando el método putItem en el RestClient
+                string response = restClient.PutItem(jsonData);
 
-                    // Verificar la respuesta
-                    if (!string.IsNullOrEmpty(response)) {
-                        Console.WriteLine("Ingrediente actualizado exitosamente: " + response);
-                        MessageBox.Show("Ingrediente actualizado");
-                        Close();
-                    } else {
-                        MessageBox.Show("Error al actualizar el ingrediente");
-                        Console.WriteLine("Error al actualizar el ingrediente.");
-                        Close();
-                    }
+                // Verificar la respuesta
+                if (response == jsonData) {
+                    MessageBox.Show("Ingrediente editado correctamente.",
+                        "Editado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
+                    Dispose();
                 } else {
-                    // Crear el objeto Ingredient
-                    Ingredient newIngredient = new Ingredient {
-                        name = nameIngredient,
-                        category = categoryEnum.ToString()
-                    };
-
-                    string jsonData = JsonSerializer.Serialize(newIngredient);
-                    string res = string.Empty;
-
-                    // Estamos agregando un nuevo ingrediente
-                    string url = "http://127.0.0.1:8080/ingredients";
-                    RestClient r = new RestClient(url, "POST");
-                    res = r.PostItem(jsonData);  // Realizamos un POST para agregar el ingrediente
-                    Console.WriteLine(res);
-                    if (res != null) {
-                        try {
-                            // Eliminar el prefijo "Error: " si existe
-                            if (res.StartsWith("Error:")) {
-                                res = res.Substring(6).Trim(); // Elimina "Error: " (6 caracteres)
-                            }
-
-                            // Ahora intenta deserializar el JSON después de eliminar el prefijo
-                            var responseObj = JsonSerializer.Deserialize<Response>(res);
-
-                            // Verifica si la deserialización fue exitosa
-                            if (responseObj != null && responseObj.error != null) {
-                                if (responseObj.error.errorCode == 0) {
-                                    // Caso de éxito
-                                    string successMessage = string.IsNullOrEmpty(responseObj.error.message)
-                                        ? "Ingrediente agregado exitosamente!"
-                                        : responseObj.error.message;
-
-                                    MessageBox.Show(successMessage);
-                                    Console.WriteLine("Ingrediente agregado exitosamente: " + res);
-                                } else if (responseObj.error.errorCode == 101) {
-                                    // Error: El ingrediente ya existe
-                                    MessageBox.Show("Error: " + responseObj.error.message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    Console.WriteLine($"Error Code: {responseObj.error.errorCode}, Message: {responseObj.error.message}");
-                                } else {
-                                    // Manejo de otros códigos de error
-                                    MessageBox.Show($"Error al agregar el ingrediente: {responseObj.error.message}");
-                                    Console.WriteLine($"Error Code: {responseObj.error.errorCode}, Message: {responseObj.error.message}");
-                                }
-                            } else {
-                                // Si la deserialización falló o el objeto de error está vacío
-                                MessageBox.Show("Respuesta no válida del servidor.");
-                                Console.WriteLine("Respuesta no válida del servidor.");
-                            }
-                        } catch (JsonException ex) {
-                            // Manejo de errores de deserialización JSON
-                            MessageBox.Show($"Error al procesar la respuesta JSON: {ex.Message}");
-                            Console.WriteLine($"Error al procesar la respuesta JSON: {ex.Message}");
-                        }
-                    } else {
-                        MessageBox.Show("No se pudo conectar al servidor.");
-                        Console.WriteLine("No se pudo conectar al servidor.");
-                    }
-
+                    MessageBox.Show("Problema al editar el ingrediente. No editada.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
                 }
-            */
+
+                /*
+                 
+                // Crear un objeto con los datos actualizados
+                CategoryIngredient updatedCat = new CategoryIngredient {
+                    id = category.id,
+                    name = categoryName
+                };
+
+                // Serializar el objeto a JSON
+                string jsonData = JsonSerializer.Serialize(updatedCat);
+
+
+                // Configurar la URL para el endpoint de actualización (incluye el ID en la URL)
+                string url = $"http://127.0.0.1:8080/categories/{category.id}";
+                RestClient client = new RestClient(url, "PUT");
+
+                // Realizar la solicitud PUT
+                string res = client.PutItem(jsonData);
+
+                if(res == jsonData) {
+                    MessageBox.Show("Categoria editada correctamente.",
+                        "Editado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
+                    Dispose();
+                } else {
+                    MessageBox.Show("Problema al editar categoría. No editada.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
+                }
+                 
+                 */
+            } else {
+                // Crear el objeto Ingredient
+                Ingredient newIngredient = new Ingredient(name: name, categoryIngredient: category);
+
+
+                string jsonData = JsonSerializer.Serialize(newIngredient);
+                string res = string.Empty;
+
+                // Estamos agregando un nuevo ingrediente
+                string url = "http://127.0.0.1:8080/ingredients";
+                RestClient r = new RestClient(url, "POST");
+                res = r.PostItem(jsonData);  // Realizamos un POST para agregar el ingrediente
+                Console.WriteLine("RESPUESTA: " + res);
+
+                if (res.Contains("\"errorCode\":101")) {
+                    MessageBox.Show("Ingrediente ya existente",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
+                }
+                Dispose();
+            }
 
         }
 
@@ -165,19 +163,19 @@ namespace vila_tour_di {
             var client = new RestClient(apiUrl, "GET");
             string jsonResponse = client.GetItem();
 
-            List<CategoryIngredient> categoryIngredients = null;
-
             if (jsonResponse != null) {
                 try {
                     // Deserializar la respuesta JSON a una lista de categorias
-                    categoryIngredients = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
+
+                    var categoryIngredients = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
 
                     Console.WriteLine(jsonResponse);
 
-                    foreach (CategoryIngredient category in categoryIngredients) {
-                        guna2ComboBoxCategory.Items.Add(category);
-                    }
-                    
+                    // Configurar el ComboBox con los datos obtenidos
+                    guna2ComboBoxCategory.DataSource = categoryIngredients;
+                    guna2ComboBoxCategory.DisplayMember = "name"; // Propiedad que se mostrará
+                    guna2ComboBoxCategory.ValueMember = "id"; // Propiedad usada como valor
+
                 } catch (Exception ex) {
                     MessageBox.Show("Error al procesar los datos: " + ex.Message);
                 }

@@ -63,10 +63,16 @@ namespace vila_tour_di
             // Obtener los datos actualizados
             string username = TextBoxUserName.Text;
             string email = TextBoxeEmail.Text;
-            string password = "1234"; // Puede ser vacío o un campo no editable
             string role = ComboBoxRol.Text;
             string name = TextBoxName.Text;
             string surname = TextBoxSurname.Text;
+
+            string password = $"{GetFirstThreeChars(surname)}{GetFirstThreeChars(name)}_vi.to";
+
+            // Método para obtener las primeras 3 letras o la longitud disponible
+            string GetFirstThreeChars(string input) {
+                return string.IsNullOrEmpty(input) ? "" : input.Substring(0, Math.Min(3, input.Length)).ToLower();
+            }
 
             // Convertir la imagen a base64
             string profilePicture = "null";
@@ -97,12 +103,10 @@ namespace vila_tour_di
                 "}";
                 resultado = client.PutItem(datos);
 
-                if (resultado.Contains("name"))
-                {
+                if (resultado.Contains("name")) {
                     MessageBox.Show("Usuario editado con éxito.");
                 }
-                else
-                {
+                else {
                     MessageBox.Show("Error al editar el usuario.");
                 }
             }

@@ -13,6 +13,11 @@ namespace vila_tour_di {
             this.category = categoryIngredient;
         }
 
+        public Ingredient(string name, CategoryIngredient categoryIngredient) {
+            this.name = name;
+            this.category = categoryIngredient;
+        }
+
         public Ingredient() {
             
         }
