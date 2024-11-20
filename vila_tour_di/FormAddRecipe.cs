@@ -8,12 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace vila_tour_di
-{
-    public partial class FormAddRecipe : Form
-    {
-        public FormAddRecipe()
-        {
+namespace vila_tour_di {
+    public partial class Receta : Form {
+        public Receta() {
             InitializeComponent();
         }
     }
