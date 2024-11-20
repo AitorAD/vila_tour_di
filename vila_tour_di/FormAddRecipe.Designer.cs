@@ -492,6 +492,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Receta";
             this.Text = "Receta";
+
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
