@@ -34,9 +34,9 @@ namespace vila_tour_di {
             if (jsonResponse != null) {
                 try {
                     var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
-
+                    
                     foreach (var ingredient in ingredients) {
-                        table.Rows.Add(ingredient.id, ingredient.name, ingredient.category);
+                        table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category?.name ?? "None");
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error al procesar los datos");
@@ -64,6 +64,7 @@ namespace vila_tour_di {
             formAddIng.Owner = this; // Establecer el formulario principal como propietario
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
+            LoadIngredientsInDataGridView();
         }
 
         // Editar Ingrediente
@@ -75,13 +76,39 @@ namespace vila_tour_di {
 
                 int idIngredient = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
                 string name = selectedRow.Cells["Nombre"].Value.ToString();
-                string category = selectedRow.Cells["Categoria"].Value.ToString();
+
+                string category_string = selectedRow.Cells["Categoria"].Value.ToString();
 
 
-                FormAddIngrediente formAddIng = new FormAddIngrediente(idIngredient, name, category);
+
+                string apiUrl = "http://127.0.0.1:8080/categories";
+                var client = new RestClient(apiUrl, "GET");
+                string jsonResponse = client.GetItem();
+
+                CategoryIngredient newCategory = null;
+                if (jsonResponse != null) {
+                    try {
+                        var categories = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
+
+                        if (category_string != "None") {
+                            foreach (var category in categories) {
+                                if (category_string == category.name) {
+                                    newCategory = category;
+                                }
+                             
+                            }
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al procesar los datos");
+                    }
+                } else {
+                    MessageBox.Show("No se pudieron obtener los datos");
+                }
+                FormAddIngrediente formAddIng = new FormAddIngrediente(idIngredient, name, newCategory);
                 formAddIng.StartPosition = FormStartPosition.CenterParent;
                 formAddIng.Owner = this; // Establecer el formulario principal como propietarIO
                 formAddIng.ShowDialog();
+                LoadIngredientsInDataGridView();
             } else {
                 MessageBox.Show("No se ha selecionado nigun ingrediente");
             }

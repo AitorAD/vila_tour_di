@@ -1,4 +1,5 @@
 ﻿using ClientRESTAPI;
+using Guna.UI2.WinForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,8 @@ namespace vila_tour_di {
             FormAddCategoryIngredient formAddCategory = new FormAddCategoryIngredient();
             formAddCategory.StartPosition = FormStartPosition.CenterParent;
             formAddCategory.ShowDialog();
+            loadCategoriesInDataGridView();
+
         }
 
         private void btnEditCategoryIngredient_Click(object sender, EventArgs e) {
@@ -100,7 +103,38 @@ namespace vila_tour_di {
         }
 
         private void btnDeleteCategoryIngredient_Click(object sender, EventArgs e) {
+            // Verificar si hay una fila seleccionada
+            if (guna2DataGridViewCATING.SelectedRows.Count > 0) {
+                var selectedRow = guna2DataGridViewCATING.SelectedRows[0];
 
+                // Obtener el ID de la categoria seleccionada
+                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
+
+                // Confirmar eliminación
+                var confirmResult = MessageBox.Show("¿Estás seguro de que quieres eliminar esta categoria?",
+                                                    "Confirmar eliminación",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes) {
+                    // Crear la URL para el DELETE con el ID de la categoria
+                    string url = $"http://127.0.0.1:8080/categories/{id}";
+                    RestClient client = new RestClient(url, "DELETE");
+
+                    // Realizar la solicitud DELETE
+                    string response = client.DeleteItem();  // Método DELETE en RestClient, pero si tienes un método específico usa client.deleteItem()
+
+                    // Verificar la respuesta y actualizar el DataGridView si fue exitoso
+                    if (!string.IsNullOrEmpty(response)) {
+                        MessageBox.Show("Categoria eliminada exitosamente.");
+                        loadCategories(); // Llama a un método que recargue los datos en el DataGridView
+                    } else {
+                        MessageBox.Show("Error al eliminar el ingrediente.");
+                    }
+                }
+            } else {
+                MessageBox.Show("No se ha seleccionado ningún ingrediente");
+            }
+            guna2DataGridViewCATING.DataSource = loadCategories();
         }
 
         private void bttnExit_Click(object sender, EventArgs e) {

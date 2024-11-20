@@ -17,5 +17,9 @@ namespace vila_tour_di {
         public CategoryIngredient() {
 
         }
+
+        public override string ToString() {
+            return $"{id} - {name}";
+        }
     }
 }
