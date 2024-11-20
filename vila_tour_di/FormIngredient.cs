@@ -34,9 +34,9 @@ namespace vila_tour_di {
             if (jsonResponse != null) {
                 try {
                     var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
-
+                    
                     foreach (var ingredient in ingredients) {
-                        table.Rows.Add(ingredient.id, ingredient.name, ingredient.category);
+                        table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category.name);
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error al procesar los datos");
@@ -75,7 +75,41 @@ namespace vila_tour_di {
 
                 int idIngredient = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
                 string name = selectedRow.Cells["Nombre"].Value.ToString();
-                string category = selectedRow.Cells["Categoria"].Value.ToString();
+
+                string category_string = selectedRow.Cells["Categoria"].Value.ToString();
+
+
+
+                string apiUrl = "http://127.0.0.1:8080/ingredients";
+                var client = new RestClient(apiUrl, "GET");
+                string jsonResponse = client.GetItem();
+
+                CategoryIngredient category = null;
+                if (jsonResponse != null) {
+                    try {
+                        var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
+
+                        foreach (var ingredient in ingredients) {
+                            if (category_string == ingredient.category.name) {
+                                category = ingredient.category;
+                            }
+                             
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al procesar los datos");
+                    }
+                } else {
+                    MessageBox.Show("No se pudieron obtener los datos");
+                }
+
+
+
+
+
+
+
+
+
 
 
                 FormAddIngrediente formAddIng = new FormAddIngrediente(idIngredient, name, category);

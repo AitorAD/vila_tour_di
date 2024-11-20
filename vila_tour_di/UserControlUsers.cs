@@ -177,7 +177,7 @@ namespace vila_tour_di {
                     role = selectedRow.Cells["Rol"].Value.ToString(),
                     name = selectedRow.Cells["Nombre"].Value.ToString(),
                     surname = selectedRow.Cells["Apellidos"].Value.ToString(),
-                    profilePicture = selectedRow.Cells["ProfilePicture"].Value.ToString()
+                    // profilePicture = selectedRow.Cells["ProfilePicture"].Value.ToString()
                 };
 
                 // Pasar el usuario al formulario en modo no editable

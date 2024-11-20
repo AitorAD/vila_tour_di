@@ -12,15 +12,16 @@ namespace vila_tour_di {
         bool isEditing = false;
         int idIng;
         string nameIng;
-        string catIng;
+        CategoryIngredient catIng;
 
 
         // Constructor para agregar un ingrediente
         public FormAddIngrediente() {
             InitializeComponent();
             labelTitle.Text = "Añadir ingrediente";
+            
+            LoadCategoriesIngredientsData();
 
-            guna2ComboBoxCategory = LoadCategoriesIngredientsData();
             /*
             // Cargar las opciones traducidas en el ComboBox
             guna2ComboBoxCategory.DataSource = GetIngredientTypeTranslations();
@@ -30,7 +31,7 @@ namespace vila_tour_di {
             this.FormClosed += FormAddIngrediente_FormClosed; // Suscribirse al evento FormClosed
         }
 
-        public FormAddIngrediente(int id, string name, string category) {
+        public FormAddIngrediente(int id, string name, CategoryIngredient category) {
             isEditing = true;
 
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace vila_tour_di {
             guna2TextBoxName.Text = nameIng; // Nombre del ingrediente
 
             // Seleccionar el tipo de ingrediente actual en el ComboBox
-            guna2ComboBoxCategory.SelectedValue = Enum.Parse(typeof(IngredientType), catIng);
+            guna2ComboBoxCategory.SelectedValue = catIng;
 
             this.Text = "Editar ingrediente";
 
@@ -60,17 +61,14 @@ namespace vila_tour_di {
         }
 
         private void bttbAddIngredient_Click(object sender, EventArgs e) {
+            // Obtener los datos del formulario
             string name = guna2TextBoxName.Text;
-
+            CategoryIngredient category = guna2ComboBoxCategory.SelectedItem as CategoryIngredient;
+            
             /*
-
-                // Obtener los datos del formulario
-                string nameIngredient = guna2TextBox1.Text;
-                IngredientType categoryEnum = (IngredientType)guna2ComboBox1.SelectedValue;
-
-                if (isEditing) {
-                    // Crear el objeto IngredientOriginal
-                    Ingredient originalIngredient = new Ingredient(idIng, nameIng, catIng);
+            if (isEditing) {
+                // Crear el objeto IngredientOriginal
+                Ingredient originalIngredient = new Ingredient(idIng, nameIng, catIng);
 
                     // Crear el objeto Ingredient que será enviado en la actualización
                     Ingredient newIngredient = new Ingredient {
@@ -162,22 +160,22 @@ namespace vila_tour_di {
 
         }
 
-        private Guna2ComboBox LoadCategoriesIngredientsData() {
+        private void LoadCategoriesIngredientsData() {
             string apiUrl = "http://127.0.0.1:8080/categories"; // Ajusta tu URL
             var client = new RestClient(apiUrl, "GET");
             string jsonResponse = client.GetItem();
-            
-            Guna2ComboBox comboBox = new Guna2ComboBox();
+
+            List<CategoryIngredient> categoryIngredients = null;
 
             if (jsonResponse != null) {
                 try {
-                    // Deserializar la respuesta JSON a una lista de usuarios
-                    var categories = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
+                    // Deserializar la respuesta JSON a una lista de categorias
+                    categoryIngredients = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
 
                     Console.WriteLine(jsonResponse);
 
-                    foreach (var category in categories) {
-                        comboBox.Items.Add(category.name);
+                    foreach (CategoryIngredient category in categoryIngredients) {
+                        guna2ComboBoxCategory.Items.Add(category);
                     }
                     
                 } catch (Exception ex) {
@@ -186,8 +184,6 @@ namespace vila_tour_di {
             } else {
                 MessageBox.Show("No se pudieron obtener los datos.");
             }
-
-            return comboBox;
         }
 
         // Función para traducir el enum y devolver una lista de objetos

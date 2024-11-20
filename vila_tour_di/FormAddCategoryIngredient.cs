@@ -14,7 +14,7 @@ namespace vila_tour_di {
     public partial class FormAddCategoryIngredient : Form {
 
         bool isEditing = false;
-        CategoryIngredient categ; // Variable para almacenar la categoría
+        CategoryIngredient category; // Variable para almacenar la categoría
 
         public FormAddCategoryIngredient() {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace vila_tour_di {
             InitializeComponent();
             labelTitle.Text = "EDITAR CATEGORIA";
 
-            categ = category;
+            this.category = category;
 
             guna2TextBoxNombreCat.Text = category.name;
         }
@@ -39,61 +39,36 @@ namespace vila_tour_di {
             if (isEditing) {
                 // Crear un objeto con los datos actualizados
                 CategoryIngredient updatedCat = new CategoryIngredient {
-                    id = categ.id,
+                    id = category.id,
                     name = categoryName
                 };
 
                 // Serializar el objeto a JSON
                 string jsonData = JsonSerializer.Serialize(updatedCat);
 
+
                 // Configurar la URL para el endpoint de actualización (incluye el ID en la URL)
-                string url = $"http://127.0.0.1:8080/categories/{categ.id}";
+                string url = $"http://127.0.0.1:8080/categories/{category.id}";
                 RestClient client = new RestClient(url, "PUT");
 
                 // Realizar la solicitud PUT
                 string res = client.PutItem(jsonData);
 
-                if (!string.IsNullOrEmpty(res)) {
-                    try {
-                        // Verificar si la respuesta contiene un prefijo de error
-                        if (res.StartsWith("Error:")) {
-                            res = res.Substring(6).Trim();
-                        }
-
-                        // Intentar deserializar la respuesta JSON
-                        var responseObj = JsonSerializer.Deserialize<Response>(res);
-                        Console.Write("Prueba:");
-                        Console.WriteLine(responseObj);
-
-                        if (responseObj != null && responseObj.error != null) {
-                            if (responseObj.error.errorCode == 0) {
-                                // Actualización exitosa
-                                string successMessage = string.IsNullOrEmpty(responseObj.error.message)
-                                    ? "Categoría actualizada exitosamente!"
-                                    : responseObj.error.message;
-
-                                MessageBox.Show(successMessage);
-                                Console.WriteLine("Categoría actualizada exitosamente: " + res);
-                            } else {
-                                // Manejo de errores específicos
-                                MessageBox.Show($"Error al actualizar la categoría: {responseObj.error.message}");
-                                Console.WriteLine($"Error Code: {responseObj.error.errorCode}, Message: {responseObj.error.message}");
-                            }
-                        } else {
-                            // Respuesta no válida del servidor
-                            MessageBox.Show("Respuesta no válida del servidor.");
-                            Console.WriteLine("Respuesta no válida del servidor.");
-                        }
-                    } catch (JsonException ex) {
-                        // Manejo de errores de deserialización
-                        MessageBox.Show($"Error al procesar la respuesta JSON: {ex.Message}");
-                        Console.WriteLine($"Error al procesar la respuesta JSON: {ex.Message}");
-                    }
+                if(res == jsonData) {
+                    MessageBox.Show("Categoria editada correctamente.",
+                        "Editado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
+                    Dispose();
                 } else {
-                    MessageBox.Show("No se pudo conectar al servidor.");
-                    Console.WriteLine("No se pudo conectar al servidor.");
+                    MessageBox.Show("Problema al editar categoría. No editada.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
                 }
-        } else {
+            } else {
                 // Creamos la categoria
                 CategoryIngredient newCat = new CategoryIngredient(categoryName);
 
@@ -105,51 +80,19 @@ namespace vila_tour_di {
                 RestClient r = new RestClient(url, "POST");
 
                 res = r.PostItem(jsonData); // Realizamos el post
-                if (res != null) {
-                    try {
-                        // Eliminar el prefijo
-                        if (res.StartsWith("Error:")) {
-                            res.Substring(6).Trim();
-                        }
+                Console.WriteLine("RESPUESTA: " + res);
 
-                        // Ahora intenta deserializar el JSON después de eliminar el prefijo
-                        var responseObj = JsonSerializer.Deserialize<Response>(res);
-                        // Verifica si la deserialización fue exitosa
-                        if (responseObj != null && responseObj.error != null) {
-                            if (responseObj.error.errorCode == 0) {
-                                // Caso de éxito
-                                string successMessage = string.IsNullOrEmpty(responseObj.error.message)
-                                    ? "Categoria agregada exitosamente!"
-                                    : responseObj.error.message;
 
-                                MessageBox.Show(successMessage);
-                                Console.WriteLine("Categotia agregada exitosamente: " + res);
-                            } else if (responseObj.error.errorCode == 101) {
-                                // Error: El ingrediente ya existe
-                                MessageBox.Show("Error: " + responseObj.error.message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                Console.WriteLine($"Error Code: {responseObj.error.errorCode}, Message: {responseObj.error.message}");
-                            } else {
-                                // Manejo de otros códigos de error
-                                MessageBox.Show($"Error al agregar la categoria: {responseObj.error.message}");
-                                Console.WriteLine($"Error Code: {responseObj.error.errorCode}, Message: {responseObj.error.message}");
-                            }
-                        } else {
-                            // Si la deserialización falló o el objeto de error está vacío
-                            MessageBox.Show("Respuesta no válida del servidor.");
-                            Console.WriteLine("Respuesta no válida del servidor.");
-                        }
-                    } catch (JsonException ex) {
-                        // Manejo de errores de deserialización JSON
-                        MessageBox.Show($"Error al procesar la respuesta JSON: {ex.Message}");
-                        Console.WriteLine($"Error al procesar la respuesta JSON: {ex.Message}");
-                    }
-                } else {
-                    MessageBox.Show("No se pudo conectar al servidor.");
-                    Console.WriteLine("No se pudo conectar al servidor.");
+                if (res.Contains("\"errorCode\":101")) {
+                    MessageBox.Show("Categoria ya existente",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                        );
                 }
-
             }
         }
+      
 
         private void bttnSalir_Click(object sender, EventArgs e) {
             Dispose();

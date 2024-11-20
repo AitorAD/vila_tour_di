@@ -65,6 +65,8 @@ namespace vila_tour_di {
             FormAddCategoryIngredient formAddCategory = new FormAddCategoryIngredient();
             formAddCategory.StartPosition = FormStartPosition.CenterParent;
             formAddCategory.ShowDialog();
+            loadCategoriesInDataGridView();
+
         }
 
         private void btnEditCategoryIngredient_Click(object sender, EventArgs e) {

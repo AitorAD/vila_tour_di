@@ -102,7 +102,7 @@ namespace vila_tour_di
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(490, 60);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
@@ -110,7 +110,7 @@ namespace vila_tour_di
             // 
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonExit.Location = new System.Drawing.Point(255, 10);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(10);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(225, 40);
             this.buttonExit.TabIndex = 1;
@@ -121,7 +121,7 @@ namespace vila_tour_di
             // 
             this.buttonAddIng.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAddIng.Location = new System.Drawing.Point(10, 10);
-            this.buttonAddIng.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.buttonAddIng.Margin = new System.Windows.Forms.Padding(10);
             this.buttonAddIng.Name = "buttonAddIng";
             this.buttonAddIng.Size = new System.Drawing.Size(225, 40);
             this.buttonAddIng.TabIndex = 0;
@@ -264,7 +264,7 @@ namespace vila_tour_di
             this.checkApproved.Checked = true;
             this.checkApproved.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkApproved.Location = new System.Drawing.Point(466, 22);
-            this.checkApproved.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkApproved.Margin = new System.Windows.Forms.Padding(2);
             this.checkApproved.Name = "checkApproved";
             this.checkApproved.Size = new System.Drawing.Size(15, 14);
             this.checkApproved.TabIndex = 6;
@@ -294,7 +294,7 @@ namespace vila_tour_di
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(64, 227);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel1.SetRowSpan(this.tableLayoutPanel5, 2);
@@ -320,7 +320,7 @@ namespace vila_tour_di
             this.listIngredients.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listIngredients.FormattingEnabled = true;
             this.listIngredients.Location = new System.Drawing.Point(296, 8);
-            this.listIngredients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listIngredients.Margin = new System.Windows.Forms.Padding(2);
             this.listIngredients.Name = "listIngredients";
             this.tableLayoutPanel5.SetRowSpan(this.listIngredients, 2);
             this.listIngredients.Size = new System.Drawing.Size(194, 108);
@@ -331,7 +331,7 @@ namespace vila_tour_di
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(117, 39);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(157, 21);
             this.comboBox1.TabIndex = 5;
@@ -345,7 +345,7 @@ namespace vila_tour_di
             this.tableLayoutPanel6.Controls.Add(this.btnRemoveIngredient, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(100, 64);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -357,7 +357,7 @@ namespace vila_tour_di
             // 
             this.btnAddIngredient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddIngredient.Location = new System.Drawing.Point(35, 2);
-            this.btnAddIngredient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddIngredient.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddIngredient.Name = "btnAddIngredient";
             this.btnAddIngredient.Size = new System.Drawing.Size(59, 41);
             this.btnAddIngredient.TabIndex = 0;
@@ -367,7 +367,7 @@ namespace vila_tour_di
             // btnRemoveIngredient
             // 
             this.btnRemoveIngredient.Location = new System.Drawing.Point(98, 2);
-            this.btnRemoveIngredient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveIngredient.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveIngredient.Name = "btnRemoveIngredient";
             this.btnRemoveIngredient.Size = new System.Drawing.Size(59, 41);
             this.btnRemoveIngredient.TabIndex = 1;
@@ -381,7 +381,7 @@ namespace vila_tour_di
             this.ClientSize = new System.Drawing.Size(620, 483);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddRecipe";
             this.Text = "Añadir receta";
             this.tableLayoutPanel1.ResumeLayout(false);
