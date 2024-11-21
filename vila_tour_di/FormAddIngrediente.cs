@@ -23,12 +23,6 @@ namespace vila_tour_di {
             
             LoadCategoriesIngredientsData();
 
-            /*
-            // Cargar las opciones traducidas en el ComboBox
-            guna2ComboBoxCategory.DataSource = GetIngredientTypeTranslations();
-            guna2ComboBoxCategory.DisplayMember = "Translation";  // Mostrar la traducción
-            guna2ComboBoxCategory.ValueMember = "Type";           // Usar el valor original del enum
-            */
             this.FormClosed += FormAddIngrediente_FormClosed; // Suscribirse al evento FormClosed
         }
 

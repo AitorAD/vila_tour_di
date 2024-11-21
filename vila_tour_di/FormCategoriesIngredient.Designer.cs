@@ -26,9 +26,9 @@ namespace vila_tour_di {
         private void InitializeComponent() {
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoriesIngredient));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,10 +56,9 @@ namespace vila_tour_di {
             label1.Dock = System.Windows.Forms.DockStyle.Fill;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(4, 0);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Location = new System.Drawing.Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(584, 57);
+            label1.Size = new System.Drawing.Size(438, 46);
             label1.TabIndex = 22;
             label1.Text = "CATEGORIAS DE INGREDIENTES";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +67,7 @@ namespace vila_tour_di {
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.14941F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.8506F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
@@ -80,7 +79,6 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.Controls.Add(this.bttnExit, 2, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.90476F));
@@ -89,26 +87,25 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.04762F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.04762F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.04762F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 507);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(444, 412);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBoxSearch, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(31, 61);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(23, 49);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(467, 49);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(350, 40);
             this.tableLayoutPanel3.TabIndex = 21;
             // 
             // pictureBox2
@@ -116,10 +113,9 @@ namespace vila_tour_di {
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(419, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(314, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 1);
+            this.pictureBox2.Size = new System.Drawing.Size(22, 1);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
@@ -127,10 +123,9 @@ namespace vila_tour_di {
             // textBoxSearch
             // 
             this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearch.Location = new System.Drawing.Point(4, 10);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Location = new System.Drawing.Point(3, 7);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(391, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(294, 20);
             this.textBoxSearch.TabIndex = 13;
             // 
             // pictureBox1
@@ -138,10 +133,9 @@ namespace vila_tour_di {
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(419, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(314, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(22, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -159,10 +153,9 @@ namespace vila_tour_di {
             this.bttnAddCategoryIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bttnAddCategoryIngredient.ForeColor = System.Drawing.Color.White;
             this.bttnAddCategoryIngredient.Image = ((System.Drawing.Image)(resources.GetObject("bttnAddCategoryIngredient.Image")));
-            this.bttnAddCategoryIngredient.Location = new System.Drawing.Point(513, 128);
-            this.bttnAddCategoryIngredient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bttnAddCategoryIngredient.Location = new System.Drawing.Point(385, 104);
             this.bttnAddCategoryIngredient.Name = "bttnAddCategoryIngredient";
-            this.bttnAddCategoryIngredient.Size = new System.Drawing.Size(67, 62);
+            this.bttnAddCategoryIngredient.Size = new System.Drawing.Size(50, 50);
             this.bttnAddCategoryIngredient.TabIndex = 0;
             this.guna2HtmlToolTip1.SetToolTip(this.bttnAddCategoryIngredient, "Añadir");
             this.bttnAddCategoryIngredient.Click += new System.EventHandler(this.bttnAddCategoryIngredient_Click);
@@ -172,37 +165,36 @@ namespace vila_tour_di {
             this.guna2DataGridViewCATING.AllowUserToAddRows = false;
             this.guna2DataGridViewCATING.AllowUserToDeleteRows = false;
             this.guna2DataGridViewCATING.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridViewCATING.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridViewCATING.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridViewCATING.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridViewCATING.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridViewCATING.ColumnHeadersHeight = 20;
             this.guna2DataGridViewCATING.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridViewCATING.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridViewCATING.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridViewCATING.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2DataGridViewCATING.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.guna2DataGridViewCATING.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridViewCATING.Location = new System.Drawing.Point(31, 118);
-            this.guna2DataGridViewCATING.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2DataGridViewCATING.Location = new System.Drawing.Point(23, 95);
             this.guna2DataGridViewCATING.Name = "guna2DataGridViewCATING";
             this.guna2DataGridViewCATING.ReadOnly = true;
             this.guna2DataGridViewCATING.RowHeadersVisible = false;
             this.guna2DataGridViewCATING.RowHeadersWidth = 51;
             this.tableLayoutPanel1.SetRowSpan(this.guna2DataGridViewCATING, 4);
-            this.guna2DataGridViewCATING.Size = new System.Drawing.Size(467, 356);
+            this.guna2DataGridViewCATING.Size = new System.Drawing.Size(350, 290);
             this.guna2DataGridViewCATING.TabIndex = 23;
             this.guna2DataGridViewCATING.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewCATING.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -239,10 +231,9 @@ namespace vila_tour_di {
             this.btnEditCategoryIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEditCategoryIngredient.ForeColor = System.Drawing.Color.White;
             this.btnEditCategoryIngredient.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCategoryIngredient.Image")));
-            this.btnEditCategoryIngredient.Location = new System.Drawing.Point(513, 219);
-            this.btnEditCategoryIngredient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditCategoryIngredient.Location = new System.Drawing.Point(385, 178);
             this.btnEditCategoryIngredient.Name = "btnEditCategoryIngredient";
-            this.btnEditCategoryIngredient.Size = new System.Drawing.Size(67, 62);
+            this.btnEditCategoryIngredient.Size = new System.Drawing.Size(50, 50);
             this.btnEditCategoryIngredient.TabIndex = 24;
             this.guna2HtmlToolTip1.SetToolTip(this.btnEditCategoryIngredient, "Editar");
             this.btnEditCategoryIngredient.Click += new System.EventHandler(this.btnEditCategoryIngredient_Click);
@@ -260,10 +251,9 @@ namespace vila_tour_di {
             this.btnDeleteCategoryIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteCategoryIngredient.ForeColor = System.Drawing.Color.White;
             this.btnDeleteCategoryIngredient.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCategoryIngredient.Image")));
-            this.btnDeleteCategoryIngredient.Location = new System.Drawing.Point(513, 310);
-            this.btnDeleteCategoryIngredient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteCategoryIngredient.Location = new System.Drawing.Point(385, 252);
             this.btnDeleteCategoryIngredient.Name = "btnDeleteCategoryIngredient";
-            this.btnDeleteCategoryIngredient.Size = new System.Drawing.Size(67, 62);
+            this.btnDeleteCategoryIngredient.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteCategoryIngredient.TabIndex = 19;
             this.guna2HtmlToolTip1.SetToolTip(this.btnDeleteCategoryIngredient, "Eliminar");
             this.btnDeleteCategoryIngredient.Click += new System.EventHandler(this.btnDeleteCategoryIngredient_Click);
@@ -281,10 +271,9 @@ namespace vila_tour_di {
             this.bttnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bttnExit.ForeColor = System.Drawing.Color.White;
             this.bttnExit.Image = ((System.Drawing.Image)(resources.GetObject("bttnExit.Image")));
-            this.bttnExit.Location = new System.Drawing.Point(513, 401);
-            this.bttnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bttnExit.Location = new System.Drawing.Point(385, 326);
             this.bttnExit.Name = "bttnExit";
-            this.bttnExit.Size = new System.Drawing.Size(67, 62);
+            this.bttnExit.Size = new System.Drawing.Size(50, 50);
             this.bttnExit.TabIndex = 20;
             this.guna2HtmlToolTip1.SetToolTip(this.bttnExit, "Salir");
             this.bttnExit.Click += new System.EventHandler(this.bttnExit_Click);
@@ -296,11 +285,13 @@ namespace vila_tour_di {
             // 
             // FormCategoriesIngredient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 507);
+            this.ClientSize = new System.Drawing.Size(444, 412);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormCategoriesIngredient";
             this.Text = "FormCategories";
             this.tableLayoutPanel1.ResumeLayout(false);

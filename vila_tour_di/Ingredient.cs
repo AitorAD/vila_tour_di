@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace vila_tour_di {
-    class Ingredient {
+    public class Ingredient {
 
         public Ingredient(int idIngredient, string name, CategoryIngredient categoryIngredient) {
             this.idIngredient = idIngredient;
@@ -28,7 +28,7 @@ namespace vila_tour_di {
         public CategoryIngredient category { get; set; }
 
         public override string ToString() {
-            return $"Ingredient: {{ Id: {idIngredient}, Name: \"{name}\", Category: {category?.name ?? "None"} }}";
+            return $"{name}";
         }
     }
 }

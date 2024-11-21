@@ -45,10 +45,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             vila_tour_logo.Image = ((System.Drawing.Image)(resources.GetObject("vila_tour_logo.Image")));
-            vila_tour_logo.Location = new System.Drawing.Point(8, 165);
-            vila_tour_logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            vila_tour_logo.Location = new System.Drawing.Point(6, 134);
             vila_tour_logo.Name = "vila_tour_logo";
-            vila_tour_logo.Size = new System.Drawing.Size(1037, 332);
+            vila_tour_logo.Size = new System.Drawing.Size(778, 270);
             vila_tour_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             vila_tour_logo.TabIndex = 1;
             vila_tour_logo.TabStop = false;
@@ -64,9 +63,8 @@
             this.sidePanel.Controls.Add(this.btnFestivals);
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(303, 690);
+            this.sidePanel.Size = new System.Drawing.Size(227, 561);
             this.sidePanel.TabIndex = 0;
             // 
             // lblWelcome
@@ -74,10 +72,9 @@
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(51, 30);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblWelcome.Location = new System.Drawing.Point(38, 24);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(201, 31);
+            this.lblWelcome.Size = new System.Drawing.Size(160, 26);
             this.lblWelcome.TabIndex = 13;
             this.lblWelcome.Text = "Bienvenido/a XXX";
             // 
@@ -88,7 +85,7 @@
             this.btnPlaces.AutoRoundedCorners = true;
             this.btnPlaces.BackColor = System.Drawing.Color.Transparent;
             this.btnPlaces.BorderColor = System.Drawing.Color.Transparent;
-            this.btnPlaces.BorderRadius = 30;
+            this.btnPlaces.BorderRadius = 24;
             this.btnPlaces.BorderThickness = 2;
             this.btnPlaces.CustomizableEdges.BottomRight = false;
             this.btnPlaces.CustomizableEdges.TopRight = false;
@@ -103,11 +100,10 @@
             this.btnPlaces.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnPlaces.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnPlaces.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnPlaces.Location = new System.Drawing.Point(51, 127);
-            this.btnPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPlaces.Location = new System.Drawing.Point(38, 103);
             this.btnPlaces.Name = "btnPlaces";
             this.btnPlaces.PressedColor = System.Drawing.Color.White;
-            this.btnPlaces.Size = new System.Drawing.Size(264, 62);
+            this.btnPlaces.Size = new System.Drawing.Size(198, 50);
             this.btnPlaces.TabIndex = 11;
             this.btnPlaces.Text = "Places";
             this.btnPlaces.Click += new System.EventHandler(this.btnPlaces_Click);
@@ -119,7 +115,7 @@
             this.btnRecipes.AutoRoundedCorners = true;
             this.btnRecipes.BackColor = System.Drawing.Color.Transparent;
             this.btnRecipes.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRecipes.BorderRadius = 30;
+            this.btnRecipes.BorderRadius = 24;
             this.btnRecipes.BorderThickness = 2;
             this.btnRecipes.CustomizableEdges.BottomRight = false;
             this.btnRecipes.CustomizableEdges.TopRight = false;
@@ -134,11 +130,10 @@
             this.btnRecipes.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnRecipes.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnRecipes.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnRecipes.Location = new System.Drawing.Point(51, 287);
-            this.btnRecipes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecipes.Location = new System.Drawing.Point(38, 233);
             this.btnRecipes.Name = "btnRecipes";
             this.btnRecipes.PressedColor = System.Drawing.Color.White;
-            this.btnRecipes.Size = new System.Drawing.Size(264, 62);
+            this.btnRecipes.Size = new System.Drawing.Size(198, 50);
             this.btnRecipes.TabIndex = 15;
             this.btnRecipes.Text = "Recetas";
             this.btnRecipes.Click += new System.EventHandler(this.btnRecipes_Click);
@@ -150,7 +145,7 @@
             this.btnUsers.AutoRoundedCorners = true;
             this.btnUsers.BackColor = System.Drawing.Color.Transparent;
             this.btnUsers.BorderColor = System.Drawing.Color.Transparent;
-            this.btnUsers.BorderRadius = 30;
+            this.btnUsers.BorderRadius = 24;
             this.btnUsers.BorderThickness = 2;
             this.btnUsers.CustomizableEdges.BottomRight = false;
             this.btnUsers.CustomizableEdges.TopRight = false;
@@ -165,11 +160,10 @@
             this.btnUsers.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnUsers.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnUsers.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnUsers.Location = new System.Drawing.Point(51, 367);
-            this.btnUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUsers.Location = new System.Drawing.Point(38, 298);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.PressedColor = System.Drawing.Color.White;
-            this.btnUsers.Size = new System.Drawing.Size(264, 62);
+            this.btnUsers.Size = new System.Drawing.Size(198, 50);
             this.btnUsers.TabIndex = 12;
             this.btnUsers.Text = "Usuarios";
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
@@ -180,7 +174,7 @@
             this.btnLogOut.AutoRoundedCorners = true;
             this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
             this.btnLogOut.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.BorderRadius = 30;
+            this.btnLogOut.BorderRadius = 24;
             this.btnLogOut.BorderThickness = 2;
             this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -194,11 +188,11 @@
             this.btnLogOut.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnLogOut.HoverState.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
-            this.btnLogOut.Location = new System.Drawing.Point(16, 615);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(47, 43, 47, 43);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 500);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(35, 35, 35, 35);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.PressedColor = System.Drawing.Color.White;
-            this.btnLogOut.Size = new System.Drawing.Size(67, 62);
+            this.btnLogOut.Size = new System.Drawing.Size(50, 50);
             this.btnLogOut.TabIndex = 16;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -209,7 +203,7 @@
             this.btnFestivals.AutoRoundedCorners = true;
             this.btnFestivals.BackColor = System.Drawing.Color.Transparent;
             this.btnFestivals.BorderColor = System.Drawing.Color.Transparent;
-            this.btnFestivals.BorderRadius = 30;
+            this.btnFestivals.BorderRadius = 24;
             this.btnFestivals.BorderThickness = 2;
             this.btnFestivals.CustomizableEdges.BottomRight = false;
             this.btnFestivals.CustomizableEdges.TopRight = false;
@@ -224,11 +218,10 @@
             this.btnFestivals.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnFestivals.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnFestivals.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnFestivals.Location = new System.Drawing.Point(51, 207);
-            this.btnFestivals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFestivals.Location = new System.Drawing.Point(38, 168);
             this.btnFestivals.Name = "btnFestivals";
             this.btnFestivals.PressedColor = System.Drawing.Color.White;
-            this.btnFestivals.Size = new System.Drawing.Size(264, 62);
+            this.btnFestivals.Size = new System.Drawing.Size(198, 50);
             this.btnFestivals.TabIndex = 14;
             this.btnFestivals.Text = "Festivales y Tradiciones";
             this.btnFestivals.Click += new System.EventHandler(this.btnFestivals_Click);
@@ -237,22 +230,21 @@
             // 
             this.mainPanel.Controls.Add(vila_tour_logo);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(303, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainPanel.Location = new System.Drawing.Point(227, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1061, 690);
+            this.mainPanel.Size = new System.Drawing.Size(796, 561);
             this.mainPanel.TabIndex = 1;
             // 
             // FormManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1364, 690);
+            this.ClientSize = new System.Drawing.Size(1023, 561);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sidePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
