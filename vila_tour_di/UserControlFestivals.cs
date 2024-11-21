@@ -13,5 +13,9 @@ namespace vila_tour_di {
         public UserControlFestivals() {
             InitializeComponent();
         }
+
+        private void btnAddFestival_Click(object sender, EventArgs e) {
+
+        }
     }
 }

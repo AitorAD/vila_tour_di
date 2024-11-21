@@ -18,17 +18,3 @@ namespace vila_tour_di {
     }
 
 }
-
-
-/*
-   {
-        "id": 1,
-        "username": "omarllinares",
-        "email": "email@gmail.com",
-        "password": "contraseña",
-        "role": "USER",
-        "name": "omar",
-        "surname": "llinares",
-        "profilePicture": null,
-        "reviews": []
-    }*/

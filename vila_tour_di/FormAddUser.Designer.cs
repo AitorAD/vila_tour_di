@@ -54,10 +54,10 @@ namespace vila_tour_di {
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.99204F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.00796F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TextBoxUserName, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel1, 1, 1);
@@ -74,10 +74,9 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
@@ -85,8 +84,8 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(568, 702);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(426, 570);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelTitle
@@ -97,10 +96,9 @@ namespace vila_tour_di {
             this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(4, 0);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(560, 123);
+            this.labelTitle.Size = new System.Drawing.Size(420, 100);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Añadir/Editar Usuario";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,13 +115,13 @@ namespace vila_tour_di {
             this.TextBoxUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxUserName.Location = new System.Drawing.Point(241, 140);
-            this.TextBoxUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxUserName.Location = new System.Drawing.Point(180, 114);
+            this.TextBoxUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxUserName.Name = "TextBoxUserName";
             this.TextBoxUserName.PasswordChar = '\0';
             this.TextBoxUserName.PlaceholderText = "";
             this.TextBoxUserName.SelectedText = "";
-            this.TextBoxUserName.Size = new System.Drawing.Size(289, 44);
+            this.TextBoxUserName.Size = new System.Drawing.Size(216, 36);
             this.TextBoxUserName.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -132,11 +130,10 @@ namespace vila_tour_di {
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(52, 149);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2HtmlLabel1.MinimumSize = new System.Drawing.Size(50, 0);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(39, 121);
+            this.guna2HtmlLabel1.MinimumSize = new System.Drawing.Size(38, 0);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(174, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(130, 22);
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "Usuario:";
             // 
@@ -146,11 +143,10 @@ namespace vila_tour_di {
             this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(52, 228);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2HtmlLabel2.MinimumSize = new System.Drawing.Size(50, 0);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(39, 185);
+            this.guna2HtmlLabel2.MinimumSize = new System.Drawing.Size(38, 0);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(181, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(135, 22);
             this.guna2HtmlLabel2.TabIndex = 3;
             this.guna2HtmlLabel2.Text = "E-mail:";
             // 
@@ -166,13 +162,13 @@ namespace vila_tour_di {
             this.TextBoxeEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxeEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxeEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxeEmail.Location = new System.Drawing.Point(241, 219);
-            this.TextBoxeEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxeEmail.Location = new System.Drawing.Point(180, 178);
+            this.TextBoxeEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxeEmail.Name = "TextBoxeEmail";
             this.TextBoxeEmail.PasswordChar = '\0';
             this.TextBoxeEmail.PlaceholderText = "";
             this.TextBoxeEmail.SelectedText = "";
-            this.TextBoxeEmail.Size = new System.Drawing.Size(289, 44);
+            this.TextBoxeEmail.Size = new System.Drawing.Size(216, 36);
             this.TextBoxeEmail.TabIndex = 4;
             // 
             // guna2HtmlLabel3
@@ -181,11 +177,10 @@ namespace vila_tour_di {
             this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(52, 307);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2HtmlLabel3.MinimumSize = new System.Drawing.Size(50, 0);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(39, 249);
+            this.guna2HtmlLabel3.MinimumSize = new System.Drawing.Size(38, 0);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(181, 27);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(135, 22);
             this.guna2HtmlLabel3.TabIndex = 5;
             this.guna2HtmlLabel3.Text = "Rol:";
             // 
@@ -200,10 +195,9 @@ namespace vila_tour_di {
             this.ComboBoxRol.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ComboBoxRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ComboBoxRol.ItemHeight = 30;
-            this.ComboBoxRol.Location = new System.Drawing.Point(241, 302);
-            this.ComboBoxRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboBoxRol.Location = new System.Drawing.Point(180, 242);
             this.ComboBoxRol.Name = "ComboBoxRol";
-            this.ComboBoxRol.Size = new System.Drawing.Size(288, 36);
+            this.ComboBoxRol.Size = new System.Drawing.Size(216, 36);
             this.ComboBoxRol.TabIndex = 6;
             // 
             // guna2HtmlLabel4
@@ -212,11 +206,10 @@ namespace vila_tour_di {
             this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(52, 386);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2HtmlLabel4.MinimumSize = new System.Drawing.Size(50, 0);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(39, 313);
+            this.guna2HtmlLabel4.MinimumSize = new System.Drawing.Size(38, 0);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(181, 27);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(135, 22);
             this.guna2HtmlLabel4.TabIndex = 7;
             this.guna2HtmlLabel4.Text = "Nombre:";
             // 
@@ -226,11 +219,10 @@ namespace vila_tour_di {
             this.guna2HtmlLabel5.AutoSize = false;
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(52, 465);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2HtmlLabel5.MinimumSize = new System.Drawing.Size(50, 0);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(39, 377);
+            this.guna2HtmlLabel5.MinimumSize = new System.Drawing.Size(38, 0);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(181, 27);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(135, 22);
             this.guna2HtmlLabel5.TabIndex = 8;
             this.guna2HtmlLabel5.Text = "Apellidos:";
             // 
@@ -240,11 +232,10 @@ namespace vila_tour_di {
             this.guna2HtmlLabel6.AutoSize = false;
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(52, 544);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2HtmlLabel6.MinimumSize = new System.Drawing.Size(50, 0);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(39, 441);
+            this.guna2HtmlLabel6.MinimumSize = new System.Drawing.Size(38, 0);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(174, 27);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(130, 22);
             this.guna2HtmlLabel6.TabIndex = 9;
             this.guna2HtmlLabel6.Text = "Foto de perfil:";
             // 
@@ -260,13 +251,13 @@ namespace vila_tour_di {
             this.TextBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxName.Location = new System.Drawing.Point(241, 377);
-            this.TextBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxName.Location = new System.Drawing.Point(180, 306);
+            this.TextBoxName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.PasswordChar = '\0';
             this.TextBoxName.PlaceholderText = "";
             this.TextBoxName.SelectedText = "";
-            this.TextBoxName.Size = new System.Drawing.Size(289, 44);
+            this.TextBoxName.Size = new System.Drawing.Size(216, 36);
             this.TextBoxName.TabIndex = 10;
             // 
             // TextBoxSurname
@@ -281,13 +272,13 @@ namespace vila_tour_di {
             this.TextBoxSurname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxSurname.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxSurname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxSurname.Location = new System.Drawing.Point(241, 456);
-            this.TextBoxSurname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxSurname.Location = new System.Drawing.Point(180, 370);
+            this.TextBoxSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxSurname.Name = "TextBoxSurname";
             this.TextBoxSurname.PasswordChar = '\0';
             this.TextBoxSurname.PlaceholderText = "";
             this.TextBoxSurname.SelectedText = "";
-            this.TextBoxSurname.Size = new System.Drawing.Size(289, 44);
+            this.TextBoxSurname.Size = new System.Drawing.Size(216, 36);
             this.TextBoxSurname.TabIndex = 11;
             // 
             // tableLayoutPanel2
@@ -299,12 +290,11 @@ namespace vila_tour_di {
             this.tableLayoutPanel2.Controls.Add(this.guna2Button1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnAddUser, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(52, 601);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(39, 487);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(478, 71);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(357, 58);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
             // guna2Button1
@@ -320,10 +310,9 @@ namespace vila_tour_di {
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(86, 4);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Location = new System.Drawing.Point(64, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(67, 62);
+            this.guna2Button1.Size = new System.Drawing.Size(50, 50);
             this.guna2Button1.TabIndex = 2;
             this.guna2HtmlToolTip1.SetToolTip(this.guna2Button1, "Cancelar");
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -341,10 +330,9 @@ namespace vila_tour_di {
             this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddUser.ForeColor = System.Drawing.Color.White;
             this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
-            this.btnAddUser.Location = new System.Drawing.Point(325, 4);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddUser.Location = new System.Drawing.Point(242, 4);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(67, 62);
+            this.btnAddUser.Size = new System.Drawing.Size(50, 50);
             this.btnAddUser.TabIndex = 1;
             this.guna2HtmlToolTip1.SetToolTip(this.btnAddUser, "Confirmar");
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
@@ -357,11 +345,12 @@ namespace vila_tour_di {
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnAddImage, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.profilePicBox, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(298, 521);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(222, 422);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(175, 73);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(131, 59);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
             // btnAddImage
@@ -377,10 +366,9 @@ namespace vila_tour_di {
             this.btnAddImage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddImage.ForeColor = System.Drawing.Color.White;
             this.btnAddImage.Image = ((System.Drawing.Image)(resources.GetObject("btnAddImage.Image")));
-            this.btnAddImage.Location = new System.Drawing.Point(97, 5);
-            this.btnAddImage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddImage.Location = new System.Drawing.Point(73, 4);
             this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(67, 62);
+            this.btnAddImage.Size = new System.Drawing.Size(50, 50);
             this.btnAddImage.TabIndex = 2;
             this.guna2HtmlToolTip1.SetToolTip(this.btnAddImage, "Subir imagen");
             this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
@@ -388,9 +376,10 @@ namespace vila_tour_di {
             // profilePicBox
             // 
             this.profilePicBox.ImageRotate = 0F;
-            this.profilePicBox.Location = new System.Drawing.Point(3, 3);
+            this.profilePicBox.Location = new System.Drawing.Point(2, 2);
+            this.profilePicBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.profilePicBox.Name = "profilePicBox";
-            this.profilePicBox.Size = new System.Drawing.Size(81, 67);
+            this.profilePicBox.Size = new System.Drawing.Size(61, 54);
             this.profilePicBox.TabIndex = 3;
             this.profilePicBox.TabStop = false;
             // 
@@ -401,12 +390,13 @@ namespace vila_tour_di {
             // 
             // FormAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 702);
+            this.ClientSize = new System.Drawing.Size(426, 570);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "FormAddUser";
             this.Text = "Usuario";
             this.tableLayoutPanel1.ResumeLayout(false);

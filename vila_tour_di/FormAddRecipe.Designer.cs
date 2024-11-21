@@ -26,37 +26,37 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddRecipe));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddUser = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCloseForm = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2ImageCheckBoxApproved = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageCheckBox1 = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnAddPhoto = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.listBoxIngredients = new System.Windows.Forms.ListBox();
+            this.guna2ComboBoxIngredients = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddIngredient = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteIngredient = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBoxDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -87,99 +87,99 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(631, 626);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(810, 618);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel16
             // 
             this.tableLayoutPanel16.ColumnCount = 3;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.1967F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.60659F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.1967F));
-            this.tableLayoutPanel16.Controls.Add(this.guna2Button1, 0, 0);
-            this.tableLayoutPanel16.Controls.Add(this.btnAddUser, 2, 0);
-            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel16.Controls.Add(this.btnCloseForm, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.btnAddRecipe, 2, 0);
+            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(66, 546);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(84, 538);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(498, 54);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(642, 53);
             this.tableLayoutPanel16.TabIndex = 19;
             // 
-            // guna2Button1
+            // btnCloseForm
             // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderRadius = 25;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Crimson;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(25, 3);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(50, 48);
-            this.guna2Button1.TabIndex = 3;
+            this.btnCloseForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCloseForm.Animated = true;
+            this.btnCloseForm.BorderRadius = 25;
+            this.btnCloseForm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseForm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseForm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCloseForm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCloseForm.FillColor = System.Drawing.Color.Crimson;
+            this.btnCloseForm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCloseForm.ForeColor = System.Drawing.Color.White;
+            this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
+            this.btnCloseForm.Location = new System.Drawing.Point(424, 3);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(50, 47);
+            this.btnCloseForm.TabIndex = 3;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
-            // btnAddUser
+            // btnAddRecipe
             // 
-            this.btnAddUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddUser.Animated = true;
-            this.btnAddUser.BorderRadius = 25;
-            this.btnAddUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddUser.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddUser.ForeColor = System.Drawing.Color.White;
-            this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
-            this.btnAddUser.Location = new System.Drawing.Point(422, 3);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(50, 48);
-            this.btnAddUser.TabIndex = 4;
+            this.btnAddRecipe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddRecipe.Animated = true;
+            this.btnAddRecipe.BorderRadius = 25;
+            this.btnAddRecipe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddRecipe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddRecipe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddRecipe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddRecipe.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddRecipe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddRecipe.ForeColor = System.Drawing.Color.White;
+            this.btnAddRecipe.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRecipe.Image")));
+            this.btnAddRecipe.Location = new System.Drawing.Point(552, 3);
+            this.btnAddRecipe.Name = "btnAddRecipe";
+            this.btnAddRecipe.Size = new System.Drawing.Size(50, 47);
+            this.btnAddRecipe.TabIndex = 4;
+            this.btnAddRecipe.Click += new System.EventHandler(this.btnAddRecipe_Click);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.guna2ImageCheckBoxApproved, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.guna2ImageCheckBox1, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(103, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(290, 48);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(290, 47);
             this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // guna2ImageCheckBoxApproved
+            // 
+            this.guna2ImageCheckBoxApproved.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2ImageCheckBoxApproved.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageCheckBoxApproved.Image")));
+            this.guna2ImageCheckBoxApproved.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageCheckBoxApproved.ImageRotate = 0F;
+            this.guna2ImageCheckBoxApproved.Location = new System.Drawing.Point(148, 3);
+            this.guna2ImageCheckBoxApproved.Name = "guna2ImageCheckBoxApproved";
+            this.guna2ImageCheckBoxApproved.Size = new System.Drawing.Size(139, 41);
+            this.guna2ImageCheckBoxApproved.TabIndex = 2;
             // 
             // guna2HtmlLabel2
             // 
-            this.guna2HtmlLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(22, 10);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 3);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(38, 3, 3, 3);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(101, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(102, 27);
             this.guna2HtmlLabel2.TabIndex = 0;
-            this.guna2HtmlLabel2.Text = "Aprovada:";
-            // 
-            // guna2ImageCheckBox1
-            // 
-            this.guna2ImageCheckBox1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2ImageCheckBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageCheckBox1.Image")));
-            this.guna2ImageCheckBox1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageCheckBox1.ImageRotate = 0F;
-            this.guna2ImageCheckBox1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageCheckBox1.Location = new System.Drawing.Point(148, 3);
-            this.guna2ImageCheckBox1.Name = "guna2ImageCheckBox1";
-            this.guna2ImageCheckBox1.Size = new System.Drawing.Size(139, 42);
-            this.guna2ImageCheckBox1.TabIndex = 2;
+            this.guna2HtmlLabel2.Text = "Aprobada:";
             // 
             // tableLayoutPanel13
             // 
@@ -189,19 +189,19 @@
             this.tableLayoutPanel13.Controls.Add(this.guna2HtmlLabel5, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(66, 425);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(84, 419);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(498, 115);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(642, 113);
             this.tableLayoutPanel13.TabIndex = 16;
             // 
             // guna2HtmlLabel5
             // 
-            this.guna2HtmlLabel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(60, 44);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(40, 3);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(79, 27);
             this.guna2HtmlLabel5.TabIndex = 1;
@@ -210,44 +210,47 @@
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel7.Controls.Add(this.guna2PictureBox1, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.guna2Button4, 1, 0);
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel7.Controls.Add(this.guna2PictureBox, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btnAddPhoto, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(202, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(259, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(293, 109);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(380, 107);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
-            // guna2PictureBox1
+            // guna2PictureBox
             // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(190, 103);
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox.ImageRotate = 0F;
+            this.guna2PictureBox.Location = new System.Drawing.Point(117, 3);
+            this.guna2PictureBox.Name = "guna2PictureBox";
+            this.guna2PictureBox.Size = new System.Drawing.Size(260, 101);
+            this.guna2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.guna2PictureBox.TabIndex = 0;
+            this.guna2PictureBox.TabStop = false;
             // 
-            // guna2Button4
+            // btnAddPhoto
             // 
-            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BorderRadius = 25;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.Location = new System.Drawing.Point(219, 30);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(50, 48);
-            this.guna2Button4.TabIndex = 5;
+            this.btnAddPhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPhoto.Animated = true;
+            this.btnAddPhoto.BorderRadius = 25;
+            this.btnAddPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddPhoto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddPhoto.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddPhoto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddPhoto.ForeColor = System.Drawing.Color.White;
+            this.btnAddPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPhoto.Image")));
+            this.btnAddPhoto.Location = new System.Drawing.Point(32, 29);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(50, 48);
+            this.btnAddPhoto.TabIndex = 5;
+            this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
             // 
             // tableLayoutPanel10
             // 
@@ -257,20 +260,20 @@
             this.tableLayoutPanel10.Controls.Add(this.guna2HtmlLabel4, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(66, 274);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(84, 270);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(498, 145);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(642, 143);
             this.tableLayoutPanel10.TabIndex = 13;
             // 
             // guna2HtmlLabel4
             // 
-            this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(36, 59);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(40, 3);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(127, 27);
             this.guna2HtmlLabel4.TabIndex = 1;
@@ -281,102 +284,106 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.listBox1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.guna2ComboBox1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.listBoxIngredients, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.guna2ComboBoxIngredients, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(202, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(259, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(293, 139);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(380, 137);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // listBox1
+            // listBoxIngredients
             // 
-            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(167, 22);
-            this.listBox1.Name = "listBox1";
-            this.tableLayoutPanel4.SetRowSpan(this.listBox1, 2);
-            this.listBox1.Size = new System.Drawing.Size(104, 95);
-            this.listBox1.TabIndex = 0;
+            this.listBoxIngredients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxIngredients.FormattingEnabled = true;
+            this.listBoxIngredients.Location = new System.Drawing.Point(193, 3);
+            this.listBoxIngredients.Name = "listBoxIngredients";
+            this.tableLayoutPanel4.SetRowSpan(this.listBoxIngredients, 2);
+            this.listBoxIngredients.Size = new System.Drawing.Size(184, 131);
+            this.listBoxIngredients.TabIndex = 0;
             // 
-            // guna2ComboBox1
+            // guna2ComboBoxIngredients
             // 
-            this.guna2ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(12, 16);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(122, 36);
-            this.guna2ComboBox1.TabIndex = 1;
+            this.guna2ComboBoxIngredients.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2ComboBoxIngredients.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBoxIngredients.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxIngredients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBoxIngredients.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxIngredients.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxIngredients.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBoxIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxIngredients.ItemHeight = 30;
+            this.guna2ComboBoxIngredients.Location = new System.Drawing.Point(12, 3);
+            this.guna2ComboBoxIngredients.Name = "guna2ComboBoxIngredients";
+            this.guna2ComboBoxIngredients.Size = new System.Drawing.Size(165, 36);
+            this.guna2ComboBoxIngredients.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.guna2Button3, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.guna2Button2, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 72);
+            this.tableLayoutPanel5.Controls.Add(this.btnAddIngredient, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnDeleteIngredient, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 37);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(140, 64);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(184, 64);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // guna2Button3
+            // btnAddIngredient
             // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderRadius = 25;
-            this.guna2Button3.CustomizableEdges.BottomLeft = false;
-            this.guna2Button3.CustomizableEdges.BottomRight = false;
-            this.guna2Button3.CustomizableEdges.TopLeft = false;
-            this.guna2Button3.CustomizableEdges.TopRight = false;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(80, 19);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(50, 25);
-            this.guna2Button3.TabIndex = 5;
+            this.btnAddIngredient.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddIngredient.Animated = true;
+            this.btnAddIngredient.BorderRadius = 25;
+            this.btnAddIngredient.CustomizableEdges.BottomLeft = false;
+            this.btnAddIngredient.CustomizableEdges.BottomRight = false;
+            this.btnAddIngredient.CustomizableEdges.TopLeft = false;
+            this.btnAddIngredient.CustomizableEdges.TopRight = false;
+            this.btnAddIngredient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddIngredient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddIngredient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddIngredient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddIngredient.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddIngredient.ForeColor = System.Drawing.Color.White;
+            this.btnAddIngredient.Image = ((System.Drawing.Image)(resources.GetObject("btnAddIngredient.Image")));
+            this.btnAddIngredient.Location = new System.Drawing.Point(113, 10);
+            this.btnAddIngredient.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnAddIngredient.Name = "btnAddIngredient";
+            this.btnAddIngredient.Size = new System.Drawing.Size(50, 25);
+            this.btnAddIngredient.TabIndex = 5;
+            this.btnAddIngredient.Click += new System.EventHandler(this.btnAddIngredient_Click);
             // 
-            // guna2Button2
+            // btnDeleteIngredient
             // 
-            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderRadius = 25;
-            this.guna2Button2.CustomizableEdges.BottomLeft = false;
-            this.guna2Button2.CustomizableEdges.BottomRight = false;
-            this.guna2Button2.CustomizableEdges.TopLeft = false;
-            this.guna2Button2.CustomizableEdges.TopRight = false;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Crimson;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(9, 19);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(52, 25);
-            this.guna2Button2.TabIndex = 4;
+            this.btnDeleteIngredient.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeleteIngredient.Animated = true;
+            this.btnDeleteIngredient.BorderRadius = 25;
+            this.btnDeleteIngredient.CustomizableEdges.BottomLeft = false;
+            this.btnDeleteIngredient.CustomizableEdges.BottomRight = false;
+            this.btnDeleteIngredient.CustomizableEdges.TopLeft = false;
+            this.btnDeleteIngredient.CustomizableEdges.TopRight = false;
+            this.btnDeleteIngredient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteIngredient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteIngredient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteIngredient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteIngredient.FillColor = System.Drawing.Color.Crimson;
+            this.btnDeleteIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeleteIngredient.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteIngredient.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteIngredient.Image")));
+            this.btnDeleteIngredient.Location = new System.Drawing.Point(20, 10);
+            this.btnDeleteIngredient.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnDeleteIngredient.Name = "btnDeleteIngredient";
+            this.btnDeleteIngredient.Size = new System.Drawing.Size(52, 25);
+            this.btnDeleteIngredient.TabIndex = 4;
+            this.btnDeleteIngredient.Click += new System.EventHandler(this.btnDeleteIngredient_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -384,45 +391,45 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel6.Controls.Add(this.guna2HtmlLabel3, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.guna2TextBox2, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.guna2TextBoxDescription, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(66, 123);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(84, 121);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(498, 145);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(642, 143);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // guna2HtmlLabel3
             // 
-            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(38, 59);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(40, 3);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(122, 27);
             this.guna2HtmlLabel3.TabIndex = 1;
             this.guna2HtmlLabel3.Text = "Descripción:";
             // 
-            // guna2TextBox2
+            // guna2TextBoxDescription
             // 
-            this.guna2TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(223, 3);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(250, 139);
-            this.guna2TextBox2.TabIndex = 2;
+            this.guna2TextBoxDescription.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2TextBoxDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBoxDescription.DefaultText = "";
+            this.guna2TextBoxDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBoxDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBoxDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBoxDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBoxDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBoxDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBoxDescription.Location = new System.Drawing.Point(271, 3);
+            this.guna2TextBoxDescription.Name = "guna2TextBoxDescription";
+            this.guna2TextBoxDescription.PasswordChar = '\0';
+            this.guna2TextBoxDescription.PlaceholderText = "";
+            this.guna2TextBoxDescription.SelectedText = "";
+            this.guna2TextBoxDescription.Size = new System.Drawing.Size(368, 137);
+            this.guna2TextBoxDescription.TabIndex = 2;
             // 
             // labelTitle
             // 
@@ -430,10 +437,11 @@
             this.labelTitle.BackColor = System.Drawing.Color.LightSeaGreen;
             this.tableLayoutPanel1.SetColumnSpan(this.labelTitle, 3);
             this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(625, 60);
+            this.labelTitle.Size = new System.Drawing.Size(804, 59);
             this.labelTitle.TabIndex = 5;
             this.labelTitle.Text = "Añadir/Editar Receta";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,53 +452,56 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.guna2TextBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2TextBoxName, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(66, 63);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(84, 62);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(498, 54);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(642, 53);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(57, 13);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(40, 10);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(40, 10, 3, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(84, 27);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Nombre:";
             // 
-            // guna2TextBox1
+            // guna2TextBoxName
             // 
-            this.guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(223, 9);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(250, 36);
-            this.guna2TextBox1.TabIndex = 1;
+            this.guna2TextBoxName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2TextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBoxName.DefaultText = "";
+            this.guna2TextBoxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBoxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBoxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBoxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBoxName.Location = new System.Drawing.Point(271, 8);
+            this.guna2TextBoxName.Name = "guna2TextBoxName";
+            this.guna2TextBoxName.PasswordChar = '\0';
+            this.guna2TextBoxName.PlaceholderText = "";
+            this.guna2TextBoxName.SelectedText = "";
+            this.guna2TextBoxName.Size = new System.Drawing.Size(368, 36);
+            this.guna2TextBoxName.TabIndex = 1;
             // 
-            // Receta
+            // FormAddRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 626);
+            this.ClientSize = new System.Drawing.Size(810, 618);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Receta";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "FormAddRecipe";
             this.Text = "Receta";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -500,7 +511,7 @@
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -526,21 +537,21 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button btnAddUser;
+        private Guna.UI2.WinForms.Guna2Button btnCloseForm;
+        private Guna.UI2.WinForms.Guna2Button btnAddRecipe;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ImageCheckBox guna2ImageCheckBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox guna2ImageCheckBoxApproved;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxDescription;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.ListBox listBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private System.Windows.Forms.ListBox listBoxIngredients;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxIngredients;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnAddIngredient;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteIngredient;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox;
+        private Guna.UI2.WinForms.Guna2Button btnAddPhoto;
     }
 }

@@ -80,6 +80,7 @@ namespace vila_tour_di
             {
                 string filePath = profilePicBox.Tag.ToString();
                 profilePicture = ConvertImageToBase64(filePath);
+                Console.WriteLine(profilePicture);
             }
 
             string url = "http://127.0.0.1:8080/users";

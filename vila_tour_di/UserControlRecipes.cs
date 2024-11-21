@@ -24,6 +24,7 @@ namespace vila_tour_di {
             gunaDataGridViewRecipes.AutoResizeColumns();
         }
 
+        // Carga las recetas
         public DataTable LoadRecipesData() {
             string apiUrl = "http://127.0.0.1:8080/recipes"; // Ajusta tu URL
             var client = new RestClient(apiUrl, "GET");
@@ -38,7 +39,7 @@ namespace vila_tour_di {
             table.Columns.Add("Puntuación Media");
             table.Columns.Add("Fecha de creación");
             table.Columns.Add("Última modificación");
-            table.Columns.Add("Aprovado");
+            table.Columns.Add("Aprobado");
             table.Columns.Add("Ingredientes");
 
 
@@ -76,6 +77,16 @@ namespace vila_tour_di {
             return table;
         }
 
+        public void LoadRecipesInDataGridView() {
+            DataTable ingredientsTable = LoadRecipesData(); // Llamamos a LoadIngredients para obtener el DataTable
+
+            // Asignamos el DataTable al DataGridView
+            gunaDataGridViewRecipes.DataSource = ingredientsTable;
+
+            // Para asegurar que el DataGridView se actualiza, puedes forzar la actualización del control
+            gunaDataGridViewRecipes.Refresh();
+        }
+
         private void btnIngredients_Click(object sender, EventArgs e) {
             FormIngredient formIngredient = new FormIngredient();
             formIngredient.StartPosition = FormStartPosition.CenterParent;
@@ -86,10 +97,112 @@ namespace vila_tour_di {
             FormAddRecipe formAddRecipe = new FormAddRecipe();
             formAddRecipe.StartPosition = FormStartPosition.CenterParent;
             formAddRecipe.ShowDialog();
+            LoadRecipesInDataGridView();
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e) {
+        private void btnEditRecipe_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewRecipes.SelectedRows.Count > 0) {
 
+                var selectedRow = gunaDataGridViewRecipes.SelectedRows[0];
+
+                // Atributos
+                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
+
+                string apiUrl = $"http://127.0.0.1:8080/recipes/{id}";
+                var client = new RestClient(apiUrl, "GET");
+                string jsonResponse = client.GetItem();
+
+
+                Recipe recipe = null;
+                if (jsonResponse != null) {
+                    try {
+                        recipe = JsonConvert.DeserializeObject<Recipe>(jsonResponse);
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al procesar los datos");
+                    }
+                } else {
+                    MessageBox.Show("No se pudieron obtener los datos");
+                }
+
+                FormAddRecipe formAddRecipe = new FormAddRecipe(recipe, false);
+                formAddRecipe.StartPosition = FormStartPosition.CenterParent;
+                formAddRecipe.ShowDialog();
+                LoadRecipesInDataGridView();
+            } else {
+                MessageBox.Show("No se ha selecionado niguna receta");
+            }
+        }
+
+        private void btnDetailsRecipe_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewRecipes.SelectedRows.Count > 0) {
+
+                var selectedRow = gunaDataGridViewRecipes.SelectedRows[0];
+
+                // Atributos
+                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
+
+                string apiUrl = $"http://127.0.0.1:8080/recipes/{id}";
+                var client = new RestClient(apiUrl, "GET");
+                string jsonResponse = client.GetItem();
+
+
+                Recipe recipe = null;
+                if (jsonResponse != null) {
+                    try {
+                        recipe = JsonConvert.DeserializeObject<Recipe>(jsonResponse);
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al procesar los datos");
+                    }
+                } else {
+                    MessageBox.Show("No se pudieron obtener los datos");
+                }
+
+                FormAddRecipe formAddRecipe = new FormAddRecipe(recipe, true);
+                formAddRecipe.StartPosition = FormStartPosition.CenterParent;
+                formAddRecipe.ShowDialog();
+                LoadRecipesInDataGridView();
+            } else {
+                MessageBox.Show("No se ha selecionado niguna receta");
+            }
+        }
+
+        private void btnDeleterecipe_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewRecipes.SelectedRows.Count > 0) {
+                var selectedRow = gunaDataGridViewRecipes.SelectedRows[0];
+                int recipeId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+
+                // Confirmación antes de eliminar
+                DialogResult result = MessageBox.Show(
+                    "¿Estás seguro de que deseas eliminar esta receta?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.Yes) {
+                    string apiUrl = $"http://127.0.0.1:8080/recipes/{recipeId}"; // URL con el ID del usuario
+                    var client = new RestClient(apiUrl, "DELETE");
+
+                    try {
+                        string response = client.DeleteItem();
+
+                        // Verificar la respuesta
+                        if (!string.IsNullOrEmpty(response)) {
+                            MessageBox.Show("Receta eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        } else {
+                            MessageBox.Show("Error al eliminar la receta. Por favor, inténtalo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        // Recargar la lista de usuarios después de eliminar
+                        originalDataTable = LoadRecipesData();
+                        gunaDataGridViewRecipes.DataSource = originalDataTable;
+                    } catch (Exception ex) {
+                        MessageBox.Show("Ocurrió un error al intentar eliminar la receta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            } else {
+                MessageBox.Show("No se ha seleccionado ninguna receta para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

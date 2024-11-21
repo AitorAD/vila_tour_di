@@ -81,34 +81,37 @@ namespace vila_tour_di {
             gunaDataGridViewUsers.DataSource = originalDataTable;
         }
 
-        private void btnEditUser_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
-            {
+        private void btnEditUser_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0) {
+
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
-                int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                User user = new User
-                {
-                    id = userId,
-                    username = selectedRow.Cells["Usuario"].Value.ToString(),
-                    email = selectedRow.Cells["Email"].Value.ToString(),
-                    role = selectedRow.Cells["Rol"].Value.ToString(),
-                    name = selectedRow.Cells["Nombre"].Value.ToString(),
-                    surname = selectedRow.Cells["Apellidos"].Value.ToString(),
-                };
+                // Atributos
+                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
-                // Pasar el usuario al formulario de edición
+                string apiUrl = $"http://127.0.0.1:8080/users/{id}";
+                var client = new RestClient(apiUrl, "GET");
+                string jsonResponse = client.GetItem();
+
+
+                User user = null;
+                if (jsonResponse != null) {
+                    try {
+                        user = JsonConvert.DeserializeObject<User>(jsonResponse);
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al procesar los datos");
+                    }
+                } else {
+                    MessageBox.Show("No se pudieron obtener los datos");
+                }
+
                 FormAddUser formEditUser = new FormAddUser(user, true);
                 formEditUser.StartPosition = FormStartPosition.CenterParent;
                 formEditUser.ShowDialog();
-
                 originalDataTable = LoadUsersData();
                 gunaDataGridViewUsers.DataSource = originalDataTable;
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado ningún usuario.");
+            } else {
+                MessageBox.Show("No se ha selecionado nigún usuario");
             }
         }
 
