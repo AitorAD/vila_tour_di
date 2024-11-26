@@ -105,7 +105,7 @@
             this.btnPlaces.PressedColor = System.Drawing.Color.White;
             this.btnPlaces.Size = new System.Drawing.Size(198, 50);
             this.btnPlaces.TabIndex = 11;
-            this.btnPlaces.Text = "Places";
+            this.btnPlaces.Text = "Lugares";
             this.btnPlaces.Click += new System.EventHandler(this.btnPlaces_Click);
             // 
             // btnRecipes
@@ -189,7 +189,7 @@
             this.btnLogOut.HoverState.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.Location = new System.Drawing.Point(12, 500);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(35, 35, 35, 35);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(35);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.PressedColor = System.Drawing.Color.White;
             this.btnLogOut.Size = new System.Drawing.Size(50, 50);
