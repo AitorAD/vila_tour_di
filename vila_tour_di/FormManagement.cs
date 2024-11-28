@@ -18,7 +18,7 @@ namespace vila_tour_di {
             InitializeComponent();
             AppState.JwtData = responseData;
             this.role = responseData.Role;
-            this.name = responseData.Username;
+            this.name = responseData.Name;
             ValidaRol();
             lblWelcome.Text = $"Bienvenido, {name}";
         }
