@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text.Json;
 using System.Windows.Forms;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -90,42 +91,6 @@ namespace vila_tour_di {
                         MessageBoxIcon.Error
                         );
                 }
-
-                /*
-                 
-                // Crear un objeto con los datos actualizados
-                CategoryIngredient updatedCat = new CategoryIngredient {
-                    id = category.id,
-                    name = categoryName
-                };
-
-                // Serializar el objeto a JSON
-                string jsonData = JsonSerializer.Serialize(updatedCat);
-
-
-                // Configurar la URL para el endpoint de actualización (incluye el ID en la URL)
-                string url = $"http://127.0.0.1:8080/categories/{category.id}";
-                RestClient client = new RestClient(url, "PUT");
-
-                // Realizar la solicitud PUT
-                string res = client.PutItem(jsonData);
-
-                if(res == jsonData) {
-                    MessageBox.Show("Categoria editada correctamente.",
-                        "Editado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                        );
-                    Dispose();
-                } else {
-                    MessageBox.Show("Problema al editar categoría. No editada.",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
-                }
-                 
-                 */
             } else {
                 // Crear el objeto Ingredient
                 Ingredient newIngredient = new Ingredient(name: name, categoryIngredient: category);
@@ -154,27 +119,33 @@ namespace vila_tour_di {
 
         private void LoadCategoriesIngredientsData() {
             string apiUrl = "http://127.0.0.1:8080/categories"; // Ajusta tu URL
-            var client = new RestClient(apiUrl, "GET");
-            string jsonResponse = client.GetItem();
+            string token = AppState.JwtData.Token; // Obtener el token desde AppState
 
-            if (jsonResponse != null) {
+            using (HttpClient client = new HttpClient()) {
                 try {
-                    // Deserializar la respuesta JSON a una lista de categorias
+                    // Agregar el token al encabezado de autorización
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-                    var categoryIngredients = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
+                    // Hacer la solicitud GET
+                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
 
-                    Console.WriteLine(jsonResponse);
+                    if (response.IsSuccessStatusCode) {
+                        // Leer la respuesta como cadena JSON
+                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
-                    // Configurar el ComboBox con los datos obtenidos
-                    guna2ComboBoxCategory.DataSource = categoryIngredients;
-                    guna2ComboBoxCategory.DisplayMember = "name"; // Propiedad que se mostrará
-                    guna2ComboBoxCategory.ValueMember = "id"; // Propiedad usada como valor
+                        // Deserializar la respuesta JSON a una lista de categorías
+                        var categoryIngredients = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
 
+                        // Configurar el ComboBox con los datos obtenidos
+                        guna2ComboBoxCategory.DataSource = categoryIngredients;
+                        guna2ComboBoxCategory.DisplayMember = "name"; // Propiedad que se mostrará
+                        guna2ComboBoxCategory.ValueMember = "id"; // Propiedad usada como valor
+                    } else {
+                        MessageBox.Show($"Error al obtener los datos: {response.StatusCode} - {response.ReasonPhrase}");
+                    }
                 } catch (Exception ex) {
-                    MessageBox.Show("Error al procesar los datos: " + ex.Message);
+                    MessageBox.Show("Error al procesar la solicitud: " + ex.Message);
                 }
-            } else {
-                MessageBox.Show("No se pudieron obtener los datos.");
             }
         }
 

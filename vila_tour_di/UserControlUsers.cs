@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using System.Net.Http;
 
 namespace vila_tour_di {
     public partial class UserControlUsers : UserControl {
@@ -28,45 +29,49 @@ namespace vila_tour_di {
 
         public DataTable LoadUsersData()
         {
+            
             string apiUrl = "http://127.0.0.1:8080/users"; // Ajusta tu URL
-            var client = new RestClient(apiUrl, "GET");
-            string jsonResponse = client.GetItem();
+            string token = AppState.JwtData.Token;
 
             DataTable table = new DataTable();
 
-            // Definir las columnas del DataTable
-            table.Columns.Add("ID", typeof(int));
-            table.Columns.Add("Usuario");
-            table.Columns.Add("Email");
-            table.Columns.Add("Rol");
-            table.Columns.Add("Nombre");
-            table.Columns.Add("Apellidos");
+                // Definir las columnas del DataTable
+                table.Columns.Add("ID", typeof(int));
+                table.Columns.Add("Usuario");
+                table.Columns.Add("Email");
+                table.Columns.Add("Rol");
+                table.Columns.Add("Nombre");
+                table.Columns.Add("Apellidos");
 
+            using (HttpClient client = new HttpClient()) {
+                try {
+                    // Agregar el token
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-            if (jsonResponse != null)
-            {
-                try
-                {
-                    // Deserializar la respuesta JSON a una lista de usuarios
-                    var usuarios = JsonConvert.DeserializeObject<List<User>>(jsonResponse);
+                    // Hacer la peticion
+                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
 
-                    // Agregar los datos de los usuarios al DataTable
-                    foreach (var user in usuarios)
-                    {
-                        table.Rows.Add(user.id, user.username, user.email, user.role, user.name, user.surname);
+                    if (response.IsSuccessStatusCode) {
+                        // Leer la respuesta
+                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+                        // Deserializarla
+                        var users = JsonConvert.DeserializeObject<List<User>>(jsonResponse);
+
+                        // Agregamos los users a la tabla
+                        foreach (var user in users) {
+                            table.Rows.Add(user.id, user.username, user.email, user.role, user.name, user.surname);
+                        }
+                    } else {
+                        MessageBox.Show($"Error al obtener los datos: {response.StatusCode} - {response.ReasonPhrase}", "Error",
+                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al procesar los datos: " + ex.Message);
+
+                } catch (Exception ex) {
+                    MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
+                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("No se pudieron obtener los datos.");
-            }
-
-
             return table;
         }
 
