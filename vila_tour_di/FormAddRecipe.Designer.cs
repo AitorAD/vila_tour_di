@@ -40,10 +40,10 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.listBoxIngredients = new System.Windows.Forms.ListBox();
-            this.guna2ComboBoxIngredients = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddIngredient = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteIngredient = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ComboBoxIngredients = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBoxDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -264,7 +264,7 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 143F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(642, 143);
             this.tableLayoutPanel10.TabIndex = 13;
             // 
@@ -305,22 +305,6 @@
             this.tableLayoutPanel4.SetRowSpan(this.listBoxIngredients, 2);
             this.listBoxIngredients.Size = new System.Drawing.Size(184, 131);
             this.listBoxIngredients.TabIndex = 0;
-            // 
-            // guna2ComboBoxIngredients
-            // 
-            this.guna2ComboBoxIngredients.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2ComboBoxIngredients.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBoxIngredients.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBoxIngredients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBoxIngredients.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxIngredients.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxIngredients.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBoxIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBoxIngredients.ItemHeight = 30;
-            this.guna2ComboBoxIngredients.Location = new System.Drawing.Point(12, 3);
-            this.guna2ComboBoxIngredients.Name = "guna2ComboBoxIngredients";
-            this.guna2ComboBoxIngredients.Size = new System.Drawing.Size(165, 36);
-            this.guna2ComboBoxIngredients.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
@@ -384,6 +368,22 @@
             this.btnDeleteIngredient.Size = new System.Drawing.Size(52, 25);
             this.btnDeleteIngredient.TabIndex = 4;
             this.btnDeleteIngredient.Click += new System.EventHandler(this.btnDeleteIngredient_Click);
+            // 
+            // guna2ComboBoxIngredients
+            // 
+            this.guna2ComboBoxIngredients.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2ComboBoxIngredients.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBoxIngredients.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxIngredients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBoxIngredients.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxIngredients.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxIngredients.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBoxIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxIngredients.ItemHeight = 30;
+            this.guna2ComboBoxIngredients.Location = new System.Drawing.Point(12, 3);
+            this.guna2ComboBoxIngredients.Name = "guna2ComboBoxIngredients";
+            this.guna2ComboBoxIngredients.Size = new System.Drawing.Size(165, 36);
+            this.guna2ComboBoxIngredients.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
