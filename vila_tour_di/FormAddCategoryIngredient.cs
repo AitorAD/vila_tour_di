@@ -1,13 +1,8 @@
 ﻿using ClientRESTAPI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
@@ -15,6 +10,7 @@ namespace vila_tour_di {
 
         bool isEditing = false;
         CategoryIngredient category; // Variable para almacenar la categoría
+        string token = AppState.JwtData.Token;
 
         public FormAddCategoryIngredient() {
             InitializeComponent();
@@ -49,25 +45,32 @@ namespace vila_tour_di {
 
                 // Configurar la URL para el endpoint de actualización (incluye el ID en la URL)
                 string url = $"http://127.0.0.1:8080/categories/{category.id}";
-                RestClient client = new RestClient(url, "PUT");
 
-                // Realizar la solicitud PUT
-                string res = client.PutItem(jsonData);
+                using (HttpClient client = new HttpClient()) {
+                    try {
+                        // Agregamos el token al encabezado
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-                if(res == jsonData) {
-                    MessageBox.Show("Categoria editada correctamente.",
-                        "Editado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                        );
-                    Dispose();
-                } else {
-                    MessageBox.Show("Problema al editar categoría. No editada.",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
-                }
+                        // Creamos el contenido de la solicitud
+                        HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                        // Realizamos la solicitud PUT
+                        HttpResponseMessage response = client.PutAsync(url, content).Result;
+
+                        if (response.IsSuccessStatusCode) {
+                            MessageBox.Show("Categoria editada correctamente", "Editado",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        } else {
+                            MessageBox.Show($"Problema al editar categoría. Error: {response.StatusCode} - {response.ReasonPhrase}", "Error",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Error);
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al realizar la solicitud: " + ex.Message, "Error",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Error);
+                    }
+                }                
             } else {
                 // Creamos la categoria
                 CategoryIngredient newCat = new CategoryIngredient(categoryName);
@@ -77,18 +80,44 @@ namespace vila_tour_di {
 
                 // Agregamos una nueva categoria
                 String url = "http://127.0.0.1:8080/categories";
-                RestClient r = new RestClient(url, "POST");
 
-                res = r.PostItem(jsonData); // Realizamos el post
-                Console.WriteLine("RESPUESTA: " + res);
+                using (HttpClient client = new HttpClient()) {
+                    try {
+                        // Agregar el encabezado de autorización con el token
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
+                        // Crear el contenido de la solicitud
+                        HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-                if (res.Contains("\"errorCode\":101")) {
-                    MessageBox.Show("Categoria ya existente",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
+                        // Realizar la solicitud POST
+                        HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+                        if (response.IsSuccessStatusCode) {
+                            // Mostrar un mensaje si la categoría se creó correctamente
+                            MessageBox.Show("Categoría creada correctamente.",
+                                "Éxito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            Dispose();
+                        } else {
+                            // Leer el contenido de la respuesta en caso de error
+                            string errorResponse = response.Content.ReadAsStringAsync().Result;
+
+                            if (errorResponse.Contains("\"errorCode\":101")) {
+                                MessageBox.Show("Categoría ya existente.", "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            } else {
+                                MessageBox.Show($"Error al crear categoría: {response.StatusCode} - {response.ReasonPhrase}", "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            }
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al realizar la solicitud: " + ex.Message, "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
                 }
                 Dispose();
             }
