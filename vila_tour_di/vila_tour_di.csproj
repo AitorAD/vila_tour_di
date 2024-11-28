@@ -96,7 +96,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppState.cs" />
     <Compile Include="CategoryIngredient.cs" />
+    <Compile Include="JwtResponse.cs" />
     <Compile Include="Recipe.cs" />
     <Compile Include="FormAddCategoryIngredient.cs">
       <SubType>Form</SubType>

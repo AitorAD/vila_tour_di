@@ -3,28 +3,30 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using System.Collections.Generic;
 
 namespace vila_tour_di {
     public partial class FormManagement : Form {
         private Guna2Button currentButton;
         private Guna2Button lastButton;
-        private string role;
+        private List<Role> role;
         private string name;
         private Size originalSize;
         private Point originalLocation;
 
-        public FormManagement(string role, string name) {
+        public FormManagement(JwtResponse responseData) {
             InitializeComponent();
-            this.role = role;
-            this.name = name;
+            AppState.JwtData = responseData;
+            this.role = responseData.Role;
+            this.name = responseData.Username;
             ValidaRol();
             lblWelcome.Text = $"Bienvenido, {name}";
         }
 
         private void ValidaRol() {
-            if (role == "EDITOR") {
+            if (role.Exists(role => role.Authority == "EDITOR")) {
                 btnUsers.Visible = false; 
-            } else if (role == "ADMIN") {
+            } else if (role.Exists(role => role.Authority == "ADMIN")) {
                 btnUsers.Visible = true;  
             }
         }
