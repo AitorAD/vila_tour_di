@@ -94,7 +94,7 @@ namespace vila_tour_di {
         }
 
         private void buttonAddRecipe_Click(object sender, EventArgs e) {
-            FormAddRecipe formAddRecipe = new FormAddRecipe();
+            FormAddEditRecipe formAddRecipe = new FormAddEditRecipe();
             formAddRecipe.StartPosition = FormStartPosition.CenterParent;
             formAddRecipe.ShowDialog();
             LoadRecipesInDataGridView();
@@ -124,7 +124,7 @@ namespace vila_tour_di {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
 
-                FormAddRecipe formAddRecipe = new FormAddRecipe(recipe, false);
+                FormAddEditRecipe formAddRecipe = new FormAddEditRecipe(recipe, false);
                 formAddRecipe.StartPosition = FormStartPosition.CenterParent;
                 formAddRecipe.ShowDialog();
                 LoadRecipesInDataGridView();
@@ -138,7 +138,6 @@ namespace vila_tour_di {
 
                 var selectedRow = gunaDataGridViewRecipes.SelectedRows[0];
 
-                // Atributos
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/recipes/{id}";
@@ -157,7 +156,7 @@ namespace vila_tour_di {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
 
-                FormAddRecipe formAddRecipe = new FormAddRecipe(recipe, true);
+                FormAddEditRecipe formAddRecipe = new FormAddEditRecipe(recipe, true);
                 formAddRecipe.StartPosition = FormStartPosition.CenterParent;
                 formAddRecipe.ShowDialog();
                 LoadRecipesInDataGridView();

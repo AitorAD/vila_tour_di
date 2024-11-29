@@ -78,7 +78,7 @@ namespace vila_tour_di {
 
 
         private void btnAddUser_Click(object sender, EventArgs e) {
-            FormAddUser formAddUser = new FormAddUser();
+            FormAddEditUser formAddUser = new FormAddEditUser();
             formAddUser.StartPosition = FormStartPosition.CenterParent;
             formAddUser.ShowDialog();
 
@@ -110,7 +110,7 @@ namespace vila_tour_di {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
 
-                FormAddUser formEditUser = new FormAddUser(user, true);
+                FormAddEditUser formEditUser = new FormAddEditUser(user, true);
                 formEditUser.StartPosition = FormStartPosition.CenterParent;
                 formEditUser.ShowDialog();
                 originalDataTable = LoadUsersData();
@@ -189,7 +189,7 @@ namespace vila_tour_di {
                 };
 
                 // Pasar el usuario al formulario en modo no editable
-                FormAddUser formDetails = new FormAddUser(user, false);
+                FormAddEditUser formDetails = new FormAddEditUser(user, false);
                 formDetails.StartPosition = FormStartPosition.CenterParent;
                 formDetails.ShowDialog();
             }

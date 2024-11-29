@@ -22,7 +22,7 @@ namespace vila_tour_di
         public int coordinateId { get; set; }
         public Coordinate coordinate { get; set; }
 
-        public Festival(string name, string description, string imagensPaths, double averageScore, DateTime creationDate, DateTime lastModificationDate, LocalDate startDate, LocalDate endDate, int creatorId, User creator, int coordinateId, Coordinate coordinate)
+        public Festival(string name, string description, string imagensPaths, double averageScore, DateTime creationDate, DateTime lastModificationDate, DateTime startDate, DateTime endDate, int creatorId, User creator, int coordinateId, Coordinate coordinate)
         {
             this.name = name;
             this.description = description;

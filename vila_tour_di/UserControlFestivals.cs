@@ -15,7 +15,7 @@ namespace vila_tour_di {
         }
 
         private void btnAddFestival_Click(object sender, EventArgs e) {
-            FormAddFestival formAddFestival = new FormAddFestival();
+            FormAddEditFestival formAddFestival = new FormAddEditFestival();
             formAddFestival.StartPosition = FormStartPosition.CenterScreen;
             formAddFestival.ShowDialog();
         }

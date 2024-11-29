@@ -21,7 +21,7 @@ namespace vila_tour_di {
 
         public DataTable LoadPlacesData()
         {
-            string apiUrl = "http://127.0.0.1:8080/users"; // Ajusta tu URL
+            string apiUrl = "http://127.0.0.1:8080/places"; // Ajusta tu URL
             string token = AppState.JwtData.Token;
 
             DataTable table = new DataTable();
@@ -78,7 +78,7 @@ namespace vila_tour_di {
 
 
         private void btnAdd_Click(object sender, EventArgs e) {
-            FormAddPlace formAddPlace = new FormAddPlace();
+            FormAddEditPlace formAddPlace = new FormAddEditPlace();
             formAddPlace.StartPosition = FormStartPosition.CenterParent;
             formAddPlace.ShowDialog();
 
@@ -90,27 +90,50 @@ namespace vila_tour_di {
         {
             if (gunaDataGridViewPlaces.SelectedRows.Count > 0)
             {
-
                 var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
 
                 // Atributos
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
-                string apiUrl = $"http://127.0.0.1:8080/users/{id}";
-                var client = new RestClient(apiUrl, "GET");
-                string jsonResponse = client.GetItem();
+                string apiUrl = $"http://127.0.0.1:8080/places/{id}";
+                string token = AppState.JwtData.Token;
+                string jsonResponse = null;
 
-
-                User user = null;
-                if (jsonResponse != null)
+                using (HttpClient client = new HttpClient())
                 {
                     try
                     {
-                        user = JsonConvert.DeserializeObject<User>(jsonResponse);
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                        HttpResponseMessage response = client.GetAsync(apiUrl).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            jsonResponse = response.Content.ReadAsStringAsync().Result;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error en la solicitud: " + response.ReasonPhrase, "Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al procesar los datos");
+                        MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                Place place = null;
+                if (!string.IsNullOrEmpty(jsonResponse))
+                {
+                    try
+                    {
+                        place = JsonConvert.DeserializeObject<Place>(jsonResponse);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al procesar los datos: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -118,44 +141,79 @@ namespace vila_tour_di {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
 
-                FormAddUser formEditUser = new FormAddUser(user, true);
-                formEditUser.StartPosition = FormStartPosition.CenterParent;
-                formEditUser.ShowDialog();
+                FormAddEditPlace formAddEditPlace = new FormAddEditPlace(place, true);
+                formAddEditPlace.StartPosition = FormStartPosition.CenterParent;
+                formAddEditPlace.ShowDialog();
                 originalDataTable = LoadPlacesData();
                 gunaDataGridViewPlaces.DataSource = originalDataTable;
             }
             else
             {
-                MessageBox.Show("No se ha selecionado nigún usuario");
+                MessageBox.Show("No se ha seleccionado ningún usuario");
             }
         }
+
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
             if (gunaDataGridViewPlaces.SelectedRows.Count > 0)
             {
                 var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
-                int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
-                User user = new User
+                string apiUrl = $"http://127.0.0.1:8080/places/{id}";
+                string token = AppState.JwtData.Token;
+                string jsonResponse = null;
+
+                using (HttpClient client = new HttpClient())
                 {
-                    id = userId,
-                    username = selectedRow.Cells["Usuario"].Value.ToString(),
-                    email = selectedRow.Cells["Email"].Value.ToString(),
-                    role = selectedRow.Cells["Rol"].Value.ToString(),
-                    name = selectedRow.Cells["Nombre"].Value.ToString(),
-                    surname = selectedRow.Cells["Apellidos"].Value.ToString(),
-                    // profilePicture = selectedRow.Cells["ProfilePicture"].Value.ToString()
-                };
+                    try
+                    {
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                        HttpResponseMessage response = client.GetAsync(apiUrl).Result;
 
-                // Pasar el usuario al formulario en modo no editable
-                FormAddUser formDetails = new FormAddUser(user, false);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            jsonResponse = response.Content.ReadAsStringAsync().Result;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error en la solicitud: " + response.ReasonPhrase, "Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                Place place = null;
+                if (!string.IsNullOrEmpty(jsonResponse))
+                {
+                    try
+                    {
+                        place = JsonConvert.DeserializeObject<Place>(jsonResponse);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al procesar los datos: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron obtener los datos");
+                }
+
+                FormAddEditPlace formDetails = new FormAddEditPlace(place, false); // Modo no editable
                 formDetails.StartPosition = FormStartPosition.CenterParent;
                 formDetails.ShowDialog();
             }
             else
             {
-                MessageBox.Show("No se ha seleccionado ningún usuario para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha seleccionado ningún lugar para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -164,11 +222,11 @@ namespace vila_tour_di {
             if (gunaDataGridViewPlaces.SelectedRows.Count > 0)
             {
                 var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
-                int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
                 // Confirmación antes de eliminar
                 DialogResult result = MessageBox.Show(
-                    "¿Estás seguro de que deseas eliminar este usuario?",
+                    "¿Estás seguro de que deseas eliminar este lugar?",
                     "Confirmar eliminación",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
@@ -176,37 +234,42 @@ namespace vila_tour_di {
 
                 if (result == DialogResult.Yes)
                 {
-                    string apiUrl = $"http://127.0.0.1:8080/users/{userId}"; // URL con el ID del usuario
-                    var client = new RestClient(apiUrl, "DELETE");
+                    string apiUrl = $"http://127.0.0.1:8080/places/{id}"; // URL con el ID del lugar
+                    string token = AppState.JwtData.Token;
 
-                    try
+                    using (HttpClient client = new HttpClient())
                     {
-                        string response = client.DeleteItem();
-
-                        // Verificar la respuesta
-                        if (!string.IsNullOrEmpty(response))
+                        try
                         {
-                            MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al eliminar el usuario. Por favor, inténtalo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                            HttpResponseMessage response = client.DeleteAsync(apiUrl).Result;
 
-                        // Recargar la lista de usuarios después de eliminar
-                        originalDataTable = LoadPlacesData();
-                        gunaDataGridViewPlaces.DataSource = originalDataTable;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocurrió un error al intentar eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                MessageBox.Show("Lugar eliminado correctamente", "Información",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                originalDataTable = LoadPlacesData();
+                                gunaDataGridViewPlaces.DataSource = originalDataTable;
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Error al eliminar el lugar: {response.StatusCode} - {response.ReasonPhrase}", "Error",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No se ha seleccionado ningún usuario para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha seleccionado ningún lugar para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
     }
 }
