@@ -133,6 +133,12 @@
     <Compile Include="CategoryPlace.cs" />
     <Compile Include="Festival.cs" />
     <Compile Include="Coordinate.cs" />
+    <Compile Include="FormAddEditCoordinate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditCoordinate.Designer.cs">
+      <DependentUpon>FormAddEditCoordinate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Place.cs" />
     <Compile Include="FormAddEditPlace.cs">
       <SubType>Form</SubType>
@@ -229,6 +235,9 @@
     </Compile>
     <EmbeddedResource Include="FormAddEditCategoryIngredient.resx">
       <DependentUpon>FormAddEditCategoryIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditCoordinate.resx">
+      <DependentUpon>FormAddEditCoordinate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddEditIngrediente.resx">
       <DependentUpon>FormAddEditIngrediente.cs</DependentUpon>

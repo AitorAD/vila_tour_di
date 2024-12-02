@@ -129,7 +129,7 @@ namespace vila_tour_di {
                 formAddRecipe.ShowDialog();
                 LoadRecipesInDataGridView();
             } else {
-                MessageBox.Show("No se ha selecionado niguna receta");
+                MessageBox.Show("No se ha selecionado niguna receta", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -161,7 +161,7 @@ namespace vila_tour_di {
                 formAddRecipe.ShowDialog();
                 LoadRecipesInDataGridView();
             } else {
-                MessageBox.Show("No se ha selecionado niguna receta");
+                MessageBox.Show("No se ha selecionado niguna receta", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -28,8 +28,7 @@ namespace vila_tour_di
             comboBoxCategoryPlace.DataSource = LoadCategoriesPlacesData();
             labelTitle.Text = editable ? "Editar lugar" : "Detalles del lugar";
 
-            _currentPlace = place;
-
+            _currentPlace = place; 
         }
 
         private List<CategoryIngredient> LoadCategoriesPlacesData()
@@ -41,21 +40,14 @@ namespace vila_tour_di
             {
                 try
                 {
-                    // Agregar el token al encabezado de autorización
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-                    // Hacer la solicitud GET
                     HttpResponseMessage response = client.GetAsync(apiUrl).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
-                        // Leer la respuesta como cadena JSON
                         string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
-                        // Deserializar la respuesta JSON a una lista de categorías
                         return JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
-
-                        
                     }
                     else
                     {
@@ -73,9 +65,14 @@ namespace vila_tour_di
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            /*FormAddEditCoordinate formAddEditCoordinate = new FormAddEditCoordinate();
+            FormAddEditCoordinate formAddEditCoordinate = new FormAddEditCoordinate();
             formAddEditCoordinate.StartPosition = FormStartPosition.CenterScreen;
-            formAddEditCoordinate.Show();*/
+            formAddEditCoordinate.Show();
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

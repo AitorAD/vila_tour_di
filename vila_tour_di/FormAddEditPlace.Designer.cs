@@ -50,6 +50,9 @@ namespace vila_tour_di
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelLastModificationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.labelCreationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -58,6 +61,7 @@ namespace vila_tour_di
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -68,25 +72,25 @@ namespace vila_tour_di
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel13, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel16, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel16, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Button1, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.31579F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.05263F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(571, 614);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(571, 646);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel13
@@ -97,11 +101,11 @@ namespace vila_tour_di
             this.tableLayoutPanel13.Controls.Add(this.guna2HtmlLabel5, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(60, 328);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(60, 362);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(450, 112);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(450, 125);
             this.tableLayoutPanel13.TabIndex = 22;
             // 
             // guna2HtmlLabel5
@@ -127,7 +131,7 @@ namespace vila_tour_di
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(264, 106);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(264, 119);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // guna2PictureBox
@@ -154,7 +158,7 @@ namespace vila_tour_di
             this.btnAddPhoto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddPhoto.ForeColor = System.Drawing.Color.White;
             this.btnAddPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPhoto.Image")));
-            this.btnAddPhoto.Location = new System.Drawing.Point(14, 29);
+            this.btnAddPhoto.Location = new System.Drawing.Point(14, 35);
             this.btnAddPhoto.Name = "btnAddPhoto";
             this.btnAddPhoto.Size = new System.Drawing.Size(50, 48);
             this.btnAddPhoto.TabIndex = 5;
@@ -167,11 +171,11 @@ namespace vila_tour_di
             this.tableLayoutPanel4.Controls.Add(this.comboBoxCategoryPlace, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.guna2HtmlLabel4, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(60, 269);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(60, 297);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(450, 53);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(450, 59);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
             // comboBoxCategoryPlace
@@ -185,7 +189,7 @@ namespace vila_tour_di
             this.comboBoxCategoryPlace.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxCategoryPlace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboBoxCategoryPlace.ItemHeight = 30;
-            this.comboBoxCategoryPlace.Location = new System.Drawing.Point(183, 8);
+            this.comboBoxCategoryPlace.Location = new System.Drawing.Point(183, 11);
             this.comboBoxCategoryPlace.Name = "comboBoxCategoryPlace";
             this.comboBoxCategoryPlace.Size = new System.Drawing.Size(264, 36);
             this.comboBoxCategoryPlace.TabIndex = 21;
@@ -209,12 +213,13 @@ namespace vila_tour_di
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel16.Controls.Add(this.btnCloseForm, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnAddPlace, 2, 0);
+            this.tableLayoutPanel16.Controls.Add(this.guna2Button1, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(60, 534);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(60, 558);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(450, 53);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(450, 59);
             this.tableLayoutPanel16.TabIndex = 19;
             // 
             // btnCloseForm
@@ -230,10 +235,11 @@ namespace vila_tour_di
             this.btnCloseForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCloseForm.ForeColor = System.Drawing.Color.White;
             this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
-            this.btnCloseForm.Location = new System.Drawing.Point(290, 3);
+            this.btnCloseForm.Location = new System.Drawing.Point(290, 4);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(50, 47);
+            this.btnCloseForm.Size = new System.Drawing.Size(50, 50);
             this.btnCloseForm.TabIndex = 3;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
             // btnAddPlace
             // 
@@ -248,9 +254,9 @@ namespace vila_tour_di
             this.btnAddPlace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddPlace.ForeColor = System.Drawing.Color.White;
             this.btnAddPlace.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPlace.Image")));
-            this.btnAddPlace.Location = new System.Drawing.Point(380, 3);
+            this.btnAddPlace.Location = new System.Drawing.Point(380, 4);
             this.btnAddPlace.Name = "btnAddPlace";
-            this.btnAddPlace.Size = new System.Drawing.Size(50, 47);
+            this.btnAddPlace.Size = new System.Drawing.Size(50, 50);
             this.btnAddPlace.TabIndex = 4;
             // 
             // tableLayoutPanel6
@@ -261,11 +267,11 @@ namespace vila_tour_di
             this.tableLayoutPanel6.Controls.Add(this.guna2HtmlLabel3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.guna2TextBoxDescription, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(60, 121);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(60, 133);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(450, 142);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(450, 158);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // guna2HtmlLabel3
@@ -291,7 +297,7 @@ namespace vila_tour_di
             this.guna2TextBoxDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBoxDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxDescription.Location = new System.Drawing.Point(183, 3);
+            this.guna2TextBoxDescription.Location = new System.Drawing.Point(183, 11);
             this.guna2TextBoxDescription.Name = "guna2TextBoxDescription";
             this.guna2TextBoxDescription.PasswordChar = '\0';
             this.guna2TextBoxDescription.PlaceholderText = "";
@@ -309,7 +315,7 @@ namespace vila_tour_di
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(3, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(565, 59);
+            this.labelTitle.Size = new System.Drawing.Size(565, 65);
             this.labelTitle.TabIndex = 5;
             this.labelTitle.Text = "Añadir/Editar/Detalles Lugar";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -322,11 +328,12 @@ namespace vila_tour_di
             this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2TextBoxName, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(60, 62);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(60, 68);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(450, 53);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(450, 59);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // guna2HtmlLabel1
@@ -352,7 +359,7 @@ namespace vila_tour_di
             this.guna2TextBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxName.Location = new System.Drawing.Point(183, 8);
+            this.guna2TextBoxName.Location = new System.Drawing.Point(183, 11);
             this.guna2TextBoxName.Name = "guna2TextBoxName";
             this.guna2TextBoxName.PasswordChar = '\0';
             this.guna2TextBoxName.PlaceholderText = "";
@@ -373,17 +380,54 @@ namespace vila_tour_di
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(260, 449);
+            this.guna2Button1.Location = new System.Drawing.Point(110, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(50, 47);
+            this.guna2Button1.Size = new System.Drawing.Size(50, 50);
             this.guna2Button1.TabIndex = 23;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.labelLastModificationDate, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelCreationDate, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(60, 493);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(450, 59);
+            this.tableLayoutPanel3.TabIndex = 24;
+            // 
+            // labelLastModificationDate
+            // 
+            this.labelLastModificationDate.BackColor = System.Drawing.Color.Transparent;
+            this.labelLastModificationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.labelLastModificationDate.Location = new System.Drawing.Point(40, 29);
+            this.labelLastModificationDate.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.labelLastModificationDate.Name = "labelLastModificationDate";
+            this.labelLastModificationDate.Size = new System.Drawing.Size(258, 27);
+            this.labelLastModificationDate.TabIndex = 2;
+            this.labelLastModificationDate.Text = "Fecha última modificación: ";
+            // 
+            // labelCreationDate
+            // 
+            this.labelCreationDate.BackColor = System.Drawing.Color.Transparent;
+            this.labelCreationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.labelCreationDate.Location = new System.Drawing.Point(40, 0);
+            this.labelCreationDate.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.labelCreationDate.Name = "labelCreationDate";
+            this.labelCreationDate.Size = new System.Drawing.Size(187, 27);
+            this.labelCreationDate.TabIndex = 1;
+            this.labelCreationDate.Text = "Fecha de creación: ";
             // 
             // FormAddEditPlace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 614);
+            this.ClientSize = new System.Drawing.Size(571, 646);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddEditPlace";
@@ -401,6 +445,8 @@ namespace vila_tour_di
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +473,8 @@ namespace vila_tour_di
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox;
         private Guna.UI2.WinForms.Guna2Button btnAddPhoto;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel labelLastModificationDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel labelCreationDate;
     }
 }

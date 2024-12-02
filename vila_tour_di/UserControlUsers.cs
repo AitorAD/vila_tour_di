@@ -116,7 +116,7 @@ namespace vila_tour_di {
                 originalDataTable = LoadUsersData();
                 gunaDataGridViewUsers.DataSource = originalDataTable;
             } else {
-                MessageBox.Show("No se ha selecionado nigún usuario");
+                MessageBox.Show("No se ha selecionado ningún usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

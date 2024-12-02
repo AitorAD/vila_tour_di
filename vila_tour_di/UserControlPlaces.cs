@@ -149,7 +149,7 @@ namespace vila_tour_di {
             }
             else
             {
-                MessageBox.Show("No se ha seleccionado ningún usuario");
+                MessageBox.Show("No se ha seleccionado ningún lugar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
