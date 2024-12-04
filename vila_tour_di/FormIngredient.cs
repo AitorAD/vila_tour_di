@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace vila_tour_di {
@@ -12,44 +13,32 @@ namespace vila_tour_di {
         public FormIngredient() {
             InitializeComponent();
             // Cargar los datos y almacenar la tabla
-            originalDatatable = LoadIngredients();
+            originalDatatable = LoadIngredientsData();
             guna2DataGridView1.DataSource = originalDatatable;
             guna2DataGridView1.AutoGenerateColumns = true;
+            guna2DataGridView1.AutoResizeColumnHeadersHeight();
+            guna2DataGridView1.AutoResizeColumns();
         }
 
         // Carga los Ingredientes
-        public DataTable LoadIngredients() {
-            Console.WriteLine("Recargando los ingredientes...");
-            string apiUrl = "http://127.0.0.1:8080/ingredients";
-            var client = new RestClient(apiUrl, "GET");
-            string jsonResponse = client.GetItem();
-
+        public DataTable LoadIngredientsData() {
+            
             DataTable table = new DataTable();
+                // Definimos las columnas
+                table.Columns.Add("ID", typeof(long));  // Usar long para ID
+                table.Columns.Add("Nombre");
+                table.Columns.Add("Categoria");
 
-            // Definimos las columnas
-            table.Columns.Add("ID", typeof(long));  // Usar long para ID
-            table.Columns.Add("Nombre");
-            table.Columns.Add("Categoria");
-
-            if (jsonResponse != null) {
-                try {
-                    var ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
-                    
-                    foreach (var ingredient in ingredients) {
-                        table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category?.name ?? "None");
-                    }
-                } catch (Exception ex) {
-                    MessageBox.Show("Error al procesar los datos");
-                }
-            } else {
-                MessageBox.Show("No se pudieron obtener los datos");
+            // Agregamos los users a la tabla
+            foreach (var ingredient in Ingredient.GetIngredients()) {
+                table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category);
             }
-            Console.WriteLine(jsonResponse); // Para verificar cómo llega la respuesta.
+
             return table;
         }
 
         public void LoadIngredientsInDataGridView() {
-            DataTable ingredientsTable = LoadIngredients(); // Llamamos a LoadIngredients para obtener el DataTable
+            DataTable ingredientsTable = LoadIngredientsData(); // Llamamos a LoadIngredients para obtener el DataTable
 
             // Asignamos el DataTable al DataGridView
             guna2DataGridView1.DataSource = ingredientsTable;
@@ -60,7 +49,7 @@ namespace vila_tour_di {
 
         // Añadir Ingrediente
         private void guna2Button1_Click(object sender, EventArgs e) {
-            FormAddIngrediente formAddIng = new FormAddIngrediente();
+            FormAddEditIngrediente formAddIng = new FormAddEditIngrediente();
             formAddIng.Owner = this; // Establecer el formulario principal como propietario
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
@@ -104,7 +93,7 @@ namespace vila_tour_di {
                 } else {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
-                FormAddIngrediente formAddIng = new FormAddIngrediente(idIngredient, name, newCategory);
+                FormAddEditIngrediente formAddIng = new FormAddEditIngrediente(idIngredient, name, newCategory);
                 formAddIng.StartPosition = FormStartPosition.CenterParent;
                 formAddIng.Owner = this; // Establecer el formulario principal como propietarIO
                 formAddIng.ShowDialog();
@@ -144,7 +133,7 @@ namespace vila_tour_di {
                     // Verificar la respuesta y actualizar el DataGridView si fue exitoso
                     if (!string.IsNullOrEmpty(response)) {
                         MessageBox.Show("Ingrediente eliminado exitosamente.");
-                        LoadIngredients(); // Llama a un método que recargue los datos en el DataGridView
+                        LoadIngredientsInDataGridView(); // Llama a un método que recargue los datos en el DataGridView
                     } else {
                         MessageBox.Show("Error al eliminar el ingrediente.");
                     }
@@ -152,7 +141,7 @@ namespace vila_tour_di {
             } else {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");
             }
-            guna2DataGridView1.DataSource = LoadIngredients();
+            guna2DataGridView1.DataSource = LoadIngredientsData();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e) {
