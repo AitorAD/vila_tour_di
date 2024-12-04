@@ -1,6 +1,6 @@
 ﻿
 namespace vila_tour_di {
-    partial class FormAddEditIngrediente {
+    partial class FormAddEditIngredient {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,7 +24,7 @@ namespace vila_tour_di {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddEditIngrediente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddEditIngredient));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ComboBoxCategory = new Guna.UI2.WinForms.Guna2ComboBox();
