@@ -1,5 +1,4 @@
-﻿using ClientRESTAPI;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +21,6 @@ namespace vila_tour_di {
             InitializeComponent();
             labelTitle.Text = "Añadir receta";
 
-            LoadIngredients();
         }
 
         public FormAddEditRecipe(Recipe recipe, bool showDetails) {
@@ -30,7 +28,6 @@ namespace vila_tour_di {
 
             isEditing = true;
 
-            LoadIngredients();
             labelTitle.Text = "Editar receta";
             this.recipeToEdit = recipe;
 
@@ -79,32 +76,7 @@ namespace vila_tour_di {
             }
         }
 
-        private List<Ingredient> LoadIngredients() {
-            string apiUrl = "http://127.0.0.1:8080/ingredients"; // Ajusta tu URL
-            var client = new RestClient(apiUrl, "GET");
-            string jsonResponse = client.GetItem();
-
-            List<Ingredient> ingredients = new List<Ingredient>();
-            if (jsonResponse != null) {
-                try {
-                    // Deserializar la respuesta JSON a una lista de categorias
-
-                    ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(jsonResponse);
-
-
-                    // Configurar el ComboBox con los datos obtenidos
-                    guna2ComboBoxIngredients.DataSource = ingredients;
-                    guna2ComboBoxIngredients.DisplayMember = "name"; // Propiedad que se mostrará
-                    guna2ComboBoxIngredients.ValueMember = "idIngredient";
-                    Console.WriteLine(jsonResponse);
-                } catch (Exception ex) {
-                    MessageBox.Show("Error al procesar los datos: " + ex.Message);
-                }
-            } else {
-                MessageBox.Show("No se pudieron obtener los datos.");
-            }
-            return ingredients;
-        }
+  
 
         private void btnAddRecipe_Click(object sender, EventArgs e) {
             // Obtener datos
@@ -138,22 +110,8 @@ namespace vila_tour_di {
                 Recipe newRecipe = new Recipe(name, description, image, averageScore, approved, recent, ingredients);
 
 
-                string jsonData = JsonSerializer.Serialize(newRecipe);
-                string res = string.Empty;
-
-                // Estamos agregando un nuevo ingrediente
-                string url = "http://127.0.0.1:8080/recipes";
-                RestClient r = new RestClient(url, "POST");
-                res = r.PostItem(jsonData);  // Realizamos un POST para agregar la receta
-                Console.WriteLine("RESPUESTA: " + res);
-
-                if (res.Contains("\"errorCode\":101")) {
-                    MessageBox.Show("Receta ya existente",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
-                }
+        
+           
                 Dispose();
             }
         }

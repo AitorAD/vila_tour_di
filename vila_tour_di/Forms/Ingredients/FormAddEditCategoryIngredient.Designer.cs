@@ -30,7 +30,7 @@ namespace vila_tour_di {
             this.label1 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bttbAddIngredient = new Guna.UI2.WinForms.Guna2Button();
+            this.bttbAddCatIngredient = new Guna.UI2.WinForms.Guna2Button();
             this.bttnSalir = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tableLayoutPanel1.SuspendLayout();
@@ -113,7 +113,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.bttbAddIngredient, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.bttbAddCatIngredient, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bttnSalir, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(23, 191);
@@ -123,25 +123,25 @@ namespace vila_tour_di {
             this.tableLayoutPanel2.Size = new System.Drawing.Size(267, 83);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // bttbAddIngredient
+            // bttbAddCatIngredient
             // 
-            this.bttbAddIngredient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bttbAddIngredient.Animated = true;
-            this.bttbAddIngredient.BorderRadius = 25;
-            this.bttbAddIngredient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bttbAddIngredient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bttbAddIngredient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bttbAddIngredient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bttbAddIngredient.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.bttbAddIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bttbAddIngredient.ForeColor = System.Drawing.Color.White;
-            this.bttbAddIngredient.Image = ((System.Drawing.Image)(resources.GetObject("bttbAddIngredient.Image")));
-            this.bttbAddIngredient.Location = new System.Drawing.Point(175, 16);
-            this.bttbAddIngredient.Name = "bttbAddIngredient";
-            this.bttbAddIngredient.Size = new System.Drawing.Size(50, 50);
-            this.bttbAddIngredient.TabIndex = 22;
-            this.guna2HtmlToolTip1.SetToolTip(this.bttbAddIngredient, "Añadir");
-            this.bttbAddIngredient.Click += new System.EventHandler(this.bttbAddIngredient_Click);
+            this.bttbAddCatIngredient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bttbAddCatIngredient.Animated = true;
+            this.bttbAddCatIngredient.BorderRadius = 25;
+            this.bttbAddCatIngredient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bttbAddCatIngredient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bttbAddCatIngredient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bttbAddCatIngredient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bttbAddCatIngredient.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.bttbAddCatIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bttbAddCatIngredient.ForeColor = System.Drawing.Color.White;
+            this.bttbAddCatIngredient.Image = ((System.Drawing.Image)(resources.GetObject("bttbAddCatIngredient.Image")));
+            this.bttbAddCatIngredient.Location = new System.Drawing.Point(175, 16);
+            this.bttbAddCatIngredient.Name = "bttbAddCatIngredient";
+            this.bttbAddCatIngredient.Size = new System.Drawing.Size(50, 50);
+            this.bttbAddCatIngredient.TabIndex = 22;
+            this.guna2HtmlToolTip1.SetToolTip(this.bttbAddCatIngredient, "Añadir");
+            this.bttbAddCatIngredient.Click += new System.EventHandler(this.bttbAddCatIngredient_Click_1);
             // 
             // bttnSalir
             // 
@@ -168,7 +168,7 @@ namespace vila_tour_di {
             this.guna2HtmlToolTip1.AllowLinksHandling = true;
             this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             // 
-            // FormAddCategoryIngredient
+            // FormAddEditCategoryIngredient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +177,7 @@ namespace vila_tour_di {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormAddCategoryIngredient";
+            this.Name = "FormAddEditCategoryIngredient";
             this.Text = "Categoría de ingrediente";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -193,7 +193,7 @@ namespace vila_tour_di {
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Guna.UI2.WinForms.Guna2Button bttbAddIngredient;
+        private Guna.UI2.WinForms.Guna2Button bttbAddCatIngredient;
         private Guna.UI2.WinForms.Guna2Button bttnSalir;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
     }

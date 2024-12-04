@@ -1,10 +1,8 @@
-﻿using ClientRESTAPI;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Net.Http;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class FormIngredient : Form {
@@ -29,8 +27,10 @@ namespace vila_tour_di {
                 table.Columns.Add("Nombre");
                 table.Columns.Add("Categoria");
 
+            List<Ingredient> ingredients = IngredientService.GetIngredients();
+
             // Agregamos los users a la tabla
-            foreach (var ingredient in Ingredient.GetIngredients()) {
+            foreach (var ingredient in ingredients) {
                 table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category);
             }
 
@@ -58,49 +58,7 @@ namespace vila_tour_di {
 
         // Editar Ingrediente
         private void btnEditIngredient_Click(object sender, EventArgs e) {
-            // Aqui hay que cargar un ingrediente, el que esta selecionado
-            if (guna2DataGridView1.SelectedRows.Count > 0) {
-
-                var selectedRow = guna2DataGridView1.SelectedRows[0];
-
-                int idIngredient = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
-                string name = selectedRow.Cells["Nombre"].Value.ToString();
-
-                string category_string = selectedRow.Cells["Categoria"].Value.ToString();
-
-
-
-                string apiUrl = "http://127.0.0.1:8080/categories";
-                var client = new RestClient(apiUrl, "GET");
-                string jsonResponse = client.GetItem();
-
-                CategoryIngredient newCategory = null;
-                if (jsonResponse != null) {
-                    try {
-                        var categories = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
-
-                        if (category_string != "None") {
-                            foreach (var category in categories) {
-                                if (category_string == category.name) {
-                                    newCategory = category;
-                                }
-                             
-                            }
-                        }
-                    } catch (Exception ex) {
-                        MessageBox.Show("Error al procesar los datos");
-                    }
-                } else {
-                    MessageBox.Show("No se pudieron obtener los datos");
-                }
-                FormAddEditIngredient formAddIng = new FormAddEditIngredient(idIngredient, name, newCategory);
-                formAddIng.StartPosition = FormStartPosition.CenterParent;
-                formAddIng.Owner = this; // Establecer el formulario principal como propietarIO
-                formAddIng.ShowDialog();
-                LoadIngredientsInDataGridView();
-            } else {
-                MessageBox.Show("No se ha selecionado nigun ingrediente");
-            }
+            
         }
 
         private void btnCategoryIngredient_Click(object sender, EventArgs e) {
@@ -122,22 +80,6 @@ namespace vila_tour_di {
                                                     "Confirmar eliminación",
                                                     MessageBoxButtons.YesNo);
 
-                if (confirmResult == DialogResult.Yes) {
-                    // Crear la URL para el DELETE con el ID del ingrediente
-                    string url = $"http://127.0.0.1:8080/ingredients/{idIngredient}";
-                    RestClient client = new RestClient(url, "DELETE");
-
-                    // Realizar la solicitud DELETE
-                    string response = client.DeleteItem();  // Método DELETE en RestClient, pero si tienes un método específico usa client.deleteItem()
-
-                    // Verificar la respuesta y actualizar el DataGridView si fue exitoso
-                    if (!string.IsNullOrEmpty(response)) {
-                        MessageBox.Show("Ingrediente eliminado exitosamente.");
-                        LoadIngredientsInDataGridView(); // Llama a un método que recargue los datos en el DataGridView
-                    } else {
-                        MessageBox.Show("Error al eliminar el ingrediente.");
-                    }
-                }
             } else {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");
             }

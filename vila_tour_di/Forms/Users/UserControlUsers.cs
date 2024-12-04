@@ -1,5 +1,4 @@
-﻿using ClientRESTAPI;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Data;
 using System.Collections.Generic;
@@ -95,28 +94,6 @@ namespace vila_tour_di {
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/users/{id}";
-                var client = new RestClient(apiUrl, "GET");
-                string jsonResponse = client.GetItem();
-
-
-                User user = null;
-                if (jsonResponse != null) {
-                    try {
-                        user = JsonConvert.DeserializeObject<User>(jsonResponse);
-                    } catch (Exception ex) {
-                        MessageBox.Show("Error al procesar los datos");
-                    }
-                } else {
-                    MessageBox.Show("No se pudieron obtener los datos");
-                }
-
-                FormAddEditUser formEditUser = new FormAddEditUser(user, true);
-                formEditUser.StartPosition = FormStartPosition.CenterParent;
-                formEditUser.ShowDialog();
-                originalDataTable = LoadUsersData();
-                gunaDataGridViewUsers.DataSource = originalDataTable;
-            } else {
-                MessageBox.Show("No se ha selecionado ningún usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -135,34 +112,9 @@ namespace vila_tour_di {
                     MessageBoxIcon.Warning
                 );
 
-                if (result == DialogResult.Yes)
-                {
-                    string apiUrl = $"http://127.0.0.1:8080/users/{userId}"; // URL con el ID del usuario
-                    var client = new RestClient(apiUrl, "DELETE");
-
-                    try
-                    {
-                        string response = client.DeleteItem();
-
-                        // Verificar la respuesta
-                        if (!string.IsNullOrEmpty(response))
-                        {
-                            MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al eliminar el usuario. Por favor, inténtalo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        // Recargar la lista de usuarios después de eliminar
-                        originalDataTable = LoadUsersData();
-                        gunaDataGridViewUsers.DataSource = originalDataTable;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocurrió un error al intentar eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                if (result == DialogResult.Yes) { }
+                
+              
             }
             else
             {
