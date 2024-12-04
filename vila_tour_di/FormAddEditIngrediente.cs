@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -15,12 +16,14 @@ namespace vila_tour_di {
         int idIng;
         string nameIng;
         CategoryIngredient catIng;
+        string token = AppState.JwtData.Token;
+
 
 
         // Constructor para agregar un ingrediente
         public FormAddEditIngrediente() {
             InitializeComponent();
-            labelTitle.Text = "Añadir ingrediente";
+            labelTitle.Text = "AÑADIR INGREDIENTE";
             
             LoadCategoriesIngredientsData();
 
@@ -28,12 +31,11 @@ namespace vila_tour_di {
         }
 
         public FormAddEditIngrediente(int id, string name, CategoryIngredient category) {
+            isEditing = true;
             InitializeComponent();
 
-            isEditing = true;
-
             LoadCategoriesIngredientsData();
-            labelTitle.Text = "Editar ingrediente";
+            labelTitle.Text = "EDITAR INGREDIENTE";
             idIng = id;
             nameIng = name;
             catIng = category;
@@ -46,7 +48,7 @@ namespace vila_tour_di {
                 guna2ComboBoxCategory.SelectedValue = catIng.id;
             }
 
-            this.Text = "Editar ingrediente";
+            this.Text = "EDITAR INGREDIENTE";
 
             this.FormClosed += FormAddIngrediente_FormClosed; // Suscribirse al evento FormClosed
         }
@@ -55,66 +57,64 @@ namespace vila_tour_di {
             Dispose();
         }
 
+
         private void bttbAddIngredient_Click(object sender, EventArgs e) {
-            // Obtener los datos del formulario
             string name = guna2TextBoxName.Text;
             CategoryIngredient category = guna2ComboBoxCategory.SelectedItem as CategoryIngredient;
-            
+
             if (isEditing) {
-
-                // Crear un objeto con los datos actualizados
                 Ingredient updatedIngredient = new Ingredient(idIng, name, category);
-
-                
-                // Serializar el objeto newIngredient a JSON
                 string jsonData = JsonSerializer.Serialize(updatedIngredient);
-
-                // Configurar la URL para el endpoint de PUT con el ID correspondiente
                 string url = $"http://127.0.0.1:8080/ingredients/{idIng}";
-                RestClient restClient = new RestClient(url, "PUT");
 
-                // Realizar la solicitud PUT usando el método putItem en el RestClient
-                string response = restClient.PutItem(jsonData);
+                using (HttpClient client = new HttpClient()) {
+                    try {
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                        HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                        HttpResponseMessage response = client.PutAsync(url, content).Result;
 
-                // Verificar la respuesta
-                if (response == jsonData) {
-                    MessageBox.Show("Ingrediente editado correctamente.",
-                        "Editado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                        );
-                    Dispose();
-                } else {
-                    MessageBox.Show("Problema al editar el ingrediente. No editada.",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
+                        if (response.IsSuccessStatusCode) {
+                            MessageBox.Show("Ingrediente editado correctamente", "Editado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        } else {
+                            MessageBox.Show($"Problema al editar categoría. Error: {response.StatusCode} - {response.ReasonPhrase}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error al realizar la solicitud: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             } else {
-                // Crear el objeto Ingredient
                 Ingredient newIngredient = new Ingredient(name: name, categoryIngredient: category);
 
+                if (category != null) {
+                    string jsonData = JsonSerializer.Serialize(newIngredient);
+                    string url = "http://127.0.0.1:8080/ingredients";
 
-                string jsonData = JsonSerializer.Serialize(newIngredient);
-                string res = string.Empty;
+                    using (HttpClient client = new HttpClient()) {
+                        try {
+                            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                            HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                            HttpResponseMessage response = client.PostAsync(url, content).Result;
 
-                // Estamos agregando un nuevo ingrediente
-                string url = "http://127.0.0.1:8080/ingredients";
-                RestClient r = new RestClient(url, "POST");
-                res = r.PostItem(jsonData);  // Realizamos un POST para agregar el ingrediente
-                Console.WriteLine("RESPUESTA: " + res);
+                            if (response.IsSuccessStatusCode) {
+                                MessageBox.Show("Ingrediente creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Dispose();
+                            } else {
+                                string errorResponse = response.Content.ReadAsStringAsync().Result;
 
-                if (res.Contains("\"errorCode\":101")) {
-                    MessageBox.Show("Ingrediente ya existente",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                        );
+                                if (errorResponse.Contains("\"errorCode\":101")) {
+                                    MessageBox.Show("Ingrediente ya existente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                } else {
+                                    MessageBox.Show($"Error al crear el Ingrediente: {response.StatusCode} - {response.ReasonPhrase}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        } catch (Exception ex) {
+                            MessageBox.Show("Error al realizar la solicitud: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                } else {
+                    MessageBox.Show("Debe seleccionar una categoría.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                Dispose();
             }
-
         }
 
         private void LoadCategoriesIngredientsData() {

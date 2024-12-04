@@ -129,7 +129,7 @@ namespace vila_tour_di {
 
                 // Confirmación antes de eliminar
                 DialogResult result = MessageBox.Show(
-                    "¿Estás seguro de que deseas eliminar este usuario?",
+                    $"¿Estás seguro de que deseas eliminar a {selectedRow.Cells["Nombre"].Value}?",
                     "Confirmar eliminación",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
