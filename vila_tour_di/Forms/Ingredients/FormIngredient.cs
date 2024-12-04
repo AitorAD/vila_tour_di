@@ -49,7 +49,7 @@ namespace vila_tour_di {
 
         // Añadir Ingrediente
         private void guna2Button1_Click(object sender, EventArgs e) {
-            FormAddEditIngrediente formAddIng = new FormAddEditIngrediente();
+            FormAddEditIngredient formAddIng = new FormAddEditIngredient();
             formAddIng.Owner = this; // Establecer el formulario principal como propietario
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
@@ -93,7 +93,7 @@ namespace vila_tour_di {
                 } else {
                     MessageBox.Show("No se pudieron obtener los datos");
                 }
-                FormAddEditIngrediente formAddIng = new FormAddEditIngrediente(idIngredient, name, newCategory);
+                FormAddEditIngredient formAddIng = new FormAddEditIngredient(idIngredient, name, newCategory);
                 formAddIng.StartPosition = FormStartPosition.CenterParent;
                 formAddIng.Owner = this; // Establecer el formulario principal como propietarIO
                 formAddIng.ShowDialog();

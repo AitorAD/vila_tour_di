@@ -11,7 +11,7 @@ using System.Text.Json;
 using System.Windows.Forms;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 namespace vila_tour_di {
-    public partial class FormAddEditIngrediente : Form {
+    public partial class FormAddEditIngredient : Form {
         bool isEditing = false;
         int idIng;
         string nameIng;
@@ -21,7 +21,7 @@ namespace vila_tour_di {
 
 
         // Constructor para agregar un ingrediente
-        public FormAddEditIngrediente() {
+        public FormAddEditIngredient() {
             InitializeComponent();
             labelTitle.Text = "AÑADIR INGREDIENTE";
             
@@ -30,7 +30,7 @@ namespace vila_tour_di {
             this.FormClosed += FormAddIngrediente_FormClosed; // Suscribirse al evento FormClosed
         }
 
-        public FormAddEditIngrediente(int id, string name, CategoryIngredient category) {
+        public FormAddEditIngredient(int id, string name, CategoryIngredient category) {
             isEditing = true;
             InitializeComponent();
 
