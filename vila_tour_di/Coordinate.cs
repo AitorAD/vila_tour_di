@@ -15,13 +15,11 @@ namespace vila_tour_di
         public Place place { get; set; }
         public List<Festival> festivals { get; set; }
 
-        public Coordinate(string name, double latitude, double longitude, Place place, List<Festival> festivals)
+        public Coordinate(string name, double latitude, double longitude)
         {
             this.name = name;
             this.latitude = latitude;
             this.longitude = longitude;
-            this.place = place;
-            this.festivals = festivals;
         }
 
         public Coordinate() { }
