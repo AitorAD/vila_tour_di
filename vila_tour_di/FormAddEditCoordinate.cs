@@ -22,6 +22,7 @@ namespace vila_tour_di
             loadMap();
         }
 
+
         public FormAddEditCoordinate(Coordinate coordinate)
         {
             InitializeComponent();
