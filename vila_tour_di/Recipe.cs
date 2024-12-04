@@ -20,20 +20,6 @@ namespace vila_tour_di
         public bool recent { get; set; }
         public List<Ingredient> ingredients { get; set; }
 
-        public Recipe(int id, string name, string description, string imagensPaths, double averageScore, DateTime creationDate, DateTime lastModificationDate, string review, bool approved, bool recent, List<Ingredient> ingredients) {
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.imagensPaths = imagensPaths;
-            this.averageScore = averageScore;
-            this.creationDate = creationDate;
-            this.lastModificationDate = lastModificationDate;
-            this.review = review;
-            this.approved = approved;
-            this.recent = recent;
-            this.ingredients = ingredients;
-        }
-
         public Recipe(string name, string description, string imagesPaths, double averageScore, bool approved, bool recent, List<Ingredient> ingredients) {
             this.id = id;
             this.name = name;

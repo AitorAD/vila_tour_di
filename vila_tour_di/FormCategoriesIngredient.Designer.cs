@@ -293,7 +293,7 @@ namespace vila_tour_di {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormCategoriesIngredient";
-            this.Text = "FormCategories";
+            this.Text = "Categorías de ingredientes";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);

@@ -63,7 +63,7 @@ namespace vila_tour_di {
         }
 
         private void bttnAddCategoryIngredient_Click(object sender, EventArgs e) {
-            FormAddCategoryIngredient formAddCategory = new FormAddCategoryIngredient();
+            FormAddEditCategoryIngredient formAddCategory = new FormAddEditCategoryIngredient();
             formAddCategory.StartPosition = FormStartPosition.CenterParent;
             formAddCategory.ShowDialog();
             loadCategoriesInDataGridView();
@@ -87,7 +87,7 @@ namespace vila_tour_di {
                     };
 
                     // Crear y mostrar el formulario de edición
-                    FormAddCategoryIngredient formAddCategory = new FormAddCategoryIngredient(category);
+                    FormAddEditCategoryIngredient formAddCategory = new FormAddEditCategoryIngredient(category);
                     formAddCategory.StartPosition = FormStartPosition.CenterParent;
                     formAddCategory.ShowDialog();
 
