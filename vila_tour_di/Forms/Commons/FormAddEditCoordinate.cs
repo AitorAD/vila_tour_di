@@ -20,16 +20,17 @@ namespace vila_tour_di
         {
             InitializeComponent();
             loadMap();
+            lblLat.Text = initialLocation.latitude.ToString("F6");
+            lblLon.Text = initialLocation.longitude.ToString("F6");
         }
 
-
-        public FormAddEditCoordinate(Coordinate coordinate)
+        public FormAddEditCoordinate(Coordinate coordinate, bool editable)
         {
             InitializeComponent();
             loadMap(coordinate);
         }
 
-        private void loadMap( Coordinate coordinate)
+        private void loadMap(Coordinate coordinate)
         {
             gMapControl1.MapProvider = GMapProviders.OpenStreetMap;
             GMaps.Instance.Mode = AccessMode.ServerAndCache;

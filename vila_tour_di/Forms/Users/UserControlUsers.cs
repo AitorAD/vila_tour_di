@@ -1,5 +1,4 @@
-﻿using ClientRESTAPI;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Data;
 using System.Collections.Generic;
@@ -11,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using System.Net.Http;
+using ClientRESTAPI;
 
 namespace vila_tour_di {
     public partial class UserControlUsers : UserControl {
