@@ -66,8 +66,22 @@ namespace vila_tour_di.Services {
                 return false;
             }
         }
-        public bool DeleteCategory() {
 
+        public static bool DeleteCategory(int categoryId) {
+            // Configurar la URL para el endpoint de eliminación (incluye el ID en la URL)
+            string url = $"http://127.0.0.1:8080/categories/{categoryId}";
+
+            // Llamar al servicio de la API para realizar la solicitud DELETE
+            var response = ApiService.Delete(url);
+
+            if (response != null && response.IsSuccessStatusCode) {
+                MessageBox.Show("Categoría eliminada exitosamente.");
+                return true;
+            } else {
+                MessageBox.Show($"Error al eliminar categoría. Error: {response?.StatusCode} - {response?.ReasonPhrase}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
     }
 }
