@@ -132,7 +132,11 @@
   <ItemGroup>
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Services\CategoryIngredientService.cs" />
+    <Compile Include="Services\CategoryPlacesService.cs" />
+    <Compile Include="Services\CoordinateService.cs" />
+    <Compile Include="Services\FestivalService.cs" />
     <Compile Include="Services\IngredientService.cs" />
+    <Compile Include="Services\PlaceService.cs" />
     <Compile Include="Services\RecipeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\AppState.cs" />

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class UserControlRecipes : UserControl {
@@ -86,12 +87,12 @@ namespace vila_tour_di {
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
-
                 if (result == DialogResult.Yes) {
-
+                    RecipeService.DeleteRecipe(recipeId);
                 } else {
                     MessageBox.Show("No se ha seleccionado ninguna receta para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                gunaDataGridViewRecipes.DataSource = LoadRecipesData();
             }
         }
     }
