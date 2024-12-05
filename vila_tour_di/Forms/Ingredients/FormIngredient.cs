@@ -1,10 +1,8 @@
-﻿using ClientRESTAPI;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Net.Http;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class FormIngredient : Form {
@@ -29,8 +27,10 @@ namespace vila_tour_di {
                 table.Columns.Add("Nombre");
                 table.Columns.Add("Categoria");
 
+            List<Ingredient> ingredients = IngredientService.GetIngredients();
+
             // Agregamos los users a la tabla
-            foreach (var ingredient in Ingredient.GetIngredients()) {
+            foreach (var ingredient in ingredients) {
                 table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category);
             }
 
@@ -50,7 +50,7 @@ namespace vila_tour_di {
         // Añadir Ingrediente
         private void guna2Button1_Click(object sender, EventArgs e) {
             FormAddEditIngredient formAddIng = new FormAddEditIngredient();
-            formAddIng.Owner = this; // Establecer el formulario principal como propietario
+            formAddIng.Owner = this; 
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
             LoadIngredientsInDataGridView();
@@ -58,50 +58,27 @@ namespace vila_tour_di {
 
         // Editar Ingrediente
         private void btnEditIngredient_Click(object sender, EventArgs e) {
-            // Aqui hay que cargar un ingrediente, el que esta selecionado
             if (guna2DataGridView1.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
 
-                var selectedRow = guna2DataGridView1.SelectedRows[0];
+                // Verificamos si el valor de la celda es válido y se puede convertir a int
+                if (selectedRow.Cells["ID"].Value != null && int.TryParse(selectedRow.Cells["ID"].Value.ToString(), out int ingredientId)) {
+                    // Usamos el ID para obtener el objeto Ingredient de tu servicio
+                    Ingredient selectedIngredient = IngredientService.GetIngredientById(ingredientId);
 
-                int idIngredient = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
-                string name = selectedRow.Cells["Nombre"].Value.ToString();
-
-                string category_string = selectedRow.Cells["Categoria"].Value.ToString();
-
-
-
-                string apiUrl = "http://127.0.0.1:8080/categories";
-                var client = new RestClient(apiUrl, "GET");
-                string jsonResponse = client.GetItem();
-
-                CategoryIngredient newCategory = null;
-                if (jsonResponse != null) {
-                    try {
-                        var categories = JsonConvert.DeserializeObject<List<CategoryIngredient>>(jsonResponse);
-
-                        if (category_string != "None") {
-                            foreach (var category in categories) {
-                                if (category_string == category.name) {
-                                    newCategory = category;
-                                }
-                             
-                            }
-                        }
-                    } catch (Exception ex) {
-                        MessageBox.Show("Error al procesar los datos");
-                    }
+                    // Ahora puedes usar selectedIngredient para editarlo
+                    FormAddEditIngredient editForm = new FormAddEditIngredient(selectedIngredient);
+                    editForm.Owner = this;
+                    editForm.StartPosition = FormStartPosition.CenterParent;
+                    editForm.ShowDialog();
                 } else {
-                    MessageBox.Show("No se pudieron obtener los datos");
+                    MessageBox.Show("No se pudo obtener el ID del ingrediente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                FormAddEditIngredient formAddIng = new FormAddEditIngredient(idIngredient, name, newCategory);
-                formAddIng.StartPosition = FormStartPosition.CenterParent;
-                formAddIng.Owner = this; // Establecer el formulario principal como propietarIO
-                formAddIng.ShowDialog();
-                LoadIngredientsInDataGridView();
             } else {
-                MessageBox.Show("No se ha selecionado nigun ingrediente");
+                MessageBox.Show("Debe seleccionar un ingrediente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnCategoryIngredient_Click(object sender, EventArgs e) {
             FormCategoriesIngredient formCategories = new FormCategoriesIngredient();
@@ -121,23 +98,10 @@ namespace vila_tour_di {
                 var confirmResult = MessageBox.Show("¿Estás seguro de que quieres eliminar este ingrediente?",
                                                     "Confirmar eliminación",
                                                     MessageBoxButtons.YesNo);
-
                 if (confirmResult == DialogResult.Yes) {
-                    // Crear la URL para el DELETE con el ID del ingrediente
-                    string url = $"http://127.0.0.1:8080/ingredients/{idIngredient}";
-                    RestClient client = new RestClient(url, "DELETE");
-
-                    // Realizar la solicitud DELETE
-                    string response = client.DeleteItem();  // Método DELETE en RestClient, pero si tienes un método específico usa client.deleteItem()
-
-                    // Verificar la respuesta y actualizar el DataGridView si fue exitoso
-                    if (!string.IsNullOrEmpty(response)) {
-                        MessageBox.Show("Ingrediente eliminado exitosamente.");
-                        LoadIngredientsInDataGridView(); // Llama a un método que recargue los datos en el DataGridView
-                    } else {
-                        MessageBox.Show("Error al eliminar el ingrediente.");
-                    }
+                    IngredientService.DeleteIngredient(idIngredient);
                 }
+
             } else {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");
             }

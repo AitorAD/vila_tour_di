@@ -19,7 +19,7 @@ namespace vila_tour_di {
         }
 
         public override string ToString() {
-            return $"{id} - {name}";
+            return $"{name}";
         }
     }
 }

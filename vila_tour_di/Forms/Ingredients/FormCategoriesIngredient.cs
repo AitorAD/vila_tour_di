@@ -1,15 +1,11 @@
-﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class FormCategoriesIngredient : Form {
@@ -28,7 +24,6 @@ namespace vila_tour_di {
         }
 
         public DataTable loadCategoriesData() {
-
             Console.WriteLine("Cargando categorias");
 
             string apiUrl = "http://127.0.0.1:8080/categories";
@@ -40,43 +35,18 @@ namespace vila_tour_di {
                 table.Columns.Add("ID", typeof(int));
                 table.Columns.Add("Nombre");
 
-            using (HttpClient client = new HttpClient()) {
-                try {
-                    // Agregar el token
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            List<CategoryIngredient> categories = CategoryIngredientService.GetCategoriesIngredient();
 
-                    // Hacer la peticion
-                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
-
-                    if (response.IsSuccessStatusCode) {
-                        // Leer la respuesta
-                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
-                        // Deserializarla
-                        var categories = JsonConvert.DeserializeObject<List<User>>(jsonResponse);
-
-                        // Agregamos los users a la tabla
-                        foreach (var category in categories) {
-                            table.Rows.Add(category.id, category.name);
-                        }
-                    } else {
-                        MessageBox.Show($"Error al obtener los datos: {response.StatusCode} - {response.ReasonPhrase}", "Error",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                } catch (Exception ex) {
-                    MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            foreach (var category in categories) {
+                table.Rows.Add(category.id, category.name);
             }
+
             return table;
         }
 
         public void loadCategoriesInDataGridView() {
             DataTable categoriesTable = loadCategoriesData();
-
             guna2DataGridViewCATING.DataSource = categoriesTable;
-
             guna2DataGridViewCATING.Refresh();
         }
 
@@ -135,38 +105,19 @@ namespace vila_tour_di {
                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmResult == DialogResult.Yes) {
-                    // Crear la URL para el DELETE con el ID de la categoria
-                    string url = $"http://127.0.0.1:8080/categories/{id}";
                     string token = AppState.JwtData.Token;
 
+                    // Llamar al método de eliminación en CategoryService
+                    bool success = CategoryIngredientService.DeleteCategory(id);
 
-                    try {
-                        using (HttpClient client = new HttpClient()) {
-
-                            // Agregar token al encabezado
-                            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-                            // Solicitud Delete
-                            HttpResponseMessage response = client.DeleteAsync(url).Result;
-
-                            // Verificar la respuesta
-                            if (response.IsSuccessStatusCode) {
-                                MessageBox.Show("Categoría eliminada exitosamente.");
-                                guna2DataGridViewCATING.DataSource = loadCategoriesData();
-                            } else {
-                                MessageBox.Show($"Error al eliminar el producto: {response.StatusCode} - {response.ReasonPhrase}",
-                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    } catch (Exception ex){
-                        MessageBox.Show($"Ocurrió un error al procesar la solicitud: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (success) {
+                        // Actualizar la vista de las categorías
+                        guna2DataGridViewCATING.DataSource = loadCategoriesData();
                     }
                 }
             } else {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");
             }
-            guna2DataGridViewCATING.DataSource = loadCategoriesData();
         }
 
         private void bttnExit_Click(object sender, EventArgs e) {
