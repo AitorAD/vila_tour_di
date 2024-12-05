@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using System.Net.Http;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class UserControlUsers : UserControl {
@@ -103,7 +104,6 @@ namespace vila_tour_di {
             {
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
                 int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-
                 // Confirmación antes de eliminar
                 DialogResult result = MessageBox.Show(
                     $"¿Estás seguro de que deseas eliminar a {selectedRow.Cells["Nombre"].Value}?",
@@ -111,10 +111,11 @@ namespace vila_tour_di {
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
-
-                if (result == DialogResult.Yes) { }
-                
-              
+                if (result == DialogResult.Yes) {
+                    if (UserService.DeleteUser(userId)) {
+                        Dispose();
+                    }
+                }
             }
             else
             {
