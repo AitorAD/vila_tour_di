@@ -1,5 +1,4 @@
-﻿using ClientRESTAPI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -85,14 +84,12 @@ namespace vila_tour_di
 
             string url = "http://127.0.0.1:8080/users";
 
-            RestClient client;
             string datos;
             string resultado;
 
             if (labelTitle.Text == "Editar usuario" && _currentUser != null)
             {
                 // Enviar actualización (PUT)
-                client = new RestClient($"{url}/{_currentUser.id}", "PUT");
                 datos = "{" +
                     $"\"username\": \"{username}\", " +
                     $"\"email\": \"{email}\", " +
@@ -102,19 +99,11 @@ namespace vila_tour_di
                     $"\"surname\": \"{surname}\", " +
                     $"\"profilePicture\": \"{profilePicture}\"" +
                 "}";
-                resultado = client.PutItem(datos);
 
-                if (resultado.Contains("name")) {
-                    MessageBox.Show("Usuario editado con éxito.");
-                }
-                else {
-                    MessageBox.Show("Error al editar el usuario.");
-                }
             }
             else
             {
                 // Crear nuevo usuario (POST)
-                client = new RestClient(url, "POST");
                 datos = "{" +
                     $"\"username\": \"{username}\", " +
                     $"\"email\": \"{email}\", " +
@@ -124,16 +113,8 @@ namespace vila_tour_di
                     $"\"surname\": \"{surname}\", " +
                     $"\"profilePicture\": \"{profilePicture}\"" +
                 "}";
-                resultado = client.PostItem(datos);
 
-                if (resultado.Contains("name")) // Ajusta esta condición según el formato de la respuesta del servidor
-                {
-                    MessageBox.Show("Usuario añadido con éxito.");
-                }
-                else
-                {
-                    MessageBox.Show("Error al añadir el usuario.");
-                }
+              
             }
 
             Dispose();

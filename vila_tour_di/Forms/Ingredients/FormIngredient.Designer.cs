@@ -71,13 +71,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.81462F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.18538F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bttnAddIngredient, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.bttnExit, 2, 6);
             this.tableLayoutPanel1.Controls.Add(label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2DataGridView1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnDelete, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnCategoryIngredient, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnEditIngredient, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnEditIngredient, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.bttnAddIngredient, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnCategoryIngredient, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -155,7 +155,7 @@
             this.bttnAddIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bttnAddIngredient.ForeColor = System.Drawing.Color.White;
             this.bttnAddIngredient.Image = ((System.Drawing.Image)(resources.GetObject("bttnAddIngredient.Image")));
-            this.bttnAddIngredient.Location = new System.Drawing.Point(701, 95);
+            this.bttnAddIngredient.Location = new System.Drawing.Point(701, 164);
             this.bttnAddIngredient.Name = "bttnAddIngredient";
             this.bttnAddIngredient.Size = new System.Drawing.Size(50, 50);
             this.bttnAddIngredient.TabIndex = 0;
@@ -272,7 +272,7 @@
             this.btnCategoryIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCategoryIngredient.ForeColor = System.Drawing.Color.White;
             this.btnCategoryIngredient.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoryIngredient.Image")));
-            this.btnCategoryIngredient.Location = new System.Drawing.Point(701, 233);
+            this.btnCategoryIngredient.Location = new System.Drawing.Point(701, 95);
             this.btnCategoryIngredient.Name = "btnCategoryIngredient";
             this.btnCategoryIngredient.Size = new System.Drawing.Size(50, 50);
             this.btnCategoryIngredient.TabIndex = 18;
@@ -292,7 +292,7 @@
             this.btnEditIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEditIngredient.ForeColor = System.Drawing.Color.White;
             this.btnEditIngredient.Image = ((System.Drawing.Image)(resources.GetObject("btnEditIngredient.Image")));
-            this.btnEditIngredient.Location = new System.Drawing.Point(701, 164);
+            this.btnEditIngredient.Location = new System.Drawing.Point(701, 233);
             this.btnEditIngredient.Name = "btnEditIngredient";
             this.btnEditIngredient.Size = new System.Drawing.Size(50, 50);
             this.btnEditIngredient.TabIndex = 24;
