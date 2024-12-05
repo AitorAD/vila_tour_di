@@ -130,6 +130,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="RestClient.cs" />
+=======
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Services\CategoryIngredientService.cs" />
     <Compile Include="Services\CategoryPlacesService.cs" />
@@ -139,6 +142,7 @@
     <Compile Include="Services\PlaceService.cs" />
     <Compile Include="Services\RecipeService.cs" />
     <Compile Include="Services\UserService.cs" />
+>>>>>>> develop
     <Compile Include="Utils\AppState.cs" />
     <Compile Include="Models\CategoryIngredient.cs" />
     <Compile Include="Models\CategoryPlace.cs" />

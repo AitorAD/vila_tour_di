@@ -56,7 +56,7 @@ namespace vila_tour_di {
                         // Agregamos los users a la tabla
                         foreach (var place in places)
                         {
-                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace, place.creator);
+                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace.name, place.creator.name);
                         }
                     }
                     else
