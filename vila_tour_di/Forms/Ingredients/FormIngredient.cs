@@ -50,7 +50,7 @@ namespace vila_tour_di {
         // Añadir Ingrediente
         private void guna2Button1_Click(object sender, EventArgs e) {
             FormAddEditIngredient formAddIng = new FormAddEditIngredient();
-            formAddIng.Owner = this; // Establecer el formulario principal como propietario
+            formAddIng.Owner = this; 
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
             LoadIngredientsInDataGridView();
@@ -58,8 +58,27 @@ namespace vila_tour_di {
 
         // Editar Ingrediente
         private void btnEditIngredient_Click(object sender, EventArgs e) {
-            
+            if (guna2DataGridView1.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
+
+                // Verificamos si el valor de la celda es válido y se puede convertir a int
+                if (selectedRow.Cells["ID"].Value != null && int.TryParse(selectedRow.Cells["ID"].Value.ToString(), out int ingredientId)) {
+                    // Usamos el ID para obtener el objeto Ingredient de tu servicio
+                    Ingredient selectedIngredient = IngredientService.GetIngredientById(ingredientId);
+
+                    // Ahora puedes usar selectedIngredient para editarlo
+                    FormAddEditIngredient editForm = new FormAddEditIngredient(selectedIngredient);
+                    editForm.Owner = this;
+                    editForm.StartPosition = FormStartPosition.CenterParent;
+                    editForm.ShowDialog();
+                } else {
+                    MessageBox.Show("No se pudo obtener el ID del ingrediente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } else {
+                MessageBox.Show("Debe seleccionar un ingrediente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnCategoryIngredient_Click(object sender, EventArgs e) {
             FormCategoriesIngredient formCategories = new FormCategoriesIngredient();
@@ -79,6 +98,9 @@ namespace vila_tour_di {
                 var confirmResult = MessageBox.Show("¿Estás seguro de que quieres eliminar este ingrediente?",
                                                     "Confirmar eliminación",
                                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes) {
+                    IngredientService.DeleteIngredient(idIngredient);
+                }
 
             } else {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");

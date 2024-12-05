@@ -28,7 +28,6 @@ namespace vila_tour_di {
 
         private void bttbAddCatIngredient_Click_1(object sender, EventArgs e) {
             // Obtener los datos del formulario
-
             string categoryName = guna2TextBoxNombreCat.Text.ToUpper();
 
             //Logica de editar
