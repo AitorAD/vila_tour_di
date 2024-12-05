@@ -1,36 +1,44 @@
 ﻿using GMap.NET;
 using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace vila_tour_di
 {
     public partial class FormAddEditCoordinate : Form
     {
+        private Coordinate initialLocation = new Coordinate("Ies Marcos Zaragoza", 38.504719, -0.240991);
+        private bool isEditable;
+        private GMapMarker marker;
 
-        private Coordinate initialLocation = new Coordinate("Ies Marcos Zaragoza", 38.504719,-0.240991); 
         public FormAddEditCoordinate()
         {
             InitializeComponent();
-            loadMap();
+            isEditable = true;
+            loadMap(initialLocation, isEditable);
             lblLat.Text = initialLocation.latitude.ToString("F6");
             lblLon.Text = initialLocation.longitude.ToString("F6");
+            lblTitle.Text = "Añadir ubicación";
         }
 
         public FormAddEditCoordinate(Coordinate coordinate, bool editable)
         {
             InitializeComponent();
-            loadMap(coordinate);
+            isEditable = editable;
+            loadMap(coordinate, isEditable);
+            txtName.Text = coordinate.name;
+            if (editable) lblTitle.Text = "Editar ubicación";
+            else
+            {
+                lblTitle.Text = "Detalles ubicación";
+                txtName.Enabled = false;
+                btnSave.Enabled = false;
+            }
         }
 
-        private void loadMap(Coordinate coordinate)
+        private void loadMap(Coordinate coordinate, bool editable)
         {
             gMapControl1.MapProvider = GMapProviders.OpenStreetMap;
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
@@ -39,18 +47,27 @@ namespace vila_tour_di
             gMapControl1.MaxZoom = 18;
             gMapControl1.Zoom = 15;
             gMapControl1.DragButton = MouseButtons.Left;
+
+            marker = new GMarkerGoogle(new PointLatLng(coordinate.latitude, coordinate.longitude), GMarkerGoogleType.red_dot);
+            var markersOverlay = new GMapOverlay("markers");
+            markersOverlay.Markers.Add(marker);
+            gMapControl1.Overlays.Add(markersOverlay);
+
+            if (editable)
+            {
+                gMapControl1.OnPositionChanged += gMapControl1_OnPositionChanged;
+            }
         }
 
-        private void loadMap()
+        private void gMapControl1_OnPositionChanged(PointLatLng point)
         {
-            gMapControl1.MapProvider = GMapProviders.OpenStreetMap;
-            GMaps.Instance.Mode = AccessMode.ServerAndCache;
-            gMapControl1.Position = new GMap.NET.PointLatLng(initialLocation.latitude, initialLocation.longitude);
-            gMapControl1.MinZoom = 2;
-            gMapControl1.MaxZoom = 18;
-            gMapControl1.Zoom = 15;
-            gMapControl1.DragButton = MouseButtons.Left;
+            lblLat.Text = point.Lat.ToString("F6");
+            lblLon.Text = point.Lng.ToString("F6");
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

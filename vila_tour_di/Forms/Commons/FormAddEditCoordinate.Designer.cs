@@ -40,11 +40,11 @@ namespace vila_tour_di
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.bttbAddIngredient = new Guna.UI2.WinForms.Guna2Button();
-            this.bttnSalir = new Guna.UI2.WinForms.Guna2Button();
-            this.labelTitle = new System.Windows.Forms.Label();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -89,7 +89,7 @@ namespace vila_tour_di
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gMapControl1, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -192,7 +192,7 @@ namespace vila_tour_di
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.guna2TextBoxName, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtName, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(34, 400);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -214,34 +214,34 @@ namespace vila_tour_di
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Nombre:";
             // 
-            // guna2TextBoxName
+            // txtName
             // 
-            this.guna2TextBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBoxName.DefaultText = "";
-            this.guna2TextBoxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBoxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBoxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxName.Location = new System.Drawing.Point(275, 14);
-            this.guna2TextBoxName.MaxLength = 40;
-            this.guna2TextBoxName.Name = "guna2TextBoxName";
-            this.guna2TextBoxName.PasswordChar = '\0';
-            this.guna2TextBoxName.PlaceholderText = "";
-            this.guna2TextBoxName.SelectedText = "";
-            this.guna2TextBoxName.Size = new System.Drawing.Size(238, 36);
-            this.guna2TextBoxName.TabIndex = 1;
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(275, 14);
+            this.txtName.MaxLength = 40;
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(238, 36);
+            this.txtName.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.bttbAddIngredient, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.bttnSalir, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnSave, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnCancel, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(34, 597);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -250,58 +250,59 @@ namespace vila_tour_di
             this.tableLayoutPanel4.Size = new System.Drawing.Size(564, 86);
             this.tableLayoutPanel4.TabIndex = 25;
             // 
-            // bttbAddIngredient
+            // btnSave
             // 
-            this.bttbAddIngredient.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bttbAddIngredient.Animated = true;
-            this.bttbAddIngredient.BorderRadius = 25;
-            this.bttbAddIngredient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bttbAddIngredient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bttbAddIngredient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bttbAddIngredient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bttbAddIngredient.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.bttbAddIngredient.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bttbAddIngredient.ForeColor = System.Drawing.Color.White;
-            this.bttbAddIngredient.Image = ((System.Drawing.Image)(resources.GetObject("bttbAddIngredient.Image")));
-            this.bttbAddIngredient.Location = new System.Drawing.Point(307, 18);
-            this.bttbAddIngredient.Margin = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.bttbAddIngredient.Name = "bttbAddIngredient";
-            this.bttbAddIngredient.Size = new System.Drawing.Size(50, 50);
-            this.bttbAddIngredient.TabIndex = 22;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSave.Animated = true;
+            this.btnSave.BorderRadius = 25;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(307, 18);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(50, 50);
+            this.btnSave.TabIndex = 22;
             // 
-            // bttnSalir
+            // btnCancel
             // 
-            this.bttnSalir.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bttnSalir.Animated = true;
-            this.bttnSalir.BorderRadius = 25;
-            this.bttnSalir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bttnSalir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bttnSalir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bttnSalir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bttnSalir.FillColor = System.Drawing.Color.Crimson;
-            this.bttnSalir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bttnSalir.ForeColor = System.Drawing.Color.White;
-            this.bttnSalir.Image = ((System.Drawing.Image)(resources.GetObject("bttnSalir.Image")));
-            this.bttnSalir.Location = new System.Drawing.Point(207, 18);
-            this.bttnSalir.Margin = new System.Windows.Forms.Padding(0, 0, 25, 0);
-            this.bttnSalir.Name = "bttnSalir";
-            this.bttnSalir.Size = new System.Drawing.Size(50, 50);
-            this.bttnSalir.TabIndex = 21;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancel.Animated = true;
+            this.btnCancel.BorderRadius = 25;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.Crimson;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(207, 18);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0, 0, 25, 0);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(50, 50);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // labelTitle
+            // lblTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tableLayoutPanel1.SetColumnSpan(this.labelTitle, 3);
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(3, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(628, 92);
-            this.labelTitle.TabIndex = 5;
-            this.labelTitle.Text = "Añadir/Editar/Detalles Lugar";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.tableLayoutPanel1.SetColumnSpan(this.lblTitle, 3);
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(628, 92);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "Añadir/Editar/Detalles Ubicación";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormAddEditCoordinate
             // 
@@ -310,8 +311,9 @@ namespace vila_tour_di
             this.ClientSize = new System.Drawing.Size(634, 711);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormAddEditCoordinate";
-            this.Text = "Coordenada";
+            this.Text = "Ubicación";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -329,13 +331,13 @@ namespace vila_tour_di
 
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private Guna.UI2.WinForms.Guna2Button bttbAddIngredient;
-        private Guna.UI2.WinForms.Guna2Button bttnSalir;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxName;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLon;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;

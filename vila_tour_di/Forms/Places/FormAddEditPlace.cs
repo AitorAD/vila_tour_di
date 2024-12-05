@@ -38,6 +38,8 @@ namespace vila_tour_di
             txtName.Text = place.name;
             comboCategory.SelectedItem = place.categoryPlace;
             txtDescription.Text = place.description;
+            lblCreationDate.Text = "Fecha de creación: " + place.creationDate;
+            lblLastModificationDate.Text = "Última modificación: " + place.lastModificationDate;
 
             if (place.imagensPaths != null)
             {

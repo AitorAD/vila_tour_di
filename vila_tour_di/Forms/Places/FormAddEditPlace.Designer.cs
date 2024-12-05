@@ -430,6 +430,7 @@ namespace vila_tour_di
             this.ClientSize = new System.Drawing.Size(571, 646);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormAddEditPlace";
             this.Text = "Lugar turístico";
             this.tableLayoutPanel1.ResumeLayout(false);
