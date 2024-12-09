@@ -33,17 +33,22 @@ namespace vila_tour_di
             InitializeComponent();
             isEditable = editable;
             currentCoordinate = coordinate;
+
+            MessageBox.Show(""+currentCoordinate.id);
+
             loadMap(coordinate, isEditable);
             txtName.Text = coordinate.name;
             lblLat.Text = coordinate.latitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
             lblLon.Text = coordinate.longitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
             lblTitle.Text = editable ? "Editar ubicación" : "Detalles ubicación";
+
             if (!editable)
             {
                 txtName.Enabled = false;
                 btnSave.Enabled = false;
             }
         }
+
 
         private void loadMap(Coordinate coordinate, bool editable)
         {
@@ -85,13 +90,32 @@ namespace vila_tour_di
             if (currentCoordinate == null)
             {
                 Coordinate coordinate = new Coordinate(txtName.Text, lat, lon);
-                if (CoordinateService.AddCoordinate(coordinate))
+                var res = CoordinateService.AddCoordinate(coordinate);
+
+                if (res.StatusCode == System.Net.HttpStatusCode.Created)
                 {
-                    currentCoordinate = coordinate;
-                    DialogResult = DialogResult.OK;
-                    Dispose();
+                    string jsonResponse = res.Content.ReadAsStringAsync().Result;
+
+                    try
+                    {
+                        currentCoordinate = System.Text.Json.JsonSerializer.Deserialize<Coordinate>(jsonResponse);
+
+                        DialogResult = DialogResult.OK;
+                        Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al procesar la respuesta: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Error al añadir la coordenada. Código de estado: {res.StatusCode}");
                 }
             }
+
+
+
             else
             {
                 currentCoordinate.name = txtName.Text;
@@ -99,9 +123,14 @@ namespace vila_tour_di
                 currentCoordinate.longitude = lon;
                 if (CoordinateService.UpdateCoordinate(currentCoordinate))
                 {
+                    MessageBox.Show("Coordenada actualizada correctamente.");
                     DialogResult = DialogResult.OK;
-                    Dispose();
                 }
+                else
+                {
+                    MessageBox.Show("Error al actualizar la coordenada.");
+                }
+
             }
         }
 

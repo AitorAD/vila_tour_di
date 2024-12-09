@@ -97,26 +97,18 @@ namespace vila_tour_di
 
         private void btnLocation_Click(object sender, EventArgs e)
         {
-            FormAddEditCoordinate formAddEditCoordinate;
-            if (currentCoordinate == null)
-            {
-                formAddEditCoordinate = new FormAddEditCoordinate();
-            }
-            else
-            {
-                formAddEditCoordinate = new FormAddEditCoordinate(currentCoordinate, true);
-            }
-            formAddEditCoordinate.StartPosition = FormStartPosition.CenterScreen;
-            formAddEditCoordinate.ShowDialog(); // Para que esperes a que se cierre el formulario de coordenadas
+            FormAddEditCoordinate formAddEditCoordinate = currentCoordinate == null
+                ? new FormAddEditCoordinate()
+                : new FormAddEditCoordinate(currentCoordinate, true);
 
-            // Actualiza la coordenada actual si se ha cambiado
-            if (formAddEditCoordinate.DialogResult == DialogResult.OK)
+            formAddEditCoordinate.StartPosition = FormStartPosition.CenterScreen;
+            var result = formAddEditCoordinate.ShowDialog();
+
+            if (result == DialogResult.OK)
             {
                 currentCoordinate = formAddEditCoordinate.CurrentCoordinate;
             }
         }
-
-
 
         private string ConvertImageToBase64(string filePath)
         {

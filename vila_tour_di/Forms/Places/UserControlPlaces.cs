@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Net.Http;
 using System.Windows.Forms;
+using vila_tour_di.Forms.Places;
 
 namespace vila_tour_di {
     public partial class UserControlPlaces : UserControl {
@@ -56,7 +57,7 @@ namespace vila_tour_di {
                         // Agregamos los users a la tabla
                         foreach (var place in places)
                         {
-                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace.name, place.creator.name);
+                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace?.name ?? "Sin asignar", place.creator.name);
                         }
                     }
                     else
@@ -91,7 +92,6 @@ namespace vila_tour_di {
             {
                 var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
 
-                // Atributos
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/places/{id}";
@@ -270,5 +270,11 @@ namespace vila_tour_di {
             }
         }
 
+        private void btnCategoriesPlace_Click(object sender, EventArgs e)
+        {
+            FormCategoryPlace formCategories = new FormCategoryPlace();
+            formCategories.StartPosition = FormStartPosition.CenterParent;
+            formCategories.ShowDialog();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,10 +25,10 @@ namespace vila_tour_di.Services
         }
 
         // Crear una nueva coordenada
-        public static bool AddCoordinate(Coordinate coordinate)
+        public static HttpResponseMessage AddCoordinate(Coordinate coordinate)
         {
-            var response = ApiService.Post(baseUrl, coordinate);
-            return ApiService.HandleResponse(response, "Coordenada creada correctamente.", "Error al crear la coordenada");
+            HttpResponseMessage response = ApiService.Post(baseUrl, coordinate);
+            return response;
         }
 
         // Actualizar coordenada

@@ -12,10 +12,15 @@ namespace vila_tour_di
         public string name { get; set; }
         public List<Place> places { get; set; }
 
-        public CategoryPlace(string name, List<Place> places)
+        public CategoryPlace(string name)
         {
             this.name = name;
-            this.places = places;
+        }
+
+        public CategoryPlace(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
         }
 
         public CategoryPlace() { }
