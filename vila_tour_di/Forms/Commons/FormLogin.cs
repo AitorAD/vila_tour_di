@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class FormLogin : Form {
@@ -56,16 +57,13 @@ namespace vila_tour_di {
 
                         JwToken = responseData.Token;
 
-                        Console.WriteLine($"Username: {responseData.Username}");
-                        Console.WriteLine($"Email: {responseData.Email}");
-                        Console.WriteLine($"Contraseña: {responseData.Role}");
-                        Console.WriteLine($"Token: {responseData.Token}");
-
                         // Verificar los roles
-                        bool hasAccess = responseData.Role.Exists(role => role.Authority == "ADMIN" || role.Authority == "EDITOR");
+                        bool hasAccess = (responseData.Role == "ADMIN" || responseData.Role == "EDITOR");
 
                         if (hasAccess) {
-                            FormManagement managementForm = new FormManagement(responseData);
+                            Config.currentToken = responseData.Token;
+                            Config.currentUser = UserService.GetUserById((int)responseData.Id);
+                            FormManagement managementForm = new FormManagement();
                             managementForm.Show();
                             this.Hide();
                         } else {

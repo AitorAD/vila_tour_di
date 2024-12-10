@@ -15,7 +15,6 @@ namespace vila_tour_di {
         int idIng;
         string nameIng;
         CategoryIngredient catIng;
-        string token = AppState.JwtData.Token;
         private Ingredient selectedIngredient;
 
         public FormAddEditIngredient() {
