@@ -4,29 +4,25 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Text;
 using System.Collections.Generic;
+using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class FormManagement : Form {
         private Guna2Button currentButton;
         private Guna2Button lastButton;
-        private List<Role> role;
-        private string name;
         private Size originalSize;
         private Point originalLocation;
 
-        public FormManagement(JwtResponse responseData) {
+        public FormManagement() {
             InitializeComponent();
-            AppState.JwtData = responseData;
-            this.role = responseData.Role;
-            this.name = responseData.Name;
             ValidaRol();
-            lblWelcome.Text = $"Bienvenido, {name}";
+            lblWelcome.Text = ("Bienvenido/a: " + Config.currentUser.name);
         }
 
         private void ValidaRol() {
-            if (role.Exists(role => role.Authority == "EDITOR")) {
+            if (Config.currentUser.role == "EDITOR") {
                 btnUsers.Visible = false; 
-            } else if (role.Exists(role => role.Authority == "ADMIN")) {
+            } else if (Config.currentUser.role == "ADMIN") {
                 btnUsers.Visible = true;  
             }
         }

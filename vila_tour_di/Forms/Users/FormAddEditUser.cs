@@ -13,7 +13,7 @@ namespace vila_tour_di
 {
     public partial class FormAddEditUser : Form
     {
-        private User _currentUser; // Campo para almacenar el usuario actual
+        private User _selectedUser; // Campo para almacenar el usuario actual
 
         public FormAddEditUser()
         {
@@ -28,7 +28,7 @@ namespace vila_tour_di
             ComboBoxRol.DataSource = Enum.GetValues(typeof(RoleType));
             labelTitle.Text = editable ? "Editar usuario" : "Detalles del usuario";
 
-            _currentUser = user; // Almacenar el usuario en el campo privado
+            _selectedUser = user; // Almacenar el usuario en el campo privado
 
             // Rellenar los campos con los datos del usuario
             TextBoxUserName.Text = user.username;
@@ -81,11 +81,13 @@ namespace vila_tour_di
                 profilePicture = ConvertImageToBase64(filePath);
                 Console.WriteLine(profilePicture);
             }
-
+           
             User newUser = new User(username, email, password, role, name, surname, profilePicture);
 
-            if (labelTitle.Text == "Editar Usuario" && _currentUser != null) {
-                UserService.UpdateUser(_currentUser.id, newUser);
+
+            if (labelTitle.Text == "Editar Usuario" && _selectedUser != null) {
+                newUser.password = _selectedUser.password;
+                UserService.UpdateUser(_selectedUser.id, newUser);
             } else {
                 UserService.AddUser(newUser);
             }
@@ -170,6 +172,10 @@ namespace vila_tour_di
             USER,
             ADMIN,
             EDITOR
+        }
+
+        private void labelTitle_Click(object sender, EventArgs e) {
+
         }
     }
 }

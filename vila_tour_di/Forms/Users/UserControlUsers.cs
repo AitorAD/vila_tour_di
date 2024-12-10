@@ -30,7 +30,7 @@ namespace vila_tour_di {
         public DataTable LoadUsersData() {
 
             string apiUrl = "http://127.0.0.1:8080/users"; // Ajusta tu URL
-            string token = AppState.JwtData.Token;
+            string token = Config.currentToken;
 
             DataTable table = new DataTable();
 
