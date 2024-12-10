@@ -1,30 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\",
+  "WorkspaceRootPath": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\admin\\documents\\github\\vila_tour_di\\vila_tour_di\\forms\\ingredients\\formcategoriesingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\ingredients\\formcategoriesingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\forms\\commons\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\commons\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\admin\\documents\\github\\vila_tour_di\\vila_tour_di\\forms\\ingredients\\formaddeditcategoryingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\ingredients\\formaddeditcategoryingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\forms\\commons\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\commons\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\admin\\documents\\github\\vila_tour_di\\vila_tour_di\\services\\categoryingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\services\\categoryingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\forms\\commons\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\commons\\formmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\admin\\documents\\github\\vila_tour_di\\vila_tour_di\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\utils\\jwtresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\utils\\jwtresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\admin\\documents\\github\\vila_tour_di\\vila_tour_di\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\forms\\commons\\formaddeditcoordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\commons\\formaddeditcoordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\admin\\documents\\github\\vila_tour_di\\vila_tour_di\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|c:\\users\\aitor\\desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\forms\\users\\usercontrolusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E128711B-E44E-4903-96C6-67280FBB0870}|vila_tour_di\\vila_tour_di.csproj|solutionrelative:vila_tour_di\\forms\\users\\usercontrolusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,94 +34,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1858,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormCategoriesIngredient.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Forms\\Ingredients\\FormCategoriesIngredient.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Ingredients\\FormCategoriesIngredient.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Forms\\Ingredients\\FormCategoriesIngredient.cs",
-              "RelativeToolTip": "vila_tour_di\\Forms\\Ingredients\\FormCategoriesIngredient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:31:22.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormAddEditCategoryIngredient.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Forms\\Ingredients\\FormAddEditCategoryIngredient.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Ingredients\\FormAddEditCategoryIngredient.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Forms\\Ingredients\\FormAddEditCategoryIngredient.cs [Dise\u00F1o]",
-              "RelativeToolTip": "vila_tour_di\\Forms\\Ingredients\\FormAddEditCategoryIngredient.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:23:57.185Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\UserService.cs",
-              "RelativeToolTip": "vila_tour_di\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:16:41.458Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CategoryIngredientService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\CategoryIngredientService.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\Services\\CategoryIngredientService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\CategoryIngredientService.cs",
-              "RelativeToolTip": "vila_tour_di\\Services\\CategoryIngredientService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAjwEUAAAAlAAAAAAAAAA==",
+              "Title": "FormManagement.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormManagement.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Commons\\FormManagement.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormManagement.cs",
+              "RelativeToolTip": "vila_tour_di\\Forms\\Commons\\FormManagement.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwBwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:16:29.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IngredientService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\IngredientService.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\Services\\IngredientService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\IngredientService.cs",
-              "RelativeToolTip": "vila_tour_di\\Services\\IngredientService.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwCgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:16:39.216Z",
+              "WhenOpened": "2024-12-09T23:49:14.894Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "vila_tour_di\\Services\\ApiService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\vila_tour_di\\vila_tour_di\\Services\\ApiService.cs",
-              "RelativeToolTip": "vila_tour_di\\Services\\ApiService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "JwtResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Utils\\JwtResponse.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\Utils\\JwtResponse.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Utils\\JwtResponse.cs",
+              "RelativeToolTip": "vila_tour_di\\Utils\\JwtResponse.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADgvxIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:16:16.838Z",
+              "WhenOpened": "2024-12-09T23:48:41.534Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormLogin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Commons\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormLogin.cs",
+              "RelativeToolTip": "vila_tour_di\\Forms\\Commons\\FormLogin.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwEIAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:32:04.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormLogin.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Commons\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\Forms\\Commons\\FormLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:31:59.246Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormAddEditCoordinate.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormAddEditCoordinate.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Commons\\FormAddEditCoordinate.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Commons\\FormAddEditCoordinate.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\Forms\\Commons\\FormAddEditCoordinate.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:31:56.526Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserControlUsers.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Users\\UserControlUsers.cs",
+              "RelativeDocumentMoniker": "vila_tour_di\\Forms\\Users\\UserControlUsers.cs",
+              "ToolTip": "C:\\Users\\Aitor\\Desktop\\vila_tour_proyecto\\vila_tour_di\\vila_tour_di\\Forms\\Users\\UserControlUsers.cs [Dise\u00F1o]",
+              "RelativeToolTip": "vila_tour_di\\Forms\\Users\\UserControlUsers.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:30:30.315Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1858,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

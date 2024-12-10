@@ -9,7 +9,7 @@ namespace vila_tour_di {
     public partial class FormManagement : Form {
         private Guna2Button currentButton;
         private Guna2Button lastButton;
-        private List<Role> role;
+        private string role;
         private string name;
         private Size originalSize;
         private Point originalLocation;
@@ -24,9 +24,9 @@ namespace vila_tour_di {
         }
 
         private void ValidaRol() {
-            if (role.Exists(role => role.Authority == "EDITOR")) {
+            if (role == "EDITOR") {
                 btnUsers.Visible = false; 
-            } else if (role.Exists(role => role.Authority == "ADMIN")) {
+            } else if (role == "ADMIN") {
                 btnUsers.Visible = true;  
             }
         }

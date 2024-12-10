@@ -48,7 +48,7 @@ namespace vila_tour_di {
                     // Enviar las credenciales
                     var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                     var response = await client.PostAsync(apiUrl, content);
-
+                    
                     if (response.IsSuccessStatusCode) {
                         // Leer el token
                         var responseString = await response.Content.ReadAsStringAsync();
@@ -62,8 +62,9 @@ namespace vila_tour_di {
                         Console.WriteLine($"Token: {responseData.Token}");
 
                         // Verificar los roles
-                        bool hasAccess = responseData.Role.Exists(role => role.Authority == "ADMIN" || role.Authority == "EDITOR");
 
+
+                        bool hasAccess = (responseData.Role == "ADMIN" || responseData.Role == "EDITOR");
                         if (hasAccess) {
                             FormManagement managementForm = new FormManagement(responseData);
                             managementForm.Show();
