@@ -108,10 +108,6 @@ namespace vila_tour_di {
             } else {
                 // Crear el objeto Recipe
                 Recipe newRecipe = new Recipe(name, description, image, averageScore, approved, recent, ingredients);
-
-
-        
-           
                 Dispose();
             }
         }
