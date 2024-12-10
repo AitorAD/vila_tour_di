@@ -100,6 +100,7 @@ namespace vila_tour_di
         private void btnLocation_Click(object sender, EventArgs e)
         {
             FormAddEditCoordinate formAddEditCoordinate;
+
             if (creating)
             {
                 formAddEditCoordinate = new FormAddEditCoordinate();

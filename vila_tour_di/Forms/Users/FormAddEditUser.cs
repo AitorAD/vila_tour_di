@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di
 {
@@ -75,48 +76,19 @@ namespace vila_tour_di
 
             // Convertir la imagen a base64
             string profilePicture = "null";
-            if (profilePicBox.Image != null && profilePicBox.Tag != null)
-            {
+            if (profilePicBox.Image != null && profilePicBox.Tag != null) {
                 string filePath = profilePicBox.Tag.ToString();
                 profilePicture = ConvertImageToBase64(filePath);
                 Console.WriteLine(profilePicture);
             }
 
-            string url = "http://127.0.0.1:8080/users";
+            User newUser = new User(username, email, password, role, name, surname, profilePicture);
 
-            string datos;
-            string resultado;
-
-            if (labelTitle.Text == "Editar usuario" && _currentUser != null)
-            {
-                // Enviar actualización (PUT)
-                datos = "{" +
-                    $"\"username\": \"{username}\", " +
-                    $"\"email\": \"{email}\", " +
-                    $"\"password\": \"{password}\", " +
-                    $"\"role\": \"{role}\", " +
-                    $"\"name\": \"{name}\", " +
-                    $"\"surname\": \"{surname}\", " +
-                    $"\"profilePicture\": \"{profilePicture}\"" +
-                "}";
-
+            if (labelTitle.Text == "Editar Usuario" && _currentUser != null) {
+                UserService.UpdateUser(_currentUser.id, newUser);
+            } else {
+                UserService.AddUser(newUser);
             }
-            else
-            {
-                // Crear nuevo usuario (POST)
-                datos = "{" +
-                    $"\"username\": \"{username}\", " +
-                    $"\"email\": \"{email}\", " +
-                    $"\"password\": \"{password}\", " +
-                    $"\"role\": \"{role}\", " +
-                    $"\"name\": \"{name}\", " +
-                    $"\"surname\": \"{surname}\", " +
-                    $"\"profilePicture\": \"{profilePicture}\"" +
-                "}";
-
-              
-            }
-
             Dispose();
         }
 
