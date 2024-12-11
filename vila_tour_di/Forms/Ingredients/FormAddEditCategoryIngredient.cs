@@ -9,7 +9,7 @@ namespace vila_tour_di {
     public partial class FormAddEditCategoryIngredient : Form {
 
         bool isEditing = false;
-        CategoryIngredient category; // Variable para almacenar la categoría
+        CategoryIngredient category;
 
         public FormAddEditCategoryIngredient() {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace vila_tour_di {
                         Dispose();
                     }
                 }
-            }
+        }
 
         private void bttnSalir_Click(object sender, EventArgs e) {
             Dispose();

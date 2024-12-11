@@ -134,12 +134,29 @@
     <Compile Include="Services\CategoryIngredientService.cs" />
     <Compile Include="Services\CategoryPlacesService.cs" />
     <Compile Include="Services\Config.cs" />
+    <Compile Include="Forms\Places\FormAddEditCategoryPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Places\FormAddEditCategoryPlace.Designer.cs">
+      <DependentUpon>FormAddEditCategoryPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Places\FormCategoryPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Places\FormCategoryPlace.Designer.cs">
+      <DependentUpon>FormCategoryPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestClient.cs" />
+    <Compile Include="Services\ApiService.cs" />
+    <Compile Include="Services\CategoryIngredientService.cs" />
+    <Compile Include="Services\CategoryPlaceService.cs" />
     <Compile Include="Services\CoordinateService.cs" />
     <Compile Include="Services\FestivalService.cs" />
     <Compile Include="Services\IngredientService.cs" />
     <Compile Include="Services\PlaceService.cs" />
     <Compile Include="Services\RecipeService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="Utils\AppState.cs" />
     <Compile Include="Models\CategoryIngredient.cs" />
     <Compile Include="Models\CategoryPlace.cs" />
     <Compile Include="Models\Festival.cs" />
@@ -252,8 +269,14 @@
     <EmbeddedResource Include="Forms\Ingredients\FormAddEditIngredient.resx">
       <DependentUpon>FormAddEditIngredient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Places\FormAddEditCategoryPlace.resx">
+      <DependentUpon>FormAddEditCategoryPlace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Places\FormAddEditPlace.resx">
       <DependentUpon>FormAddEditPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Places\FormCategoryPlace.resx">
+      <DependentUpon>FormCategoryPlace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\FormAddEditUser.resx">
       <DependentUpon>FormAddEditUser.cs</DependentUpon>

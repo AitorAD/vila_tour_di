@@ -2,14 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vila_tour_di.Services;
 
@@ -20,18 +16,22 @@ namespace vila_tour_di
         private Place _currentPlace;
         private bool edit;
         private bool creating;
+        private Coordinate currentCoordinate;
+
         public FormAddEditPlace()
         {
             InitializeComponent();
             comboCategory.DataSource = LoadCategoriesPlacesData();
             labelTitle.Text = "Añadir lugar de interés";
             creating = true;
+            currentCoordinate = null;
         }
 
         public FormAddEditPlace(Place place, bool editable)
         {
             InitializeComponent();
             edit = editable;
+            creating = false;
             comboCategory.DataSource = LoadCategoriesPlacesData();
             labelTitle.Text = editable ? "Editar lugar de interés" : "Detalles del lugar de interés";
             _currentPlace = place;
@@ -41,6 +41,7 @@ namespace vila_tour_di
             txtDescription.Text = place.description;
             lblCreationDate.Text = "Fecha de creación: " + place.creationDate;
             lblLastModificationDate.Text = "Última modificación: " + place.lastModificationDate;
+            currentCoordinate = place.coordinate;
 
             if (place.imagensPaths != null)
             {
@@ -57,7 +58,6 @@ namespace vila_tour_di
                 btnAddPlace.Enabled = false;
             }
         }
-
 
         private List<CategoryPlace> LoadCategoriesPlacesData()
         {
@@ -91,8 +91,6 @@ namespace vila_tour_di
             }
         }
 
-        
-
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -100,17 +98,17 @@ namespace vila_tour_di
 
         private void btnLocation_Click(object sender, EventArgs e)
         {
-            FormAddEditCoordinate formAddEditCoordinate;
+            FormAddEditCoordinate formAddEditCoordinate = currentCoordinate == null
+                ? new FormAddEditCoordinate()
+                : new FormAddEditCoordinate(currentCoordinate, true);
 
-            if (creating)
-            {
-                formAddEditCoordinate = new FormAddEditCoordinate();
-            } else
-            {
-                formAddEditCoordinate = new FormAddEditCoordinate(_currentPlace.coordinate, edit);
-            }
             formAddEditCoordinate.StartPosition = FormStartPosition.CenterScreen;
-            formAddEditCoordinate.Show();
+            var result = formAddEditCoordinate.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                currentCoordinate = formAddEditCoordinate.CurrentCoordinate;
+            }
         }
 
         private string ConvertImageToBase64(string filePath)
