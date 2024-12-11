@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Net.Http;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di
 {
@@ -61,7 +62,7 @@ namespace vila_tour_di
         private List<CategoryPlace> LoadCategoriesPlacesData()
         {
             string apiUrl = "http://127.0.0.1:8080/categoriesPlace"; // Ajusta tu URL
-            string token = AppState.JwtData.Token; // Obtener el token desde AppState
+            string token = Config.currentToken; // Obtener el token desde AppState
 
             using (HttpClient client = new HttpClient())
             {

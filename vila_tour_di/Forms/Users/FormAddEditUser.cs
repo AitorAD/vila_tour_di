@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di
 {
     public partial class FormAddEditUser : Form
     {
-        private User _currentUser; // Campo para almacenar el usuario actual
+        private User _selectedUser; // Campo para almacenar el usuario actual
 
         public FormAddEditUser()
         {
@@ -27,7 +28,7 @@ namespace vila_tour_di
             ComboBoxRol.DataSource = Enum.GetValues(typeof(RoleType));
             labelTitle.Text = editable ? "Editar usuario" : "Detalles del usuario";
 
-            _currentUser = user; // Almacenar el usuario en el campo privado
+            _selectedUser = user; // Almacenar el usuario en el campo privado
 
             // Rellenar los campos con los datos del usuario
             TextBoxUserName.Text = user.username;
@@ -75,48 +76,21 @@ namespace vila_tour_di
 
             // Convertir la imagen a base64
             string profilePicture = "null";
-            if (profilePicBox.Image != null && profilePicBox.Tag != null)
-            {
+            if (profilePicBox.Image != null && profilePicBox.Tag != null) {
                 string filePath = profilePicBox.Tag.ToString();
                 profilePicture = ConvertImageToBase64(filePath);
                 Console.WriteLine(profilePicture);
             }
+           
+            User newUser = new User(username, email, password, role, name, surname, profilePicture);
 
-            string url = "http://127.0.0.1:8080/users";
 
-            string datos;
-            string resultado;
-
-            if (labelTitle.Text == "Editar usuario" && _currentUser != null)
-            {
-                // Enviar actualización (PUT)
-                datos = "{" +
-                    $"\"username\": \"{username}\", " +
-                    $"\"email\": \"{email}\", " +
-                    $"\"password\": \"{password}\", " +
-                    $"\"role\": \"{role}\", " +
-                    $"\"name\": \"{name}\", " +
-                    $"\"surname\": \"{surname}\", " +
-                    $"\"profilePicture\": \"{profilePicture}\"" +
-                "}";
-
+            if (labelTitle.Text == "Editar Usuario" && _selectedUser != null) {
+                newUser.password = _selectedUser.password;
+                UserService.UpdateUser(_selectedUser.id, newUser);
+            } else {
+                UserService.AddUser(newUser);
             }
-            else
-            {
-                // Crear nuevo usuario (POST)
-                datos = "{" +
-                    $"\"username\": \"{username}\", " +
-                    $"\"email\": \"{email}\", " +
-                    $"\"password\": \"{password}\", " +
-                    $"\"role\": \"{role}\", " +
-                    $"\"name\": \"{name}\", " +
-                    $"\"surname\": \"{surname}\", " +
-                    $"\"profilePicture\": \"{profilePicture}\"" +
-                "}";
-
-              
-            }
-
             Dispose();
         }
 
@@ -198,6 +172,10 @@ namespace vila_tour_di
             USER,
             ADMIN,
             EDITOR
+        }
+
+        private void labelTitle_Click(object sender, EventArgs e) {
+
         }
     }
 }

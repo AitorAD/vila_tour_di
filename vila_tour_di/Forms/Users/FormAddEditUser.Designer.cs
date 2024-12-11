@@ -57,7 +57,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.99204F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.00796F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TextBoxUserName, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel1, 1, 1);
@@ -102,6 +102,7 @@ namespace vila_tour_di {
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Añadir/Editar/Detalles Usuario";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
             // 
             // TextBoxUserName
             // 
@@ -121,7 +122,7 @@ namespace vila_tour_di {
             this.TextBoxUserName.PasswordChar = '\0';
             this.TextBoxUserName.PlaceholderText = "";
             this.TextBoxUserName.SelectedText = "";
-            this.TextBoxUserName.Size = new System.Drawing.Size(215, 36);
+            this.TextBoxUserName.Size = new System.Drawing.Size(214, 36);
             this.TextBoxUserName.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -168,7 +169,7 @@ namespace vila_tour_di {
             this.TextBoxeEmail.PasswordChar = '\0';
             this.TextBoxeEmail.PlaceholderText = "";
             this.TextBoxeEmail.SelectedText = "";
-            this.TextBoxeEmail.Size = new System.Drawing.Size(215, 36);
+            this.TextBoxeEmail.Size = new System.Drawing.Size(214, 36);
             this.TextBoxeEmail.TabIndex = 4;
             // 
             // guna2HtmlLabel3
@@ -197,7 +198,7 @@ namespace vila_tour_di {
             this.ComboBoxRol.ItemHeight = 30;
             this.ComboBoxRol.Location = new System.Drawing.Point(180, 242);
             this.ComboBoxRol.Name = "ComboBoxRol";
-            this.ComboBoxRol.Size = new System.Drawing.Size(215, 36);
+            this.ComboBoxRol.Size = new System.Drawing.Size(214, 36);
             this.ComboBoxRol.TabIndex = 6;
             // 
             // guna2HtmlLabel4
@@ -257,7 +258,7 @@ namespace vila_tour_di {
             this.TextBoxName.PasswordChar = '\0';
             this.TextBoxName.PlaceholderText = "";
             this.TextBoxName.SelectedText = "";
-            this.TextBoxName.Size = new System.Drawing.Size(215, 36);
+            this.TextBoxName.Size = new System.Drawing.Size(214, 36);
             this.TextBoxName.TabIndex = 10;
             // 
             // TextBoxSurname
@@ -278,7 +279,7 @@ namespace vila_tour_di {
             this.TextBoxSurname.PasswordChar = '\0';
             this.TextBoxSurname.PlaceholderText = "";
             this.TextBoxSurname.SelectedText = "";
-            this.TextBoxSurname.Size = new System.Drawing.Size(215, 36);
+            this.TextBoxSurname.Size = new System.Drawing.Size(214, 36);
             this.TextBoxSurname.TabIndex = 11;
             // 
             // tableLayoutPanel2
@@ -294,7 +295,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(356, 58);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 58);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
             // guna2Button1
@@ -310,7 +311,7 @@ namespace vila_tour_di {
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(64, 4);
+            this.guna2Button1.Location = new System.Drawing.Point(63, 4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(50, 50);
             this.guna2Button1.TabIndex = 2;
@@ -330,7 +331,7 @@ namespace vila_tour_di {
             this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddUser.ForeColor = System.Drawing.Color.White;
             this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
-            this.btnAddUser.Location = new System.Drawing.Point(242, 4);
+            this.btnAddUser.Location = new System.Drawing.Point(241, 4);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(50, 50);
             this.btnAddUser.TabIndex = 1;
@@ -345,7 +346,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnAddImage, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.profilePicBox, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(222, 422);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(221, 422);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;

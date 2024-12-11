@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace vila_tour_di.Services {
     class ApiService {
 
-        static string token = AppState.JwtData.Token;
+        static string token = Config.currentToken;
 
         public static T Get<T>(string apiUrl) where T : new() {
             using (HttpClient client = new HttpClient()) {

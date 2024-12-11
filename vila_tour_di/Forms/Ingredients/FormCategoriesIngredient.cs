@@ -26,9 +26,6 @@ namespace vila_tour_di {
         public DataTable loadCategoriesData() {
             Console.WriteLine("Cargando categorias");
 
-            string apiUrl = "http://127.0.0.1:8080/categories";
-            string token = AppState.JwtData.Token;
-
             DataTable table = new DataTable();
 
                 // Definimos las columnas de la tabla
@@ -105,7 +102,6 @@ namespace vila_tour_di {
                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmResult == DialogResult.Yes) {
-                    string token = AppState.JwtData.Token;
 
                     // Llamar al método de eliminación en CategoryService
                     bool success = CategoryIngredientService.DeleteCategory(id);

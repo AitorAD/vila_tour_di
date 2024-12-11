@@ -7,6 +7,28 @@ using System.Threading.Tasks;
 namespace vila_tour_di {
     public class User
     {
+        public User() { }
+
+        public User(string username, string email, string password, string role, string name, string surname, string profilePicture) {
+            this.username = username;
+            this.email = email;
+            this.password = password;
+            this.role = role;
+            this.name = name;
+            this.surname = surname;
+        }
+
+
+        public User(int id, string username, string email, string password, string role, string name, string surname) {
+            this.id = id;
+            this.username = username;
+            this.email = email;
+            this.password = password;
+            this.role = role;
+            this.name = name;
+            this.surname = surname;
+        }
+
         public int id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
