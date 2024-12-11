@@ -155,5 +155,43 @@ namespace vila_tour_di
                 return null;
             }
         }
+
+        private void btnAddPlace_Click(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(txtName.Text)) {
+                MessageBox.Show("El nombre del lugar es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboCategory.SelectedItem == null) {
+                MessageBox.Show("Debe seleccionar una categoría.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (currentCoordinate == null) {
+                MessageBox.Show("Debe establecer la ubicación del lugar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var newPlace = new Place {
+                name = txtName.Text.Trim(),
+                categoryPlace = (CategoryPlace)comboCategory.SelectedItem,
+                description = txtDescription.Text.Trim(),
+                coordinate = currentCoordinate,
+                creationDate = DateTime.Now,
+                lastModificationDate = DateTime.Now,
+                imagensPaths = imgPlace.Image != null ? ConvertImageToBase64(imgPlace.ImageLocation) : null
+            };
+
+            bool result = PlaceService.AddPlace(newPlace);
+
+            if (result) {
+                MessageBox.Show("Lugar añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            } else {
+                MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
