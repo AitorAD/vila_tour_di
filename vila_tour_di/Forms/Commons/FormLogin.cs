@@ -63,8 +63,7 @@ namespace vila_tour_di {
                         if (hasAccess) {
                             Config.currentToken = responseData.Token;
                             Config.currentUser = UserService.GetUserById((int)responseData.Id);
-                            FormManagement managementForm = new FormManagement();
-                            managementForm.Show();
+                            FormManagement managementForm = new FormManagement();                            managementForm.Show();
                             this.Hide();
                         } else {
                             MessageBox.Show("Usuario sin acceso, contacte con un administrador", "Acceso Denegado",

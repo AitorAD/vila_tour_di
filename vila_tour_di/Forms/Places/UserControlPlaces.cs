@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Net.Http;
 using System.Windows.Forms;
+using vila_tour_di.Forms.Places;
 using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class UserControlPlaces : UserControl {
         private DataTable originalDataTable;
-        private string jsonResponse;
-
         public UserControlPlaces() {
             InitializeComponent();
 
@@ -59,7 +58,7 @@ namespace vila_tour_di {
                         // Agregamos los users a la tabla
                         foreach (var place in places)
                         {
-                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace.name, place.creator.name);
+                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace?.name ?? "Sin asignar", place.creator.name);
                         }
                     }
                     else
@@ -94,11 +93,11 @@ namespace vila_tour_di {
             {
                 var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
 
-                // Atributos
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/places/{id}";
-                string token = Config.currentToken;
+                string token = AppState.JwtData.Token;
+                string jsonResponse = null;
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -163,7 +162,7 @@ namespace vila_tour_di {
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/places/{id}";
-                string token = Config.currentToken;
+                string token = AppState.JwtData.Token;
                 string jsonResponse = null;
 
                 using (HttpClient client = new HttpClient())
@@ -236,7 +235,7 @@ namespace vila_tour_di {
                 if (result == DialogResult.Yes)
                 {
                     string apiUrl = $"http://127.0.0.1:8080/places/{id}"; // URL con el ID del lugar
-                    string token = Config.currentToken;
+                    string token = AppState.JwtData.Token;
 
                     using (HttpClient client = new HttpClient())
                     {
@@ -272,5 +271,11 @@ namespace vila_tour_di {
             }
         }
 
+        private void btnCategoriesPlace_Click(object sender, EventArgs e)
+        {
+            FormCategoryPlace formCategories = new FormCategoryPlace();
+            formCategories.StartPosition = FormStartPosition.CenterParent;
+            formCategories.ShowDialog();
+        }
     }
 }

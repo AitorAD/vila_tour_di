@@ -1,21 +1,23 @@
-using Guna.UI2.WinForms;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using vila_tour_di.Services;
 
-namespace vila_tour_di {
-    public partial class FormCategoriesIngredient : Form {
-
+namespace vila_tour_di.Forms.Places
+{
+    public partial class FormCategoryPlace : Form
+    {
         private DataTable originalDatatable;
 
-        public FormCategoriesIngredient() {
+        public FormCategoryPlace()
+        {
             InitializeComponent();
-
-            // Cargar los datos
             originalDatatable = loadCategoriesData();
             guna2DataGridViewCATING.DataSource = originalDatatable;
             guna2DataGridViewCATING.AutoGenerateColumns = true;
@@ -23,98 +25,104 @@ namespace vila_tour_di {
             guna2DataGridViewCATING.AutoResizeColumns();
         }
 
-        public DataTable loadCategoriesData() {
-
+        public DataTable loadCategoriesData()
+        {
             DataTable table = new DataTable();
 
-                // Definimos las columnas de la tabla
-                table.Columns.Add("ID", typeof(int));
-                table.Columns.Add("Nombre");
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Nombre");
 
-            List<CategoryIngredient> categories = CategoryIngredientService.GetCategoriesIngredient();
+            List<CategoryPlace> categories = CategoryPlaceService.GetCategoriesPlaces();
 
-            foreach (var category in categories) {
+            foreach (var category in categories)
+            {
                 table.Rows.Add(category.id, category.name);
             }
 
             return table;
         }
 
-        public void loadCategoriesInDataGridView() {
+        public void loadCategoriesInDataGridView()
+        {
             DataTable categoriesTable = loadCategoriesData();
             guna2DataGridViewCATING.DataSource = categoriesTable;
             guna2DataGridViewCATING.Refresh();
         }
 
-        private void bttnAddCategoryIngredient_Click(object sender, EventArgs e) {
-            FormAddEditCategoryIngredient formAddCategory = new FormAddEditCategoryIngredient();
+        private void bttnAddCategory_Click_1(object sender, EventArgs e)
+        {
+            FormAddEditCategoryPlace formAddCategory = new FormAddEditCategoryPlace();
             formAddCategory.StartPosition = FormStartPosition.CenterParent;
             formAddCategory.ShowDialog();
             loadCategoriesInDataGridView();
-
         }
 
-        private void btnEditCategoryIngredient_Click(object sender, EventArgs e) {
-            try {
-                if (guna2DataGridViewCATING.SelectedRows.Count > 0) {
-                    // Obtener la fila seleccionada
+        private void btnEditCategory_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (guna2DataGridViewCATING.SelectedRows.Count > 0)
+                {
                     DataGridViewRow selectedRow = guna2DataGridViewCATING.SelectedRows[0];
 
-                    // Extraer los valores de la fila seleccionada
-                    int  id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value); // Columna "ID"
-                    string name = selectedRow.Cells["Nombre"].Value.ToString(); // Columna "Nombre"
+                    int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
+                    string name = selectedRow.Cells["Nombre"].Value.ToString();
 
-                    // Crear el objeto CategoryIngredient
-                    CategoryIngredient category = new CategoryIngredient {
+                    CategoryPlace category = new CategoryPlace
+                    {
                         id = id,
                         name = name
                     };
 
-                    // Crear y mostrar el formulario de edición
-                    FormAddEditCategoryIngredient formAddCategory = new FormAddEditCategoryIngredient(category);
+                    FormAddEditCategoryPlace formAddCategory = new FormAddEditCategoryPlace(category);
                     formAddCategory.StartPosition = FormStartPosition.CenterParent;
                     formAddCategory.ShowDialog();
 
-                    // Recargar los datos en el DataGridView después de editar
                     loadCategoriesInDataGridView();
-                } else {
+                }
+                else
+                {
                     MessageBox.Show("Por favor, selecciona una categoría para editar.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Ocurrió un error al intentar editar la categoría: {ex.Message}");
             }
-           
         }
 
-        private void btnDeleteCategoryIngredient_Click(object sender, EventArgs e) {
-            // Verificar si hay una fila seleccionada
-            if (guna2DataGridViewCATING.SelectedRows.Count > 0) {
+        private void btnDeleteCategory_Click_1(object sender, EventArgs e)
+        {
+            if (guna2DataGridViewCATING.SelectedRows.Count > 0)
+            {
                 var selectedRow = guna2DataGridViewCATING.SelectedRows[0];
 
-                // Obtener el ID de la categoria seleccionada
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
-                // Confirmar eliminación
                 var confirmResult = MessageBox.Show($"¿Estás seguro de que quieres eliminar {selectedRow.Cells["Nombre"].Value}?",
                                                     "Confirmar eliminación",
                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (confirmResult == DialogResult.Yes) {
-                    // Llamar al método de eliminación en CategoryService
-                    bool success = CategoryIngredientService.DeleteCategory(id);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    string token = AppState.JwtData.Token;
+                    bool success = CategoryPlaceService.DeleteCategoryPlace(id);
 
-                    if (success) {
-                        // Actualizar la vista de las categorías
+                    if (success)
+                    {
                         guna2DataGridViewCATING.DataSource = loadCategoriesData();
                     }
                 }
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");
             }
         }
 
-        private void bttnExit_Click(object sender, EventArgs e) {
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
             Dispose();
         }
     }
