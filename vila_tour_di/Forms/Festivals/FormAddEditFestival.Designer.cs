@@ -27,30 +27,30 @@ namespace vila_tour_di {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddEditFestival));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblCoordinate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBoxDesciption = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.labelTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.bttnSalir = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddFestival = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabelImg = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddImage = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabelIng = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DateTimePickerFinal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DateTimePickerStart = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBoxName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comboBoxCoordinates = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -71,7 +71,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel20, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel27, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel24, 1, 4);
@@ -96,8 +96,8 @@ namespace vila_tour_di {
             this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel9.Controls.Add(this.guna2TextBox3, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.guna2HtmlLabel8, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lblCoordinate, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.comboBoxCoordinates, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(23, 305);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -107,45 +107,25 @@ namespace vila_tour_di {
             this.tableLayoutPanel9.Size = new System.Drawing.Size(518, 55);
             this.tableLayoutPanel9.TabIndex = 45;
             // 
-            // guna2TextBox3
+            // lblCoordinate
             // 
-            this.guna2TextBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(210, 9);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(305, 36);
-            this.guna2TextBox3.TabIndex = 4;
-            // 
-            // guna2HtmlLabel8
-            // 
-            this.guna2HtmlLabel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(40, 14);
-            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(99, 27);
-            this.guna2HtmlLabel8.TabIndex = 1;
-            this.guna2HtmlLabel8.Text = "Dirección:";
-            this.guna2HtmlLabel8.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblCoordinate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCoordinate.BackColor = System.Drawing.Color.Transparent;
+            this.lblCoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblCoordinate.Location = new System.Drawing.Point(40, 14);
+            this.lblCoordinate.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.lblCoordinate.Name = "lblCoordinate";
+            this.lblCoordinate.Size = new System.Drawing.Size(64, 27);
+            this.lblCoordinate.TabIndex = 1;
+            this.lblCoordinate.Text = "Lugar:";
+            this.lblCoordinate.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel10.Controls.Add(this.guna2TextBox2, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.txtBoxDesciption, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.guna2HtmlLabel3, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(23, 125);
@@ -155,25 +135,25 @@ namespace vila_tour_di {
             this.tableLayoutPanel10.Size = new System.Drawing.Size(518, 174);
             this.tableLayoutPanel10.TabIndex = 39;
             // 
-            // guna2TextBox2
+            // txtBoxDesciption
             // 
-            this.guna2TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(210, 3);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(305, 168);
-            this.guna2TextBox2.TabIndex = 4;
+            this.txtBoxDesciption.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxDesciption.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBoxDesciption.DefaultText = "";
+            this.txtBoxDesciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBoxDesciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBoxDesciption.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxDesciption.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxDesciption.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxDesciption.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBoxDesciption.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxDesciption.Location = new System.Drawing.Point(210, 3);
+            this.txtBoxDesciption.Name = "txtBoxDesciption";
+            this.txtBoxDesciption.PasswordChar = '\0';
+            this.txtBoxDesciption.PlaceholderText = "";
+            this.txtBoxDesciption.SelectedText = "";
+            this.txtBoxDesciption.Size = new System.Drawing.Size(305, 168);
+            this.txtBoxDesciption.TabIndex = 4;
             // 
             // guna2HtmlLabel3
             // 
@@ -188,20 +168,20 @@ namespace vila_tour_di {
             this.guna2HtmlLabel3.Text = "Descripción:";
             this.guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // labelTitle
+            // lblTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tableLayoutPanel1.SetColumnSpan(this.labelTitle, 3);
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(3, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(558, 61);
-            this.labelTitle.TabIndex = 34;
-            this.labelTitle.Text = "Añadir/Editar Festival o Tradición";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.tableLayoutPanel1.SetColumnSpan(this.lblTitle, 3);
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(558, 61);
+            this.lblTitle.TabIndex = 34;
+            this.lblTitle.Text = "Añadir/Editar Festival o Tradición";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel20
             // 
@@ -209,8 +189,8 @@ namespace vila_tour_di {
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.Controls.Add(this.bttnSalir, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.guna2Button3, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.btnClose, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.btnAddFestival, 1, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(23, 624);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
@@ -219,41 +199,43 @@ namespace vila_tour_di {
             this.tableLayoutPanel20.Size = new System.Drawing.Size(518, 55);
             this.tableLayoutPanel20.TabIndex = 33;
             // 
-            // bttnSalir
+            // btnClose
             // 
-            this.bttnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bttnSalir.Animated = true;
-            this.bttnSalir.BorderRadius = 25;
-            this.bttnSalir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bttnSalir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bttnSalir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bttnSalir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bttnSalir.FillColor = System.Drawing.Color.Crimson;
-            this.bttnSalir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bttnSalir.ForeColor = System.Drawing.Color.White;
-            this.bttnSalir.Image = ((System.Drawing.Image)(resources.GetObject("bttnSalir.Image")));
-            this.bttnSalir.Location = new System.Drawing.Point(104, 3);
-            this.bttnSalir.Name = "bttnSalir";
-            this.bttnSalir.Size = new System.Drawing.Size(50, 49);
-            this.bttnSalir.TabIndex = 24;
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.Animated = true;
+            this.btnClose.BorderRadius = 25;
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.FillColor = System.Drawing.Color.Crimson;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(104, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(50, 49);
+            this.btnClose.TabIndex = 24;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // guna2Button3
+            // btnAddFestival
             // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderRadius = 25;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(363, 4);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(50, 47);
-            this.guna2Button3.TabIndex = 27;
+            this.btnAddFestival.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddFestival.Animated = true;
+            this.btnAddFestival.BorderRadius = 25;
+            this.btnAddFestival.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFestival.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFestival.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddFestival.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddFestival.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddFestival.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddFestival.ForeColor = System.Drawing.Color.White;
+            this.btnAddFestival.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFestival.Image")));
+            this.btnAddFestival.Location = new System.Drawing.Point(363, 4);
+            this.btnAddFestival.Name = "btnAddFestival";
+            this.btnAddFestival.Size = new System.Drawing.Size(50, 47);
+            this.btnAddFestival.TabIndex = 27;
+            this.btnAddFestival.Click += new System.EventHandler(this.btnAddFestival_Click);
             // 
             // tableLayoutPanel27
             // 
@@ -290,7 +272,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.guna2Button4, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnAddImage, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.guna2PictureBox1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(210, 3);
@@ -300,23 +282,23 @@ namespace vila_tour_di {
             this.tableLayoutPanel5.Size = new System.Drawing.Size(305, 117);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
-            // guna2Button4
+            // btnAddImage
             // 
-            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BorderRadius = 25;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.Location = new System.Drawing.Point(229, 35);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(50, 47);
-            this.guna2Button4.TabIndex = 28;
+            this.btnAddImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddImage.Animated = true;
+            this.btnAddImage.BorderRadius = 25;
+            this.btnAddImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddImage.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddImage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddImage.ForeColor = System.Drawing.Color.White;
+            this.btnAddImage.Image = ((System.Drawing.Image)(resources.GetObject("btnAddImage.Image")));
+            this.btnAddImage.Location = new System.Drawing.Point(229, 35);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(50, 47);
+            this.btnAddImage.TabIndex = 28;
             // 
             // guna2PictureBox1
             // 
@@ -361,10 +343,10 @@ namespace vila_tour_di {
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.guna2DateTimePicker2, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.DateTimePickerFinal, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel4, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.guna2DateTimePicker1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.DateTimePickerStart, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(210, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -374,21 +356,23 @@ namespace vila_tour_di {
             this.tableLayoutPanel2.Size = new System.Drawing.Size(305, 117);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // guna2DateTimePicker2
+            // DateTimePickerFinal
             // 
-            this.guna2DateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(155, 69);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(146, 36);
-            this.guna2DateTimePicker2.TabIndex = 5;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 11, 20, 9, 48, 38, 478);
+            this.DateTimePickerFinal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DateTimePickerFinal.AutoRoundedCorners = true;
+            this.DateTimePickerFinal.BorderRadius = 17;
+            this.DateTimePickerFinal.Checked = true;
+            this.DateTimePickerFinal.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.DateTimePickerFinal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateTimePickerFinal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTimePickerFinal.Location = new System.Drawing.Point(155, 69);
+            this.DateTimePickerFinal.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerFinal.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerFinal.Name = "DateTimePickerFinal";
+            this.DateTimePickerFinal.Size = new System.Drawing.Size(146, 36);
+            this.DateTimePickerFinal.TabIndex = 5;
+            this.DateTimePickerFinal.Value = new System.DateTime(2024, 11, 20, 9, 48, 38, 478);
             // 
             // guna2HtmlLabel1
             // 
@@ -414,21 +398,23 @@ namespace vila_tour_di {
             this.guna2HtmlLabel4.Text = "Final:";
             this.guna2HtmlLabel4.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // guna2DateTimePicker1
+            // DateTimePickerStart
             // 
-            this.guna2DateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(3, 69);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(146, 36);
-            this.guna2DateTimePicker1.TabIndex = 4;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 11, 20, 9, 53, 48, 561);
+            this.DateTimePickerStart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DateTimePickerStart.AutoRoundedCorners = true;
+            this.DateTimePickerStart.BorderRadius = 17;
+            this.DateTimePickerStart.Checked = true;
+            this.DateTimePickerStart.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.DateTimePickerStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateTimePickerStart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTimePickerStart.Location = new System.Drawing.Point(3, 69);
+            this.DateTimePickerStart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerStart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerStart.Name = "DateTimePickerStart";
+            this.DateTimePickerStart.Size = new System.Drawing.Size(146, 36);
+            this.DateTimePickerStart.TabIndex = 4;
+            this.DateTimePickerStart.Value = new System.DateTime(2024, 11, 20, 9, 53, 48, 561);
             // 
             // tableLayoutPanel6
             // 
@@ -436,7 +422,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel6.Controls.Add(this.guna2HtmlLabel2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.guna2TextBox1, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.txtBoxName, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(23, 64);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -458,27 +444,45 @@ namespace vila_tour_di {
             this.guna2HtmlLabel2.Text = "Nombre:";
             this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // guna2TextBox1
+            // txtBoxName
             // 
-            this.guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(210, 9);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(305, 36);
-            this.guna2TextBox1.TabIndex = 3;
+            this.txtBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBoxName.DefaultText = "";
+            this.txtBoxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBoxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBoxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxName.Location = new System.Drawing.Point(210, 9);
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.PasswordChar = '\0';
+            this.txtBoxName.PlaceholderText = "";
+            this.txtBoxName.SelectedText = "";
+            this.txtBoxName.Size = new System.Drawing.Size(305, 36);
+            this.txtBoxName.TabIndex = 3;
             // 
-            // FormAddFestival
+            // comboBoxCoordinates
+            // 
+            this.comboBoxCoordinates.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxCoordinates.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxCoordinates.BorderRadius = 15;
+            this.comboBoxCoordinates.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxCoordinates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCoordinates.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.comboBoxCoordinates.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCoordinates.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCoordinates.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxCoordinates.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCoordinates.ItemHeight = 30;
+            this.comboBoxCoordinates.Location = new System.Drawing.Point(210, 9);
+            this.comboBoxCoordinates.Name = "comboBoxCoordinates";
+            this.comboBoxCoordinates.Size = new System.Drawing.Size(305, 36);
+            this.comboBoxCoordinates.TabIndex = 2;
+            // 
+            // FormAddEditFestival
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -487,7 +491,7 @@ namespace vila_tour_di {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormAddFestival";
+            this.Name = "FormAddEditFestival";
             this.Text = "Festival";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -514,29 +518,29 @@ namespace vila_tour_di {
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtBoxDesciption;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private Guna.UI2.WinForms.Guna2Button bttnSalir;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnClose;
+        private Guna.UI2.WinForms.Guna2Button btnAddFestival;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabelImg;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnAddImage;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabelIng;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtBoxName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCoordinate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerFinal;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePickerStart;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxCoordinates;
     }
 }
