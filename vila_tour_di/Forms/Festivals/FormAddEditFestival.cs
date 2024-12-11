@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vila_tour_di.Services;
 using vila_tour_di.Utils;
+using vila_tour_di.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace vila_tour_di {
     public partial class FormAddEditFestival : Form {
@@ -30,6 +33,7 @@ namespace vila_tour_di {
         }
 
         private void setValuesToForm() {
+            imageSlider = new Forms.Commons.ImageSlider();
             loadCoordinates();
             if (selectedFestival != null) {
                 txtBoxName.Text = selectedFestival.name;
@@ -37,6 +41,14 @@ namespace vila_tour_di {
                 DateTimePickerStart.Value = selectedFestival.startDate;
                 DateTimePickerFinal.Value = selectedFestival.endDate;
                 comboBoxCoordinates.SelectedValue = selectedFestival.coordinate.id;
+
+                foreach (Models.Image image in selectedFestival.images) {
+                    Console.WriteLine(image);
+                }
+                imageSlider.images = selectedFestival.images;
+
+                // pictureBoxFestival.Image = Utils.Utils.Base64ToImage(selectedFestival.images.FirstOrDefault().path);
+
             }
         }
 
@@ -63,13 +75,16 @@ namespace vila_tour_di {
             User creator = Config.currentUser;
             Coordinate coordinate = (Coordinate) comboBoxCoordinates.SelectedItem; // TODO: Asignar una coordenada
 
-            string festivalImage = pictureBoxFestival.Image != null && pictureBoxFestival.Tag != null ? 
-                Utils.Utils.ConvertImageToBase64(pictureBoxFestival.Tag.ToString()) : 
-                null;
-
-
-
             Festival newFestival = new Festival(name, description, startDate, endDate, creator, coordinate);
+
+            string base64Image = "null";
+            /*
+            if (pictureBoxFestival.Image != null && pictureBoxFestival.Tag != null) {
+                string filePath = pictureBoxFestival.Tag.ToString();
+                base64Image = Utils.Utils.ConvertImageToBase64(filePath);
+                Console.WriteLine(base64Image);
+            }
+            */
 
             if (isEditing) {
                 newFestival.creator = selectedFestival.creator; // Modifico el creador para que no se asigne uno nuevo
@@ -77,7 +92,16 @@ namespace vila_tour_di {
                     Dispose();
                 }
             } else {
-                if (FestivalService.AddFestival(newFestival)) {
+                var response = FestivalService.AddFestival(newFestival); // Almaceno la respuesta ya que esta devuelve el festival entero con su id ya asignado.
+                
+                if (response.IsSuccessStatusCode) {
+                    ApiService.HandleResponse(response, "Festival creado correctamente.", "Error al crear el festival");
+                    string jsonResponse = response.Content.ReadAsStringAsync().Result;
+                    Festival createdFestival = JsonConvert.DeserializeObject<Festival>(jsonResponse);
+
+                    Models.Image image = new Models.Image(base64Image, createdFestival);
+                    ImageService.AddImage(image);
+
                     Dispose();
                 };
             }
@@ -118,12 +142,13 @@ namespace vila_tour_di {
                     string selectedFilePath = openFileDialog.FileName;
 
                     // Cargar la imagen en el PictureBox
-                    pictureBoxFestival.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBoxFestival.Image = Image.FromFile(selectedFilePath);
-                    pictureBoxFestival.Tag = selectedFilePath;
+                    // pictureBoxFestival.SizeMode = PictureBoxSizeMode.StretchImage;
+                    // pictureBoxFestival.Image = System.Drawing.Image.FromFile(selectedFilePath);
+                    // pictureBoxFestival.Tag = selectedFilePath;
 
                 }
             }
         }
+
     }
 }
