@@ -61,8 +61,8 @@ namespace vila_tour_di
 
         private List<CategoryPlace> LoadCategoriesPlacesData()
         {
-            string apiUrl = "http://127.0.0.1:8080/categoriesPlace"; // Ajusta tu URL
-            string token = Config.currentToken; // Obtener el token desde AppState
+            string apiUrl = "http://127.0.0.1:8080/categoriesPlace";
+            string token = Config.currentToken;
 
             using (HttpClient client = new HttpClient())
             {

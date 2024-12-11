@@ -13,6 +13,8 @@ namespace vila_tour_di {
         public string Type { get; set; }
         public long Id { get; set; }
         public string Username { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
         public string Email { get; set; }
         public string Role { get; set; }
 
@@ -21,4 +23,5 @@ namespace vila_tour_di {
         }
     }
 
+   
 }

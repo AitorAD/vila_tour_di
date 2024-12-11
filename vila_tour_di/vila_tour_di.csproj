@@ -130,9 +130,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\ApiService.cs" />
-    <Compile Include="Services\CategoryIngredientService.cs" />
-    <Compile Include="Services\CategoryPlacesService.cs" />
     <Compile Include="Services\Config.cs" />
     <Compile Include="Forms\Places\FormAddEditCategoryPlace.cs">
       <SubType>Form</SubType>
