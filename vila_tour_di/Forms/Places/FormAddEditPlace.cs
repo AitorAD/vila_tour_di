@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Net.Http;
+using System.Text;
 using System.Windows.Forms;
 using vila_tour_di.Services;
 
@@ -155,5 +156,67 @@ namespace vila_tour_di
                 return null;
             }
         }
+
+        private void btnAddPlace_Click(object sender, EventArgs e) {
+            if (string.IsNullOrWhiteSpace(txtName.Text)) {
+                MessageBox.Show("El nombre del lugar es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboCategory.SelectedItem == null) {
+                MessageBox.Show("Debe seleccionar una categoría.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (currentCoordinate == null) {
+                MessageBox.Show("Debe establecer la ubicación del lugar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Crear un nuevo objeto Place
+            var newPlace = new Place {
+                name = txtName.Text.Trim(),
+                categoryPlace = (CategoryPlace)comboCategory.SelectedItem,
+                description = txtDescription.Text.Trim(),
+                coordinate = currentCoordinate,
+                creationDate = DateTime.Now,
+                lastModificationDate = DateTime.Now,
+                imagensPaths = imgPlace.Image != null ? ConvertImageToBase64(imgPlace.ImageLocation) : null
+            };
+
+            // Formatear las fechas al formato ISO 8601 compatible con LocalDateTime
+            var formattedPlace = new {
+                newPlace.name,
+                newPlace.description,
+                newPlace.imagensPaths,
+                newPlace.coordinate,
+                creationDate = newPlace.creationDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                lastModificationDate = newPlace.lastModificationDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                newPlace.categoryPlaceId
+            };
+
+            // Serializar y enviar a la API
+            string json = JsonConvert.SerializeObject(formattedPlace);
+
+            using (HttpClient client = new HttpClient()) {
+                try {
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Config.currentToken);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = client.PostAsync("http://127.0.0.1:8080/places", content).Result;
+
+                    if (response.IsSuccessStatusCode) {
+                        MessageBox.Show("Lugar añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    } else {
+                        MessageBox.Show($"Error al añadir el lugar: {response.StatusCode} - {response.ReasonPhrase}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } catch (Exception ex) {
+                    MessageBox.Show("Error al enviar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
     }
 }
