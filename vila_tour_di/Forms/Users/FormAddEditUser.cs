@@ -84,7 +84,6 @@ namespace vila_tour_di
            
             User newUser = new User(username, email, password, role, name, surname, profilePicture);
 
-
             if (labelTitle.Text == "Editar Usuario" && _selectedUser != null) {
                 newUser.password = _selectedUser.password;
                 UserService.UpdateUser(_selectedUser.id, newUser);
@@ -173,9 +172,7 @@ namespace vila_tour_di
             ADMIN,
             EDITOR
         }
-
         private void labelTitle_Click(object sender, EventArgs e) {
-
         }
     }
 }

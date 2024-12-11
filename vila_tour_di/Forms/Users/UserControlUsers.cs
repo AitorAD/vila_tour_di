@@ -27,20 +27,21 @@ namespace vila_tour_di {
             gunaDataGridViewUsers.AutoResizeColumns();
         }
 
-        public DataTable LoadUsersData() {
-
+        public DataTable LoadUsersData()
+        {
+            
             string apiUrl = "http://127.0.0.1:8080/users"; // Ajusta tu URL
             string token = Config.currentToken;
 
             DataTable table = new DataTable();
 
-            // Definir las columnas del DataTable
-            table.Columns.Add("ID", typeof(int));
-            table.Columns.Add("Usuario");
-            table.Columns.Add("Email");
-            table.Columns.Add("Rol");
-            table.Columns.Add("Nombre");
-            table.Columns.Add("Apellidos");
+                // Definir las columnas del DataTable
+                table.Columns.Add("ID", typeof(int));
+                table.Columns.Add("Usuario");
+                table.Columns.Add("Email");
+                table.Columns.Add("Rol");
+                table.Columns.Add("Nombre");
+                table.Columns.Add("Apellidos");
 
             using (HttpClient client = new HttpClient()) {
                 try {
@@ -74,6 +75,8 @@ namespace vila_tour_di {
             return table;
         }
 
+
+
         private void btnAddUser_Click(object sender, EventArgs e) {
             FormAddEditUser formAddUser = new FormAddEditUser();
             formAddUser.StartPosition = FormStartPosition.CenterParent;
@@ -85,23 +88,22 @@ namespace vila_tour_di {
 
         private void btnEditUser_Click(object sender, EventArgs e) {
             if (gunaDataGridViewUsers.SelectedRows.Count > 0) {
+
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
+
                 // Atributos
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
-                User user = UserService.GetUserById(id);
-
-                FormAddEditUser formAddEditUser = new FormAddEditUser(user, true);
-                formAddEditUser.StartPosition = FormStartPosition.CenterParent;
-                formAddEditUser.ShowDialog();
+                string apiUrl = $"http://127.0.0.1:8080/users/{id}";
             }
         }
 
-        private void btnDeleteUser_Click(object sender, EventArgs e) {
-            if (gunaDataGridViewUsers.SelectedRows.Count > 0) {
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
+            {
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
                 int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-
                 // Confirmación antes de eliminar
                 DialogResult result = MessageBox.Show(
                     $"¿Estás seguro de que deseas eliminar a {selectedRow.Cells["Nombre"].Value}?",
@@ -109,21 +111,17 @@ namespace vila_tour_di {
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
-
                 if (result == DialogResult.Yes) {
                     if (UserService.DeleteUser(userId)) {
-                        // Recargar los datos y actualizar la vista
-                        originalDataTable = LoadUsersData();
-                        gunaDataGridViewUsers.DataSource = originalDataTable;
-                    } else {
-                        MessageBox.Show("Error al eliminar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Dispose();
                     }
                 }
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("No se ha seleccionado ningún usuario para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
 
         private void btnDetailsUser_Click(object sender, EventArgs e)
         {
@@ -132,7 +130,8 @@ namespace vila_tour_di {
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
                 int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                User user = new User {
+                User user = new User
+                {
                     id = userId,
                     username = selectedRow.Cells["Usuario"].Value.ToString(),
                     email = selectedRow.Cells["Email"].Value.ToString(),
