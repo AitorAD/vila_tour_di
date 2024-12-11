@@ -11,25 +11,24 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace vila_tour_di {
     public partial class FormAddEditRecipe : Form {
         bool isEditing = false;
-        Recipe recipeToEdit;
+        private Recipe _selectedRecipe;
         public FormAddEditRecipe() {
             InitializeComponent();
-            labelTitle.Text = "Añadir receta";
-
+            labelTitle.Text = "AÑADIR RECETA";
+            LoadIngredientsComboBox();
+            this.FormClosed += FormAddEditRecipe_FormClosed;
         }
-
         public FormAddEditRecipe(Recipe recipe, bool showDetails) {
-            InitializeComponent();
-
             isEditing = true;
-
-            labelTitle.Text = "Editar receta";
-            this.recipeToEdit = recipe;
+            InitializeComponent();
+            labelTitle.Text = "EDITAR RECETA";
+            _selectedRecipe = recipe;
 
             // Asignar los valores actuales
             guna2TextBoxName.Text = recipe.name;
@@ -40,7 +39,6 @@ namespace vila_tour_di {
 
 
             // Seleccionar los ingredientes actuales en la lista 
-
             if (recipe.ingredients != null) {
                 listBoxIngredients.Items.Clear(); // Limpiar los ítems actuales
                 foreach (var ingredient in recipe.ingredients) {
@@ -57,6 +55,19 @@ namespace vila_tour_di {
                 btnAddRecipe.Enabled = false;
                 guna2ImageCheckBoxApproved.Enabled = false;
                 btnAddPhoto.Enabled = false;
+            }
+            LoadIngredientsComboBox();
+            this.FormClosed += FormAddEditRecipe_FormClosed;
+        }
+
+        private void LoadIngredientsComboBox() {
+            guna2ComboBoxIngredients.Items.Clear();
+
+            List<Ingredient> ingredients = IngredientService.GetIngredients();
+
+            foreach (var ingredient in ingredients) {
+                guna2ComboBoxIngredients.Items.Add(ingredient);
+                guna2ComboBoxIngredients.ItemsAppearance.ToString();
             }
         }
 
@@ -76,16 +87,15 @@ namespace vila_tour_di {
             }
         }
 
-  
-
         private void btnAddRecipe_Click(object sender, EventArgs e) {
             // Obtener datos
             string name = guna2TextBoxName.Text;
             string description = guna2TextBoxDescription.Text;
-            double averageScore = 0.0;
             bool approved = guna2ImageCheckBoxApproved.Checked;
             bool recent = false;
             List<Ingredient> ingredients = new List<Ingredient>();
+            User creator = Config.currentUser;
+           
 
             // Recorrer los elementos del ListBox
             foreach (var item in listBoxIngredients.Items) {
@@ -102,15 +112,21 @@ namespace vila_tour_di {
                 image = ConvertImageToBase64(filePath);
             }
 
+            Recipe newRecipe = new Recipe(name, description, image, approved, recent, ingredients, creator);
 
             if (isEditing) {
-
+                newRecipe.creationDate = _selectedRecipe.creationDate;
+                newRecipe.creator = _selectedRecipe.creator;
+                RecipeService.UpdateRecipe(_selectedRecipe, newRecipe);
+                Dispose();
             } else {
-                // Crear el objeto Recipe
-                Recipe newRecipe = new Recipe(name, description, image, averageScore, approved, recent, ingredients);
+                newRecipe.creator = Config.currentUser;
+                RecipeService.AddRecipe(newRecipe);
                 Dispose();
             }
         }
+
+     
 
         private string ConvertImageToBase64(string filePath) {
             try {
@@ -132,19 +148,36 @@ namespace vila_tour_di {
         private void btnAddIngredient_Click(object sender, EventArgs e) {
             var selectedIngredient = guna2ComboBoxIngredients.SelectedItem as Ingredient;
 
-            if (selectedIngredient != null && listBoxIngredients.Items.Cast<Ingredient>().Any(ingredient => ingredient == selectedIngredient)) {
+            if (selectedIngredient != null && listBoxIngredients.Items.Cast<Ingredient>().Any(ingredient => ingredient.name.Equals(selectedIngredient.name))){
                 MessageBox.Show("Error. Ingrediente repetido",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             } else if (selectedIngredient != null) {
                 listBoxIngredients.Items.Add(selectedIngredient);
+            } else {
+                MessageBox.Show("Error. Seleciona un Ingrediente",
+                              "Error",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
             }
         }
 
         private void btnDeleteIngredient_Click(object sender, EventArgs e) {
-            listBoxIngredients.Items.Remove(listBoxIngredients.SelectedItem);
+            // Verifica si hay un elemento seleccionado
+            if (listBoxIngredients.SelectedItem != null) {
+                // Elimina el elemento seleccionado
+                listBoxIngredients.Items.Remove(listBoxIngredients.SelectedItem);
+            } else {
+                // Mensaje si no hay ningún elemento seleccionado
+                MessageBox.Show("Por favor, selecciona un ingrediente para eliminar.",
+                                "Advertencia",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
         }
+
+
 
         private void btnAddPhoto_Click(object sender, EventArgs e) {
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
@@ -162,21 +195,14 @@ namespace vila_tour_di {
             }
         }
 
+        private void FormAddEditRecipe_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.Owner is FormIngredient mainForm) {
+                mainForm.LoadIngredientsInDataGridView();
+            }
+        }
+
         private void btnCloseForm_Click(object sender, EventArgs e) {
             Dispose();
         }
-
-
-        /*
-        private void FormAddIngrediente_FormClosed(object sender, FormClosedEventArgs e) {
-            // Cuando el formulario se cierra, recarga las recetas en el formulario principal
-            if (this.Owner != null) {
-                var mainForm = this.Owner as UserControlRecipes;
-                if (mainForm != null) {
-                    mainForm.LoadIngredientsInDataGridView(); // Recargar los ingredientes
-                }
-            }
-        }
-        */
     }
 }
