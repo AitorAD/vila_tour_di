@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Net.Http;
+using System.Text;
 using System.Windows.Forms;
 using vila_tour_di.Services;
 
@@ -172,6 +173,7 @@ namespace vila_tour_di
                 return;
             }
 
+            // Crear un nuevo objeto Place
             var newPlace = new Place {
                 name = txtName.Text.Trim(),
                 categoryPlace = (CategoryPlace)comboCategory.SelectedItem,
@@ -182,16 +184,39 @@ namespace vila_tour_di
                 imagensPaths = imgPlace.Image != null ? ConvertImageToBase64(imgPlace.ImageLocation) : null
             };
 
-            bool result = PlaceService.AddPlace(newPlace);
+            // Formatear las fechas al formato ISO 8601 compatible con LocalDateTime
+            var formattedPlace = new {
+                newPlace.name,
+                newPlace.description,
+                newPlace.imagensPaths,
+                newPlace.coordinate,
+                creationDate = newPlace.creationDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                lastModificationDate = newPlace.lastModificationDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                newPlace.categoryPlaceId
+            };
 
-            if (result) {
-                MessageBox.Show("Lugar añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            } else {
-                MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // Serializar y enviar a la API
+            string json = JsonConvert.SerializeObject(formattedPlace);
+
+            using (HttpClient client = new HttpClient()) {
+                try {
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Config.currentToken);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = client.PostAsync("http://127.0.0.1:8080/places", content).Result;
+
+                    if (response.IsSuccessStatusCode) {
+                        MessageBox.Show("Lugar añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    } else {
+                        MessageBox.Show($"Error al añadir el lugar: {response.StatusCode} - {response.ReasonPhrase}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } catch (Exception ex) {
+                    MessageBox.Show("Error al enviar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
 
     }
 }
