@@ -1,222 +1,220 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Net.Http;
-using System.Text;
 using System.Windows.Forms;
 using vila_tour_di.Services;
 
-namespace vila_tour_di
-{
-    public partial class FormAddEditPlace : Form
-    {
+namespace vila_tour_di {
+    public partial class FormAddEditPlace : Form {
         private Place _currentPlace;
-        private bool edit;
-        private bool creating;
-        private Coordinate currentCoordinate;
+        private bool _isEditing;
+        private bool _isCreating;
+        private Coordinate _currentCoordinate;
 
-        public FormAddEditPlace()
-        {
+        public FormAddEditPlace() {
             InitializeComponent();
-            comboCategory.DataSource = LoadCategoriesPlacesData();
-            labelTitle.Text = "Añadir lugar de interés";
-            creating = true;
-            currentCoordinate = null;
+            InitializeFormForCreation();
         }
 
-        public FormAddEditPlace(Place place, bool editable)
-        {
+        public FormAddEditPlace(Place place, bool editable) {
             InitializeComponent();
-            edit = editable;
-            creating = false;
-            comboCategory.DataSource = LoadCategoriesPlacesData();
-            labelTitle.Text = editable ? "Editar lugar de interés" : "Detalles del lugar de interés";
+            InitializeFormForEditing(place, editable);
+        }
+
+        private void InitializeFormForCreation() {
+            _currentCoordinate = null;
+            labelTitle.Text = "Añadir lugar de interés";
+            LoadCategoriesIntoComboBox();
+        }
+
+        private void InitializeFormForEditing(Place place, bool editable) {
             _currentPlace = place;
+            _isEditing = editable;
+
+            labelTitle.Text = editable ? "Editar lugar de interés" : "Detalles del lugar de interés";
+
+            LoadCategoriesIntoComboBox();
 
             txtName.Text = place.name;
             comboCategory.SelectedItem = place.categoryPlace;
             txtDescription.Text = place.description;
             lblCreationDate.Text = "Fecha de creación: " + place.creationDate;
             lblLastModificationDate.Text = "Última modificación: " + place.lastModificationDate;
-            currentCoordinate = place.coordinate;
+            lblNameLocation.Text = place.coordinate.name;
+            _currentCoordinate = place.coordinate;
 
-            if (place.imagensPaths != null)
-            {
+            if (!string.IsNullOrEmpty(place.imagensPaths)) {
                 imgPlace.Image = Base64ToImage(place.imagensPaths);
                 imgPlace.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            if (!editable)
-            {
-                txtName.ReadOnly = true;
-                comboCategory.Enabled = false;
-                txtDescription.ReadOnly = true;
-                btnAddImage.Enabled = false;
-                btnAddPlace.Enabled = false;
+            ConfigureFormForReadOnly(!editable);
+        }
+
+
+        private void ConfigureFormForReadOnly(bool isReadOnly) {
+            txtName.ReadOnly = isReadOnly;
+            comboCategory.Enabled = !isReadOnly;
+            txtDescription.ReadOnly = isReadOnly;
+            btnAddImage.Enabled = !isReadOnly;
+            btnAddPlace.Enabled = !isReadOnly;
+            btnLocation.Enabled = !isReadOnly;
+        }
+
+        private void LoadCategoriesIntoComboBox() {
+            try {
+                List<CategoryPlace> categories = CategoryPlaceService.GetCategoriesPlaces();
+                comboCategory.DataSource = categories;
+                comboCategory.DisplayMember = "name";
+                comboCategory.ValueMember = "id";
+
+                if (categories == null || categories.Count == 0) {
+                    MessageBox.Show("No se encontraron categorías de lugares.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error al cargar las categorías de lugares: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private List<CategoryPlace> LoadCategoriesPlacesData()
-        {
-            string apiUrl = "http://127.0.0.1:8080/categoriesPlace";
-            string token = Config.currentToken;
-
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        return JsonConvert.DeserializeObject<List<CategoryPlace>>(jsonResponse);
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Error al obtener los datos: {response.StatusCode} - {response.ReasonPhrase}");
-                        return null;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al procesar la solicitud: " + ex.Message);
-                    return null;
-                }
+        private void btnCloseForm_Click(object sender, EventArgs e) {
+            if (_currentCoordinate != null) {
+                CoordinateService.DeleteCoordinate(_currentCoordinate.id);
             }
+
+            Close();
         }
 
-        private void btnCloseForm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnLocation_Click(object sender, EventArgs e)
-        {
-            FormAddEditCoordinate formAddEditCoordinate = currentCoordinate == null
+        private void btnLocation_Click(object sender, EventArgs e) {
+            FormAddEditCoordinate coordinateForm = _currentCoordinate == null
                 ? new FormAddEditCoordinate()
-                : new FormAddEditCoordinate(currentCoordinate, true);
+                : new FormAddEditCoordinate(_currentCoordinate, true);
 
-            formAddEditCoordinate.StartPosition = FormStartPosition.CenterScreen;
-            var result = formAddEditCoordinate.ShowDialog();
+            if (coordinateForm.ShowDialog() == DialogResult.OK) {
+                _currentCoordinate = coordinateForm.CurrentCoordinate;
 
-            if (result == DialogResult.OK)
-            {
-                currentCoordinate = formAddEditCoordinate.CurrentCoordinate;
+                if (_currentCoordinate != null) {
+                    lblNameLocation.Text = _currentCoordinate.name;
+                }
             }
         }
 
-        private string ConvertImageToBase64(string filePath)
-        {
-            try
-            {
-                using (Image image = Image.FromFile(filePath))
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    // Guardar la imagen en un MemoryStream como PNG
-                    image.Save(ms, ImageFormat.Png);
-                    byte[] imageBytes = ms.ToArray();
 
-                    // Convertir los bytes a una cadena Base64
-                    return Convert.ToBase64String(imageBytes);
-                }
+        private void btnAddPlace_Click(object sender, EventArgs e) {
+            if (!ValidateFormInputs())
+                return;
+
+            Place newPlace = CreatePlaceFromInputs();
+
+            if (_isEditing) {
+                UpdatePlace(newPlace);
+            } else {
+                AddNewPlace(newPlace);
             }
-            catch (Exception ex)
-            {
+        }
+
+        private bool ValidateFormInputs() {
+            if (string.IsNullOrWhiteSpace(txtName.Text)) {
+                MessageBox.Show("El nombre del lugar es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (comboCategory.SelectedItem == null) {
+                MessageBox.Show("Debe seleccionar una categoría.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (_currentCoordinate == null) {
+                MessageBox.Show("Debe establecer la ubicación del lugar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private Place CreatePlaceFromInputs() {
+            return new Place {
+                name = txtName.Text.Trim(),
+                description = txtDescription.Text.Trim(),
+                imagensPaths = imgPlace.Image != null ? ConvertImageToBase64(imgPlace.ImageLocation) : null,
+                creationDate = _isEditing ? _currentPlace.creationDate : DateTime.Parse(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")),
+                lastModificationDate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")),
+                categoryPlace = ((CategoryPlace)comboCategory.SelectedItem),
+                coordinate = _currentCoordinate,
+                creator = _isEditing ? _currentPlace.creator : Config.currentUser
+            };
+        }
+
+        private void UpdatePlace(Place updatedPlace) {
+            if (imgPlace.Image != null) {
+                updatedPlace.imagensPaths = ConvertImageToBase64(imgPlace.Tag.ToString());
+            }
+
+            if (PlaceService.UpdatePlace(_currentPlace, updatedPlace)) {
+                Close();
+            } else {
+                MessageBox.Show("Error al actualizar el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void AddNewPlace(Place newPlace) {
+            if (imgPlace.Image != null) {
+                newPlace.imagensPaths = ConvertImageToBase64(imgPlace.Tag.ToString());
+            }
+
+            if (PlaceService.AddPlace(newPlace)) {
+                DialogResult = DialogResult.OK;
+                Close();
+            } else {
+                MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private string ConvertImageToBase64(string filePath) {
+            try {
+                Image image = Image.FromFile(filePath);
+                MemoryStream ms = new MemoryStream();
+                image.Save(ms, ImageFormat.Png);
+                return Convert.ToBase64String(ms.ToArray());
+            } catch (Exception ex) {
                 MessageBox.Show("Error al convertir la imagen a Base64: " + ex.Message);
                 return null;
             }
         }
 
-        private Image Base64ToImage(string base64String)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(base64String)) return null;
-                var imageBytes = Convert.FromBase64String(base64String);
-                using (MemoryStream ms = new MemoryStream(imageBytes))
-                {
-                    return Image.FromStream(ms);
-                }
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("La imagen base64 tiene un formato incorrecto: " + ex.Message);
-                return null;
-            }
-            catch (Exception ex)
-            {
+
+        private Image Base64ToImage(string base64String) {
+            try {
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+                MemoryStream ms = new MemoryStream(imageBytes);
+                return Image.FromStream(ms);
+            } catch (Exception ex) {
                 MessageBox.Show("Error al convertir Base64 a imagen: " + ex.Message);
                 return null;
             }
         }
 
-        private void btnAddPlace_Click(object sender, EventArgs e) {
-            if (string.IsNullOrWhiteSpace(txtName.Text)) {
-                MessageBox.Show("El nombre del lugar es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+        private void btnAddImage_Click(object sender, EventArgs e) {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
+                openFileDialog.Filter = "Archivos de imagen (*.png;*.jpg)|*.png;*.jpg";
+                openFileDialog.Title = "Selecciona una imagen de perfil";
 
-            if (comboCategory.SelectedItem == null) {
-                MessageBox.Show("Debe seleccionar una categoría.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                    string selectedFilePath = openFileDialog.FileName;
 
-            if (currentCoordinate == null) {
-                MessageBox.Show("Debe establecer la ubicación del lugar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Crear un nuevo objeto Place
-            var newPlace = new Place {
-                name = txtName.Text.Trim(),
-                categoryPlace = (CategoryPlace)comboCategory.SelectedItem,
-                description = txtDescription.Text.Trim(),
-                coordinate = currentCoordinate,
-                creationDate = DateTime.Now,
-                lastModificationDate = DateTime.Now,
-                imagensPaths = imgPlace.Image != null ? ConvertImageToBase64(imgPlace.ImageLocation) : null
-            };
-
-            // Formatear las fechas al formato ISO 8601 compatible con LocalDateTime
-            var formattedPlace = new {
-                newPlace.name,
-                newPlace.description,
-                newPlace.imagensPaths,
-                newPlace.coordinate,
-                creationDate = newPlace.creationDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                lastModificationDate = newPlace.lastModificationDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                newPlace.categoryPlaceId
-            };
-
-            // Serializar y enviar a la API
-            string json = JsonConvert.SerializeObject(formattedPlace);
-
-            using (HttpClient client = new HttpClient()) {
-                try {
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Config.currentToken);
-                    var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var response = client.PostAsync("http://127.0.0.1:8080/places", content).Result;
-
-                    if (response.IsSuccessStatusCode) {
-                        MessageBox.Show("Lugar añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    } else {
-                        MessageBox.Show($"Error al añadir el lugar: {response.StatusCode} - {response.ReasonPhrase}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                } catch (Exception ex) {
-                    MessageBox.Show("Error al enviar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    imgPlace.SizeMode = PictureBoxSizeMode.StretchImage;
+                    imgPlace.Image = Image.FromFile(selectedFilePath);
+                    imgPlace.Tag = selectedFilePath;
                 }
             }
         }
-
 
     }
 }

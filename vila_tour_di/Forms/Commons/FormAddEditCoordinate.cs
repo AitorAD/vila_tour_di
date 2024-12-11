@@ -34,8 +34,6 @@ namespace vila_tour_di
             isEditable = editable;
             currentCoordinate = coordinate;
 
-            MessageBox.Show(""+currentCoordinate.id);
-
             loadMap(coordinate, isEditable);
             txtName.Text = coordinate.name;
             lblLat.Text = coordinate.latitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
