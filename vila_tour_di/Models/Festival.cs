@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using vila_tour_di.Models;
 
 namespace vila_tour_di
 {
-    public class Festival
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public double averageScore { get; set; }
-        public DateTime creationDate { get; set; }
-        public DateTime lastModificationDate { get; set; }
+    public class Festival : Article {
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
         public User creator { get; set; }

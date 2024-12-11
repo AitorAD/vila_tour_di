@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vila_tour_di.Services;
+using vila_tour_di.Utils;
 
 namespace vila_tour_di {
     public partial class FormAddEditFestival : Form {
         bool isEditing = false;
         Festival selectedFestival;
+        Coordinate currentCoordinate;
         public FormAddEditFestival() {
             InitializeComponent();
             setValuesToForm();
@@ -48,6 +50,9 @@ namespace vila_tour_di {
             DateTimePickerStart.Enabled = isEditing;
             DateTimePickerFinal.Enabled = isEditing;
             comboBoxCoordinates.Enabled = isEditing;
+            btnAddImage.Enabled = isEditing;
+            btnAddCoordinate.Enabled = isEditing;
+            btnAddFestival.Enabled = isEditing;
         }
 
         private void btnAddFestival_Click(object sender, EventArgs e) {
@@ -57,6 +62,12 @@ namespace vila_tour_di {
             DateTime endDate = DateTimePickerFinal.Value; // Obtiene la fecha y la hora. Mirar que el formato sea valido.
             User creator = Config.currentUser;
             Coordinate coordinate = (Coordinate) comboBoxCoordinates.SelectedItem; // TODO: Asignar una coordenada
+
+            string festivalImage = pictureBoxFestival.Image != null && pictureBoxFestival.Tag != null ? 
+                Utils.Utils.ConvertImageToBase64(pictureBoxFestival.Tag.ToString()) : 
+                null;
+
+
 
             Festival newFestival = new Festival(name, description, startDate, endDate, creator, coordinate);
 
@@ -82,6 +93,37 @@ namespace vila_tour_di {
             comboBoxCoordinates.DisplayMember = "DisplayText"; // Propiedad que se muestra al usuario
             comboBoxCoordinates.ValueMember = "id";    // Propiedad que se usará como valor
 
+        }
+
+        private void btnAddCoordinate_Click(object sender, EventArgs e) {
+            FormAddEditCoordinate formAddEditCoordinate = currentCoordinate == null
+                ? new FormAddEditCoordinate()
+                : new FormAddEditCoordinate(currentCoordinate, true);
+
+            formAddEditCoordinate.StartPosition = FormStartPosition.CenterScreen;
+            var result = formAddEditCoordinate.ShowDialog();
+
+            if (result == DialogResult.OK) {
+                currentCoordinate = formAddEditCoordinate.CurrentCoordinate;
+                loadCoordinates();
+            }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e) {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
+                openFileDialog.Filter = "Archivos de imagen (*.png;*.jpg)|*.png;*.jpg";
+                openFileDialog.Title = "Selecciona una imagen de perfil";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    // Cargar la imagen en el PictureBox
+                    pictureBoxFestival.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBoxFestival.Image = Image.FromFile(selectedFilePath);
+                    pictureBoxFestival.Tag = selectedFilePath;
+
+                }
+            }
         }
     }
 }
