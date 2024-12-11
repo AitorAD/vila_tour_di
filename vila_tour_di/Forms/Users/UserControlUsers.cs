@@ -124,11 +124,8 @@ namespace vila_tour_di {
             }
         }
 
-
-        private void btnDetailsUser_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
-            {
+        private void btnDetailsUser_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0) {
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
                 int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
@@ -146,9 +143,7 @@ namespace vila_tour_di {
                 FormAddEditUser formDetails = new FormAddEditUser(user, false);
                 formDetails.StartPosition = FormStartPosition.CenterParent;
                 formDetails.ShowDialog();
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("No se ha seleccionado ningún usuario para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

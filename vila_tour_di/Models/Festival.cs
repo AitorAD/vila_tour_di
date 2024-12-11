@@ -16,22 +16,18 @@ namespace vila_tour_di
         public DateTime lastModificationDate { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
-        public int creatorId { get; set; }
-        public int coordinateId { get; set; }
-
-        public Festival(string name, string description, double averageScore, DateTime creationDate, DateTime lastModificationDate, DateTime startDate, DateTime endDate, int creatorId, int coordinateId)
-        {
-            this.name = name;
-            this.description = description;
-            this.averageScore = averageScore;
-            this.creationDate = creationDate;
-            this.lastModificationDate = lastModificationDate;
-            this.startDate = startDate;
-            this.endDate = endDate;
-            this.creatorId = creatorId;
-            this.coordinateId = coordinateId;
-        }
+        public User creator { get; set; }
+        public Coordinate coordinate { get; set; }
 
         public Festival() { }
+
+        public Festival(string name, string description, DateTime startDate, DateTime endDate, User creator, Coordinate coordinate) {
+            this.name = name;
+            this.description = description;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.creator = creator;
+            this.coordinate = coordinate;
+        }
     }
 }
