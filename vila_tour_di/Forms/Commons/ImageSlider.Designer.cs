@@ -25,11 +25,16 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageSlider));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.lblInfoImage = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDeleteImage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddImage = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -41,21 +46,44 @@
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnBack, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblInfoImage, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(615, 325);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(620, 400);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNext.Animated = true;
+            this.btnNext.BorderRadius = 25;
+            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNext.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(564, 125);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(50, 50);
+            this.btnNext.TabIndex = 29;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pictureBox
             // 
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.ImageRotate = 0F;
-            this.pictureBox.Location = new System.Drawing.Point(64, 3);
+            this.pictureBox.Location = new System.Drawing.Point(65, 3);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(486, 319);
+            this.pictureBox.Size = new System.Drawing.Size(490, 294);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
@@ -72,28 +100,75 @@
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(5, 137);
+            this.btnBack.Location = new System.Drawing.Point(6, 125);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(50, 50);
             this.btnBack.TabIndex = 28;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnNext
+            // lblInfoImage
             // 
-            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNext.Animated = true;
-            this.btnNext.BorderRadius = 25;
-            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(559, 137);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(50, 50);
-            this.btnNext.TabIndex = 29;
+            this.lblInfoImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblInfoImage.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfoImage.Location = new System.Drawing.Point(283, 312);
+            this.lblInfoImage.Name = "lblInfoImage";
+            this.lblInfoImage.Size = new System.Drawing.Size(54, 15);
+            this.lblInfoImage.TabIndex = 30;
+            this.lblInfoImage.Text = "No Images";
+            this.lblInfoImage.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnDeleteImage, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnAddImage, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(65, 343);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(490, 54);
+            this.tableLayoutPanel2.TabIndex = 31;
+            // 
+            // btnDeleteImage
+            // 
+            this.btnDeleteImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteImage.Animated = true;
+            this.btnDeleteImage.BorderRadius = 25;
+            this.btnDeleteImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteImage.FillColor = System.Drawing.Color.Crimson;
+            this.btnDeleteImage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeleteImage.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteImage.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteImage.Image")));
+            this.btnDeleteImage.Location = new System.Drawing.Point(97, 3);
+            this.btnDeleteImage.Name = "btnDeleteImage";
+            this.btnDeleteImage.Size = new System.Drawing.Size(50, 48);
+            this.btnDeleteImage.TabIndex = 4;
+            this.btnDeleteImage.Click += new System.EventHandler(this.btnDeleteImage_Click);
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddImage.Animated = true;
+            this.btnAddImage.BorderRadius = 25;
+            this.btnAddImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddImage.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddImage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddImage.ForeColor = System.Drawing.Color.White;
+            this.btnAddImage.Image = ((System.Drawing.Image)(resources.GetObject("btnAddImage.Image")));
+            this.btnAddImage.Location = new System.Drawing.Point(342, 3);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(50, 48);
+            this.btnAddImage.TabIndex = 3;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
             // ImageSlider
             // 
@@ -101,9 +176,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ImageSlider";
-            this.Size = new System.Drawing.Size(615, 325);
+            this.Size = new System.Drawing.Size(620, 400);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -114,5 +191,9 @@
         private Guna.UI2.WinForms.Guna2PictureBox pictureBox;
         private Guna.UI2.WinForms.Guna2Button btnNext;
         private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblInfoImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Button btnAddImage;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteImage;
     }
 }

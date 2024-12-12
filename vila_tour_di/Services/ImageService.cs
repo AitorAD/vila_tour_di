@@ -17,7 +17,7 @@ namespace vila_tour_di.Services {
         }
 
         public static List<Image> GetImagesByArticle(Article article) {
-            return ApiService.Get<List<Image>>($"{baseUrl}/{article.id}") ?? new List<Image>();
+            return ApiService.Get<List<Image>>($"{baseUrl}/byArticle/{article.id}") ?? new List<Image>();
         }
 
         public static Image GetImageById(int id) {
@@ -25,9 +25,8 @@ namespace vila_tour_di.Services {
             return ApiService.GetById<Image>(baseUrl, id);
         }
 
-        public static bool AddImage(Image image) {
-            var response = ApiService.Post(baseUrl, image);
-            return ApiService.HandleResponse(response, "Imagen creada correctamente.", "Error al crear la imagen");
+        public static HttpResponseMessage AddImage(Image image) {
+            return ApiService.Post(baseUrl, image);
         }
 
         public static bool UpdateImage(int id, Image image) {
@@ -35,8 +34,8 @@ namespace vila_tour_di.Services {
             return ApiService.HandleResponse(response, "Image actualizada correctamente.", "Error al actualizar la imagen");
         }
 
-        public static bool DeleteImage(int imageId) {
-            var response = ApiService.Delete($"{baseUrl}/{imageId}");
+        public static bool DeleteImage(Image image) {
+            var response = ApiService.Delete($"{baseUrl}/{image.id}");
             return ApiService.HandleResponse(response, "Imagen eliminada correctamente.", "Error al eliminar la imagen");
         }
     }

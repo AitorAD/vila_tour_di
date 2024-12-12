@@ -20,6 +20,10 @@ namespace vila_tour_di.Models {
             this.article = article;
         }
 
+        public Image(string path) {
+            this.path = path;
+        }
+
         public override string ToString() {
             return $"ID: {id}\n" +
                    $"Path: {path}\n" +

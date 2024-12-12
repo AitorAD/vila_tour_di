@@ -53,7 +53,6 @@ namespace vila_tour_di.Services {
                         var settings = new JsonSerializerSettings {
                             Converters = new List<JsonConverter> { new ArticleConverter() }
                         };
-
                         return JsonConvert.DeserializeObject<T>(jsonResponse, settings);
                     } else {
                         // Si la respuesta no es exitosa, manejar el error
