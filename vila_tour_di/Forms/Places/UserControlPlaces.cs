@@ -30,7 +30,6 @@ namespace vila_tour_di {
             // Definir las columnas del DataTable
             table.Columns.Add("ID", typeof(int));
             table.Columns.Add("Nombre");
-            table.Columns.Add("Descripción");
             table.Columns.Add("Puntuación media");
             table.Columns.Add("Creación");
             table.Columns.Add("Última modificación");
@@ -58,7 +57,7 @@ namespace vila_tour_di {
                         // Agregamos los users a la tabla
                         foreach (var place in places)
                         {
-                            table.Rows.Add(place.id, place.name, place.description, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace?.name ?? "Sin asignar", place.creator.name);
+                            table.Rows.Add(place.id, place.name, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace?.name ?? "Sin asignar", place.creator.name);
                         }
                     }
                     else
@@ -96,7 +95,7 @@ namespace vila_tour_di {
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/places/{id}";
-                string token = AppState.JwtData.Token;
+                string token = Config.currentToken;
                 string jsonResponse = null;
 
                 using (HttpClient client = new HttpClient())
@@ -162,7 +161,7 @@ namespace vila_tour_di {
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/places/{id}";
-                string token = AppState.JwtData.Token;
+                string token = Config.currentToken;
                 string jsonResponse = null;
 
                 using (HttpClient client = new HttpClient())
@@ -235,7 +234,7 @@ namespace vila_tour_di {
                 if (result == DialogResult.Yes)
                 {
                     string apiUrl = $"http://127.0.0.1:8080/places/{id}"; // URL con el ID del lugar
-                    string token = AppState.JwtData.Token;
+                    string token = Config.currentToken;
 
                     using (HttpClient client = new HttpClient())
                     {

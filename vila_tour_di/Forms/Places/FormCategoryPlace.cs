@@ -106,7 +106,7 @@ namespace vila_tour_di.Forms.Places
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    string token = AppState.JwtData.Token;
+                    string token = Config.currentToken;
                     bool success = CategoryPlaceService.DeleteCategoryPlace(id);
 
                     if (success)

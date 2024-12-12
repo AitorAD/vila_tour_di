@@ -42,7 +42,9 @@ namespace vila_tour_di
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCloseForm = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddPlace = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLocation = new Guna.UI2.WinForms.Guna2Button();
+            this.lblNameLocation = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,6 +61,7 @@ namespace vila_tour_di
             ((System.ComponentModel.ISupportInitialize)(this.imgPlace)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -112,8 +115,8 @@ namespace vila_tour_di
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(40, 3);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(40, 50);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(40, 50, 3, 3);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(79, 27);
             this.guna2HtmlLabel5.TabIndex = 1;
@@ -162,6 +165,7 @@ namespace vila_tour_di
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(50, 48);
             this.btnAddImage.TabIndex = 5;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -180,25 +184,28 @@ namespace vila_tour_di
             // 
             // comboCategory
             // 
-            this.comboCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboCategory.BackColor = System.Drawing.Color.Transparent;
+            this.comboCategory.BorderRadius = 15;
             this.comboCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCategory.FillColor = System.Drawing.Color.LightSeaGreen;
             this.comboCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.comboCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboCategory.ForeColor = System.Drawing.Color.White;
             this.comboCategory.ItemHeight = 30;
             this.comboCategory.Location = new System.Drawing.Point(183, 11);
             this.comboCategory.Name = "comboCategory";
             this.comboCategory.Size = new System.Drawing.Size(264, 36);
-            this.comboCategory.TabIndex = 21;
+            this.comboCategory.TabIndex = 3;
             // 
             // guna2HtmlLabel4
             // 
+            this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(40, 3);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(40, 16);
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(102, 27);
@@ -213,7 +220,7 @@ namespace vila_tour_di
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel16.Controls.Add(this.btnCloseForm, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnAddPlace, 2, 0);
-            this.tableLayoutPanel16.Controls.Add(this.btnLocation, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(60, 558);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
@@ -260,6 +267,20 @@ namespace vila_tour_di
             this.btnAddPlace.TabIndex = 4;
             this.btnAddPlace.Click += new System.EventHandler(this.btnAddPlace_Click);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel5.Controls.Add(this.btnLocation, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblNameLocation, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(264, 53);
+            this.tableLayoutPanel5.TabIndex = 5;
+            // 
             // btnLocation
             // 
             this.btnLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -273,11 +294,24 @@ namespace vila_tour_di
             this.btnLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLocation.ForeColor = System.Drawing.Color.White;
             this.btnLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnLocation.Image")));
-            this.btnLocation.Location = new System.Drawing.Point(110, 4);
+            this.btnLocation.Location = new System.Drawing.Point(200, 3);
             this.btnLocation.Name = "btnLocation";
-            this.btnLocation.Size = new System.Drawing.Size(50, 50);
+            this.btnLocation.Size = new System.Drawing.Size(47, 47);
             this.btnLocation.TabIndex = 23;
             this.btnLocation.Click += new System.EventHandler(this.btnLocation_Click);
+            // 
+            // lblNameLocation
+            // 
+            this.lblNameLocation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNameLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblNameLocation.Location = new System.Drawing.Point(40, 1);
+            this.lblNameLocation.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.lblNameLocation.MaximumSize = new System.Drawing.Size(140, 50);
+            this.lblNameLocation.Name = "lblNameLocation";
+            this.lblNameLocation.Size = new System.Drawing.Size(140, 50);
+            this.lblNameLocation.TabIndex = 24;
+            this.lblNameLocation.Text = "Ubicación sin asignar";
             // 
             // tableLayoutPanel6
             // 
@@ -298,8 +332,8 @@ namespace vila_tour_di
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(40, 3);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(40, 10);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(40, 10, 3, 3);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(122, 27);
             this.guna2HtmlLabel3.TabIndex = 1;
@@ -318,6 +352,7 @@ namespace vila_tour_di
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.Location = new System.Drawing.Point(183, 11);
+            this.txtDescription.MaxLength = 400;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
@@ -358,10 +393,11 @@ namespace vila_tour_di
             // 
             // guna2HtmlLabel1
             // 
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(40, 10);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(40, 10, 3, 3);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(40, 14);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(40, 0, 3, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(84, 27);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -380,6 +416,7 @@ namespace vila_tour_di
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Location = new System.Drawing.Point(183, 11);
+            this.txtName.MaxLength = 40;
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -430,6 +467,7 @@ namespace vila_tour_di
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 646);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormAddEditPlace";
@@ -443,6 +481,8 @@ namespace vila_tour_di
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -467,7 +507,6 @@ namespace vila_tour_di
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private Guna.UI2.WinForms.Guna2ComboBox comboCategory;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
@@ -478,5 +517,8 @@ namespace vila_tour_di
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLastModificationDate;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCreationDate;
+        private Guna.UI2.WinForms.Guna2ComboBox comboCategory;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNameLocation;
     }
 }

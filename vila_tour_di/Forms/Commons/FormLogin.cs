@@ -46,18 +46,15 @@ namespace vila_tour_di {
 
             using (var client = new HttpClient()) {
                 try {
-                    // Enviar las credenciales
                     var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                     var response = await client.PostAsync(apiUrl, content);
 
                     if (response.IsSuccessStatusCode) {
-                        // Leer el token
                         var responseString = await response.Content.ReadAsStringAsync();
                         var responseData = JsonConvert.DeserializeObject<JwtResponse>(responseString);
 
                         JwToken = responseData.Token;
 
-                        // Verificar los roles
                         bool hasAccess = (responseData.Role == "ADMIN" || responseData.Role == "EDITOR");
 
                         if (hasAccess) {
@@ -79,5 +76,13 @@ namespace vila_tour_di {
                 }
             }
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing) {
+                Application.Exit();
+            }
+        }
+
     }
 }

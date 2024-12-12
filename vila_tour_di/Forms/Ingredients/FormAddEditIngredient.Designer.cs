@@ -80,6 +80,7 @@ namespace vila_tour_di {
             this.guna2TextBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxName.Location = new System.Drawing.Point(23, 150);
             this.guna2TextBoxName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBoxName.MaxLength = 40;
             this.guna2TextBoxName.Name = "guna2TextBoxName";
             this.guna2TextBoxName.PasswordChar = '\0';
             this.guna2TextBoxName.PlaceholderText = "";
