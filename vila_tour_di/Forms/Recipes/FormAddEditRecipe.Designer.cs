@@ -424,6 +424,7 @@
             this.guna2TextBoxDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBoxDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxDescription.Location = new System.Drawing.Point(271, 3);
+            this.guna2TextBoxDescription.MaxLength = 400;
             this.guna2TextBoxDescription.Name = "guna2TextBoxDescription";
             this.guna2TextBoxDescription.PasswordChar = '\0';
             this.guna2TextBoxDescription.PlaceholderText = "";
@@ -485,6 +486,7 @@
             this.guna2TextBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxName.Location = new System.Drawing.Point(271, 8);
+            this.guna2TextBoxName.MaxLength = 40;
             this.guna2TextBoxName.Name = "guna2TextBoxName";
             this.guna2TextBoxName.PasswordChar = '\0';
             this.guna2TextBoxName.PlaceholderText = "";
@@ -492,7 +494,7 @@
             this.guna2TextBoxName.Size = new System.Drawing.Size(368, 36);
             this.guna2TextBoxName.TabIndex = 1;
             // 
-            // FormAddRecipe
+            // FormAddEditRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -501,7 +503,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormAddRecipe";
+            this.Name = "FormAddEditRecipe";
             this.Text = "Receta";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

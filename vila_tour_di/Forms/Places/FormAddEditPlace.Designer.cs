@@ -42,7 +42,9 @@ namespace vila_tour_di
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCloseForm = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddPlace = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLocation = new Guna.UI2.WinForms.Guna2Button();
+            this.lblNameLocation = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,18 +55,16 @@ namespace vila_tour_di
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLastModificationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCreationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNameLocation = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlace)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -267,6 +267,20 @@ namespace vila_tour_di
             this.btnAddPlace.TabIndex = 4;
             this.btnAddPlace.Click += new System.EventHandler(this.btnAddPlace_Click);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel5.Controls.Add(this.btnLocation, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblNameLocation, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(264, 53);
+            this.tableLayoutPanel5.TabIndex = 5;
+            // 
             // btnLocation
             // 
             this.btnLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -285,6 +299,19 @@ namespace vila_tour_di
             this.btnLocation.Size = new System.Drawing.Size(47, 47);
             this.btnLocation.TabIndex = 23;
             this.btnLocation.Click += new System.EventHandler(this.btnLocation_Click);
+            // 
+            // lblNameLocation
+            // 
+            this.lblNameLocation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNameLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblNameLocation.Location = new System.Drawing.Point(40, 1);
+            this.lblNameLocation.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.lblNameLocation.MaximumSize = new System.Drawing.Size(140, 50);
+            this.lblNameLocation.Name = "lblNameLocation";
+            this.lblNameLocation.Size = new System.Drawing.Size(140, 50);
+            this.lblNameLocation.TabIndex = 24;
+            this.lblNameLocation.Text = "Ubicación sin asignar";
             // 
             // tableLayoutPanel6
             // 
@@ -325,6 +352,7 @@ namespace vila_tour_di
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.Location = new System.Drawing.Point(183, 11);
+            this.txtDescription.MaxLength = 400;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
@@ -388,6 +416,7 @@ namespace vila_tour_di
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Location = new System.Drawing.Point(183, 11);
+            this.txtName.MaxLength = 40;
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -432,39 +461,13 @@ namespace vila_tour_di
             this.lblCreationDate.TabIndex = 1;
             this.lblCreationDate.Text = "Fecha de creación: ";
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel5.Controls.Add(this.btnLocation, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblNameLocation, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(264, 53);
-            this.tableLayoutPanel5.TabIndex = 5;
-            // 
-            // lblNameLocation
-            // 
-            this.lblNameLocation.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNameLocation.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.lblNameLocation.Location = new System.Drawing.Point(40, 1);
-            this.lblNameLocation.Margin = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.lblNameLocation.MaximumSize = new System.Drawing.Size(140, 50);
-            this.lblNameLocation.Name = "lblNameLocation";
-            this.lblNameLocation.Size = new System.Drawing.Size(140, 50);
-            this.lblNameLocation.TabIndex = 24;
-            this.lblNameLocation.Text = "Ubicación sin asignar";
-            // 
             // FormAddEditPlace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 646);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormAddEditPlace";
@@ -478,14 +481,14 @@ namespace vila_tour_di
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

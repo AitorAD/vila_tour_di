@@ -12,6 +12,7 @@ namespace vila_tour_di {
         private Guna2Button lastButton;
         private Size originalSize;
         private Point originalLocation;
+        private bool isLoggingOut = false;
 
         public FormManagement() {
             InitializeComponent();
@@ -81,14 +82,20 @@ namespace vila_tour_di {
         }
 
         private void btnLogOut_Click(object sender, EventArgs e) {
-            Close();
-            new FormLogin().Show();
-            // TODO hacer que se muestre la pantalla de LogIn al hacer clic en este boton
+            isLoggingOut = true;
+
+            Config.currentToken = null;
+            Config.currentUser = null;
+
+            FormLogin loginForm = new FormLogin();
+            loginForm.Show();
+
+            this.Close();
         }
 
         private void FormManagement_FormClosing(object sender, FormClosingEventArgs e) {
-            if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall) {
-                Application.Exit();  // Cierra completamente la aplicación
+            if (!isLoggingOut && (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall)) {
+                Application.Exit();
             }
         }
 

@@ -80,7 +80,7 @@ namespace vila_tour_di {
         }
 
         private void btnCloseForm_Click(object sender, EventArgs e) {
-            if (_currentCoordinate != null) {
+            if (_currentCoordinate != null && !_isEditing) {
                 CoordinateService.DeleteCoordinate(_currentCoordinate.id);
             }
 
