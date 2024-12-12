@@ -126,8 +126,6 @@ namespace vila_tour_di {
             }
         }
 
-     
-
         private string ConvertImageToBase64(string filePath) {
             try {
                 using (Image image = Image.FromFile(filePath))
