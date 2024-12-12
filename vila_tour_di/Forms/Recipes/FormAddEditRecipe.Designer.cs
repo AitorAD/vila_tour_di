@@ -300,6 +300,7 @@
             // 
             this.listBoxIngredients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxIngredients.FormattingEnabled = true;
+            this.listBoxIngredients.HorizontalScrollbar = true;
             this.listBoxIngredients.Location = new System.Drawing.Point(193, 3);
             this.listBoxIngredients.Name = "listBoxIngredients";
             this.tableLayoutPanel4.SetRowSpan(this.listBoxIngredients, 2);
@@ -425,9 +426,11 @@
             this.guna2TextBoxDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxDescription.Location = new System.Drawing.Point(271, 3);
             this.guna2TextBoxDescription.MaxLength = 400;
+            this.guna2TextBoxDescription.Multiline = true;
             this.guna2TextBoxDescription.Name = "guna2TextBoxDescription";
             this.guna2TextBoxDescription.PasswordChar = '\0';
             this.guna2TextBoxDescription.PlaceholderText = "";
+            this.guna2TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.guna2TextBoxDescription.SelectedText = "";
             this.guna2TextBoxDescription.Size = new System.Drawing.Size(368, 137);
             this.guna2TextBoxDescription.TabIndex = 2;

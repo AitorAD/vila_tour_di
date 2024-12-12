@@ -36,11 +36,10 @@ namespace vila_tour_di {
             foreach (var category in categories) {
                 table.Rows.Add(category.id, category.name);
             }
-
             return table;
         }
 
-        public void loadCategoriesInDataGridView() {
+        public void LoadCategoriesInDataGridView() {
             DataTable categoriesTable = loadCategoriesData();
             guna2DataGridViewCATING.DataSource = categoriesTable;
             guna2DataGridViewCATING.Refresh();
@@ -50,7 +49,7 @@ namespace vila_tour_di {
             FormAddEditCategoryIngredient formAddCategory = new FormAddEditCategoryIngredient();
             formAddCategory.StartPosition = FormStartPosition.CenterParent;
             formAddCategory.ShowDialog();
-            loadCategoriesInDataGridView();
+            LoadCategoriesInDataGridView();
 
         }
 
@@ -76,7 +75,7 @@ namespace vila_tour_di {
                     formAddCategory.ShowDialog();
 
                     // Recargar los datos en el DataGridView después de editar
-                    loadCategoriesInDataGridView();
+                    LoadCategoriesInDataGridView();
                 } else {
                     MessageBox.Show("Por favor, selecciona una categoría para editar.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

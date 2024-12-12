@@ -29,20 +29,17 @@ namespace vila_tour_di {
 
             List<Ingredient> ingredients = IngredientService.GetIngredients();
 
-            // Agregamos los users a la tabla
+            // Agregamos los ingredientes a la tabla
             foreach (var ingredient in ingredients) {
                 table.Rows.Add(ingredient.idIngredient, ingredient.name, ingredient.category);
             }
-
             return table;
         }
 
         public void LoadIngredientsInDataGridView() {
             DataTable ingredientsTable = LoadIngredientsData(); // Llamamos a LoadIngredients para obtener el DataTable
-
             // Asignamos el DataTable al DataGridView
             guna2DataGridView1.DataSource = ingredientsTable;
-
             // Para asegurar que el DataGridView se actualiza, puedes forzar la actualización del control
             guna2DataGridView1.Refresh();
         }
@@ -50,7 +47,6 @@ namespace vila_tour_di {
         // Añadir Ingrediente
         private void guna2Button1_Click(object sender, EventArgs e) {
             FormAddEditIngredient formAddIng = new FormAddEditIngredient();
-            formAddIng.Owner = this; 
             formAddIng.StartPosition = FormStartPosition.CenterParent;
             formAddIng.ShowDialog();
             LoadIngredientsInDataGridView();
@@ -71,6 +67,8 @@ namespace vila_tour_di {
                     editForm.Owner = this;
                     editForm.StartPosition = FormStartPosition.CenterParent;
                     editForm.ShowDialog();
+
+                    LoadIngredientsInDataGridView();
                 } else {
                     MessageBox.Show("No se pudo obtener el ID del ingrediente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -99,9 +97,10 @@ namespace vila_tour_di {
                                                     "Confirmar eliminación",
                                                     MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes) {
-                    IngredientService.DeleteIngredient(idIngredient);
+                    if (IngredientService.DeleteIngredient(idIngredient)) {
+                        guna2DataGridView1.DataSource = LoadIngredientsData();
+                    }
                 }
-
             } else {
                 MessageBox.Show("No se ha seleccionado ningún ingrediente");
             }
