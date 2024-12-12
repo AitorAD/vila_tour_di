@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace vila_tour_di.Services {
     public class UserService {
-
         static string endPoint = Config.baseURL + "/users";
 
         // Obtener todos los usuarios

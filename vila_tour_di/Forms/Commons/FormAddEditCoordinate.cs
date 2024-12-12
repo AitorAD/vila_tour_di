@@ -4,22 +4,27 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using System;
 using System.Windows.Forms;
+using vila_tour_di.Services;
 
 namespace vila_tour_di
 {
     public partial class FormAddEditCoordinate : Form
     {
         private Coordinate initialLocation = new Coordinate("Ies Marcos Zaragoza", 38.504719, -0.240991);
+        private Coordinate currentCoordinate;
         private bool isEditable;
         private GMapMarker marker;
+
+        public Coordinate CurrentCoordinate => currentCoordinate;
 
         public FormAddEditCoordinate()
         {
             InitializeComponent();
             isEditable = true;
+            currentCoordinate = null;
             loadMap(initialLocation, isEditable);
-            lblLat.Text = initialLocation.latitude.ToString("F6");
-            lblLon.Text = initialLocation.longitude.ToString("F6");
+            lblLat.Text = initialLocation.latitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
+            lblLon.Text = initialLocation.longitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
             lblTitle.Text = "Añadir ubicación";
         }
 
@@ -27,16 +32,23 @@ namespace vila_tour_di
         {
             InitializeComponent();
             isEditable = editable;
+            currentCoordinate = coordinate;
+
+            MessageBox.Show(""+currentCoordinate.id);
+
             loadMap(coordinate, isEditable);
             txtName.Text = coordinate.name;
-            if (editable) lblTitle.Text = "Editar ubicación";
-            else
+            lblLat.Text = coordinate.latitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
+            lblLon.Text = coordinate.longitude.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
+            lblTitle.Text = editable ? "Editar ubicación" : "Detalles ubicación";
+
+            if (!editable)
             {
-                lblTitle.Text = "Detalles ubicación";
                 txtName.Enabled = false;
                 btnSave.Enabled = false;
             }
         }
+
 
         private void loadMap(Coordinate coordinate, bool editable)
         {
@@ -61,13 +73,67 @@ namespace vila_tour_di
 
         private void gMapControl1_OnPositionChanged(PointLatLng point)
         {
-            lblLat.Text = point.Lat.ToString("F6");
-            lblLon.Text = point.Lng.ToString("F6");
+            lblLat.Text = point.Lat.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
+            lblLon.Text = point.Lng.ToString("F6", System.Globalization.CultureInfo.InvariantCulture);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Dispose();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            double lat = Double.Parse(lblLat.Text, System.Globalization.CultureInfo.InvariantCulture);
+            double lon = Double.Parse(lblLon.Text, System.Globalization.CultureInfo.InvariantCulture);
+
+            if (currentCoordinate == null)
+            {
+                Coordinate coordinate = new Coordinate(txtName.Text, lat, lon);
+                var res = CoordinateService.AddCoordinate(coordinate);
+
+                if (res.StatusCode == System.Net.HttpStatusCode.Created)
+                {
+                    string jsonResponse = res.Content.ReadAsStringAsync().Result;
+
+                    try
+                    {
+                        currentCoordinate = System.Text.Json.JsonSerializer.Deserialize<Coordinate>(jsonResponse);
+
+                        DialogResult = DialogResult.OK;
+                        Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al procesar la respuesta: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Error al añadir la coordenada. Código de estado: {res.StatusCode}");
+                }
+            }
+
+
+
+            else
+            {
+                currentCoordinate.name = txtName.Text;
+                currentCoordinate.latitude = lat;
+                currentCoordinate.longitude = lon;
+                if (CoordinateService.UpdateCoordinate(currentCoordinate))
+                {
+                    MessageBox.Show("Coordenada actualizada correctamente.");
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar la coordenada.");
+                }
+
+            }
+        }
+
+
     }
 }

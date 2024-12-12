@@ -24,9 +24,12 @@ namespace vila_tour_di {
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlFestivals));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gunaDataGridViewFestivals = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxSearchUsers = new System.Windows.Forms.TextBox();
@@ -39,7 +42,7 @@ namespace vila_tour_di {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewFestivals)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,7 +56,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.28347F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.71653F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.gunaDataGridViewFestivals, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 1);
@@ -68,15 +71,60 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 657);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
-            // dataGridView1
+            // gunaDataGridViewFestivals
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 549);
-            this.dataGridView1.TabIndex = 11;
+            this.gunaDataGridViewFestivals.AllowUserToAddRows = false;
+            this.gunaDataGridViewFestivals.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewFestivals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridViewFestivals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gunaDataGridViewFestivals.ColumnHeadersHeight = 500;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridViewFestivals.DefaultCellStyle = dataGridViewCellStyle9;
+            this.gunaDataGridViewFestivals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaDataGridViewFestivals.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewFestivals.Location = new System.Drawing.Point(28, 79);
+            this.gunaDataGridViewFestivals.Name = "gunaDataGridViewFestivals";
+            this.gunaDataGridViewFestivals.ReadOnly = true;
+            this.gunaDataGridViewFestivals.RowHeadersVisible = false;
+            this.gunaDataGridViewFestivals.RowHeadersWidth = 51;
+            this.gunaDataGridViewFestivals.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gunaDataGridViewFestivals.Size = new System.Drawing.Size(799, 549);
+            this.gunaDataGridViewFestivals.TabIndex = 17;
+            this.gunaDataGridViewFestivals.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewFestivals.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gunaDataGridViewFestivals.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewFestivals.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewFestivals.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewFestivals.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewFestivals.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewFestivals.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewFestivals.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gunaDataGridViewFestivals.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewFestivals.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gunaDataGridViewFestivals.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gunaDataGridViewFestivals.ThemeStyle.HeaderStyle.Height = 500;
+            this.gunaDataGridViewFestivals.ThemeStyle.ReadOnly = true;
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.Height = 22;
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // panel1
             // 
@@ -161,6 +209,7 @@ namespace vila_tour_di {
             this.btnDeleteFestival.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteFestival.TabIndex = 3;
             this.guna2HtmlToolTip1.SetToolTip(this.btnDeleteFestival, "Eliminar");
+            this.btnDeleteFestival.Click += new System.EventHandler(this.btnDeleteFestival_Click);
             // 
             // btnDetailsFestival
             // 
@@ -180,6 +229,7 @@ namespace vila_tour_di {
             this.btnDetailsFestival.Size = new System.Drawing.Size(50, 50);
             this.btnDetailsFestival.TabIndex = 2;
             this.guna2HtmlToolTip1.SetToolTip(this.btnDetailsFestival, "Ver detalles");
+            this.btnDetailsFestival.Click += new System.EventHandler(this.btnDetailsFestival_Click);
             // 
             // btnEditFestival
             // 
@@ -199,6 +249,7 @@ namespace vila_tour_di {
             this.btnEditFestival.Size = new System.Drawing.Size(50, 50);
             this.btnEditFestival.TabIndex = 1;
             this.guna2HtmlToolTip1.SetToolTip(this.btnEditFestival, "Editar");
+            this.btnEditFestival.Click += new System.EventHandler(this.btnEditFestival_Click);
             // 
             // btnAddFestival
             // 
@@ -244,7 +295,7 @@ namespace vila_tour_di {
             this.Name = "UserControlFestivals";
             this.Size = new System.Drawing.Size(970, 657);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewFestivals)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -258,7 +309,6 @@ namespace vila_tour_di {
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Button btnDeleteFestival;
@@ -270,5 +320,6 @@ namespace vila_tour_di {
         private System.Windows.Forms.TextBox textBoxSearchUsers;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
+        private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridViewFestivals;
     }
 }

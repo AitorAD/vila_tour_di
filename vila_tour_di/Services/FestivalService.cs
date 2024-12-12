@@ -28,7 +28,7 @@ namespace vila_tour_di.Services {
 
         // Actualizar festival
         public static bool UpdateFestival(int id, Festival festival) {
-            var response = ApiService.Put($"{baseUrl}/{festival.id}", festival);
+            var response = ApiService.Put($"{baseUrl}/{id}", festival);
             return ApiService.HandleResponse(response, "Festival actualizado correctamente.", "Error al actualizar el festival");
         }
 

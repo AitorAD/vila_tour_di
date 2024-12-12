@@ -132,7 +132,7 @@ namespace vila_tour_di
             this.lblLon.Name = "lblLon";
             this.lblLon.Size = new System.Drawing.Size(100, 27);
             this.lblLon.TabIndex = 1;
-            this.lblLon.Text = "-0.240991";
+            this.lblLon.Text = "-0,240991";
             // 
             // guna2HtmlLabel3
             // 
@@ -172,7 +172,7 @@ namespace vila_tour_di
             this.lblLat.Name = "lblLat";
             this.lblLat.Size = new System.Drawing.Size(105, 27);
             this.lblLat.TabIndex = 1;
-            this.lblLat.Text = "38.504719";
+            this.lblLat.Text = "38,504719";
             // 
             // guna2HtmlLabel2
             // 
@@ -268,6 +268,7 @@ namespace vila_tour_di
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 50);
             this.btnSave.TabIndex = 22;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 

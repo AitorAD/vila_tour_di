@@ -495,7 +495,7 @@
             this.guna2TextBoxName.Size = new System.Drawing.Size(368, 36);
             this.guna2TextBoxName.TabIndex = 1;
             // 
-            // FormAddEditRecipe
+            // FormAddRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -504,7 +504,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormAddEditRecipe";
+            this.Name = "FormAddRecipe";
             this.Text = "Receta";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

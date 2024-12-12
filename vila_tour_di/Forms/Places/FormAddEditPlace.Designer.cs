@@ -258,6 +258,7 @@ namespace vila_tour_di
             this.btnAddPlace.Name = "btnAddPlace";
             this.btnAddPlace.Size = new System.Drawing.Size(50, 50);
             this.btnAddPlace.TabIndex = 4;
+            this.btnAddPlace.Click += new System.EventHandler(this.btnAddPlace_Click);
             // 
             // btnLocation
             // 
@@ -276,7 +277,6 @@ namespace vila_tour_di
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(50, 50);
             this.btnLocation.TabIndex = 23;
-            this.btnLocation.Text = " ";
             this.btnLocation.Click += new System.EventHandler(this.btnLocation_Click);
             // 
             // tableLayoutPanel6

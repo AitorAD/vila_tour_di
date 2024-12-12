@@ -120,8 +120,17 @@ namespace vila_tour_di {
                 RecipeService.UpdateRecipe(_selectedRecipe, newRecipe);
                 Dispose();
             } else {
+<<<<<<< HEAD
                 newRecipe.creator = Config.currentUser;
                 RecipeService.AddRecipe(newRecipe);
+=======
+                // Crear el objeto Recipe
+                Recipe newRecipe = new Recipe(name, description, image, averageScore, approved, recent, ingredients);
+
+
+        
+           
+>>>>>>> 11b2659f2788ddd4ad506d710adc4a608cc3c4db
                 Dispose();
             }
         }

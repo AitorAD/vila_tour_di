@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace vila_tour_di.Services {
-    class CategoryPlacesService {
+    class CategoryPlaceService {
 
         private static string baseUrl = "http://127.0.0.1:8080/categoriesPlace";
 
@@ -17,7 +18,7 @@ namespace vila_tour_di.Services {
         // Crear una nueva categoría de lugar
         public static bool AddCategoryPlace(CategoryPlace categoryPlace) {
             var response = ApiService.Post(baseUrl, categoryPlace);
-            return ApiService.HandleResponse(response, "Categoría de lugar creada correctamente.", "Error al crear categoría de lugar");
+            return ApiService.HandleResponse(response, "Categoría de lugar añadida correctamente.", "Error al añadir categoría de lugar");
         }
 
         // Actualizar una categoría de lugar

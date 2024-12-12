@@ -100,7 +100,6 @@ namespace vila_tour_di {
                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmResult == DialogResult.Yes) {
-
                     // Llamar al método de eliminación en CategoryService
                     bool success = CategoryIngredientService.DeleteCategory(id);
 
