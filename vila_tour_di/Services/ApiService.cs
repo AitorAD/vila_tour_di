@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
+using vila_tour_di.Converters;
 
 namespace vila_tour_di.Services {
     class ApiService {
@@ -17,7 +19,12 @@ namespace vila_tour_di.Services {
 
                     if (response.IsSuccessStatusCode) {
                         string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        return JsonConvert.DeserializeObject<T>(jsonResponse);
+
+                        // Configurar el deserializador con el convertidor personalizado
+                        var settings = new JsonSerializerSettings {
+                            Converters = new List<JsonConverter> { new ArticleConverter() }
+                        };
+                        return JsonConvert.DeserializeObject<T>(jsonResponse, settings);
                     } else {
                         HandleError(response);
                     }
@@ -41,7 +48,12 @@ namespace vila_tour_di.Services {
                     if (response.IsSuccessStatusCode) {
                         // Leer la respuesta y deserializarla en un objeto de tipo T
                         string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        return JsonConvert.DeserializeObject<T>(jsonResponse);
+
+                        // Configurar el deserializador con el convertidor personalizado
+                        var settings = new JsonSerializerSettings {
+                            Converters = new List<JsonConverter> { new ArticleConverter() }
+                        };
+                        return JsonConvert.DeserializeObject<T>(jsonResponse, settings);
                     } else {
                         // Si la respuesta no es exitosa, manejar el error
                         HandleError(response);
@@ -82,6 +94,7 @@ namespace vila_tour_di.Services {
                 try {
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
                     string jsonData = JsonConvert.SerializeObject(data);
+                    Console.WriteLine(jsonData);
                     HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                     var request = new HttpRequestMessage(method, apiUrl) { Content = content };
                     return client.SendAsync(request).Result;

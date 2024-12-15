@@ -26,10 +26,11 @@ namespace vila_tour_di {
             // Definimos las columnas
             table.Columns.Add("ID", typeof(long));  // Usar long para ID
             table.Columns.Add("Nombre");
-            table.Columns.Add("Descripción");
             table.Columns.Add("Puntuación media");
             table.Columns.Add("Fecha Inicio");
             table.Columns.Add("Fecha Final");
+            table.Columns.Add("Creador");
+            table.Columns.Add("Lugar");
             // TODO: Agregar nombre del sitio donde se celebra
 
 
@@ -40,10 +41,11 @@ namespace vila_tour_di {
                 table.Rows.Add(
                     festival.id,
                     festival.name,
-                    festival.description,
                     festival.averageScore,
                     festival.startDate,
-                    festival.endDate
+                    festival.endDate,
+                    festival.creator.name,
+                    festival.coordinate.name
                 );
             }
 
