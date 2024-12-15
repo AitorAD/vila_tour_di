@@ -1,39 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Guna.UI2.WinForms.Suite;
+using System;
+using System.Xml.Linq;
+using vila_tour_di.Models;
 
-namespace vila_tour_di
-{
-    public class Place
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string imagensPaths { get; set; }
+namespace vila_tour_di {
+    public class Place : Article {
         public double averageScore { get; set; }
         public DateTime creationDate { get; set; }
         public DateTime lastModificationDate { get; set; }
         public CategoryPlace categoryPlace { get; set; }
         public User creator { get; set; }
-        public int coordinateId { get; set; }
         public Coordinate coordinate { get; set; }
 
-        public Place(string name, string description, string imagensPaths, double averageScore, DateTime creationDate, DateTime lastModificationDate, CategoryPlace categoryPlace, User creator, int coordinateId, Coordinate coordinate)
-        {
+        public Place() : base() { }
+
+        public Place(string name, string description, double averageScore, DateTime creationDate, DateTime lastModificationDate, CategoryPlace categoryPlace, User creator, Coordinate coordinate) : base() {
             this.name = name;
             this.description = description;
-            this.imagensPaths = imagensPaths;
             this.averageScore = averageScore;
             this.creationDate = creationDate;
             this.lastModificationDate = lastModificationDate;
             this.categoryPlace = categoryPlace;
             this.creator = creator;
-            this.coordinateId = coordinateId;
             this.coordinate = coordinate;
         }
 
-        public Place() { }
+        public override string ToString() {
+            return $"ID: {id}\n" +
+                   $"Name: {name}\n" +
+                   $"Description: {description}\n" +
+                   $"Average Score: {averageScore}\n" +
+                   $"Creation Date: {creationDate.ToString("yyyy-MM-dd")}\n" +
+                   $"Last Modification Date: {lastModificationDate.ToString("yyyy-MM-dd")}\n" +
+                   $"Type: {type}\n" +
+                   $"Category: {categoryPlace?.ToString() ?? "Unknown"}\n" +
+                   $"Creator: {creator?.ToString() ?? "Unknown"}\n" +
+                   $"Coordinates: {coordinate?.ToString() ?? "Unknown"}";
+        }
     }
 }

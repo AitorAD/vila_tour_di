@@ -31,7 +31,7 @@ namespace vila_tour_di.Services {
 
         public static bool UpdateImage(int id, Image image) {
             var response = ApiService.Put($"{baseUrl}/{id}", image);
-            return ApiService.HandleResponse(response, "Image actualizada correctamente.", "Error al actualizar la imagen");
+            return ApiService.HandleResponse(response, "Imagen actualizada correctamente.", "Error al actualizar la imagen");
         }
 
         public static bool DeleteImage(Image image) {
