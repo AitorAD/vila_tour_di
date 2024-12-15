@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Forms.Commons;
 using vila_tour_di.Services;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
@@ -34,18 +34,22 @@ namespace vila_tour_di {
             guna2TextBoxName.Text = recipe.name;
             guna2TextBoxDescription.Text = recipe.description;
             guna2ImageCheckBoxApproved.Checked = recipe.approved;
-            guna2PictureBox.Image = Base64ToImage(recipe.imagensPaths);
-            guna2PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
+            // Utilizar el mismo slider de imágenes que en Festival
+            if ((imageSlider.images = ImageService.GetImagesByArticle(recipe))?.Count > 0) {
+                imageSlider.article = recipe;
+                imageSlider.LoadImage();
+            }
 
-            // Seleccionar los ingredientes actuales en la lista 
+            // Seleccionar los ingredientes actuales en la lista
             if (recipe.ingredients != null) {
                 listBoxIngredients.Items.Clear(); // Limpiar los ítems actuales
                 foreach (var ingredient in recipe.ingredients) {
                     listBoxIngredients.Items.Add(ingredient); // Agregar cada ingrediente
                 }
             }
-            this.Text = "Editar ingrediente";
+
+            this.Text = "Editar receta";
 
             if (showDetails) {
                 guna2TextBoxName.Enabled = false;
@@ -54,8 +58,9 @@ namespace vila_tour_di {
                 btnDeleteIngredient.Enabled = false;
                 btnAddRecipe.Enabled = false;
                 guna2ImageCheckBoxApproved.Enabled = false;
-                btnAddPhoto.Enabled = false;
+           
             }
+            imageSlider.setStatusButtons(isEditing);
             LoadIngredientsComboBox();
             this.FormClosed += FormAddEditRecipe_FormClosed;
         }
@@ -67,23 +72,6 @@ namespace vila_tour_di {
 
             foreach (var ingredient in ingredients) {
                 guna2ComboBoxIngredients.Items.Add(ingredient);
-                guna2ComboBoxIngredients.ItemsAppearance.ToString();
-            }
-        }
-
-        private Image Base64ToImage(string base64String) {
-            try {
-                if (string.IsNullOrEmpty(base64String)) return null;
-                var imageBytes = Convert.FromBase64String(base64String);
-                using (MemoryStream ms = new MemoryStream(imageBytes)) {
-                    return Image.FromStream(ms);
-                }
-            } catch (FormatException ex) {
-                MessageBox.Show("La imagen base64 tiene un formato incorrecto: " + ex.Message);
-                return null;
-            } catch (Exception ex) {
-                MessageBox.Show("Error al convertir Base64 a imagen: " + ex.Message);
-                return null;
             }
         }
 
@@ -95,22 +83,17 @@ namespace vila_tour_di {
             bool recent = false;
             List<Ingredient> ingredients = new List<Ingredient>();
             User creator = Config.currentUser;
-           
 
             // Recorrer los elementos del ListBox
             foreach (var item in listBoxIngredients.Items) {
-                // Convertir cada elemento al tipo Ingredient y agregarlo a la lista
                 if (item is Ingredient ingredient) {
                     ingredients.Add(ingredient);
                 }
             }
 
-            // Convertir la imagen a base64
-            string image = "null";
-            if (guna2PictureBox.Image != null && guna2PictureBox.Tag != null) {
-                string filePath = guna2PictureBox.Tag.ToString();
-                image = ConvertImageToBase64(filePath);
-            }
+            // Convertir las imágenes a base64 usando el nuevo control de imágenes
+            List<string> imagePaths = imageSlider.images.Select(img => img.path).ToList();
+            string image = JsonConvert.SerializeObject(imagePaths);
 
             Recipe newRecipe = new Recipe(name, description, image, approved, recent, ingredients, creator);
 
@@ -120,42 +103,17 @@ namespace vila_tour_di {
                 RecipeService.UpdateRecipe(_selectedRecipe, newRecipe);
                 Dispose();
             } else {
-<<<<<<< HEAD
                 newRecipe.creator = Config.currentUser;
+                Console.WriteLine(newRecipe);
                 RecipeService.AddRecipe(newRecipe);
-=======
-                // Crear el objeto Recipe
-                Recipe newRecipe = new Recipe(name, description, image, averageScore, approved, recent, ingredients);
-
-
-        
-           
->>>>>>> 11b2659f2788ddd4ad506d710adc4a608cc3c4db
                 Dispose();
-            }
-        }
-
-        private string ConvertImageToBase64(string filePath) {
-            try {
-                using (Image image = Image.FromFile(filePath))
-                using (MemoryStream ms = new MemoryStream()) {
-                    // Guardar la imagen en un MemoryStream como PNG
-                    image.Save(ms, ImageFormat.Png);
-                    byte[] imageBytes = ms.ToArray();
-
-                    // Convertir los bytes a una cadena Base64
-                    return Convert.ToBase64String(imageBytes);
-                }
-            } catch (Exception ex) {
-                MessageBox.Show("Error al convertir la imagen a Base64: " + ex.Message);
-                return null;
             }
         }
 
         private void btnAddIngredient_Click(object sender, EventArgs e) {
             var selectedIngredient = guna2ComboBoxIngredients.SelectedItem as Ingredient;
 
-            if (selectedIngredient != null && listBoxIngredients.Items.Cast<Ingredient>().Any(ingredient => ingredient.name.Equals(selectedIngredient.name))){
+            if (selectedIngredient != null && listBoxIngredients.Items.Cast<Ingredient>().Any(ingredient => ingredient.name.Equals(selectedIngredient.name))) {
                 MessageBox.Show("Error. Ingrediente repetido",
                                 "Error",
                                 MessageBoxButtons.OK,
@@ -163,7 +121,7 @@ namespace vila_tour_di {
             } else if (selectedIngredient != null) {
                 listBoxIngredients.Items.Add(selectedIngredient);
             } else {
-                MessageBox.Show("Error. Seleciona un Ingrediente",
+                MessageBox.Show("Error. Selecciona un Ingrediente",
                               "Error",
                               MessageBoxButtons.OK,
                               MessageBoxIcon.Error);
@@ -181,24 +139,6 @@ namespace vila_tour_di {
                                 "Advertencia",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
-            }
-        }
-
-
-
-        private void btnAddPhoto_Click(object sender, EventArgs e) {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
-                openFileDialog.Filter = "Archivos de imagen (*.png;*.jpg)|*.png;*.jpg";
-                openFileDialog.Title = "Selecciona una imagen";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                    string selectedFilePath = openFileDialog.FileName;
-
-                    // Cargar la imagen en el PictureBox
-                    guna2PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    guna2PictureBox.Image = Image.FromFile(selectedFilePath);
-                    guna2PictureBox.Tag = selectedFilePath;
-                }
             }
         }
 

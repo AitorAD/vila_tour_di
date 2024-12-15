@@ -11,7 +11,6 @@ namespace vila_tour_di {
     public partial class FormAddEditPlace : Form {
         private Place _currentPlace;
         private bool _isEditing;
-        private bool _isCreating;
         private Coordinate _currentCoordinate;
 
         public FormAddEditPlace() {
@@ -46,20 +45,20 @@ namespace vila_tour_di {
             lblNameLocation.Text = place.coordinate.name;
             _currentCoordinate = place.coordinate;
 
-            if (!string.IsNullOrEmpty(place.imagensPaths)) {
-                imgPlace.Image = Base64ToImage(place.imagensPaths);
-                imgPlace.SizeMode = PictureBoxSizeMode.StretchImage;
+            // Cargar imágenes asociadas al lugar
+            if ((imageSlider.images = ImageService.GetImagesByArticle(place))?.Count > 0) {
+                imageSlider.article = place;
+                imageSlider.LoadImage();
             }
 
             ConfigureFormForReadOnly(!editable);
+            imageSlider.setStatusButtons(_isEditing);
         }
-
 
         private void ConfigureFormForReadOnly(bool isReadOnly) {
             txtName.ReadOnly = isReadOnly;
             comboCategory.Enabled = !isReadOnly;
             txtDescription.ReadOnly = isReadOnly;
-            btnAddImage.Enabled = !isReadOnly;
             btnAddPlace.Enabled = !isReadOnly;
             btnLocation.Enabled = !isReadOnly;
         }
@@ -87,7 +86,6 @@ namespace vila_tour_di {
             Close();
         }
 
-
         private void btnLocation_Click(object sender, EventArgs e) {
             FormAddEditCoordinate coordinateForm = _currentCoordinate == null
                 ? new FormAddEditCoordinate()
@@ -102,12 +100,12 @@ namespace vila_tour_di {
             }
         }
 
-
         private void btnAddPlace_Click(object sender, EventArgs e) {
             if (!ValidateFormInputs())
                 return;
 
             Place newPlace = CreatePlaceFromInputs();
+            Console.WriteLine(newPlace);
 
             if (_isEditing) {
                 UpdatePlace(newPlace);
@@ -139,7 +137,6 @@ namespace vila_tour_di {
             return new Place {
                 name = txtName.Text.Trim(),
                 description = txtDescription.Text.Trim(),
-                imagensPaths = imgPlace.Image != null ? ConvertImageToBase64(imgPlace.ImageLocation) : null,
                 creationDate = _isEditing ? _currentPlace.creationDate : DateTime.Parse(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")),
                 lastModificationDate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")),
                 categoryPlace = ((CategoryPlace)comboCategory.SelectedItem),
@@ -149,8 +146,11 @@ namespace vila_tour_di {
         }
 
         private void UpdatePlace(Place updatedPlace) {
-            if (imgPlace.Image != null) {
-                updatedPlace.imagensPaths = ConvertImageToBase64(imgPlace.Tag.ToString());
+            // Si hay imágenes nuevas, se actualizan
+            if (imageSlider.images != null && imageSlider.images.Count > 0) {
+                foreach (var img in imageSlider.images) {
+                    ImageService.UpdateImage(img.id, img);
+                }
             }
 
             if (PlaceService.UpdatePlace(_currentPlace, updatedPlace)) {
@@ -160,11 +160,12 @@ namespace vila_tour_di {
             }
         }
 
-
-
         private void AddNewPlace(Place newPlace) {
-            if (imgPlace.Image != null) {
-                newPlace.imagensPaths = ConvertImageToBase64(imgPlace.Tag.ToString());
+            if (imageSlider.images != null && imageSlider.images.Count > 0) {
+                // Añadir nuevas imágenes al servidor
+                foreach (var img in imageSlider.images) {
+                    ImageService.AddImage(img); // Añadimos las imágenes al servidor
+                }
             }
 
             if (PlaceService.AddPlace(newPlace)) {
@@ -174,47 +175,5 @@ namespace vila_tour_di {
                 MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-        private string ConvertImageToBase64(string filePath) {
-            try {
-                Image image = Image.FromFile(filePath);
-                MemoryStream ms = new MemoryStream();
-                image.Save(ms, ImageFormat.Png);
-                return Convert.ToBase64String(ms.ToArray());
-            } catch (Exception ex) {
-                MessageBox.Show("Error al convertir la imagen a Base64: " + ex.Message);
-                return null;
-            }
-        }
-
-
-        private Image Base64ToImage(string base64String) {
-            try {
-                byte[] imageBytes = Convert.FromBase64String(base64String);
-                MemoryStream ms = new MemoryStream(imageBytes);
-                return Image.FromStream(ms);
-            } catch (Exception ex) {
-                MessageBox.Show("Error al convertir Base64 a imagen: " + ex.Message);
-                return null;
-            }
-        }
-
-        private void btnAddImage_Click(object sender, EventArgs e) {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
-                openFileDialog.Filter = "Archivos de imagen (*.png;*.jpg)|*.png;*.jpg";
-                openFileDialog.Title = "Selecciona una imagen de perfil";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                    string selectedFilePath = openFileDialog.FileName;
-
-                    imgPlace.SizeMode = PictureBoxSizeMode.StretchImage;
-                    imgPlace.Image = Image.FromFile(selectedFilePath);
-                    imgPlace.Tag = selectedFilePath;
-                }
-            }
-        }
-
     }
 }

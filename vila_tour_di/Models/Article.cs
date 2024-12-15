@@ -11,7 +11,8 @@ namespace vila_tour_di.Models {
 
     [JsonConverter(typeof(ArticleConverter))]
     public abstract class Article {
-        public int id { get; set; }
+
+        public int? id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public double averageScore { get; set; }
@@ -21,7 +22,7 @@ namespace vila_tour_di.Models {
         public string type { get; set; }
 
         protected Article() {
-            this.type = this.GetType().Name.ToLower();  // Asigna el nombre de la clase
+            this.type = this.GetType().Name.ToLower();
         }
     }
 }

@@ -73,15 +73,16 @@ namespace vila_tour_di {
             Coordinate coordinate = (Coordinate) comboBoxCoordinates.SelectedItem; 
 
             Festival newFestival = new Festival(name, description, startDate, endDate, creator, coordinate);
+            Console.WriteLine(newFestival);
 
             if (isEditing) {
                 newFestival.creator = selectedFestival.creator; // Modifico el creador para que no se asigne uno nuevo
-                if (FestivalService.UpdateFestival(selectedFestival.id, newFestival)) {
+                int festivalId = selectedFestival.id ?? 0; // Si id es null, asigna 0
+                if (FestivalService.UpdateFestival(festivalId, newFestival)) {
                     Dispose();
                 }
             } else {
                 var response = FestivalService.AddFestival(newFestival); // Almaceno la respuesta ya que esta devuelve el festival entero con su id ya asignado.
-                
                 if (response.IsSuccessStatusCode) {
                     ApiService.HandleResponse(response, "Festival creado correctamente.", "Error al crear el festival");
                     string jsonResponse = response.Content.ReadAsStringAsync().Result;
