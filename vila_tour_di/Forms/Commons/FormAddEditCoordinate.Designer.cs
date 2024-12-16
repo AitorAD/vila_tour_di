@@ -45,6 +45,7 @@ namespace vila_tour_di
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -268,6 +269,7 @@ namespace vila_tour_di
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(50, 50);
             this.btnSave.TabIndex = 22;
+            this.guna2HtmlToolTip1.SetToolTip(this.btnSave, "Añadir");
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
@@ -288,6 +290,7 @@ namespace vila_tour_di
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(50, 50);
             this.btnCancel.TabIndex = 21;
+            this.guna2HtmlToolTip1.SetToolTip(this.btnCancel, "Cancelar");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblTitle
@@ -304,6 +307,11 @@ namespace vila_tour_di
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Añadir/Editar/Detalles Ubicación";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2HtmlToolTip1
+            // 
+            this.guna2HtmlToolTip1.AllowLinksHandling = true;
+            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             // 
             // FormAddEditCoordinate
             // 
@@ -346,5 +354,6 @@ namespace vila_tour_di
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLat;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
     }
 }

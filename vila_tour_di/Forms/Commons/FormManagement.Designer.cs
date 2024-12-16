@@ -33,6 +33,7 @@
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnFestivals = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnRoutes = new Guna.UI2.WinForms.Guna2Button();
             vila_tour_logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(vila_tour_logo)).BeginInit();
             this.sidePanel.SuspendLayout();
@@ -55,6 +56,7 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.sidePanel.Controls.Add(this.btnRoutes);
             this.sidePanel.Controls.Add(this.lblWelcome);
             this.sidePanel.Controls.Add(this.btnPlaces);
             this.sidePanel.Controls.Add(this.btnRecipes);
@@ -130,7 +132,7 @@
             this.btnRecipes.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnRecipes.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnRecipes.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnRecipes.Location = new System.Drawing.Point(38, 233);
+            this.btnRecipes.Location = new System.Drawing.Point(38, 299);
             this.btnRecipes.Name = "btnRecipes";
             this.btnRecipes.PressedColor = System.Drawing.Color.White;
             this.btnRecipes.Size = new System.Drawing.Size(198, 50);
@@ -160,7 +162,7 @@
             this.btnUsers.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnUsers.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnUsers.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnUsers.Location = new System.Drawing.Point(38, 298);
+            this.btnUsers.Location = new System.Drawing.Point(38, 364);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.PressedColor = System.Drawing.Color.White;
             this.btnUsers.Size = new System.Drawing.Size(198, 50);
@@ -218,7 +220,7 @@
             this.btnFestivals.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnFestivals.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnFestivals.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnFestivals.Location = new System.Drawing.Point(38, 168);
+            this.btnFestivals.Location = new System.Drawing.Point(38, 234);
             this.btnFestivals.Name = "btnFestivals";
             this.btnFestivals.PressedColor = System.Drawing.Color.White;
             this.btnFestivals.Size = new System.Drawing.Size(198, 50);
@@ -234,6 +236,36 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(796, 561);
             this.mainPanel.TabIndex = 1;
+            // 
+            // btnRoutes
+            // 
+            this.btnRoutes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRoutes.Animated = true;
+            this.btnRoutes.AutoRoundedCorners = true;
+            this.btnRoutes.BackColor = System.Drawing.Color.Transparent;
+            this.btnRoutes.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRoutes.BorderRadius = 24;
+            this.btnRoutes.BorderThickness = 2;
+            this.btnRoutes.CustomizableEdges.BottomRight = false;
+            this.btnRoutes.CustomizableEdges.TopRight = false;
+            this.btnRoutes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoutes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoutes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRoutes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRoutes.FillColor = System.Drawing.Color.Teal;
+            this.btnRoutes.FocusedColor = System.Drawing.Color.White;
+            this.btnRoutes.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnRoutes.ForeColor = System.Drawing.Color.White;
+            this.btnRoutes.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnRoutes.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnRoutes.HoverState.FillColor = System.Drawing.Color.Turquoise;
+            this.btnRoutes.Location = new System.Drawing.Point(38, 168);
+            this.btnRoutes.Name = "btnRoutes";
+            this.btnRoutes.PressedColor = System.Drawing.Color.White;
+            this.btnRoutes.Size = new System.Drawing.Size(198, 50);
+            this.btnRoutes.TabIndex = 17;
+            this.btnRoutes.Text = "Rutas";
+            this.btnRoutes.Click += new System.EventHandler(this.btnRoutes_Click);
             // 
             // FormManagement
             // 
@@ -268,5 +300,6 @@
         private Guna.UI2.WinForms.Guna2Button btnUsers;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnFestivals;
+        private Guna.UI2.WinForms.Guna2Button btnRoutes;
     }
 }

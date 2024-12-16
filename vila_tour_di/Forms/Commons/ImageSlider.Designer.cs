@@ -32,6 +32,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeleteImage = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddImage = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -75,6 +76,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(50, 50);
             this.btnNext.TabIndex = 29;
+            this.guna2HtmlToolTip1.SetToolTip(this.btnNext, "Siguiente");
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pictureBox
@@ -104,6 +106,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(50, 50);
             this.btnBack.TabIndex = 28;
+            this.guna2HtmlToolTip1.SetToolTip(this.btnBack, "Atras");
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblInfoImage
@@ -149,6 +152,7 @@
             this.btnDeleteImage.Name = "btnDeleteImage";
             this.btnDeleteImage.Size = new System.Drawing.Size(50, 48);
             this.btnDeleteImage.TabIndex = 4;
+            this.guna2HtmlToolTip1.SetToolTip(this.btnDeleteImage, "Eliminar Imagen");
             this.btnDeleteImage.Click += new System.EventHandler(this.btnDeleteImage_Click);
             // 
             // btnAddImage
@@ -168,7 +172,13 @@
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(50, 48);
             this.btnAddImage.TabIndex = 3;
+            this.guna2HtmlToolTip1.SetToolTip(this.btnAddImage, "Añadir Imagen");
             this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // guna2HtmlToolTip1
+            // 
+            this.guna2HtmlToolTip1.AllowLinksHandling = true;
+            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             // 
             // ImageSlider
             // 
@@ -195,5 +205,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Button btnAddImage;
         private Guna.UI2.WinForms.Guna2Button btnDeleteImage;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
     }
 }
