@@ -47,6 +47,9 @@ namespace vila_tour_di.Forms.Places
             DataTable categoriesTable = loadCategoriesData();
             guna2DataGridViewCATING.DataSource = categoriesTable;
             guna2DataGridViewCATING.Refresh();
+            // Configurar el tamaño de las columnas
+            guna2DataGridViewCATING.Columns["ID"].Width = 10; // Ajustar al contenido
+            guna2DataGridViewCATING.Columns["Nombre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // Expandir para llenar el espacio disponible
         }
 
         private void bttnAddCategory_Click_1(object sender, EventArgs e)

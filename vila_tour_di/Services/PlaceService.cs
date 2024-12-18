@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,9 +22,9 @@ namespace vila_tour_di.Services {
         }
 
         // Crear un nuevo lugar
-        public static bool AddPlace(Place place) {
-            var response = ApiService.Post(baseUrl, place);
-            return ApiService.HandleResponse(response, "Lugar creado correctamente.", "Error al crear el lugar");
+        public static HttpResponseMessage AddPlace(Place place) {
+           return ApiService.Post(baseUrl, place);
+           // return ApiService.HandleResponse(response, "Lugar creado correctamente.", "Error al crear el lugar");
         }
 
         // Actualizar lugar

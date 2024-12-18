@@ -22,9 +22,9 @@ namespace vila_tour_di {
 
         private void ValidaRol() {
             if (Config.currentUser.role == "EDITOR") {
-                btnUsers.Visible = false; 
+                btnUsers.Visible = false;
             } else if (Config.currentUser.role == "ADMIN") {
-                btnUsers.Visible = true;  
+                btnUsers.Visible = true;
             }
         }
 
@@ -52,7 +52,7 @@ namespace vila_tour_di {
                 button.ForeColor = Color.Black;
                 button.FillColor = Color.White;
                 button.Size = new Size(150, 50);
-                button.Location = new Point(sidePanel.Width+10 - button.Width, button.Location.Y);
+                button.Location = new Point(sidePanel.Width + 10 - button.Width, button.Location.Y);
             }
 
             lastButton = button;
@@ -63,22 +63,24 @@ namespace vila_tour_di {
             LoadUserControl(new UserControlPlaces());
         }
 
+        private void btnRoutes_Click(object sender, EventArgs e) {
+            ChangeButtonColor(sender as Guna2Button);
+            LoadUserControl(new UserControlPlaces());
+        }
+
         private void btnFestivals_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
             LoadUserControl(new UserControlFestivals());
-
         }
 
         private void btnRecipes_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
             LoadUserControl(new UserControlRecipes());
-
         }
 
         private void btnUsers_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
             LoadUserControl(new UserControlUsers());
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e) {
@@ -98,6 +100,5 @@ namespace vila_tour_di {
                 Application.Exit();
             }
         }
-
     }
 }

@@ -25,7 +25,7 @@ namespace vila_tour_di {
 
         private void InitializeFormForCreation() {
             _currentCoordinate = null;
-            labelTitle.Text = "Añadir lugar de interés";
+            labelTitle.Text = "AÑADIR LUGAR DE INTERÉS";
             LoadCategoriesIntoComboBox();
         }
 
@@ -33,7 +33,7 @@ namespace vila_tour_di {
             _currentPlace = place;
             _isEditing = editable;
 
-            labelTitle.Text = editable ? "Editar lugar de interés" : "Detalles del lugar de interés";
+            labelTitle.Text = editable ? "EDITAR LUGAR DE INTERÉS" : "DETALLES DEL LUGAR DE INTERÉS";
 
             LoadCategoriesIntoComboBox();
 
@@ -152,7 +152,6 @@ namespace vila_tour_di {
                     ImageService.UpdateImage(img.id, img);
                 }
             }
-
             if (PlaceService.UpdatePlace(_currentPlace, updatedPlace)) {
                 Close();
             } else {
@@ -161,16 +160,13 @@ namespace vila_tour_di {
         }
 
         private void AddNewPlace(Place newPlace) {
-            if (imageSlider.images != null && imageSlider.images.Count > 0) {
-                // Añadir nuevas imágenes al servidor
-                foreach (var img in imageSlider.images) {
-                    ImageService.AddImage(img); // Añadimos las imágenes al servidor
-                }
-            }
-
-            if (PlaceService.AddPlace(newPlace)) {
-                DialogResult = DialogResult.OK;
-                Close();
+            var response = PlaceService.AddPlace(newPlace);
+            if (response.IsSuccessStatusCode) {
+                ApiService.HandleResponse(response, "Lugar de interés creado correctamente.", "Error al crear el lugar de interés.");
+                string jsonResponse = response.Content.ReadAsStringAsync().Result;
+                Place createdPlace = JsonConvert.DeserializeObject<Place>(jsonResponse);
+                imageSlider.images.ForEach(image => ImageService.AddImage(new Models.Image(image.path, createdPlace)));
+                Dispose();
             } else {
                 MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
