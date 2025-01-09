@@ -50,8 +50,8 @@ namespace vila_tour_di
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLastModificationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCreationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.imageSlider = new vila_tour_di.Forms.Commons.ImageSlider();
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.imageSlider = new vila_tour_di.Forms.Commons.ImageSlider();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
@@ -315,7 +315,7 @@ namespace vila_tour_di
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(589, 37);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
@@ -390,6 +390,11 @@ namespace vila_tour_di
             this.lblCreationDate.TabIndex = 1;
             this.lblCreationDate.Text = "Fecha de creación: ";
             // 
+            // guna2HtmlToolTip1
+            // 
+            this.guna2HtmlToolTip1.AllowLinksHandling = true;
+            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
+            // 
             // imageSlider
             // 
             this.imageSlider.article = null;
@@ -398,11 +403,6 @@ namespace vila_tour_di
             this.imageSlider.Name = "imageSlider";
             this.imageSlider.Size = new System.Drawing.Size(588, 400);
             this.imageSlider.TabIndex = 25;
-            // 
-            // guna2HtmlToolTip1
-            // 
-            this.guna2HtmlToolTip1.AllowLinksHandling = true;
-            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             // 
             // FormAddEditPlace
             // 
