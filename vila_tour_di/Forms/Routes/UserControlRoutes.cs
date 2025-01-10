@@ -27,7 +27,6 @@ namespace vila_tour_di {
         public DataTable LoadRoutesData() {
             DataTable table = new DataTable();
 
-            //Definimos las columnas
             table.Columns.Add("ID", typeof(long));
             table.Columns.Add("Nombre");
             table.Columns.Add("Numero de paradas");
@@ -36,15 +35,16 @@ namespace vila_tour_di {
 
             List<Route> routes = RouteService.GetAllRoutes();
 
-            //Agregar las rutas a l tabla
-            foreach (var route in routes) {
-                table.Rows.Add(
-                    route.idRoute,
-                    route.name,
-                    route.places.LongCount(),
-                    route.places.FirstOrDefault().name,
-                    route.places.LastOrDefault().name
-                );
+            if (routes != null && routes.Any()) {
+                foreach (var route in routes) {
+                    table.Rows.Add(
+                        route.id,
+                        route.name,
+                        route.places != null ? route.places.LongCount() : 0,
+                        route.places?.FirstOrDefault()?.name ?? "",
+                        route.places?.LastOrDefault()?.name ?? ""
+                    );
+                }
             }
 
             return table;
@@ -60,7 +60,63 @@ namespace vila_tour_di {
             FormAddEditRoute formAddEditRoutes = new FormAddEditRoute();
             formAddEditRoutes.StartPosition = FormStartPosition.CenterParent;
             formAddEditRoutes.ShowDialog();
-            LoadRoutesData();
+            loadRoutesInGridView();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewRoute.SelectedRows.Count > 0) {
+                var selectedRow = gunaDataGridViewRoute.SelectedRows[0];
+                int routeID = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+
+                // Confirmación antes de eliminar
+                DialogResult result = MessageBox.Show(
+                    "¿Estás seguro de que deseas eliminar esta ruta?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+                if (result == DialogResult.Yes) {
+                    RouteService.DeleteRoute(routeID);
+                } else {
+                    MessageBox.Show("No se ha seleccionado ninguna ruta para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                gunaDataGridViewRoute.DataSource = LoadRoutesData();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewRoute.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = gunaDataGridViewRoute.SelectedRows[0];
+
+                if (selectedRow.Cells["ID"].Value != null && int.TryParse(selectedRow.Cells["ID"].Value.ToString(), out int id)) {
+
+                    Route selectedRoute = RouteService.GetRouteById(id);
+
+                    FormAddEditRoute editForm = new FormAddEditRoute(selectedRoute, true);
+                    editForm.StartPosition = FormStartPosition.CenterParent;
+                    editForm.ShowDialog();
+                } else {
+                    MessageBox.Show("No se pudo obtener el ID de la ruta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } else {
+                MessageBox.Show("Debe seleccionar una ruta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewRoute.SelectedRows.Count > 0) {
+                var selectedRow = gunaDataGridViewRoute.SelectedRows[0];
+
+                int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+
+                Route selectedRoute = RouteService.GetRouteById(id);
+
+                FormAddEditRoute formDetails = new FormAddEditRoute(selectedRoute, false);
+                formDetails.StartPosition = FormStartPosition.CenterParent;
+                formDetails.ShowDialog();
+            } else {
+                MessageBox.Show("No se ha seleccionado ninguna ruta para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

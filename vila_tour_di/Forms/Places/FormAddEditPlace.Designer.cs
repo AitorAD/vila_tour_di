@@ -50,8 +50,8 @@ namespace vila_tour_di
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLastModificationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCreationDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.imageSlider = new vila_tour_di.Forms.Commons.ImageSlider();
+            this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
@@ -390,11 +390,6 @@ namespace vila_tour_di
             this.lblCreationDate.TabIndex = 1;
             this.lblCreationDate.Text = "Fecha de creación: ";
             // 
-            // guna2HtmlToolTip1
-            // 
-            this.guna2HtmlToolTip1.AllowLinksHandling = true;
-            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
-            // 
             // imageSlider
             // 
             this.imageSlider.article = null;
@@ -403,6 +398,11 @@ namespace vila_tour_di
             this.imageSlider.Name = "imageSlider";
             this.imageSlider.Size = new System.Drawing.Size(588, 400);
             this.imageSlider.TabIndex = 25;
+            // 
+            // guna2HtmlToolTip1
+            // 
+            this.guna2HtmlToolTip1.AllowLinksHandling = true;
+            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             // 
             // FormAddEditPlace
             // 

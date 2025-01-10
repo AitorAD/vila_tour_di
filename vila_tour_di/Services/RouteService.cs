@@ -25,7 +25,7 @@ namespace vila_tour_di.Services {
         }
 
         public static bool UpdateRoute(Route route, Route newRoute) {
-            string url = $"{baseUrl}/{route.idRoute}";
+            string url = $"{baseUrl}/{route.id}";
             var response = ApiService.Put(url, newRoute);
             return ApiService.HandleResponse(response, "Ruta editada correctamente", "Error al editar la ruta");
 

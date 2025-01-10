@@ -124,7 +124,7 @@ namespace vila_tour_di {
                 formDetails.StartPosition = FormStartPosition.CenterParent;
                 formDetails.ShowDialog();
             } else {
-                MessageBox.Show("No se ha seleccionado ningún usuario para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha seleccionado ningún festival para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
