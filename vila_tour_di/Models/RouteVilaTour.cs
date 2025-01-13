@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace vila_tour_di.Models {
-    public class Route {
+    public class RouteVilaTour {
 
         public int id { get; set; }
         public string name { get; set; }
@@ -14,13 +14,13 @@ namespace vila_tour_di.Models {
         public DateTime creationDate { get; set; }
         public DateTime lastModificationDate { get; set; }
 
-        public Route(string name, List<Place> places, User creator) {
+        public RouteVilaTour(string name, List<Place> places, User creator) {
             this.name = name;
             this.places = places;
             this.creator = creator;
         }
 
-        public Route() { }
+        public RouteVilaTour() { }
 
         public override string ToString() {
             return $"ID: {id} Nombre: {name}";

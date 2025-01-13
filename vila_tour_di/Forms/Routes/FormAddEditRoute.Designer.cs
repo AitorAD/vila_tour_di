@@ -34,7 +34,7 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.listBoxLugares = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddIPlace = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddPlace = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeletePlace = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ComboBoxPlaces = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -80,11 +80,11 @@ namespace vila_tour_di.Forms.Routes {
             // 
             // guna2HtmlLabel4
             // 
-            this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(170, 166);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(80, 166);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(42, 0, 0, 0);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(87, 27);
             this.guna2HtmlLabel4.TabIndex = 1;
@@ -119,10 +119,11 @@ namespace vila_tour_di.Forms.Routes {
             this.btnCloseForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCloseForm.ForeColor = System.Drawing.Color.White;
             this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
-            this.btnCloseForm.Location = new System.Drawing.Point(52, 20);
+            this.btnCloseForm.Location = new System.Drawing.Point(52, 19);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(50, 47);
+            this.btnCloseForm.Size = new System.Drawing.Size(50, 50);
             this.btnCloseForm.TabIndex = 3;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click_1);
             // 
             // btnAddRoute
             // 
@@ -137,9 +138,9 @@ namespace vila_tour_di.Forms.Routes {
             this.btnAddRoute.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddRoute.ForeColor = System.Drawing.Color.White;
             this.btnAddRoute.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRoute.Image")));
-            this.btnAddRoute.Location = new System.Drawing.Point(206, 20);
+            this.btnAddRoute.Location = new System.Drawing.Point(206, 19);
             this.btnAddRoute.Name = "btnAddRoute";
-            this.btnAddRoute.Size = new System.Drawing.Size(50, 47);
+            this.btnAddRoute.Size = new System.Drawing.Size(50, 50);
             this.btnAddRoute.TabIndex = 4;
             this.btnAddRoute.Click += new System.EventHandler(this.btnAddRoute_Click);
             // 
@@ -190,7 +191,7 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.btnAddIPlace, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnAddPlace, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnDeletePlace, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 60);
@@ -200,29 +201,29 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel5.Size = new System.Drawing.Size(145, 64);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // btnAddIPlace
+            // btnAddPlace
             // 
-            this.btnAddIPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddIPlace.Animated = true;
-            this.btnAddIPlace.BorderRadius = 25;
-            this.btnAddIPlace.CustomizableEdges.BottomLeft = false;
-            this.btnAddIPlace.CustomizableEdges.BottomRight = false;
-            this.btnAddIPlace.CustomizableEdges.TopLeft = false;
-            this.btnAddIPlace.CustomizableEdges.TopRight = false;
-            this.btnAddIPlace.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddIPlace.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddIPlace.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddIPlace.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddIPlace.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnAddIPlace.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddIPlace.ForeColor = System.Drawing.Color.White;
-            this.btnAddIPlace.Image = ((System.Drawing.Image)(resources.GetObject("btnAddIPlace.Image")));
-            this.btnAddIPlace.Location = new System.Drawing.Point(83, 10);
-            this.btnAddIPlace.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.btnAddIPlace.Name = "btnAddIPlace";
-            this.btnAddIPlace.Size = new System.Drawing.Size(50, 25);
-            this.btnAddIPlace.TabIndex = 5;
-            this.btnAddIPlace.Click += new System.EventHandler(this.btnAddIPlace_Click);
+            this.btnAddPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddPlace.Animated = true;
+            this.btnAddPlace.BorderRadius = 25;
+            this.btnAddPlace.CustomizableEdges.BottomLeft = false;
+            this.btnAddPlace.CustomizableEdges.BottomRight = false;
+            this.btnAddPlace.CustomizableEdges.TopLeft = false;
+            this.btnAddPlace.CustomizableEdges.TopRight = false;
+            this.btnAddPlace.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddPlace.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddPlace.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddPlace.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddPlace.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddPlace.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddPlace.ForeColor = System.Drawing.Color.White;
+            this.btnAddPlace.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPlace.Image")));
+            this.btnAddPlace.Location = new System.Drawing.Point(83, 10);
+            this.btnAddPlace.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnAddPlace.Name = "btnAddPlace";
+            this.btnAddPlace.Size = new System.Drawing.Size(50, 25);
+            this.btnAddPlace.TabIndex = 5;
+            this.btnAddPlace.Click += new System.EventHandler(this.btnAddIPlace_Click);
             // 
             // btnDeletePlace
             // 
@@ -276,7 +277,7 @@ namespace vila_tour_di.Forms.Routes {
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(858, 62);
             this.labelTitle.TabIndex = 5;
-            this.labelTitle.Text = "Añadir/Editar Receta";
+            this.labelTitle.Text = "Añadir/Editar Ruta";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -296,12 +297,13 @@ namespace vila_tour_di.Forms.Routes {
             // 
             // guna2HtmlLabel1
             // 
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(40, 10);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(40, 10, 3, 3);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(39, 14);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(80, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(84, 27);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Nombre:";
             // 
@@ -353,7 +355,6 @@ namespace vila_tour_di.Forms.Routes {
             this.gMapControl.Size = new System.Drawing.Size(465, 464);
             this.gMapControl.TabIndex = 20;
             this.gMapControl.Zoom = 0D;
-            this.gMapControl.Load += new System.EventHandler(this.gMapControl_Load);
             // 
             // FormAddEditRoute
             // 
@@ -361,9 +362,11 @@ namespace vila_tour_di.Forms.Routes {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 575);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormAddEditRoute";
-            this.Text = "FormAddEditRoute";
+            this.Text = "Ruta";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
@@ -387,7 +390,7 @@ namespace vila_tour_di.Forms.Routes {
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.ListBox listBoxLugares;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private Guna.UI2.WinForms.Guna2Button btnAddIPlace;
+        private Guna.UI2.WinForms.Guna2Button btnAddPlace;
         private Guna.UI2.WinForms.Guna2Button btnDeletePlace;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxPlaces;
         private System.Windows.Forms.Label labelTitle;

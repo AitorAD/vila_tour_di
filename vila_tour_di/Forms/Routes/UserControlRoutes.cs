@@ -33,7 +33,7 @@ namespace vila_tour_di {
             table.Columns.Add("Inicio");
             table.Columns.Add("Fin");
 
-            List<Route> routes = RouteService.GetAllRoutes();
+            List<RouteVilaTour> routes = RouteService.GetAllRoutes();
 
             if (routes != null && routes.Any()) {
                 foreach (var route in routes) {
@@ -90,9 +90,9 @@ namespace vila_tour_di {
 
                 if (selectedRow.Cells["ID"].Value != null && int.TryParse(selectedRow.Cells["ID"].Value.ToString(), out int id)) {
 
-                    Route selectedRoute = RouteService.GetRouteById(id);
+                    RouteVilaTour selectedRoute = RouteService.GetRouteById(id);
 
-                    FormAddEditRoute editForm = new FormAddEditRoute(selectedRoute, true);
+                    FormAddEditRoute editForm = new FormAddEditRoute(selectedRoute, false);
                     editForm.StartPosition = FormStartPosition.CenterParent;
                     editForm.ShowDialog();
                 } else {
@@ -109,9 +109,9 @@ namespace vila_tour_di {
 
                 int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
 
-                Route selectedRoute = RouteService.GetRouteById(id);
+                RouteVilaTour selectedRoute = RouteService.GetRouteById(id);
 
-                FormAddEditRoute formDetails = new FormAddEditRoute(selectedRoute, false);
+                FormAddEditRoute formDetails = new FormAddEditRoute(selectedRoute, true);
                 formDetails.StartPosition = FormStartPosition.CenterParent;
                 formDetails.ShowDialog();
             } else {

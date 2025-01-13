@@ -151,7 +151,7 @@
     </Compile>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Image.cs" />
-    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\RouteVilaTour.cs" />
     <Compile Include="Services\Config.cs" />
     <Compile Include="Forms\Places\FormAddEditCategoryPlace.cs">
       <SubType>Form</SubType>

@@ -10,21 +10,21 @@ namespace vila_tour_di.Services {
 
         private static string baseUrl = "http://127.0.0.1:8080/routes";
 
-        public static List<Route> GetAllRoutes() {
-            return ApiService.Get<List<Route>>(baseUrl);
+        public static List<RouteVilaTour> GetAllRoutes() {
+            return ApiService.Get<List<RouteVilaTour>>(baseUrl);
         }
 
-        public static Route GetRouteById(int idRoute) {
+        public static RouteVilaTour GetRouteById(int idRoute) {
             string url = $"{baseUrl}/{idRoute}";
-            return ApiService.GetById<Route>(baseUrl, idRoute);
+            return ApiService.GetById<RouteVilaTour>(baseUrl, idRoute);
         }
 
-        public static bool AddRoute(Route route) {
+        public static bool AddRoute(RouteVilaTour route) {
             var response = ApiService.Post(baseUrl, route);
             return ApiService.HandleResponse(response, "Ruta creada correctamente", "Error al crear la receta");
         }
 
-        public static bool UpdateRoute(Route route, Route newRoute) {
+        public static bool UpdateRoute(RouteVilaTour route, RouteVilaTour newRoute) {
             string url = $"{baseUrl}/{route.id}";
             var response = ApiService.Put(url, newRoute);
             return ApiService.HandleResponse(response, "Ruta editada correctamente", "Error al editar la ruta");
