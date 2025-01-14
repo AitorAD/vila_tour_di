@@ -45,7 +45,7 @@ namespace vila_tour_di.Forms.Routes {
                 btnDeletePlace.Enabled = false;
                 btnAddRoute.Enabled = false;
             }
-            UpdateMapRoute();
+            UpdateMapRoute(radBtnWalk.Checked);
 
         }
 
@@ -55,8 +55,12 @@ namespace vila_tour_di.Forms.Routes {
             guna2ComboBoxPlaces.DisplayMember = "name";
             guna2ComboBoxPlaces.ValueMember = "id";
 
+            var selectedPlaces = listBoxLugares.Items.Cast<string>().ToList();
+
             foreach (var place in places) {
-                guna2ComboBoxPlaces.Items.Add(place);
+                if (!selectedPlaces.Contains(place.name)) {
+                    guna2ComboBoxPlaces.Items.Add(place);
+                }
             }
         }
 
@@ -76,7 +80,7 @@ namespace vila_tour_di.Forms.Routes {
             gMapControl.ShowCenter = false;
         }
 
-        private void UpdateMapRoute() {
+        private void UpdateMapRoute(bool walkingMode) {
             routesOverlay.Routes.Clear();
             markersOverlay.Markers.Clear();
 
@@ -100,7 +104,7 @@ namespace vila_tour_di.Forms.Routes {
             // Si hay al menos dos puntos, calcular la ruta que pase por todos
             if (points.Count > 1) {
                 for (int i = 0; i < points.Count - 1; i++) {
-                    var routeSegment = GMapProviders.OpenStreetMap.GetRoute(points[i], points[i + 1], false, true, 15);
+                    var routeSegment = GMapProviders.OpenStreetMap.GetRoute(points[i], points[i + 1], false, walkingMode, 15);
                     if (routeSegment != null) {
                         var gmapRoute = new GMapRoute(routeSegment.Points, $"Ruta de {i} a {i + 1}");
                         gmapRoute.Stroke = new Pen(Color.Red, 3);
@@ -118,15 +122,14 @@ namespace vila_tour_di.Forms.Routes {
             gMapControl.Refresh();
         }
 
-
-
         private void btnAddIPlace_Click(object sender, EventArgs e) {
             var selectedPlace = guna2ComboBoxPlaces.SelectedItem as Place;
             if (selectedPlace != null && listBoxLugares.Items.Cast<string>().Any(name => name.Equals(selectedPlace.name))) {
                 MessageBox.Show("Error. Lugar repetido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else if (selectedPlace != null) {
                 listBoxLugares.Items.Add(selectedPlace.name); // Añadir solo el nombre
-                UpdateMapRoute();
+                LoadPlacesComboBox(); // Actualizar comboBox
+                UpdateMapRoute(radBtnWalk.Checked);
             } else {
                 MessageBox.Show("Error. Selecciona un lugar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -135,7 +138,8 @@ namespace vila_tour_di.Forms.Routes {
         private void btnDeletePlace_Click(object sender, EventArgs e) {
             if (listBoxLugares.SelectedItem != null) {
                 listBoxLugares.Items.Remove(listBoxLugares.SelectedItem);
-                UpdateMapRoute();
+                LoadPlacesComboBox(); // Actualizar comboBox
+                UpdateMapRoute(radBtnWalk.Checked);
             } else {
                 MessageBox.Show("Por favor, selecciona un lugar para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -174,6 +178,14 @@ namespace vila_tour_di.Forms.Routes {
 
         private void btnCloseForm_Click_1(object sender, EventArgs e) {
             Dispose();
+        }
+
+        private void radBtnWalk_CheckedChanged(object sender, EventArgs e) {
+            UpdateMapRoute(radBtnWalk.Checked);
+        }
+
+        private void radBtnCar_CheckedChanged(object sender, EventArgs e) {
+            UpdateMapRoute(radBtnWalk.Checked);
         }
     }
 }
