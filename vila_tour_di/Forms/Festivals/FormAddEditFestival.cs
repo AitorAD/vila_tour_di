@@ -70,10 +70,11 @@ namespace vila_tour_di {
             DateTime startDate = DateTimePickerStart.Value;
             DateTime endDate = DateTimePickerFinal.Value; 
             User creator = Config.currentUser;
-            Coordinate coordinate = (Coordinate) comboBoxCoordinates.SelectedItem; 
+            Coordinate coordinate = (Coordinate) comboBoxCoordinates.SelectedItem;
 
-            Festival newFestival = new Festival(name, description, startDate, endDate, creator, coordinate);
-            Console.WriteLine(newFestival);
+            imageSlider.images.ForEach(image => image.id = null);
+            Festival newFestival = new Festival(name, description, startDate, endDate, creator, coordinate, imageSlider.images);
+            // Console.WriteLine(newFestival);
 
             if (isEditing) {
                 newFestival.creator = selectedFestival.creator; // Modifico el creador para que no se asigne uno nuevo
@@ -82,14 +83,9 @@ namespace vila_tour_di {
                     Dispose();
                 }
             } else {
-                var response = FestivalService.AddFestival(newFestival); // Almaceno la respuesta ya que esta devuelve el festival entero con su id ya asignado.
-                if (response.IsSuccessStatusCode) {
-                    ApiService.HandleResponse(response, "Festival creado correctamente.", "Error al crear el festival");
-                    string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                    Festival createdFestival = JsonConvert.DeserializeObject<Festival>(jsonResponse);
-                    imageSlider.images.ForEach(image => ImageService.AddImage(new Models.Image(image.path, createdFestival)));
+                if (FestivalService.AddFestival(newFestival)) {
                     Dispose();
-                };
+                }
             }
         }
 

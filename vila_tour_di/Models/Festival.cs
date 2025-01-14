@@ -15,13 +15,14 @@ namespace vila_tour_di
 
         public Festival() : base() { }
 
-        public Festival(string name, string description, DateTime startDate, DateTime endDate, User creator, Coordinate coordinate) : base() {
+        public Festival(string name, string description, DateTime startDate, DateTime endDate, User creator, Coordinate coordinate, List<Image> images) : base() {
             this.name = name;
             this.description = description;
             this.startDate = startDate;
             this.endDate = endDate;
             this.creator = creator;
             this.coordinate = coordinate;
+            this.images = images;
         }
 
         public override string ToString() {
@@ -35,7 +36,8 @@ namespace vila_tour_di
                    $"Start Date: {startDate.ToString("yyyy-MM-dd")}\n" +
                    $"End Date: {endDate.ToString("yyyy-MM-dd")}\n" +
                    $"Creator: {creator?.ToString() ?? "Unknown"}\n" +
-                   $"Coordinates: {coordinate?.ToString() ?? "Unknown"}";
+                   $"Coordinates: {coordinate?.ToString() ?? "Unknown"}\n" +
+                   $"Images: {images?.ToString() ?? "Unknown"}\n";
         }
     }
 }

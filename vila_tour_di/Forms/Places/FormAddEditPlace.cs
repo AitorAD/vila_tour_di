@@ -146,12 +146,6 @@ namespace vila_tour_di {
         }
 
         private void UpdatePlace(Place updatedPlace) {
-            // Si hay imágenes nuevas, se actualizan
-            if (imageSlider.images != null && imageSlider.images.Count > 0) {
-                foreach (var img in imageSlider.images) {
-                    ImageService.UpdateImage(img.id, img);
-                }
-            }
             if (PlaceService.UpdatePlace(_currentPlace, updatedPlace)) {
                 Close();
             } else {

@@ -22,9 +22,9 @@ namespace vila_tour_di.Services {
         }
 
         // Crear un nuevo festival
-        public static HttpResponseMessage AddFestival(Festival festival) {
-            return ApiService.Post(baseUrl, festival);
-            // return ApiService.HandleResponse(response, "Festival creado correctamente.", "Error al crear el festival");
+        public static bool AddFestival(Festival festival) {
+            var response = ApiService.Post(baseUrl, festival);
+            return ApiService.HandleResponse(response, "Festival creado correctamente.", "Error al crear el festival");
         }
 
         // Actualizar festival
