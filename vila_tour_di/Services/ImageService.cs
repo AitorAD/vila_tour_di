@@ -36,7 +36,12 @@ namespace vila_tour_di.Services {
 
         public static bool DeleteImage(Image image) {
             var response = ApiService.Delete($"{baseUrl}/{image.id}");
-            return ApiService.HandleResponse(response, "Imagen eliminada correctamente.", "Error al eliminar la imagen");
+            return response.IsSuccessStatusCode;
+            // return ApiService.HandleResponse(response, "Imagen eliminada correctamente.", "Error al eliminar la imagen");
+        }
+
+        public static void DeleteAllByArticle(Article article) {
+            GetImagesByArticle(article).ForEach(image => DeleteImage(image));
         }
     }
 }

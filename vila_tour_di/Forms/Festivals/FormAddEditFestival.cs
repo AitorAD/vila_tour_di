@@ -79,6 +79,7 @@ namespace vila_tour_di {
             if (isEditing) {
                 newFestival.creator = selectedFestival.creator; // Modifico el creador para que no se asigne uno nuevo
                 int festivalId = selectedFestival.id ?? 0; // Si id es null, asigna 0
+                ImageService.DeleteAllByArticle(selectedFestival); // Elimino todas las imagenes asociadas a este articulo para despues agregar los cambios correspondientes
                 if (FestivalService.UpdateFestival(festivalId, newFestival)) {
                     Dispose();
                 }

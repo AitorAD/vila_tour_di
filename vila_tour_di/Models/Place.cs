@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms.Suite;
 using System;
+using System.Collections.Generic;
 using System.Xml.Linq;
 using vila_tour_di.Models;
 
@@ -14,7 +15,7 @@ namespace vila_tour_di {
 
         public Place() : base() { }
 
-        public Place(string name, string description, double averageScore, DateTime creationDate, DateTime lastModificationDate, CategoryPlace categoryPlace, User creator, Coordinate coordinate) : base() {
+        public Place(string name, string description, double averageScore, DateTime creationDate, DateTime lastModificationDate, CategoryPlace categoryPlace, User creator, Coordinate coordinate, List<Image> images) : base() {
             this.name = name;
             this.description = description;
             this.averageScore = averageScore;
@@ -23,6 +24,7 @@ namespace vila_tour_di {
             this.categoryPlace = categoryPlace;
             this.creator = creator;
             this.coordinate = coordinate;
+            this.images = images;
         }
 
         public override string ToString() {

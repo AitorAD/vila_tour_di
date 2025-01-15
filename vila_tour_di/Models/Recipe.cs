@@ -8,7 +8,6 @@ using vila_tour_di.Models;
 namespace vila_tour_di {
     public class Recipe : Article // Hereda de la clase Article
     {
-        public string imagensPaths { get; set; }
         public double averageScore { get; set; }
         public bool approved { get; set; }
         public bool recent { get; set; }
@@ -19,14 +18,14 @@ namespace vila_tour_di {
 
         public Recipe() : base() { }
 
-        public Recipe(string name, string description, string imagensPaths, bool approved, bool recent, List<Ingredient> ingredients, User creator) : base() {
+        public Recipe(string name, string description, bool approved, bool recent, List<Ingredient> ingredients, User creator, List<Image> images) : base() {
             this.name = name;
             this.description = description;
-            this.imagensPaths = imagensPaths;
             this.approved = approved;
             this.recent = recent;
             this.ingredients = ingredients;
             this.creator = creator;
+            this.images = images;
         }
         public override string ToString() {
             return $"ID: {id}\n" +
