@@ -30,7 +30,8 @@ namespace vila_tour_di.Services {
         public static bool UpdateRecipe(Recipe recipe, Recipe newRecipe) {
             string url = $"{baseUrl}/{recipe.id}";
             var response =  ApiService.Put(url, newRecipe);
-            return ApiService.HandleResponse(response, "Receta editada correctamente", "Error al editar la receta");
+            return response.IsSuccessStatusCode;
+            // return ApiService.HandleResponse(response, "Receta editada correctamente", "Error al editar la receta");
         }
 
         // Eliminar receta

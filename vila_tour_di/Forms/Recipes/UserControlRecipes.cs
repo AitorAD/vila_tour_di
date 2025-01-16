@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Forms.Recipes;
 using vila_tour_di.Services;
 
 namespace vila_tour_di {
@@ -49,6 +50,11 @@ namespace vila_tour_di {
                     string ingredients = string.Join(", ", recipe.ingredients.Select(i => i.name));
                     table.Rows.Add(recipe.id, recipe.name, recipe.description, recipe.averageScore, recipe.approved, ingredients, recipe.creator.name, recipe.creationDate, recipe.lastModificationDate);
                 }
+
+                // Muestra la cantidad de notificaciones
+                int notification = recipes.Count(recipe => recipe.recent);
+                btnBell.Text = notification > 99 ? "99+" : (notification > 0 ? notification.ToString() : null);
+
             } catch (Exception ex) {
                 MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,7 +85,7 @@ namespace vila_tour_di {
 
                 Recipe recipe = RecipeService.GetRecipeById(id);
 
-                FormAddEditRecipe formAddEditRecipe = new FormAddEditRecipe(recipe, false);
+                FormAddEditRecipe formAddEditRecipe = new FormAddEditRecipe(recipe, true);
                 formAddEditRecipe.StartPosition = FormStartPosition.CenterParent;
                 formAddEditRecipe.ShowDialog();
             }
@@ -121,6 +127,12 @@ namespace vila_tour_di {
                 }
                 gunaDataGridViewRecipes.DataSource = LoadRecipesData();
             }
+        }
+
+        private void btnBell_Click(object sender, EventArgs e) {
+            FormApproveRecipes formApproveRecipes = new FormApproveRecipes(this);
+            formApproveRecipes.Show();
+
         }
     }
 }

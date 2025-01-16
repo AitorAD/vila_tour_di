@@ -148,6 +148,11 @@
     </Compile>
     <Compile Include="Forms\Routes\UserControlRoutes.Designer.cs">
       <DependentUpon>UserControlRoutes.cs</DependentUpon>
+    <Compile Include="Forms\Recipes\FormApproveRecipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recipes\FormApproveRecipes.Designer.cs">
+      <DependentUpon>FormApproveRecipes.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Image.cs" />
@@ -307,6 +312,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Routes\UserControlRoutes.resx">
       <DependentUpon>UserControlRoutes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Recipes\FormApproveRecipes.resx">
+      <DependentUpon>FormApproveRecipes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\FormAddEditUser.resx">
       <DependentUpon>FormAddEditUser.cs</DependentUpon>
