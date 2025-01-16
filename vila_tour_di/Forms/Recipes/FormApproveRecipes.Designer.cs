@@ -31,9 +31,9 @@ namespace vila_tour_di.Forms.Recipes {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tblUnapprovedRecipes = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDisapprove = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.btnApprove = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDisapprove = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblUnapprovedRecipes)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -132,6 +132,26 @@ namespace vila_tour_di.Forms.Recipes {
             this.tableLayoutPanel2.TabIndex = 19;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
+            // btnDisapprove
+            // 
+            this.btnDisapprove.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDisapprove.Animated = true;
+            this.btnDisapprove.BorderRadius = 25;
+            this.btnDisapprove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDisapprove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDisapprove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDisapprove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDisapprove.FillColor = System.Drawing.Color.Crimson;
+            this.btnDisapprove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDisapprove.ForeColor = System.Drawing.Color.White;
+            this.btnDisapprove.Image = ((System.Drawing.Image)(resources.GetObject("btnDisapprove.Image")));
+            this.btnDisapprove.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDisapprove.Location = new System.Drawing.Point(27, 358);
+            this.btnDisapprove.Name = "btnDisapprove";
+            this.btnDisapprove.Size = new System.Drawing.Size(50, 50);
+            this.btnDisapprove.TabIndex = 22;
+            this.btnDisapprove.Click += new System.EventHandler(this.btnDisapprove_Click);
+            // 
             // btnDetails
             // 
             this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -171,33 +191,18 @@ namespace vila_tour_di.Forms.Recipes {
             this.btnApprove.TabIndex = 4;
             this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
-            // btnDisapprove
-            // 
-            this.btnDisapprove.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDisapprove.Animated = true;
-            this.btnDisapprove.BorderRadius = 25;
-            this.btnDisapprove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDisapprove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDisapprove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDisapprove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDisapprove.FillColor = System.Drawing.Color.Crimson;
-            this.btnDisapprove.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDisapprove.ForeColor = System.Drawing.Color.White;
-            this.btnDisapprove.Image = ((System.Drawing.Image)(resources.GetObject("btnDisapprove.Image")));
-            this.btnDisapprove.Location = new System.Drawing.Point(27, 358);
-            this.btnDisapprove.Name = "btnDisapprove";
-            this.btnDisapprove.Size = new System.Drawing.Size(50, 50);
-            this.btnDisapprove.TabIndex = 22;
-            this.btnDisapprove.Click += new System.EventHandler(this.btnDisapprove_Click);
-            // 
             // FormApproveRecipes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 531);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormApproveRecipes";
-            this.Text = "FormApproveRecipes";
+            this.Text = "Notificaciones";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormApproveRecipes_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblUnapprovedRecipes)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
