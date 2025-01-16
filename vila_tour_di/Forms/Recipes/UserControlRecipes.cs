@@ -94,45 +94,16 @@ namespace vila_tour_di {
         private void btnDetailsRecipe_Click(object sender, EventArgs e) {
             if (gunaDataGridViewRecipes.SelectedRows.Count > 0) {
                 var selectedRow = gunaDataGridViewRecipes.SelectedRows[0];
-                try {
-                    int recipeId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-                    string name = selectedRow.Cells["Nombre"]?.Value?.ToString() ?? "Sin nombre";
-                    string description = selectedRow.Cells["Descripción"]?.Value?.ToString() ?? "Sin descripción";
-                    double averageScore = selectedRow.Cells["P. Media"].Value != null
-                        ? Convert.ToDouble(selectedRow.Cells["P. Media"].Value)
-                        : 0.0;
-                    DateTime creationDate = selectedRow.Cells["Fecha de creación"].Value != null
-                        ? Convert.ToDateTime(selectedRow.Cells["Fecha de creación"].Value)
-                        : DateTime.MinValue;
-                    DateTime lastModificationDate = selectedRow.Cells["Última modificación"].Value != null
-                        ? Convert.ToDateTime(selectedRow.Cells["Última modificación"].Value)
-                        : DateTime.MinValue;
-                    bool approved = selectedRow.Cells["Aprobado"].Value != null
-                        ? Convert.ToBoolean(selectedRow.Cells["Aprobado"].Value)
-                        : false;
 
-                    // Crear la instancia de Recipe
-                    Recipe recipe = new Recipe {
-                        id = recipeId,
-                        name = name,
-                        description = description,
-                        averageScore = averageScore,
-                        creationDate = creationDate,
-                        lastModificationDate = lastModificationDate,
-                        approved = approved,
-                    };
+                int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
 
-                    // Abrir el formulario de detalles en modo no editable
-                    FormAddEditRecipe formDetails = new FormAddEditRecipe(recipe, false);
-                    formDetails.StartPosition = FormStartPosition.CenterParent;
-                    formDetails.ShowDialog();
-                } catch (Exception ex) {
-                    MessageBox.Show($"Ocurrió un error al cargar los detalles de la receta: {ex.Message}",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Recipe selectedRecipe = RecipeService.GetRecipeById(id);
+
+                FormAddEditRecipe formDetails = new FormAddEditRecipe(selectedRecipe, false);
+                formDetails.StartPosition = FormStartPosition.CenterParent;
+                formDetails.ShowDialog();
             } else {
-                MessageBox.Show("No se ha seleccionado ninguna receta para ver los detalles.",
-                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha seleccionado ninguna receta para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

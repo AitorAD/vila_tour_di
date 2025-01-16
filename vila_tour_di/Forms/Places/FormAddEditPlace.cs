@@ -160,10 +160,20 @@ namespace vila_tour_di {
         private void AddNewPlace(Place newPlace) {
             var response = PlaceService.AddPlace(newPlace);
             if (response.IsSuccessStatusCode) {
+
+                ApiService.HandleResponse(response, "Lugar de interés creado correctamente.", "Error al crear el lugar de interés.");
+                string jsonResponse = response.Content.ReadAsStringAsync().Result;
+                Place createdPlace = JsonConvert.DeserializeObject<Place>(jsonResponse);
+
+                // Verificar si hay imágenes antes de intentar añadirlas
+                if (imageSlider.images != null && imageSlider.images.Count > 0) {
+                    imageSlider.images.ForEach(image => ImageService.AddImage(new Models.Image(image.path, createdPlace)));
+                }
                 Dispose();
             } else {
                 MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

@@ -65,7 +65,7 @@ namespace vila_tour_di {
 
         private void btnRoutes_Click(object sender, EventArgs e) {
             ChangeButtonColor(sender as Guna2Button);
-            LoadUserControl(new UserControlPlaces());
+            LoadUserControl(new UserControlRoutes());
         }
 
         private void btnFestivals_Click(object sender, EventArgs e) {
