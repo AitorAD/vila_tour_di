@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace vila_tour_di.Models {
     public class Image {
-        public int id { get; set; }
+        public int? id { get; set; }
         public string path { get; set; }
         public Article article { get; set; }
 

@@ -16,53 +16,58 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace vila_tour_di {
     public partial class FormAddEditRecipe : Form {
-        bool isEditing = false;
+        private bool _isEditing = false;
         private Recipe _selectedRecipe;
+
         public FormAddEditRecipe() {
             InitializeComponent();
+            setValuesToForm();
             labelTitle.Text = "AÑADIR RECETA";
-            LoadIngredientsComboBox();
-            this.FormClosed += FormAddEditRecipe_FormClosed;
         }
-        public FormAddEditRecipe(Recipe recipe, bool showDetails) {
-            isEditing = true;
+
+        public FormAddEditRecipe(Recipe recipe, bool isEditing) {
             InitializeComponent();
-            labelTitle.Text = "EDITAR RECETA";
+            this._isEditing = isEditing;
             _selectedRecipe = recipe;
+            setValuesToForm();
+            setStatusToForm();
+        }
 
-            // Asignar los valores actuales
-            guna2TextBoxName.Text = recipe.name;
-            guna2TextBoxDescription.Text = recipe.description;
-            guna2ImageCheckBoxApproved.Checked = recipe.approved;
+        private void setValuesToForm() {
+            LoadIngredientsComboBox();
+            if (_selectedRecipe != null) {
+                guna2TextBoxName.Text = _selectedRecipe.name;
+                guna2TextBoxDescription.Text = _selectedRecipe.description;
+                guna2ImageCheckBoxApproved.Checked = _selectedRecipe.approved;
 
-            // Utilizar el mismo slider de imágenes que en Festival
-            if ((imageSlider.images = ImageService.GetImagesByArticle(recipe))?.Count > 0) {
-                imageSlider.article = recipe;
-                imageSlider.LoadImage();
-            }
+                // Utilizar el mismo slider de imágenes que en Festival
+                if ((imageSlider.images = ImageService.GetImagesByArticle(_selectedRecipe))?.Count > 0) {
+                    imageSlider.article = _selectedRecipe;
+                    imageSlider.LoadImage();
+                }
 
-            // Seleccionar los ingredientes actuales en la lista
-            if (recipe.ingredients != null) {
-                listBoxIngredients.Items.Clear(); // Limpiar los ítems actuales
-                foreach (var ingredient in recipe.ingredients) {
-                    listBoxIngredients.Items.Add(ingredient); // Agregar cada ingrediente
+                // Seleccionar los ingredientes actuales en la lista
+                if (_selectedRecipe.ingredients != null) {
+                    listBoxIngredients.Items.Clear(); // Limpiar los ítems actuales
+                    foreach (var ingredient in _selectedRecipe.ingredients) {
+                        listBoxIngredients.Items.Add(ingredient); // Agregar cada ingrediente
+                    }
                 }
             }
+        }
 
-            this.Text = "Editar receta";
+        private void setStatusToForm() {
+            string titleText = _isEditing ? "EDITAR" : "DETALLES";
+            titleText += " RECETA";
+            labelTitle.Text = titleText;
 
-            if (showDetails) {
-                guna2TextBoxName.Enabled = false;
-                guna2TextBoxDescription.Enabled = false;
-                btnAddIngredient.Enabled = false;
-                btnDeleteIngredient.Enabled = false;
-                btnAddRecipe.Enabled = false;
-                guna2ImageCheckBoxApproved.Enabled = false;
-           
-            }
-            imageSlider.setStatusButtons(isEditing);
-            LoadIngredientsComboBox();
-            this.FormClosed += FormAddEditRecipe_FormClosed;
+            guna2TextBoxName.Enabled = _isEditing;
+            guna2TextBoxDescription.Enabled = _isEditing;
+            btnAddIngredient.Enabled = _isEditing;
+            imageSlider.setStatusButtons(_isEditing);
+            btnDeleteIngredient.Enabled = _isEditing;
+            btnAddRecipe.Enabled = _isEditing;
+            guna2ImageCheckBoxApproved.Enabled = _isEditing;
         }
 
         private void LoadIngredientsComboBox() {
@@ -84,27 +89,24 @@ namespace vila_tour_di {
             List<Ingredient> ingredients = new List<Ingredient>();
             User creator = Config.currentUser;
 
-            // Recorrer los elementos del ListBox
             foreach (var item in listBoxIngredients.Items) {
                 if (item is Ingredient ingredient) {
                     ingredients.Add(ingredient);
                 }
             }
 
-            // Convertir las imágenes a base64 usando el nuevo control de imágenes
-            List<string> imagePaths = imageSlider.images.Select(img => img.path).ToList();
-            string image = JsonConvert.SerializeObject(imagePaths);
+            imageSlider.images.ForEach(i => i.id = null);
 
-            Recipe newRecipe = new Recipe(name, description, image, approved, recent, ingredients, creator);
+            // Crear la nueva receta
+            Recipe newRecipe = new Recipe(name, description, approved, recent, ingredients, creator, imageSlider.images);
 
-            if (isEditing) {
-                newRecipe.creationDate = _selectedRecipe.creationDate;
+            if (_isEditing) {
                 newRecipe.creator = _selectedRecipe.creator;
+                newRecipe.creationDate = _selectedRecipe.creationDate;
+                ImageService.DeleteAllByArticle(_selectedRecipe); // Elimino todas las imagenes asociadas a este articulo para despues agregar los cambios correspondientes
                 RecipeService.UpdateRecipe(_selectedRecipe, newRecipe);
                 Dispose();
             } else {
-                newRecipe.creator = Config.currentUser;
-                Console.WriteLine(newRecipe);
                 RecipeService.AddRecipe(newRecipe);
                 Dispose();
             }

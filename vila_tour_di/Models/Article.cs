@@ -18,6 +18,7 @@ namespace vila_tour_di.Models {
         public double averageScore { get; set; }
         public DateTime creationDate { get; set; }
         public DateTime lastModificationDate { get; set; }
+        public List<Image> images { get; set; }
 
         public string type { get; set; }
 

@@ -137,6 +137,12 @@
     <Compile Include="Forms\Commons\ImageSlider.Designer.cs">
       <DependentUpon>ImageSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Recipes\FormApproveRecipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recipes\FormApproveRecipes.Designer.cs">
+      <DependentUpon>FormApproveRecipes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Services\Config.cs" />
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Places\FormCategoryPlace.resx">
       <DependentUpon>FormCategoryPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recipes\FormApproveRecipes.resx">
+      <DependentUpon>FormApproveRecipes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\FormAddEditUser.resx">
       <DependentUpon>FormAddEditUser.cs</DependentUpon>
