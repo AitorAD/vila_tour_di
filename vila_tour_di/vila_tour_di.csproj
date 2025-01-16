@@ -131,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleConverter.cs" />
+    <Compile Include="Forms\Recipes\FormApproveRecipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recipes\FormApproveRecipes.Designer.cs" />
     <Compile Include="Forms\Commons\ImageSlider.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,11 +152,6 @@
     </Compile>
     <Compile Include="Forms\Routes\UserControlRoutes.Designer.cs">
       <DependentUpon>UserControlRoutes.cs</DependentUpon>
-    <Compile Include="Forms\Recipes\FormApproveRecipes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Recipes\FormApproveRecipes.Designer.cs">
-      <DependentUpon>FormApproveRecipes.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Image.cs" />
@@ -286,6 +285,7 @@
       <DependentUpon>UserControlRecipes.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="Forms\Recipes\FormApproveRecipes.resx" />
     <EmbeddedResource Include="Forms\Commons\ImageSlider.resx">
       <DependentUpon>ImageSlider.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,8 +312,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Routes\UserControlRoutes.resx">
       <DependentUpon>UserControlRoutes.cs</DependentUpon>
-    <EmbeddedResource Include="Forms\Recipes\FormApproveRecipes.resx">
-      <DependentUpon>FormApproveRecipes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\FormAddEditUser.resx">
       <DependentUpon>FormAddEditUser.cs</DependentUpon>
