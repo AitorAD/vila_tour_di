@@ -94,7 +94,7 @@ namespace vila_tour_di.Services {
                 try {
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
                     string jsonData = JsonConvert.SerializeObject(data);
-                    Console.WriteLine(jsonData);
+                    // Console.WriteLine(jsonData);
                     HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                     var request = new HttpRequestMessage(method, apiUrl) { Content = content };
                     return client.SendAsync(request).Result;

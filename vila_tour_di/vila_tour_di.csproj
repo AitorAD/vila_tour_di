@@ -131,14 +131,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleConverter.cs" />
+    <Compile Include="Forms\Recipes\FormApproveRecipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recipes\FormApproveRecipes.Designer.cs" />
     <Compile Include="Forms\Commons\ImageSlider.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Commons\ImageSlider.Designer.cs">
       <DependentUpon>ImageSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Routes\FormAddEditRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Routes\FormAddEditRoute.Designer.cs">
+      <DependentUpon>FormAddEditRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Routes\UserControlRoutes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Routes\UserControlRoutes.Designer.cs">
+      <DependentUpon>UserControlRoutes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\RouteVilaTour.cs" />
     <Compile Include="Services\Config.cs" />
     <Compile Include="Forms\Places\FormAddEditCategoryPlace.cs">
       <SubType>Form</SubType>
@@ -162,6 +179,7 @@
     <Compile Include="Services\IngredientService.cs" />
     <Compile Include="Services\PlaceService.cs" />
     <Compile Include="Services\RecipeService.cs" />
+    <Compile Include="Services\RouteService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Models\CategoryIngredient.cs" />
     <Compile Include="Models\CategoryPlace.cs" />
@@ -267,6 +285,7 @@
       <DependentUpon>UserControlRecipes.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="Forms\Recipes\FormApproveRecipes.resx" />
     <EmbeddedResource Include="Forms\Commons\ImageSlider.resx">
       <DependentUpon>ImageSlider.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Places\FormCategoryPlace.resx">
       <DependentUpon>FormCategoryPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Routes\FormAddEditRoute.resx">
+      <DependentUpon>FormAddEditRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Routes\UserControlRoutes.resx">
+      <DependentUpon>UserControlRoutes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\FormAddEditUser.resx">
       <DependentUpon>FormAddEditUser.cs</DependentUpon>

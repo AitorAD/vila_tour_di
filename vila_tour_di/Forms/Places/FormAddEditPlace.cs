@@ -108,6 +108,8 @@ namespace vila_tour_di {
             Console.WriteLine(newPlace);
 
             if (_isEditing) {
+                newPlace.creator = _currentPlace.creator; // Modifico el creador para que no se asigne uno nuevo
+                ImageService.DeleteAllByArticle(_currentPlace); // Elimino todas las imagenes asociadas a este articulo para despues agregar los cambios correspondientes
                 UpdatePlace(newPlace);
             } else {
                 AddNewPlace(newPlace);
@@ -134,6 +136,7 @@ namespace vila_tour_di {
         }
 
         private Place CreatePlaceFromInputs() {
+            imageSlider.images.ForEach(image => image.id = null);
             return new Place {
                 name = txtName.Text.Trim(),
                 description = txtDescription.Text.Trim(),
@@ -141,19 +144,14 @@ namespace vila_tour_di {
                 lastModificationDate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")),
                 categoryPlace = ((CategoryPlace)comboCategory.SelectedItem),
                 coordinate = _currentCoordinate,
-                creator = _isEditing ? _currentPlace.creator : Config.currentUser
+                creator = _isEditing ? _currentPlace.creator : Config.currentUser,
+                images = imageSlider.images
             };
         }
 
         private void UpdatePlace(Place updatedPlace) {
-            // Si hay imágenes nuevas, se actualizan
-            if (imageSlider.images != null && imageSlider.images.Count > 0) {
-                foreach (var img in imageSlider.images) {
-                    ImageService.UpdateImage(img.id, img);
-                }
-            }
             if (PlaceService.UpdatePlace(_currentPlace, updatedPlace)) {
-                Close();
+                Dispose();
             } else {
                 MessageBox.Show("Error al actualizar el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -162,14 +160,20 @@ namespace vila_tour_di {
         private void AddNewPlace(Place newPlace) {
             var response = PlaceService.AddPlace(newPlace);
             if (response.IsSuccessStatusCode) {
+
                 ApiService.HandleResponse(response, "Lugar de interés creado correctamente.", "Error al crear el lugar de interés.");
                 string jsonResponse = response.Content.ReadAsStringAsync().Result;
                 Place createdPlace = JsonConvert.DeserializeObject<Place>(jsonResponse);
-                imageSlider.images.ForEach(image => ImageService.AddImage(new Models.Image(image.path, createdPlace)));
+
+                // Verificar si hay imágenes antes de intentar añadirlas
+                if (imageSlider.images != null && imageSlider.images.Count > 0) {
+                    imageSlider.images.ForEach(image => ImageService.AddImage(new Models.Image(image.path, createdPlace)));
+                }
                 Dispose();
             } else {
                 MessageBox.Show("Error al añadir el lugar. Por favor, inténtelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
