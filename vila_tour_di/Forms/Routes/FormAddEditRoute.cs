@@ -52,17 +52,21 @@ namespace vila_tour_di.Forms.Routes {
         private void LoadPlacesComboBox() {
             guna2ComboBoxPlaces.Items.Clear();
             var places = PlaceService.GetAllPlaces();
+
+            var sortedPlaces = places.OrderBy(place => place.name).ToList();
+
             guna2ComboBoxPlaces.DisplayMember = "name";
             guna2ComboBoxPlaces.ValueMember = "id";
 
             var selectedPlaces = listBoxLugares.Items.Cast<string>().ToList();
 
-            foreach (var place in places) {
+            foreach (var place in sortedPlaces) {
                 if (!selectedPlaces.Contains(place.name)) {
                     guna2ComboBoxPlaces.Items.Add(place);
                 }
             }
         }
+
 
         private void InitializeMap() {
             gMapControl.MapProvider = GMapProviders.OpenStreetMap;

@@ -171,7 +171,7 @@
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 16);
             this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(38, 16, 3, 3);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(102, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(91, 27);
             this.guna2HtmlLabel2.TabIndex = 0;
             this.guna2HtmlLabel2.Text = "Aprobada:";
             // 

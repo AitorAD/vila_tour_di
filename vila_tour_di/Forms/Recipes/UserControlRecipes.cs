@@ -130,9 +130,8 @@ namespace vila_tour_di {
         }
 
         private void btnBell_Click(object sender, EventArgs e) {
-            FormApproveRecipes formApproveRecipes = new FormApproveRecipes(this);
-            formApproveRecipes.Show();
-
+            FormApprove formApprove = new FormApprove(this);
+            formApprove.Show();
         }
     }
 }
