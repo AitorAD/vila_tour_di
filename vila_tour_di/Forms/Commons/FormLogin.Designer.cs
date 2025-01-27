@@ -34,11 +34,12 @@ namespace vila_tour_di {
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.btnEntrar = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVilaTour = new System.Windows.Forms.Label();
+            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
+            this.gunaBtnEntrar = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -56,8 +57,9 @@ namespace vila_tour_di {
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnEntrar, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnLogOut, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.gunaBtnEntrar, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -166,17 +168,6 @@ namespace vila_tour_di {
             this.lblLogin.Text = "Log In";
             this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnEntrar
-            // 
-            this.btnEntrar.AutoSize = true;
-            this.btnEntrar.Location = new System.Drawing.Point(269, 339);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(260, 52);
-            this.btnEntrar.TabIndex = 2;
-            this.btnEntrar.Text = "Iniciar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -233,6 +224,62 @@ namespace vila_tour_di {
             this.lblVilaTour.Text = "VILATOUR";
             this.lblVilaTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogOut.Animated = true;
+            this.btnLogOut.AutoRoundedCorners = true;
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BorderRadius = 16;
+            this.btnLogOut.BorderThickness = 2;
+            this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.FillColor = System.Drawing.Color.Azure;
+            this.btnLogOut.FocusedColor = System.Drawing.Color.White;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnLogOut.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnLogOut.HoverState.FillColor = System.Drawing.Color.PowderBlue;
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.Location = new System.Drawing.Point(747, 400);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(15);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.PressedColor = System.Drawing.Color.White;
+            this.btnLogOut.Size = new System.Drawing.Size(38, 35);
+            this.btnLogOut.TabIndex = 17;
+            // 
+            // gunaBtnEntrar
+            // 
+            this.gunaBtnEntrar.Animated = true;
+            this.gunaBtnEntrar.AutoRoundedCorners = true;
+            this.gunaBtnEntrar.BackColor = System.Drawing.Color.Transparent;
+            this.gunaBtnEntrar.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaBtnEntrar.BorderRadius = 16;
+            this.gunaBtnEntrar.BorderThickness = 2;
+            this.gunaBtnEntrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaBtnEntrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.gunaBtnEntrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.gunaBtnEntrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.gunaBtnEntrar.FillColor = System.Drawing.Color.Azure;
+            this.gunaBtnEntrar.FocusedColor = System.Drawing.Color.White;
+            this.gunaBtnEntrar.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.gunaBtnEntrar.ForeColor = System.Drawing.Color.Black;
+            this.gunaBtnEntrar.HoverState.BorderColor = System.Drawing.Color.White;
+            this.gunaBtnEntrar.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.gunaBtnEntrar.HoverState.FillColor = System.Drawing.Color.PowderBlue;
+            this.gunaBtnEntrar.Location = new System.Drawing.Point(281, 351);
+            this.gunaBtnEntrar.Margin = new System.Windows.Forms.Padding(15);
+            this.gunaBtnEntrar.Name = "gunaBtnEntrar";
+            this.gunaBtnEntrar.PressedColor = System.Drawing.Color.White;
+            this.gunaBtnEntrar.Size = new System.Drawing.Size(236, 35);
+            this.gunaBtnEntrar.TabIndex = 18;
+            this.gunaBtnEntrar.Text = "Iniciar";
+            this.gunaBtnEntrar.Click += new System.EventHandler(this.gunaBtnEntrar_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,7 +293,6 @@ namespace vila_tour_di {
             this.Name = "FormLogin";
             this.Text = "Log In";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -264,7 +310,6 @@ namespace vila_tour_di {
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lblPassword;
@@ -277,6 +322,8 @@ namespace vila_tour_di {
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblVilaTour;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
+        private Guna.UI2.WinForms.Guna2Button gunaBtnEntrar;
     }
 }
 

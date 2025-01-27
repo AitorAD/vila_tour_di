@@ -31,7 +31,14 @@ namespace vila_tour_di {
             }
         }
 
-        private async void btnEntrar_Click(object sender, EventArgs e) {
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing) {
+                Application.Exit();
+            }
+        }
+
+        private async void gunaBtnEntrar_Click(object sender, EventArgs e)  {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
@@ -77,13 +84,5 @@ namespace vila_tour_di {
                 }
             }
         }
-
-        protected override void OnFormClosing(FormClosingEventArgs e) {
-            base.OnFormClosing(e);
-            if (e.CloseReason == CloseReason.UserClosing) {
-                Application.Exit();
-            }
-        }
-
     }
 }
