@@ -80,6 +80,8 @@ namespace vila_tour_di.Forms.Commons {
                 openFileDialog.Filter = "Archivos de imagen (*.png;*.jpg)|*.png;*.jpg";
                 openFileDialog.Title = "Selecciona una imagen de perfil";
 
+                /*
+                // Código antiguo sin cambiar la calidad de la imagen
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
                     string selectedFilePath = openFileDialog.FileName;
 
@@ -93,6 +95,31 @@ namespace vila_tour_di.Forms.Commons {
                         LoadImage();
                     }
                 }
+                */
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    if (selectedFilePath != null) {
+                        using (System.Drawing.Image originalImage = System.Drawing.Image.FromFile(selectedFilePath)) {
+                            System.Drawing.Image resizedImage = ResizeImage(originalImage, 800, 800); // Ajusta el tamaño máximo según sea necesario
+
+                            string tempPath = System.IO.Path.GetTempFileName();
+                            resizedImage.Save(tempPath, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                            // Convertir a Base64 usando la nueva imagen guardada
+                            string base64Image = Utils.Utils.ConvertImageToBase64(tempPath);
+
+                            if (images == null) {
+                                images = new List<Models.Image>();
+                            }
+                            images.Add(new Models.Image(base64Image));
+                            currentIndex = images.Count - 1;
+                            LoadImage();
+                        }
+                    }
+                }
+
             }
         }
 
@@ -110,5 +137,30 @@ namespace vila_tour_di.Forms.Commons {
                 
             }
         }
+
+        private System.Drawing.Image ResizeImage(System.Drawing.Image img, int maxWidth, int maxHeight) {
+            int newWidth = img.Width;
+            int newHeight = img.Height;
+
+            if (img.Width > maxWidth || img.Height > maxHeight) {
+                double ratioX = (double)maxWidth / img.Width;
+                double ratioY = (double)maxHeight / img.Height;
+                double ratio = Math.Min(ratioX, ratioY);
+
+                newWidth = (int)(img.Width * ratio);
+                newHeight = (int)(img.Height * ratio);
+            }
+
+            Bitmap resizedImage = new Bitmap(newWidth, newHeight);
+            using (Graphics graphics = Graphics.FromImage(resizedImage)) {
+                graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                graphics.DrawImage(img, 0, 0, newWidth, newHeight);
+            }
+
+            return resizedImage;
+        }
+
     }
 }
