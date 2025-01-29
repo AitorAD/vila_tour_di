@@ -10,7 +10,7 @@ using vila_tour_di.Models;
 
 namespace vila_tour_di.Services {
     class ImageService {
-        private static string baseUrl = "http://127.0.0.1:8080/images";
+        private static string baseUrl = Config.baseURL + "images";
 
         public static List<Image> GetImages() {
             return ApiService.Get<List<Image>>(baseUrl) ?? new List<Image>();

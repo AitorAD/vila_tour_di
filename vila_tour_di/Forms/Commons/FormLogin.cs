@@ -3,10 +3,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using vila_tour_di.Services;
+using vila_tour_di.Forms.Commons;
 
 namespace vila_tour_di {
     public partial class FormLogin : Form {
@@ -42,7 +42,7 @@ namespace vila_tour_di {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            string apiUrl = "http://127.0.0.1:8080/auth/login";
+            string apiUrl = Config.baseURL + "auth/login";
 
             var loginData = new {
                 username = username,
@@ -83,6 +83,12 @@ namespace vila_tour_di {
                                     "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e) {
+            FormSettings formSettings = new FormSettings();
+            formSettings.StartPosition = FormStartPosition.CenterParent;
+            formSettings.ShowDialog();
         }
     }
 }

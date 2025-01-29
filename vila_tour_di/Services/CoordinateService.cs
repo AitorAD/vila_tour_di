@@ -10,7 +10,7 @@ namespace vila_tour_di.Services
     class CoordinateService
     {
 
-        private static string baseUrl = "http://127.0.0.1:8080/coordinates";
+        private static string baseUrl = Config.baseURL + "coordinates";
 
         // Obtener todas las coordenadas
         public static List<Coordinate> GetAllCoordinates()

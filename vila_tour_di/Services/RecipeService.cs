@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace vila_tour_di.Services {
     class RecipeService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/recipes";
+        private static string baseUrl = Config.baseURL + "recipes";
 
         public static List<Recipe> GetAllRecipes() {
             return ApiService.Get<List<Recipe>>(baseUrl);

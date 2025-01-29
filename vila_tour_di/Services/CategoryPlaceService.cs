@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace vila_tour_di.Services {
     class CategoryPlaceService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/categoriesPlace";
+        private static string baseUrl = Config.baseURL + "categoriesPlace";
 
         // Obtener todas las categorías de lugares
         public static List<CategoryPlace> GetCategoriesPlaces() {

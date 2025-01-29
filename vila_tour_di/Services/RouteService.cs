@@ -8,7 +8,7 @@ using vila_tour_di.Models;
 namespace vila_tour_di.Services {
     class RouteService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/routes";
+        private static string baseUrl = Config.baseURL + "routes";
 
         public static List<RouteVilaTour> GetAllRoutes() {
             return ApiService.Get<List<RouteVilaTour>>(baseUrl);
