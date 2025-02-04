@@ -16,31 +16,31 @@ namespace vila_tour_di.Services {
 
         private static void LoadBaseUrl() {
             try {
-                Console.WriteLine($"📂 Buscando archivo en: {configFilePath}");
+                Console.WriteLine($"Buscando archivo en: {configFilePath}");
 
                 if (File.Exists(configFilePath)) {
                     string json = File.ReadAllText(configFilePath);
-                    Console.WriteLine($"📖 Contenido del JSON leído: {json}");
+                    Console.WriteLine($"Contenido del JSON leído: {json}");
 
                     JObject config = JObject.Parse(json);
                     string url = config["BaseUrl"]?.ToString();
 
                     if (!string.IsNullOrEmpty(url)) {
                         baseURL = url;
-                        Console.WriteLine($"✅ URL cargada correctamente: {baseURL}");
+                        Console.WriteLine($"URL cargada correctamente: {baseURL}");
                         return;
                     } else {
-                        Console.WriteLine("⚠️ La clave 'BaseUrl' está vacía o no existe.");
+                        Console.WriteLine("La clave 'BaseUrl' está vacía o no existe.");
                     }
                 } else {
-                    Console.WriteLine("⚠️ Archivo config.json no encontrado. Se usará la URL por defecto.");
+                    Console.WriteLine("Archivo config.json no encontrado. Se usará la URL por defecto.");
                 }
             } catch (Exception ex) {
-                Console.WriteLine($"❌ Error al leer la configuración: {ex.Message}");
+                Console.WriteLine($"Error al leer la configuración: {ex.Message}");
             }
 
             baseURL = "http://127.0.0.1:8080";
-            Console.WriteLine($"🔁 Usando BaseUrl por defecto: {baseURL}");
+            Console.WriteLine($"Usando BaseUrl por defecto: {baseURL}");
         }
 
         public static void SetBaseUrl(string nuevaUrl) {
@@ -55,9 +55,9 @@ namespace vila_tour_di.Services {
                 };
 
                 File.WriteAllText(configFilePath, config.ToString());
-                Console.WriteLine("✅ Configuración guardada correctamente.");
+                Console.WriteLine("Configuración guardada correctamente.");
             } catch (Exception ex) {
-                Console.WriteLine($"❌ Error al guardar la configuración: {ex.Message}");
+                Console.WriteLine($"Error al guardar la configuración: {ex.Message}");
             }
         }
     }

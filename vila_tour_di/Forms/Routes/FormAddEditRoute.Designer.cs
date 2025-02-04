@@ -36,23 +36,27 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddPlace = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeletePlace = new Guna.UI2.WinForms.Guna2Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.radBtnCar = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radBtnWalk = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2ComboBoxPlaces = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.gMapControl = new GMap.NET.WindowsForms.GMapControl();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.radBtnWalk = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.radBtnCar = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -63,12 +67,12 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel4, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel16, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelTitle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.gMapControl, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -88,12 +92,13 @@ namespace vila_tour_di.Forms.Routes {
             this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(80, 166);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(42, 0);
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(42, 0, 0, 0);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(87, 27);
             this.guna2HtmlLabel4.TabIndex = 1;
             this.guna2HtmlLabel4.Text = "Lugares:";
+            this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
             // 
             // tableLayoutPanel16
             // 
@@ -153,12 +158,13 @@ namespace vila_tour_di.Forms.Routes {
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.guna2HtmlLabel4, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(41, 219);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(308, 236);
             this.tableLayoutPanel10.TabIndex = 13;
@@ -172,13 +178,13 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.guna2ComboBoxPlaces, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 23);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(302, 230);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(302, 210);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // listBoxLugares
@@ -189,7 +195,7 @@ namespace vila_tour_di.Forms.Routes {
             this.listBoxLugares.Location = new System.Drawing.Point(154, 3);
             this.listBoxLugares.Name = "listBoxLugares";
             this.tableLayoutPanel4.SetRowSpan(this.listBoxLugares, 2);
-            this.listBoxLugares.Size = new System.Drawing.Size(145, 224);
+            this.listBoxLugares.Size = new System.Drawing.Size(145, 204);
             this.listBoxLugares.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -201,12 +207,12 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel5.Controls.Add(this.btnDeletePlace, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 60);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 55);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(145, 167);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(145, 152);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // btnAddPlace
@@ -257,6 +263,78 @@ namespace vila_tour_di.Forms.Routes {
             this.btnDeletePlace.TabIndex = 4;
             this.btnDeletePlace.Click += new System.EventHandler(this.btnDeletePlace_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel5.SetColumnSpan(this.tableLayoutPanel3, 2);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.radBtnCar, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.radBtnWalk, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 48);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(139, 101);
+            this.tableLayoutPanel3.TabIndex = 6;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(30, 15);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(30, 15, 0, 0);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(57, 15);
+            this.guna2HtmlLabel2.TabIndex = 3;
+            this.guna2HtmlLabel2.Text = "Vista:";
+            // 
+            // radBtnCar
+            // 
+            this.radBtnCar.AutoSize = true;
+            this.radBtnCar.CheckedState.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.radBtnCar.CheckedState.BorderThickness = 0;
+            this.radBtnCar.CheckedState.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.radBtnCar.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radBtnCar.CheckedState.InnerOffset = -4;
+            this.radBtnCar.Location = new System.Drawing.Point(31, 70);
+            this.radBtnCar.Margin = new System.Windows.Forms.Padding(31, 5, 0, 0);
+            this.radBtnCar.Name = "radBtnCar";
+            this.radBtnCar.Size = new System.Drawing.Size(56, 17);
+            this.radBtnCar.TabIndex = 2;
+            this.radBtnCar.Text = "Coche";
+            this.radBtnCar.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radBtnCar.UncheckedState.BorderThickness = 2;
+            this.radBtnCar.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radBtnCar.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radBtnCar.CheckedChanged += new System.EventHandler(this.radBtnCar_CheckedChanged);
+            // 
+            // radBtnWalk
+            // 
+            this.radBtnWalk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.radBtnWalk.AutoSize = true;
+            this.radBtnWalk.Checked = true;
+            this.radBtnWalk.CheckedState.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.radBtnWalk.CheckedState.BorderThickness = 0;
+            this.radBtnWalk.CheckedState.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.radBtnWalk.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radBtnWalk.CheckedState.InnerOffset = -4;
+            this.radBtnWalk.Location = new System.Drawing.Point(31, 43);
+            this.radBtnWalk.Margin = new System.Windows.Forms.Padding(31, 0, 0, 5);
+            this.radBtnWalk.Name = "radBtnWalk";
+            this.radBtnWalk.Size = new System.Drawing.Size(78, 17);
+            this.radBtnWalk.TabIndex = 0;
+            this.radBtnWalk.TabStop = true;
+            this.radBtnWalk.Text = "Caminando";
+            this.radBtnWalk.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radBtnWalk.UncheckedState.BorderThickness = 2;
+            this.radBtnWalk.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radBtnWalk.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radBtnWalk.CheckedChanged += new System.EventHandler(this.radBtnWalk_CheckedChanged);
+            // 
             // guna2ComboBoxPlaces
             // 
             this.guna2ComboBoxPlaces.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -293,27 +371,16 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2HtmlLabel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2TextBoxName, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(41, 85);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 56);
             this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(39, 14);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(84, 27);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Nombre:";
             // 
             // guna2TextBoxName
             // 
@@ -364,77 +431,66 @@ namespace vila_tour_di.Forms.Routes {
             this.gMapControl.TabIndex = 20;
             this.gMapControl.Zoom = 0D;
             // 
-            // tableLayoutPanel3
+            // guna2HtmlLabel1
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel5.SetColumnSpan(this.tableLayoutPanel3, 2);
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.guna2HtmlLabel2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.radBtnCar, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.radBtnWalk, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 53);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(139, 111);
-            this.tableLayoutPanel3.TabIndex = 6;
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(1, 19);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(122, 27);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Descripcíon:";
             // 
-            // radBtnWalk
+            // tableLayoutPanel6
             // 
-            this.radBtnWalk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radBtnWalk.AutoSize = true;
-            this.radBtnWalk.Checked = true;
-            this.radBtnWalk.CheckedState.BorderColor = System.Drawing.Color.LightSeaGreen;
-            this.radBtnWalk.CheckedState.BorderThickness = 0;
-            this.radBtnWalk.CheckedState.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.radBtnWalk.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radBtnWalk.CheckedState.InnerOffset = -4;
-            this.radBtnWalk.Location = new System.Drawing.Point(31, 49);
-            this.radBtnWalk.Margin = new System.Windows.Forms.Padding(31, 0, 0, 5);
-            this.radBtnWalk.Name = "radBtnWalk";
-            this.radBtnWalk.Size = new System.Drawing.Size(78, 17);
-            this.radBtnWalk.TabIndex = 0;
-            this.radBtnWalk.TabStop = true;
-            this.radBtnWalk.Text = "Caminando";
-            this.radBtnWalk.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radBtnWalk.UncheckedState.BorderThickness = 2;
-            this.radBtnWalk.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radBtnWalk.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radBtnWalk.CheckedChanged += new System.EventHandler(this.radBtnWalk_CheckedChanged);
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel6.Controls.Add(this.txtDesc, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.guna2HtmlLabel1, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(41, 147);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(308, 66);
+            this.tableLayoutPanel6.TabIndex = 21;
             // 
-            // radBtnCar
+            // guna2HtmlLabel3
             // 
-            this.radBtnCar.AutoSize = true;
-            this.radBtnCar.CheckedState.BorderColor = System.Drawing.Color.LightSeaGreen;
-            this.radBtnCar.CheckedState.BorderThickness = 0;
-            this.radBtnCar.CheckedState.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.radBtnCar.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.radBtnCar.CheckedState.InnerOffset = -4;
-            this.radBtnCar.Location = new System.Drawing.Point(31, 76);
-            this.radBtnCar.Margin = new System.Windows.Forms.Padding(31, 5, 0, 0);
-            this.radBtnCar.Name = "radBtnCar";
-            this.radBtnCar.Size = new System.Drawing.Size(56, 17);
-            this.radBtnCar.TabIndex = 2;
-            this.radBtnCar.Text = "Coche";
-            this.radBtnCar.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.radBtnCar.UncheckedState.BorderThickness = 2;
-            this.radBtnCar.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.radBtnCar.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.radBtnCar.CheckedChanged += new System.EventHandler(this.radBtnCar_CheckedChanged);
+            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(39, 14);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(84, 27);
+            this.guna2HtmlLabel3.TabIndex = 2;
+            this.guna2HtmlLabel3.Text = "Nombre:";
             // 
-            // guna2HtmlLabel2
+            // txtDesc
             // 
-            this.guna2HtmlLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(30, 15);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(30, 15, 0, 0);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(57, 27);
-            this.guna2HtmlLabel2.TabIndex = 3;
-            this.guna2HtmlLabel2.Text = "Vista:";
+            this.txtDesc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDesc.DefaultText = "";
+            this.txtDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDesc.Location = new System.Drawing.Point(139, 15);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDesc.MaxLength = 40;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.PasswordChar = '\0';
+            this.txtDesc.PlaceholderText = "";
+            this.txtDesc.SelectedText = "";
+            this.txtDesc.Size = new System.Drawing.Size(166, 36);
+            this.txtDesc.TabIndex = 2;
             // 
             // FormAddEditRoute
             // 
@@ -451,12 +507,15 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -477,12 +536,15 @@ namespace vila_tour_di.Forms.Routes {
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxPlaces;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxName;
         private GMap.NET.WindowsForms.GMapControl gMapControl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2RadioButton radBtnWalk;
         private Guna.UI2.WinForms.Guna2RadioButton radBtnCar;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private Guna.UI2.WinForms.Guna2TextBox txtDesc;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
