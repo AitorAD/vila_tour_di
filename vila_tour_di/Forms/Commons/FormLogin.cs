@@ -3,10 +3,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using vila_tour_di.Services;
+using vila_tour_di.Forms.Commons;
 
 namespace vila_tour_di {
     public partial class FormLogin : Form {
@@ -31,11 +31,18 @@ namespace vila_tour_di {
             }
         }
 
-        private async void btnEntrar_Click(object sender, EventArgs e) {
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing) {
+                Application.Exit();
+            }
+        }
+
+        private async void gunaBtnEntrar_Click(object sender, EventArgs e)  {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            string apiUrl = "http://127.0.0.1:8080/auth/login";
+            string apiUrl = Config.baseURL + "auth/login";
 
             var loginData = new {
                 username = username,
@@ -78,12 +85,10 @@ namespace vila_tour_di {
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e) {
-            base.OnFormClosing(e);
-            if (e.CloseReason == CloseReason.UserClosing) {
-                Application.Exit();
-            }
+        private void btnSettings_Click(object sender, EventArgs e) {
+            FormSettings formSettings = new FormSettings();
+            formSettings.StartPosition = FormStartPosition.CenterParent;
+            formSettings.ShowDialog();
         }
-
     }
 }

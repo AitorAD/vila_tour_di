@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace vila_tour_di.Services {
     class PlaceService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/places";
+        private static string baseUrl = Config.baseURL + "places";
 
         // Obtener todos los lugares
         public static List<Place> GetAllPlaces() {

@@ -29,6 +29,7 @@ namespace vila_tour_di {
 
             table.Columns.Add("ID", typeof(long));
             table.Columns.Add("Nombre");
+            table.Columns.Add("Descripción");
             table.Columns.Add("Numero de paradas");
             table.Columns.Add("Inicio");
             table.Columns.Add("Fin");
@@ -40,6 +41,7 @@ namespace vila_tour_di {
                     table.Rows.Add(
                         route.id,
                         route.name,
+                        route.description,
                         route.places != null ? route.places.LongCount() : 0,
                         route.places?.FirstOrDefault()?.name ?? "",
                         route.places?.LastOrDefault()?.name ?? ""

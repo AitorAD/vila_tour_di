@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace vila_tour_di.Services {
     class FestivalService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/festivals";
+        private static string baseUrl = Config.baseURL + "festivals";
 
         // Obtener todos los festivales
         public static List<Festival> GetAllFestivals() {
