@@ -166,5 +166,6 @@ namespace vila_tour_di.Forms.Recipes {
         private void FormApprove_FormClosed(object sender, FormClosedEventArgs e) {
             _userControlRecipes?.LoadRecipesData();
         }
+
     }
 }
