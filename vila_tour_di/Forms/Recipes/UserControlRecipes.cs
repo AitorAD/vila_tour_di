@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vila_tour_di.Forms.Commons;
 using vila_tour_di.Forms.Recipes;
 using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class UserControlRecipes : UserControl {
         private DataTable originalDataTable;  // Para almacenar los datos originales sin filtrar
+        List<Recipe> recipes = RecipeService.GetAllRecipes();
+
         public UserControlRecipes() {
             InitializeComponent();
 
@@ -44,7 +47,6 @@ namespace vila_tour_di {
             table.Columns.Add("Última modificación");
 
             try {
-                var recipes = RecipeService.GetAllRecipes();
 
                 foreach(var recipe in recipes) {
                     string ingredients = string.Join(", ", recipe.ingredients.Select(i => i.name));
@@ -92,19 +94,9 @@ namespace vila_tour_di {
         }
 
         private void btnDetailsRecipe_Click(object sender, EventArgs e) {
-            if (gunaDataGridViewRecipes.SelectedRows.Count > 0) {
-                var selectedRow = gunaDataGridViewRecipes.SelectedRows[0];
-
-                int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
-
-                Recipe selectedRecipe = RecipeService.GetRecipeById(id);
-
-                FormAddEditRecipe formDetails = new FormAddEditRecipe(selectedRecipe, false);
-                formDetails.StartPosition = FormStartPosition.CenterParent;
-                formDetails.ShowDialog();
-            } else {
-                MessageBox.Show("No se ha seleccionado ninguna receta para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            FormReport formReports = new FormReport(recipes);
+            formReports.StartPosition = FormStartPosition.CenterParent;
+            formReports.ShowDialog();
         }
 
 
@@ -133,6 +125,24 @@ namespace vila_tour_di {
             FormApprove formApprove = new FormApprove(this);
             formApprove.Show();
         }
+
+        private void gunaDataGridViewRecipes_MouseDoubleClick(object sender, MouseEventArgs e) {
+            // Verificar si se hizo doble clic en una fila válida
+            if (gunaDataGridViewRecipes.CurrentRow != null && gunaDataGridViewRecipes.CurrentRow.Index >= 0) {
+                // Obtener la receta asociada a la fila seleccionada
+                int recipeId = Convert.ToInt32(gunaDataGridViewRecipes.CurrentRow.Cells["Id"].Value);
+
+                // Obtener la receta usando el servicio
+                Recipe selectedRecipe = RecipeService.GetRecipeById(recipeId);
+
+                // Crear una instancia del formulario para agregar/editar recetas
+                FormAddEditRecipe formAddEditRecipe = new FormAddEditRecipe(selectedRecipe, false);
+
+                // Mostrar el formulario
+                formAddEditRecipe.ShowDialog(); // Mostrar como formulario modal
+            }
+        }
     }
+
 }
 
