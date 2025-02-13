@@ -8,9 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vila_tour_di.Services;
+using vila_tour_di.Forms.Commons;
+using vila_tour_di.Forms.Places;
 
 namespace vila_tour_di {
     public partial class UserControlFestivals : UserControl {
+        List<Festival> festivals = FestivalService.GetAllFestivals();
+
         public UserControlFestivals() {
             InitializeComponent();
 
@@ -33,8 +37,6 @@ namespace vila_tour_di {
             table.Columns.Add("Lugar");
             // TODO: Agregar nombre del sitio donde se celebra
 
-
-            List<Festival> festivals = FestivalService.GetAllFestivals();
 
             // Agregamos los users a la tabla
             foreach (var festival in festivals) {
@@ -113,18 +115,25 @@ namespace vila_tour_di {
         }
 
         private void btnDetailsFestival_Click(object sender, EventArgs e) {
-            if (gunaDataGridViewFestivals.SelectedRows.Count > 0) {
-                var selectedRow = gunaDataGridViewFestivals.SelectedRows[0];
+            FormReport formReports = new FormReport(festivals);
+            formReports.StartPosition = FormStartPosition.CenterParent;
+            formReports.ShowDialog();
+        }
 
-                int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+        private void gunaDataGridViewFestivals_MouseDoubleClick(object sender, MouseEventArgs e) {
+            // Verificar si se hizo doble clic en una fila válida
+            if (gunaDataGridViewFestivals.CurrentRow != null && gunaDataGridViewFestivals.CurrentRow.Index >= 0) {
+                // Obtener la receta asociada a la fila seleccionada
+                int festivalId = Convert.ToInt32(gunaDataGridViewFestivals.CurrentRow.Cells["Id"].Value);
 
-                Festival selectedFestival = FestivalService.GetFestivalById(id);
+                // Obtener la receta usando el servicio
+                Festival selectedFestival = FestivalService.GetFestivalById(festivalId);
 
-                FormAddEditFestival formDetails = new FormAddEditFestival(selectedFestival, false);
-                formDetails.StartPosition = FormStartPosition.CenterParent;
-                formDetails.ShowDialog();
-            } else {
-                MessageBox.Show("No se ha seleccionado ningún festival para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Crear una instancia del formulario para agregar/editar recetas
+                FormAddEditFestival formAddEditFestival = new FormAddEditFestival(selectedFestival, false);
+
+                // Mostrar el formulario
+                formAddEditFestival.ShowDialog(); // Mostrar como formulario modal
             }
         }
     }
