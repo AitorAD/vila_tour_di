@@ -152,5 +152,21 @@ namespace vila_tour_di {
             }
         }
 
+        private void gunaDataGridViewUsers_MouseDoubleClick(object sender, MouseEventArgs e) {
+            // Verificar si se hizo doble clic en una fila válida
+            if (gunaDataGridViewUsers.CurrentRow != null && gunaDataGridViewUsers.CurrentRow.Index >= 0) {
+                // Obtener la receta asociada a la fila seleccionada
+                int userId = Convert.ToInt32(gunaDataGridViewUsers.CurrentRow.Cells["Id"].Value);
+
+                // Obtener la receta usando el servicio
+                User selectedUser = UserService.GetUserById(userId);
+
+                // Crear una instancia del formulario para agregar/editar recetas
+                FormAddEditUser formAddEditUser = new FormAddEditUser(selectedUser, false);
+
+                // Mostrar el formulario
+                formAddEditUser.ShowDialog(); // Mostrar como formulario modal
+            }
+        }
     }
 }

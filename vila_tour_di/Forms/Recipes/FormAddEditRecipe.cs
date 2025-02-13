@@ -1,18 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using vila_tour_di.Forms.Commons;
 using vila_tour_di.Services;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace vila_tour_di {
     public partial class FormAddEditRecipe : Form {
@@ -72,12 +64,59 @@ namespace vila_tour_di {
 
         private void LoadIngredientsComboBox() {
             guna2ComboBoxIngredients.Items.Clear();
-
             List<Ingredient> ingredients = IngredientService.GetIngredients();
 
-            foreach (var ingredient in ingredients) {
-                guna2ComboBoxIngredients.Items.Add(ingredient);
+            // Lista para almacenar el texto máximo
+            List<string> itemTexts = new List<string>();
+
+            // Ordenamos los ingredientes por categoría
+            var groupedIngredients = ingredients.GroupBy(i => i.category.name);
+            foreach (var group in groupedIngredients) {
+                // Agregamos la categoría como un "encabezado"
+                CategoryIngredient categoryItem = new CategoryIngredient(group.Key);
+                guna2ComboBoxIngredients.Items.Add("---" + categoryItem.name.ToUpper() + "---");
+                itemTexts.Add("---" + categoryItem.name.ToUpper() + "---");
+
+                // Agregamos los ingredientes de esta categoría
+                foreach (var ingredient in group) {
+                    guna2ComboBoxIngredients.Items.Add(ingredient);
+                    itemTexts.Add(ingredient.name);
+                }
             }
+
+            // Configuramos el ComboBox para dibujar los elementos manualmente
+            guna2ComboBoxIngredients.DrawMode = DrawMode.OwnerDrawVariable;
+
+            // Ajustamos el tamaño del ComboBox cuando se despliega
+            guna2ComboBoxIngredients.DropDown += (sender, e) => AdjustDropDownWidth(itemTexts);
+        }
+
+        // No funciona, pero bueno, se le quiere
+        private void guna2ComboBoxIngredients_SelectedIndexChanged(object sender, EventArgs e) {
+            if (guna2ComboBoxIngredients.SelectedItem.ToString().StartsWith("---")) {
+                this.BeginInvoke((MethodInvoker)delegate {
+                    guna2ComboBoxIngredients.SelectedItem = -1;
+                });
+            }
+        }
+
+        private void AdjustDropDownWidth(List<string> texts) {
+            int maxWidth = GetMaxTextWidth(texts);
+            guna2ComboBoxIngredients.DropDownWidth = maxWidth + 50; // 50 es para margen extra
+        }
+
+        private int GetMaxTextWidth(List<string> texts) {
+            int maxWidth = 0;
+
+            using (Graphics g = guna2ComboBoxIngredients.CreateGraphics()) {
+                foreach (var text in texts) {
+                    SizeF size = g.MeasureString(text, guna2ComboBoxIngredients.Font);
+                    if (size.Width > maxWidth) {
+                        maxWidth = (int)size.Width;
+                    }
+                }
+            }
+            return maxWidth;
         }
 
         private void btnAddRecipe_Click(object sender, EventArgs e) {
@@ -121,7 +160,7 @@ namespace vila_tour_di {
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             } else if (selectedIngredient != null) {
-                listBoxIngredients.Items.Add(selectedIngredient);
+                listBoxIngredients.Items.Add(selectedIngredient); 
             } else {
                 MessageBox.Show("Error. Selecciona un Ingrediente",
                               "Error",
