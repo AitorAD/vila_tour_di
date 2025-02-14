@@ -15,40 +15,33 @@ using vila_tour_di.Services;
 namespace vila_tour_di {
     public partial class UserControlUsers : UserControl {
         private DataTable originalDataTable;  // Para almacenar los datos originales sin filtrar
+        private List<User> users;  // Lista original de usuarios
 
         public UserControlUsers() {
             InitializeComponent();
 
             // Cargar los datos y almacenar una copia sin filtrar
-            originalDataTable = LoadUsersData();
+            users = LoadUsersData();
+            originalDataTable = LoadUsersDataTable(users);
             gunaDataGridViewUsers.DataSource = originalDataTable;
             gunaDataGridViewUsers.AutoGenerateColumns = true;
             gunaDataGridViewUsers.AutoResizeColumnHeadersHeight();
             gunaDataGridViewUsers.AutoResizeColumns();
+            loadCategories();
         }
 
-        public DataTable LoadUsersData()
-        {
-            
+        public List<User> LoadUsersData() {
             string apiUrl = "http://127.0.0.1:8080/users"; // Ajusta tu URL
             string token = Config.currentToken;
 
-            DataTable table = new DataTable();
-
-                // Definir las columnas del DataTable
-                table.Columns.Add("ID", typeof(int));
-                table.Columns.Add("Usuario");
-                table.Columns.Add("Email");
-                table.Columns.Add("Rol");
-                table.Columns.Add("Nombre");
-                table.Columns.Add("Apellidos");
+            List<User> userList = new List<User>();
 
             using (HttpClient client = new HttpClient()) {
                 try {
                     // Agregar el token
                     client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-                    // Hacer la peticion
+                    // Hacer la petición
                     HttpResponseMessage response = client.GetAsync(apiUrl).Result;
 
                     if (response.IsSuccessStatusCode) {
@@ -56,12 +49,7 @@ namespace vila_tour_di {
                         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
                         // Deserializarla
-                        var users = JsonConvert.DeserializeObject<List<User>>(jsonResponse);
-
-                        // Agregamos los users a la tabla
-                        foreach (var user in users) {
-                            table.Rows.Add(user.id, user.username, user.email, user.role, user.name, user.surname);
-                        }
+                        userList = JsonConvert.DeserializeObject<List<User>>(jsonResponse);
                     } else {
                         MessageBox.Show($"Error al obtener los datos: {response.StatusCode} - {response.ReasonPhrase}", "Error",
                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,17 +60,93 @@ namespace vila_tour_di {
                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            return userList;
+        }
+
+        private DataTable LoadUsersDataTable(List<User> usersList) {
+            DataTable table = new DataTable();
+
+            // Definir las columnas del DataTable
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Usuario");
+            table.Columns.Add("Email");
+            table.Columns.Add("Rol");
+            table.Columns.Add("Nombre");
+            table.Columns.Add("Apellidos");
+
+            // Agregar los usuarios a la tabla
+            foreach (var user in usersList) {
+                table.Rows.Add(user.id, user.username, user.email, user.role, user.name, user.surname);
+            }
+
             return table;
         }
 
+        private void loadCategories() {
+            List<string> categories = new List<string>
+            {
+                "Usuario",
+                "Email",
+                "Rol",
+                "Nombre",
+                "Apellidos"
+            };
 
+            comboBoxCategories.Items.Clear();
+            comboBoxCategories.Items.Add("Todos");
+            foreach (var category in categories) {
+                comboBoxCategories.Items.Add(category);
+            }
+
+            comboBoxCategories.SelectedIndex = 0;  // "Todos" por defecto
+        }
+
+        private void filterUsers() {
+            string selectedCategory = comboBoxCategories.SelectedItem.ToString();
+            string searchText = textBoxSearch.Text.ToLower();
+
+            List<User> filteredUsers = users;
+
+            if (selectedCategory != "Todos") {
+                switch (selectedCategory) {
+                    case "Usuario":
+                        filteredUsers = users.Where(u => u.username.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Email":
+                        filteredUsers = users.Where(u => u.email.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Rol":
+                        filteredUsers = users.Where(u => u.role.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Nombre":
+                        filteredUsers = users.Where(u => u.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Apellidos":
+                        filteredUsers = users.Where(u => u.surname.ToLower().Contains(searchText)).ToList();
+                        break;
+                }
+            }
+
+            originalDataTable = LoadUsersDataTable(filteredUsers);
+            gunaDataGridViewUsers.DataSource = originalDataTable;
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e) {
+            filterUsers();
+        }
+
+        private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e) {
+            filterUsers();
+        }
 
         private void btnAddUser_Click(object sender, EventArgs e) {
             FormAddEditUser formAddUser = new FormAddEditUser();
             formAddUser.StartPosition = FormStartPosition.CenterParent;
             formAddUser.ShowDialog();
 
-            originalDataTable = LoadUsersData();
+            // Recargar los datos después de añadir un usuario
+            users = LoadUsersData();
+            originalDataTable = LoadUsersDataTable(users);
             gunaDataGridViewUsers.DataSource = originalDataTable;
         }
 
@@ -95,13 +159,12 @@ namespace vila_tour_di {
                 int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
 
                 string apiUrl = $"http://127.0.0.1:8080/users/{id}";
+                // Aquí iría la lógica para editar el usuario
             }
         }
 
-        private void btnDeleteUser_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
-            {
+        private void btnDeleteUser_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0) {
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
                 int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
                 // Confirmación antes de eliminar
@@ -113,34 +176,30 @@ namespace vila_tour_di {
                 );
                 if (result == DialogResult.Yes) {
                     if (UserService.DeleteUser(userId)) {
-                        Dispose();
+                        // Recargar los datos después de eliminar un usuario
+                        users = LoadUsersData();
+                        originalDataTable = LoadUsersDataTable(users);
+                        gunaDataGridViewUsers.DataSource = originalDataTable;
                     }
                 }
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("No se ha seleccionado ningún usuario para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-
-        private void btnDetailsUser_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewUsers.SelectedRows.Count > 0)
-            {
+        private void btnDetailsUser_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewUsers.SelectedRows.Count > 0) {
 
                 var selectedRow = gunaDataGridViewUsers.SelectedRows[0];
                 int userId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                User user = new User
-                {
+                User user = new User {
                     id = userId,
                     username = selectedRow.Cells["Usuario"].Value.ToString(),
                     email = selectedRow.Cells["Email"].Value.ToString(),
                     role = selectedRow.Cells["Rol"].Value.ToString(),
                     name = selectedRow.Cells["Nombre"].Value.ToString(),
-                    surname = selectedRow.Cells["Apellidos"].Value.ToString(),
-                    // profilePicture = selectedRow.Cells["ProfilePicture"].Value.ToString()
+                    surname = selectedRow.Cells["Apellidos"].Value.ToString()
                 };
 
                 // Pasar el usuario al formulario en modo no editable
@@ -158,10 +217,10 @@ namespace vila_tour_di {
                 // Obtener la receta asociada a la fila seleccionada
                 int userId = Convert.ToInt32(gunaDataGridViewUsers.CurrentRow.Cells["Id"].Value);
 
-                // Obtener la receta usando el servicio
+                // Obtener el usuario usando el servicio
                 User selectedUser = UserService.GetUserById(userId);
 
-                // Crear una instancia del formulario para agregar/editar recetas
+                // Crear una instancia del formulario para agregar/editar usuarios
                 FormAddEditUser formAddEditUser = new FormAddEditUser(selectedUser, false);
 
                 // Mostrar el formulario

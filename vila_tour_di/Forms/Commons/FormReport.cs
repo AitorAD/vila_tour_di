@@ -3,6 +3,7 @@ using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
@@ -23,7 +24,6 @@ namespace vila_tour_di.Forms.Commons {
         public FormReport(List<Festival> festivals) {
             tipo = 1;
             InitializeComponent();
-            lblCat.Text = "No se que";
         }
 
         public FormReport(List<Place> places) {
@@ -208,24 +208,31 @@ namespace vila_tour_di.Forms.Commons {
 
             // Cargar el logo
             try {
-                ImageData logo = ImageDataFactory.Create("C:/Users/dam_lco/Documents/GitHub/vila_tour_pmdm/assets/logo_foreground.png"); // Ruta del archivo de imagen
-                Image logoImage = new Image(logo).SetAutoScale(true).SetWidth(20); // Ajustar tamaño del logo
-                headerTable.AddCell(new Cell().Add(logoImage));
+                ImageData logo = ImageDataFactory.Create("../../vilaLogo.png");
+                Image logoImage = new Image(logo).SetAutoScale(true).SetWidth(5);
+                headerTable.AddCell(new Cell().Add(logoImage).SetVerticalAlignment(VerticalAlignment.MIDDLE));
+
             } catch (Exception ex) {
                 MessageBox.Show($"Error al cargar el logo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                headerTable.AddCell(new Cell().Add(new Paragraph("Logo no encontrado")));
+                headerTable.AddCell(new Cell().Add(new Paragraph("Logo no encontrado")).SetVerticalAlignment(VerticalAlignment.MIDDLE));
             }
 
-            // Título del informe
-            Paragraph title = new Paragraph("Reporte de Lugares, Recetas o Ingredientes")
+            Paragraph title = new Paragraph("Reporte")
                 .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD))
                 .SetFontSize(16)
-                .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                .SetTextAlignment(TextAlignment.CENTER);
 
-            headerTable.AddCell(new Cell().Add(title));
 
-            // Añadir la tabla al documento (encabezado)
+            Cell titleCell = new Cell().Add(title)
+                .SetVerticalAlignment(VerticalAlignment.MIDDLE); // Centrar verticalmente el título
+
+            headerTable.AddCell(titleCell);
+
             document.Add(headerTable);
+
+            LineSeparator line = new LineSeparator(new SolidLine(1f));
+            document.Add(line);
+
         }
 
         private void MostrarPDF() {

@@ -120,7 +120,7 @@ namespace vila_tour_di {
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(254, 26);
-            this.txtPassword.TabIndex = 0;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // flowLayoutPanel2
@@ -250,7 +250,7 @@ namespace vila_tour_di {
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.PressedColor = System.Drawing.Color.White;
             this.btnSettings.Size = new System.Drawing.Size(38, 35);
-            this.btnSettings.TabIndex = 17;
+            this.btnSettings.TabIndex = 4;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // gunaBtnEntrar
@@ -277,7 +277,7 @@ namespace vila_tour_di {
             this.gunaBtnEntrar.Name = "gunaBtnEntrar";
             this.gunaBtnEntrar.PressedColor = System.Drawing.Color.White;
             this.gunaBtnEntrar.Size = new System.Drawing.Size(236, 35);
-            this.gunaBtnEntrar.TabIndex = 18;
+            this.gunaBtnEntrar.TabIndex = 3;
             this.gunaBtnEntrar.Text = "Iniciar";
             this.gunaBtnEntrar.Click += new System.EventHandler(this.gunaBtnEntrar_Click);
             // 

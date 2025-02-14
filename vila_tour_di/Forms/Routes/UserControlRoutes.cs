@@ -13,31 +13,35 @@ using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class UserControlRoutes : UserControl {
-        public object FormAddEditRoutes { get; private set; }
+        private DataTable originalDataTable;  // Para almacenar los datos originales sin filtrar
+        private List<RouteVilaTour> routes;
 
         public UserControlRoutes() {
             InitializeComponent();
-
-            loadRoutesInGridView();
+            // Cargar los datos y almacenar una copia sin filtrar
+            routes = RouteService.GetAllRoutes();
+            originalDataTable = LoadRoutesData(routes);
+            gunaDataGridViewRoute.DataSource = originalDataTable;
             gunaDataGridViewRoute.AutoGenerateColumns = true;
             gunaDataGridViewRoute.AutoResizeColumnHeadersHeight();
             gunaDataGridViewRoute.AutoResizeColumns();
+            loadCategories();
         }
 
-        public DataTable LoadRoutesData() {
+        // Carga las rutas
+        public DataTable LoadRoutesData(List<RouteVilaTour> routesList) {
             DataTable table = new DataTable();
 
+            // Definir las columnas del DataTable
             table.Columns.Add("ID", typeof(long));
             table.Columns.Add("Nombre");
             table.Columns.Add("Descripción");
-            table.Columns.Add("Numero de paradas");
+            table.Columns.Add("Número de paradas");
             table.Columns.Add("Inicio");
             table.Columns.Add("Fin");
 
-            List<RouteVilaTour> routes = RouteService.GetAllRoutes();
-
-            if (routes != null && routes.Any()) {
-                foreach (var route in routes) {
+            if (routesList != null && routesList.Any()) {
+                foreach (var route in routesList) {
                     table.Rows.Add(
                         route.id,
                         route.name,
@@ -52,8 +56,67 @@ namespace vila_tour_di {
             return table;
         }
 
+        private void loadCategories() {
+            List<string> categories = new List<string>
+            {
+                "Nombre",
+                "Descripción",
+                "Número de paradas",
+                "Inicio",
+                "Fin"
+            };
+
+            comboBoxCategories.Items.Clear();
+            comboBoxCategories.Items.Add("Todos");
+            foreach (var category in categories) {
+                comboBoxCategories.Items.Add(category);
+            }
+
+            comboBoxCategories.SelectedIndex = 0;  // "Todos" por defecto
+        }
+
+        private void filterRoutes() {
+            string selectedCategory = comboBoxCategories.SelectedItem.ToString();
+            string searchText = textBoxSearch.Text.ToLower();
+
+            List<RouteVilaTour> filteredRoutes = routes;
+
+            if (selectedCategory != "Todos") {
+                switch (selectedCategory) {
+                    case "Nombre":
+                        filteredRoutes = routes.Where(r => r.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Descripción":
+                        filteredRoutes = routes.Where(r => r.description.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Número de paradas":
+                        if (int.TryParse(searchText, out int stops)) {
+                            filteredRoutes = routes.Where(r => r.places != null && r.places.Count == stops).ToList();
+                        }
+                        break;
+                    case "Inicio":
+                        filteredRoutes = routes.Where(r => r.places?.FirstOrDefault()?.name.ToLower().Contains(searchText) ?? false).ToList();
+                        break;
+                    case "Fin":
+                        filteredRoutes = routes.Where(r => r.places?.LastOrDefault()?.name.ToLower().Contains(searchText) ?? false).ToList();
+                        break;
+                }
+            }
+
+            originalDataTable = LoadRoutesData(filteredRoutes);
+            gunaDataGridViewRoute.DataSource = originalDataTable;
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e) {
+            filterRoutes();
+        }
+
+        private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e) {
+            filterRoutes();
+        }
+
         private void loadRoutesInGridView() {
-            DataTable routesTable = LoadRoutesData();
+            DataTable routesTable = LoadRoutesData(routes);
             gunaDataGridViewRoute.DataSource = routesTable;
             gunaDataGridViewRoute.Refresh();
         }
@@ -82,7 +145,7 @@ namespace vila_tour_di {
                 } else {
                     MessageBox.Show("No se ha seleccionado ninguna ruta para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                gunaDataGridViewRoute.DataSource = LoadRoutesData();
+                gunaDataGridViewRoute.DataSource = LoadRoutesData(routes);
             }
         }
 

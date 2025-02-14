@@ -15,6 +15,14 @@ namespace vila_tour_di {
         public FormLogin() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;  // Centrar la ventana
+            this.KeyPreview = true;  // Permite que el formulario capture eventos de teclado
+            this.KeyDown += new KeyEventHandler(FormLogin_KeyDown);  // Suscribirse al evento KeyDown
+        }
+
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                gunaBtnEntrar_Click(sender, e);  // Llamar al método del botón
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e) {

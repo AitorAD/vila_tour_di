@@ -24,12 +24,10 @@ namespace vila_tour_di.Converters {
                     article = new Festival();
                     break;
                 case "recipe":
-                    article = new Festival();
-                    // article = new Recipe();
+                    article = new Recipe();
                     break;
                 case "place":
-                    article = new Festival();
-                    // article = new Place();
+                    article = new Place();
                     break;
                 default:
                     throw new InvalidOperationException($"Unknown type: {type}");
