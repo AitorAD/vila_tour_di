@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using vila_tour_di.Services;
 using vila_tour_di.Forms.Commons;
+using System.Diagnostics;
 
 namespace vila_tour_di {
     public partial class FormLogin : Form {
@@ -97,6 +98,11 @@ namespace vila_tour_di {
             FormSettings formSettings = new FormSettings();
             formSettings.StartPosition = FormStartPosition.CenterParent;
             formSettings.ShowDialog();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e) {
+            string rutaArchivo = @"C:\Users\dam_ada\Desktop\proyecto\vila_tour_di\vila_tour_di\Help\VilaTour.pdf";  // Ruta completa del archivo
+            Process.Start("explorer", rutaArchivo);
         }
     }
 }

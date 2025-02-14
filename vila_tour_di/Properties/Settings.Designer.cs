@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VilaTour.Properties {
+namespace Vilatour.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
