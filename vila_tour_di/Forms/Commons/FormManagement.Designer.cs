@@ -23,9 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox vila_tour_logo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManagement));
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.btnRoutes = new Guna.UI2.WinForms.Guna2Button();
             this.lblWelcome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnPlaces = new Guna.UI2.WinForms.Guna2Button();
             this.btnRecipes = new Guna.UI2.WinForms.Guna2Button();
@@ -33,7 +35,7 @@
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnFestivals = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btnRoutes = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             vila_tour_logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(vila_tour_logo)).BeginInit();
             this.sidePanel.SuspendLayout();
@@ -68,6 +70,36 @@
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(227, 561);
             this.sidePanel.TabIndex = 0;
+            // 
+            // btnRoutes
+            // 
+            this.btnRoutes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRoutes.Animated = true;
+            this.btnRoutes.AutoRoundedCorners = true;
+            this.btnRoutes.BackColor = System.Drawing.Color.Transparent;
+            this.btnRoutes.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRoutes.BorderRadius = 24;
+            this.btnRoutes.BorderThickness = 2;
+            this.btnRoutes.CustomizableEdges.BottomRight = false;
+            this.btnRoutes.CustomizableEdges.TopRight = false;
+            this.btnRoutes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoutes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoutes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRoutes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRoutes.FillColor = System.Drawing.Color.Teal;
+            this.btnRoutes.FocusedColor = System.Drawing.Color.White;
+            this.btnRoutes.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnRoutes.ForeColor = System.Drawing.Color.White;
+            this.btnRoutes.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnRoutes.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnRoutes.HoverState.FillColor = System.Drawing.Color.Turquoise;
+            this.btnRoutes.Location = new System.Drawing.Point(38, 168);
+            this.btnRoutes.Name = "btnRoutes";
+            this.btnRoutes.PressedColor = System.Drawing.Color.White;
+            this.btnRoutes.Size = new System.Drawing.Size(198, 50);
+            this.btnRoutes.TabIndex = 17;
+            this.btnRoutes.Text = "Rutas";
+            this.btnRoutes.Click += new System.EventHandler(this.btnRoutes_Click);
             // 
             // lblWelcome
             // 
@@ -237,36 +269,6 @@
             this.mainPanel.Size = new System.Drawing.Size(796, 561);
             this.mainPanel.TabIndex = 1;
             // 
-            // btnRoutes
-            // 
-            this.btnRoutes.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRoutes.Animated = true;
-            this.btnRoutes.AutoRoundedCorners = true;
-            this.btnRoutes.BackColor = System.Drawing.Color.Transparent;
-            this.btnRoutes.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRoutes.BorderRadius = 24;
-            this.btnRoutes.BorderThickness = 2;
-            this.btnRoutes.CustomizableEdges.BottomRight = false;
-            this.btnRoutes.CustomizableEdges.TopRight = false;
-            this.btnRoutes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRoutes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRoutes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRoutes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRoutes.FillColor = System.Drawing.Color.Teal;
-            this.btnRoutes.FocusedColor = System.Drawing.Color.White;
-            this.btnRoutes.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnRoutes.ForeColor = System.Drawing.Color.White;
-            this.btnRoutes.HoverState.BorderColor = System.Drawing.Color.White;
-            this.btnRoutes.HoverState.CustomBorderColor = System.Drawing.Color.White;
-            this.btnRoutes.HoverState.FillColor = System.Drawing.Color.Turquoise;
-            this.btnRoutes.Location = new System.Drawing.Point(38, 168);
-            this.btnRoutes.Name = "btnRoutes";
-            this.btnRoutes.PressedColor = System.Drawing.Color.White;
-            this.btnRoutes.Size = new System.Drawing.Size(198, 50);
-            this.btnRoutes.TabIndex = 17;
-            this.btnRoutes.Text = "Rutas";
-            this.btnRoutes.Click += new System.EventHandler(this.btnRoutes_Click);
-            // 
             // FormManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,5 +303,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnFestivals;
         private Guna.UI2.WinForms.Guna2Button btnRoutes;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

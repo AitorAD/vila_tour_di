@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace vila_tour_di.Services {
     class IngredientService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/ingredients";
+        private static string baseUrl = Config.baseURL + "ingredients";
 
         public static List<Ingredient> GetIngredients() {
             return ApiService.Get<List<Ingredient>>(baseUrl) ?? new List<Ingredient>();

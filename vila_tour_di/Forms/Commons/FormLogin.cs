@@ -3,10 +3,11 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using vila_tour_di.Services;
+using vila_tour_di.Forms.Commons;
+using System.Diagnostics;
 
 namespace vila_tour_di {
     public partial class FormLogin : Form {
@@ -15,6 +16,14 @@ namespace vila_tour_di {
         public FormLogin() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;  // Centrar la ventana
+            this.KeyPreview = true;  // Permite que el formulario capture eventos de teclado
+            this.KeyDown += new KeyEventHandler(FormLogin_KeyDown);  // Suscribirse al evento KeyDown
+        }
+
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                gunaBtnEntrar_Click(sender, e);  // Llamar al método del botón
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e) {
@@ -31,11 +40,18 @@ namespace vila_tour_di {
             }
         }
 
-        private async void btnEntrar_Click(object sender, EventArgs e) {
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing) {
+                Application.Exit();
+            }
+        }
+
+        private async void gunaBtnEntrar_Click(object sender, EventArgs e)  {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            string apiUrl = "http://127.0.0.1:8080/auth/login";
+            string apiUrl = Config.baseURL + "auth/login";
 
             var loginData = new {
                 username = username,
@@ -78,12 +94,15 @@ namespace vila_tour_di {
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e) {
-            base.OnFormClosing(e);
-            if (e.CloseReason == CloseReason.UserClosing) {
-                Application.Exit();
-            }
+        private void btnSettings_Click(object sender, EventArgs e) {
+            FormSettings formSettings = new FormSettings();
+            formSettings.StartPosition = FormStartPosition.CenterParent;
+            formSettings.ShowDialog();
         }
 
+        private void btnHelp_Click(object sender, EventArgs e) {
+            string rutaArchivo = @"C:\Users\dam_ada\Desktop\proyecto\vila_tour_di\vila_tour_di\Help\VilaTour.pdf";  // Ruta completa del archivo
+            Process.Start("explorer", rutaArchivo);
+        }
     }
 }

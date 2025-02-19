@@ -171,7 +171,7 @@
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 16);
             this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(38, 16, 3, 3);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(91, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(102, 27);
             this.guna2HtmlLabel2.TabIndex = 0;
             this.guna2HtmlLabel2.Text = "Aprobada:";
             // 
@@ -298,16 +298,19 @@
             this.guna2ComboBoxIngredients.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2ComboBoxIngredients.BackColor = System.Drawing.Color.Transparent;
             this.guna2ComboBoxIngredients.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxIngredients.DropDownHeight = 200;
             this.guna2ComboBoxIngredients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.guna2ComboBoxIngredients.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBoxIngredients.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBoxIngredients.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBoxIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxIngredients.IntegralHeight = false;
             this.guna2ComboBoxIngredients.ItemHeight = 30;
-            this.guna2ComboBoxIngredients.Location = new System.Drawing.Point(8, 3);
+            this.guna2ComboBoxIngredients.Location = new System.Drawing.Point(3, 3);
             this.guna2ComboBoxIngredients.Name = "guna2ComboBoxIngredients";
-            this.guna2ComboBoxIngredients.Size = new System.Drawing.Size(165, 36);
+            this.guna2ComboBoxIngredients.Size = new System.Drawing.Size(176, 36);
             this.guna2ComboBoxIngredients.TabIndex = 1;
+            this.guna2ComboBoxIngredients.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBoxIngredients_SelectedIndexChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -350,7 +353,7 @@
             this.guna2TextBoxDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxDescription.Location = new System.Drawing.Point(249, 4);
             this.guna2TextBoxDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBoxDescription.MaxLength = 400;
+            this.guna2TextBoxDescription.MaxLength = 1500;
             this.guna2TextBoxDescription.Multiline = true;
             this.guna2TextBoxDescription.Name = "guna2TextBoxDescription";
             this.guna2TextBoxDescription.PasswordChar = '\0';
@@ -426,7 +429,6 @@
             // imageSlider
             // 
             this.imageSlider.article = null;
-            this.imageSlider.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider.images = null;
             this.imageSlider.Location = new System.Drawing.Point(41, 54);
             this.imageSlider.Name = "imageSlider";

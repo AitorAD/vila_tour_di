@@ -33,8 +33,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBoxSearchUsers = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.btnBell = new Guna.UI2.WinForms.Guna2Button();
+            this.comboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeleterecipe = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetailsRecipe = new Guna.UI2.WinForms.Guna2Button();
@@ -127,6 +128,7 @@
             this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.Height = 22;
             this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridViewRecipes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewRecipes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gunaDataGridViewRecipes_MouseDoubleClick);
             // 
             // panel1
             // 
@@ -139,41 +141,44 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.98186F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.011264F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.011264F));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxSearchUsers, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnBell, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxSearch, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnBell, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxCategories, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 45);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(679, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
-            // textBoxSearchUsers
+            // textBoxSearch
             // 
-            this.textBoxSearchUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearchUsers.Location = new System.Drawing.Point(3, 12);
-            this.textBoxSearchUsers.Name = "textBoxSearchUsers";
-            this.textBoxSearchUsers.Size = new System.Drawing.Size(649, 20);
-            this.textBoxSearchUsers.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.textBoxSearchUsers, "Buscar");
+            this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxSearch.Location = new System.Drawing.Point(82, 12);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(353, 20);
+            this.textBoxSearch.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.textBoxSearch, "Término a buscar");
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // btnBell
             // 
@@ -188,12 +193,29 @@
             this.btnBell.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBell.ForeColor = System.Drawing.Color.White;
             this.btnBell.Image = ((System.Drawing.Image)(resources.GetObject("btnBell.Image")));
-            this.btnBell.Location = new System.Drawing.Point(729, 5);
+            this.btnBell.Location = new System.Drawing.Point(704, 5);
             this.btnBell.Name = "btnBell";
             this.btnBell.Size = new System.Drawing.Size(67, 35);
             this.btnBell.TabIndex = 15;
             this.toolTip1.SetToolTip(this.btnBell, "Notificaciones");
             this.btnBell.Click += new System.EventHandler(this.btnBell_Click);
+            // 
+            // comboBoxCategories
+            // 
+            this.comboBoxCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxCategories.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxCategories.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategories.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCategories.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCategories.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxCategories.ItemHeight = 30;
+            this.comboBoxCategories.Location = new System.Drawing.Point(487, 4);
+            this.comboBoxCategories.Name = "comboBoxCategories";
+            this.comboBoxCategories.Size = new System.Drawing.Size(140, 36);
+            this.comboBoxCategories.TabIndex = 16;
+            this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -254,7 +276,7 @@
             this.btnDetailsRecipe.Name = "btnDetailsRecipe";
             this.btnDetailsRecipe.Size = new System.Drawing.Size(50, 50);
             this.btnDetailsRecipe.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btnDetailsRecipe, "Ver detalles de la Recetsa");
+            this.toolTip1.SetToolTip(this.btnDetailsRecipe, "Generar informe");
             this.btnDetailsRecipe.Click += new System.EventHandler(this.btnDetailsRecipe_Click);
             // 
             // btnEditRecipe
@@ -351,7 +373,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxSearchUsers;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Button btnDeleterecipe;
         private Guna.UI2.WinForms.Guna2Button btnDetailsRecipe;
@@ -360,9 +381,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnIngredients;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridViewRecipes;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2Button btnBell;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxCategories;
     }
 }

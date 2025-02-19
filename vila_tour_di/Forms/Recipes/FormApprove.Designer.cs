@@ -24,15 +24,14 @@ namespace vila_tour_di.Forms.Recipes {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApprove));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tblUnapprovedRecipes = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDisapprove = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.btnApprove = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblUnapprovedRecipes)).BeginInit();
@@ -63,27 +62,27 @@ namespace vila_tour_di.Forms.Recipes {
             // 
             this.tblUnapprovedRecipes.AllowUserToAddRows = false;
             this.tblUnapprovedRecipes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.tblUnapprovedRecipes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tblUnapprovedRecipes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tblUnapprovedRecipes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblUnapprovedRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblUnapprovedRecipes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tblUnapprovedRecipes.ColumnHeadersHeight = 20;
             this.tblUnapprovedRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblUnapprovedRecipes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblUnapprovedRecipes.DefaultCellStyle = dataGridViewCellStyle3;
             this.tblUnapprovedRecipes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblUnapprovedRecipes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblUnapprovedRecipes.Location = new System.Drawing.Point(23, 23);
@@ -113,21 +112,20 @@ namespace vila_tour_di.Forms.Recipes {
             this.tblUnapprovedRecipes.ThemeStyle.RowsStyle.Height = 22;
             this.tblUnapprovedRecipes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblUnapprovedRecipes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.tblUnapprovedRecipes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tblUnapprovedRecipes_MouseDoubleClick);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btnDisapprove, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.btnDetails, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnApprove, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnDisapprove, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnApprove, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(646, 23);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(130, 404);
             this.tableLayoutPanel2.TabIndex = 19;
@@ -146,30 +144,11 @@ namespace vila_tour_di.Forms.Recipes {
             this.btnDisapprove.ForeColor = System.Drawing.Color.White;
             this.btnDisapprove.Image = ((System.Drawing.Image)(resources.GetObject("btnDisapprove.Image")));
             this.btnDisapprove.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDisapprove.Location = new System.Drawing.Point(40, 311);
+            this.btnDisapprove.Location = new System.Drawing.Point(40, 278);
             this.btnDisapprove.Name = "btnDisapprove";
             this.btnDisapprove.Size = new System.Drawing.Size(50, 50);
             this.btnDisapprove.TabIndex = 22;
             this.btnDisapprove.Click += new System.EventHandler(this.btnDisapprove_Click);
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDetails.Animated = true;
-            this.btnDetails.BorderRadius = 25;
-            this.btnDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetails.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDetails.ForeColor = System.Drawing.Color.White;
-            this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
-            this.btnDetails.Location = new System.Drawing.Point(40, 42);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(50, 50);
-            this.btnDetails.TabIndex = 3;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnApprove
             // 
@@ -185,7 +164,7 @@ namespace vila_tour_di.Forms.Recipes {
             this.btnApprove.ForeColor = System.Drawing.Color.White;
             this.btnApprove.Image = ((System.Drawing.Image)(resources.GetObject("btnApprove.Image")));
             this.btnApprove.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnApprove.Location = new System.Drawing.Point(40, 176);
+            this.btnApprove.Location = new System.Drawing.Point(40, 76);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(50, 50);
             this.btnApprove.TabIndex = 21;
@@ -215,7 +194,6 @@ namespace vila_tour_di.Forms.Recipes {
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2DataGridView tblUnapprovedRecipes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Guna.UI2.WinForms.Guna2Button btnDetails;
         private Guna.UI2.WinForms.Guna2Button btnDisapprove;
         private Guna.UI2.WinForms.Guna2Button btnApprove;
     }

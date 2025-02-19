@@ -24,19 +24,19 @@ namespace vila_tour_di {
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlFestivals));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gunaDataGridViewFestivals = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxSearchUsers = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.comboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeleteFestival = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDetailsFestival = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditFestival = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddFestival = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,25 +75,25 @@ namespace vila_tour_di {
             // 
             this.gunaDataGridViewFestivals.AllowUserToAddRows = false;
             this.gunaDataGridViewFestivals.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridViewFestivals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridViewFestivals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewFestivals.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridViewFestivals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gunaDataGridViewFestivals.ColumnHeadersHeight = 500;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridViewFestivals.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridViewFestivals.DefaultCellStyle = dataGridViewCellStyle6;
             this.gunaDataGridViewFestivals.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaDataGridViewFestivals.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridViewFestivals.Location = new System.Drawing.Point(28, 79);
@@ -125,6 +125,7 @@ namespace vila_tour_di {
             this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.Height = 22;
             this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridViewFestivals.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewFestivals.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gunaDataGridViewFestivals_MouseDoubleClick);
             // 
             // panel1
             // 
@@ -137,56 +138,75 @@ namespace vila_tour_di {
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.textBoxSearchUsers, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 1, 0);
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxSearch, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxCategories, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 45);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // textBoxSearchUsers
-            // 
-            this.textBoxSearchUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearchUsers.Location = new System.Drawing.Point(3, 12);
-            this.textBoxSearchUsers.Name = "textBoxSearchUsers";
-            this.textBoxSearchUsers.Size = new System.Drawing.Size(743, 20);
-            this.textBoxSearchUsers.TabIndex = 13;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(763, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxSearch.Location = new System.Drawing.Point(82, 12);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(473, 20);
+            this.textBoxSearch.TabIndex = 13;
+            this.guna2HtmlToolTip1.SetToolTip(this.textBoxSearch, "Término a buscar");
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
+            // comboBoxCategories
+            // 
+            this.comboBoxCategories.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxCategories.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxCategories.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategories.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCategories.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCategories.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxCategories.ItemHeight = 30;
+            this.comboBoxCategories.Location = new System.Drawing.Point(608, 3);
+            this.comboBoxCategories.Name = "comboBoxCategories";
+            this.comboBoxCategories.Size = new System.Drawing.Size(140, 36);
+            this.comboBoxCategories.TabIndex = 16;
+            this.guna2HtmlToolTip1.SetToolTip(this.comboBoxCategories, "Categoria");
+            this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btnDeleteFestival, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.btnDetailsFestival, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnDeleteFestival, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnEditFestival, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnAddFestival, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(833, 79);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(134, 549);
             this.tableLayoutPanel2.TabIndex = 13;
@@ -204,32 +224,12 @@ namespace vila_tour_di {
             this.btnDeleteFestival.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteFestival.ForeColor = System.Drawing.Color.White;
             this.btnDeleteFestival.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteFestival.Image")));
-            this.btnDeleteFestival.Location = new System.Drawing.Point(42, 437);
+            this.btnDeleteFestival.Location = new System.Drawing.Point(42, 431);
             this.btnDeleteFestival.Name = "btnDeleteFestival";
             this.btnDeleteFestival.Size = new System.Drawing.Size(50, 50);
             this.btnDeleteFestival.TabIndex = 3;
             this.guna2HtmlToolTip1.SetToolTip(this.btnDeleteFestival, "Eliminar");
             this.btnDeleteFestival.Click += new System.EventHandler(this.btnDeleteFestival_Click);
-            // 
-            // btnDetailsFestival
-            // 
-            this.btnDetailsFestival.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDetailsFestival.Animated = true;
-            this.btnDetailsFestival.BorderRadius = 25;
-            this.btnDetailsFestival.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetailsFestival.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetailsFestival.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetailsFestival.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetailsFestival.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnDetailsFestival.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDetailsFestival.ForeColor = System.Drawing.Color.White;
-            this.btnDetailsFestival.Image = ((System.Drawing.Image)(resources.GetObject("btnDetailsFestival.Image")));
-            this.btnDetailsFestival.Location = new System.Drawing.Point(42, 305);
-            this.btnDetailsFestival.Name = "btnDetailsFestival";
-            this.btnDetailsFestival.Size = new System.Drawing.Size(50, 50);
-            this.btnDetailsFestival.TabIndex = 2;
-            this.guna2HtmlToolTip1.SetToolTip(this.btnDetailsFestival, "Ver detalles");
-            this.btnDetailsFestival.Click += new System.EventHandler(this.btnDetailsFestival_Click);
             // 
             // btnEditFestival
             // 
@@ -244,7 +244,7 @@ namespace vila_tour_di {
             this.btnEditFestival.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEditFestival.ForeColor = System.Drawing.Color.White;
             this.btnEditFestival.Image = ((System.Drawing.Image)(resources.GetObject("btnEditFestival.Image")));
-            this.btnEditFestival.Location = new System.Drawing.Point(42, 173);
+            this.btnEditFestival.Location = new System.Drawing.Point(42, 248);
             this.btnEditFestival.Name = "btnEditFestival";
             this.btnEditFestival.Size = new System.Drawing.Size(50, 50);
             this.btnEditFestival.TabIndex = 1;
@@ -264,7 +264,7 @@ namespace vila_tour_di {
             this.btnAddFestival.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddFestival.ForeColor = System.Drawing.Color.White;
             this.btnAddFestival.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFestival.Image")));
-            this.btnAddFestival.Location = new System.Drawing.Point(42, 41);
+            this.btnAddFestival.Location = new System.Drawing.Point(42, 66);
             this.btnAddFestival.Name = "btnAddFestival";
             this.btnAddFestival.Size = new System.Drawing.Size(50, 50);
             this.btnAddFestival.TabIndex = 0;
@@ -312,14 +312,14 @@ namespace vila_tour_di {
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Button btnDeleteFestival;
-        private Guna.UI2.WinForms.Guna2Button btnDetailsFestival;
         private Guna.UI2.WinForms.Guna2Button btnEditFestival;
         private Guna.UI2.WinForms.Guna2Button btnAddFestival;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox textBoxSearchUsers;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
         private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridViewFestivals;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxCategories;
     }
 }

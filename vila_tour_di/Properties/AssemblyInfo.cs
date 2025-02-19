@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("vila_tour_di")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Vilatour")]
+[assembly: AssemblyDescription("Una aplicación turística de Villajoyosa / La Vila Joisosa")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("vila_tour_di")]
+[assembly: AssemblyCompany("TEAM AJO")]
+[assembly: AssemblyProduct("Vilatour")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

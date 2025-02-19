@@ -2,29 +2,30 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
+using vila_tour_di.Forms.Commons;
 using vila_tour_di.Forms.Places;
 using vila_tour_di.Services;
 
 namespace vila_tour_di {
     public partial class UserControlPlaces : UserControl {
         private DataTable originalDataTable;
+        List<Place> places = PlaceService.GetAllPlaces();
+
         public UserControlPlaces() {
             InitializeComponent();
 
-            originalDataTable = LoadPlacesData();
+            originalDataTable = loadPlacesData(places);
             gunaDataGridViewPlaces.DataSource = originalDataTable;
             gunaDataGridViewPlaces.AutoGenerateColumns = true;
             gunaDataGridViewPlaces.AutoResizeColumnHeadersHeight();
             gunaDataGridViewPlaces.AutoResizeColumns();
+            loadCategories();
         }
 
-        public DataTable LoadPlacesData()
-        {
-            string apiUrl = "http://127.0.0.1:8080/places"; // Ajusta tu URL
-            string token = Config.currentToken;
-
+        public DataTable loadPlacesData(List<Place> placesList) {
             DataTable table = new DataTable();
 
             // Definir las columnas del DataTable
@@ -36,245 +37,160 @@ namespace vila_tour_di {
             table.Columns.Add("Categoría");
             table.Columns.Add("Creador");
 
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    // Agregar el token
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-                    // Hacer la peticion
-                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Leer la respuesta
-                        string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
-                        // Deserializarla
-                        var places = JsonConvert.DeserializeObject<List<Place>>(jsonResponse);
-
-                        // Agregamos los users a la tabla
-                        foreach (var place in places)
-                        {
-                            table.Rows.Add(place.id, place.name, place.averageScore, place.creationDate, place.lastModificationDate, place.categoryPlace?.name ?? "Sin asignar", place.creator.name);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Error al obtener los datos: {response.StatusCode} - {response.ReasonPhrase}", "Error",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            foreach (var place in placesList) {
+                table.Rows.Add(
+                    place.id,
+                    place.name,
+                    place.averageScore,
+                    place.creationDate,
+                    place.lastModificationDate,
+                    place.categoryPlace.name,
+                    place.creator.username
+                );
             }
             return table;
         }
 
+        private void loadPlacesInGridView(List<Place> filteredPlaces) {
+            DataTable placesTable = loadPlacesData(filteredPlaces);
+            gunaDataGridViewPlaces.DataSource = placesTable;
+            gunaDataGridViewPlaces.Refresh();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e) {
             FormAddEditPlace formAddPlace = new FormAddEditPlace();
             formAddPlace.StartPosition = FormStartPosition.CenterParent;
             formAddPlace.ShowDialog();
-
-            originalDataTable = LoadPlacesData();
-            gunaDataGridViewPlaces.DataSource = originalDataTable;
+            loadPlacesInGridView(places);
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewPlaces.SelectedRows.Count > 0)
-            {
-                var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
+        private void btnEdit_Click(object sender, EventArgs e) {
+            if (gunaDataGridViewPlaces.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
 
-                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
+                if (selectedRow.Cells["ID"].Value != null && int.TryParse(selectedRow.Cells["ID"].Value.ToString(), out int id)) {
 
-                string apiUrl = $"http://127.0.0.1:8080/places/{id}";
-                string token = Config.currentToken;
-                string jsonResponse = null;
+                    Place selectedPlace = PlaceService.GetPlaceById(id);
 
-                using (HttpClient client = new HttpClient())
-                {
-                    try
-                    {
-                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-                        HttpResponseMessage response = client.GetAsync(apiUrl).Result;
-
-                        if (response.IsSuccessStatusCode)
-                        {
-                            jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error en la solicitud: " + response.ReasonPhrase, "Error",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    FormAddEditPlace editForm = new FormAddEditPlace(selectedPlace, true);
+                    editForm.StartPosition = FormStartPosition.CenterParent;
+                    editForm.ShowDialog();
+                } else {
+                    MessageBox.Show("No se pudo obtener el ID del lugar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                Place place = null;
-                if (!string.IsNullOrEmpty(jsonResponse))
-                {
-                    try
-                    {
-                        place = JsonConvert.DeserializeObject<Place>(jsonResponse);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al procesar los datos: " + ex.Message, "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se pudieron obtener los datos");
-                }
-
-                FormAddEditPlace formAddEditPlace = new FormAddEditPlace(place, true);
-                formAddEditPlace.StartPosition = FormStartPosition.CenterParent;
-                formAddEditPlace.ShowDialog();
-                originalDataTable = LoadPlacesData();
-                gunaDataGridViewPlaces.DataSource = originalDataTable;
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado ningún lugar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
+                MessageBox.Show("Debe seleccionar un lugar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-        private void btnDetails_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewPlaces.SelectedRows.Count > 0)
-            {
-                var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
-                int id = (int)Convert.ToInt64(selectedRow.Cells["ID"].Value);
-
-                string apiUrl = $"http://127.0.0.1:8080/places/{id}";
-                string token = Config.currentToken;
-                string jsonResponse = null;
-
-                using (HttpClient client = new HttpClient())
-                {
-                    try
-                    {
-                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-                        HttpResponseMessage response = client.GetAsync(apiUrl).Result;
-
-                        if (response.IsSuccessStatusCode)
-                        {
-                            jsonResponse = response.Content.ReadAsStringAsync().Result;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error en la solicitud: " + response.ReasonPhrase, "Error",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                Place place = null;
-                if (!string.IsNullOrEmpty(jsonResponse))
-                {
-                    try
-                    {
-                        place = JsonConvert.DeserializeObject<Place>(jsonResponse);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al procesar los datos: " + ex.Message, "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se pudieron obtener los datos");
-                }
-
-                FormAddEditPlace formDetails = new FormAddEditPlace(place, false); // Modo no editable
-                formDetails.StartPosition = FormStartPosition.CenterParent;
-                formDetails.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado ningún lugar para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+        private void btnDetails_Click(object sender, EventArgs e) {
+            FormReport formReports = new FormReport(places);
+            formReports.StartPosition = FormStartPosition.CenterParent;
+            formReports.ShowDialog();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (gunaDataGridViewPlaces.SelectedRows.Count > 0)
-            {
+        private void btnDelete_Click(object sender, EventArgs e) {
+            // Verificar si hay una fila seleccionada
+            if (gunaDataGridViewPlaces.SelectedRows.Count > 0) {
                 var selectedRow = gunaDataGridViewPlaces.SelectedRows[0];
-                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                // Confirmación antes de eliminar
-                DialogResult result = MessageBox.Show(
-                    "¿Estás seguro de que deseas eliminar este lugar?",
-                    "Confirmar eliminación",
+                // Obtener el ID del lugar seleccionado
+                int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+
+                // Confirmar eliminación
+                var confirmResult = MessageBox.Show(
+                    "¿Estás seguro de que deseas eliminar este lugar?\n\n" +
+                    "Esta acción no se puede deshacer y eliminará permanentemente el lugar seleccionado de la lista.\n\n" +
+                    "Presiona 'Sí' para confirmar o 'No' para cancelar.",
+                    "Confirmación de eliminación",
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
+                    MessageBoxIcon.Warning,
+                    MessageBoxDefaultButton.Button2);
 
-                if (result == DialogResult.Yes)
-                {
-                    string apiUrl = $"http://127.0.0.1:8080/places/{id}"; // URL con el ID del lugar
-                    string token = Config.currentToken;
-
-                    using (HttpClient client = new HttpClient())
-                    {
-                        try
-                        {
-                            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-                            HttpResponseMessage response = client.DeleteAsync(apiUrl).Result;
-
-                            if (response.IsSuccessStatusCode)
-                            {
-                                MessageBox.Show("Lugar eliminado correctamente", "Información",
-                                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                originalDataTable = LoadPlacesData();
-                                gunaDataGridViewPlaces.DataSource = originalDataTable;
-                            }
-                            else
-                            {
-                                MessageBox.Show($"Error al eliminar el lugar: {response.StatusCode} - {response.ReasonPhrase}", "Error",
-                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al procesar la solicitud: " + ex.Message, "Error",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                if (confirmResult == DialogResult.Yes) {
+                    PlaceService.DeletePlace(id);
+                    gunaDataGridViewPlaces.DataSource = loadPlacesData(places);
                 }
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado ningún lugar para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            } else {
+                MessageBox.Show("No se ha seleccionado ningún lugar");
             }
         }
 
-        private void btnCategoriesPlace_Click(object sender, EventArgs e)
-        {
+        private void btnCategoriesPlace_Click(object sender, EventArgs e) {
             FormCategoryPlace formCategories = new FormCategoryPlace();
             formCategories.StartPosition = FormStartPosition.CenterParent;
             formCategories.ShowDialog();
+        }
+
+        private void gunaDataGridViewPlaces_MouseDoubleClick(object sender, MouseEventArgs e) {
+            // Verificar si se hizo doble clic en una fila válida
+            if (gunaDataGridViewPlaces.CurrentRow != null && gunaDataGridViewPlaces.CurrentRow.Index >= 0) {
+                // Obtener el lugar asociado a la fila seleccionada
+                int placeId = Convert.ToInt32(gunaDataGridViewPlaces.CurrentRow.Cells["Id"].Value);
+
+                // Obtener el lugar usando el servicio
+                Place selectedPlace = PlaceService.GetPlaceById(placeId);
+
+                // Crear una instancia del formulario para agregar/editar lugares
+                FormAddEditPlace formAddEditPlace = new FormAddEditPlace(selectedPlace, false);
+
+                // Mostrar el formulario
+                formAddEditPlace.ShowDialog(); // Mostrar como formulario modal
+            }
+        }
+
+        // Método para filtrar lugares
+        private void filterPlaces() {
+            string selectedCategory = comboBoxCategories.SelectedItem.ToString();
+            string searchText = textBoxSearch.Text.ToLower();
+
+            List<Place> filteredPlaces = places;
+
+            if (selectedCategory != "Todos") {
+                switch (selectedCategory) {
+                    case "Nombre":
+                        filteredPlaces = places.Where(p => p.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Categoría":
+                        filteredPlaces = places.Where(p => p.categoryPlace.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Creador":
+                        filteredPlaces = places.Where(p => p.creator.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                }
+            }
+
+            // Actualizar la vista de datos con los lugares filtrados
+            loadPlacesInGridView(filteredPlaces);
+        }
+
+        // Método que se ejecuta cuando cambia el texto del cuadro de búsqueda
+        private void textBoxSearch_TextChanged(object sender, EventArgs e) {
+            filterPlaces();
+        }
+
+        // Método que se ejecuta cuando cambia la categoría seleccionada
+        private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e) {
+            filterPlaces();
+        }
+
+        // Cargar categorías en el ComboBox
+        private void loadCategories() {
+            List<string> categories = new List<string>
+            {
+                "Todos",  // Para mostrar todos los lugares sin filtro
+                "Nombre",
+                "Categoría",
+                "Creador"
+            };
+
+            comboBoxCategories.Items.Clear();
+            foreach (var category in categories) {
+                comboBoxCategories.Items.Add(category);
+            }
+
+            comboBoxCategories.SelectedIndex = 0;  // "Todos" por defecto
         }
     }
 }

@@ -30,6 +30,7 @@ namespace vila_tour_di.Forms.Routes {
             _selectedRoute = route;
 
             guna2TextBoxName.Text = route.name;
+            txtDesc.Text = route.description;
 
             if (route.places != null) {
                 listBoxLugares.Items.Clear();
@@ -151,6 +152,7 @@ namespace vila_tour_di.Forms.Routes {
 
         private void btnAddRoute_Click(object sender, EventArgs e) {
             string name = guna2TextBoxName.Text;
+            string description = txtDesc.Text;
             var places = listBoxLugares.Items.Cast<string>()
                            .Select(placeName => PlaceService.GetAllPlaces().FirstOrDefault(p => p.name == placeName))
                            .Where(place => place != null)
@@ -167,7 +169,7 @@ namespace vila_tour_di.Forms.Routes {
                 return;
             }
 
-            var newRoute = new RouteVilaTour(name, places, creator);
+            var newRoute = new RouteVilaTour(name, description, places, creator);
 
             if (isEditing) {
                 newRoute.creationDate = _selectedRoute.creationDate;
@@ -190,6 +192,10 @@ namespace vila_tour_di.Forms.Routes {
 
         private void radBtnCar_CheckedChanged(object sender, EventArgs e) {
             UpdateMapRoute(radBtnWalk.Checked);
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e) {
+
         }
     }
 }

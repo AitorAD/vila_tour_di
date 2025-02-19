@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vila_tour_di.Services;
+using vila_tour_di.Forms.Commons;
+using vila_tour_di.Forms.Places;
 
 namespace vila_tour_di {
     public partial class UserControlFestivals : UserControl {
+        List<Festival> festivals = FestivalService.GetAllFestivals();
+
         public UserControlFestivals() {
             InitializeComponent();
-
             loadFestivalsInGridView();
             gunaDataGridViewFestivals.AutoGenerateColumns = true;
             gunaDataGridViewFestivals.AutoResizeColumnHeadersHeight();
             gunaDataGridViewFestivals.AutoResizeColumns();
+            loadCategories();
         }
 
-        private DataTable loadFestivalsData() {
+        private DataTable loadFestivalsData(List<Festival> festivalsList) {
             DataTable table = new DataTable();
 
             // Definimos las columnas
@@ -31,13 +31,9 @@ namespace vila_tour_di {
             table.Columns.Add("Fecha Final");
             table.Columns.Add("Creador");
             table.Columns.Add("Lugar");
-            // TODO: Agregar nombre del sitio donde se celebra
 
-
-            List<Festival> festivals = FestivalService.GetAllFestivals();
-
-            // Agregamos los users a la tabla
-            foreach (var festival in festivals) {
+            // Agregamos los festivals a la tabla
+            foreach (var festival in festivalsList) {
                 table.Rows.Add(
                     festival.id,
                     festival.name,
@@ -52,8 +48,14 @@ namespace vila_tour_di {
             return table;
         }
 
+        private void loadFestivalsInGridView(List<Festival> festivalsList) {
+            DataTable festivalsTable = loadFestivalsData(festivalsList);
+            gunaDataGridViewFestivals.DataSource = festivalsTable;
+            gunaDataGridViewFestivals.Refresh();
+        }
+
         private void loadFestivalsInGridView() {
-            DataTable festivalsTable = loadFestivalsData();
+            DataTable festivalsTable = loadFestivalsData(festivals);
             gunaDataGridViewFestivals.DataSource = festivalsTable;
             gunaDataGridViewFestivals.Refresh();
         }
@@ -70,7 +72,6 @@ namespace vila_tour_di {
                 DataGridViewRow selectedRow = gunaDataGridViewFestivals.SelectedRows[0];
 
                 if (selectedRow.Cells["ID"].Value != null && int.TryParse(selectedRow.Cells["ID"].Value.ToString(), out int id)) {
-
                     Festival selectedFestival = FestivalService.GetFestivalById(id);
 
                     FormAddEditFestival editForm = new FormAddEditFestival(selectedFestival, true);
@@ -85,14 +86,10 @@ namespace vila_tour_di {
         }
 
         private void btnDeleteFestival_Click(object sender, EventArgs e) {
-            // Verificar si hay una fila seleccionada
             if (gunaDataGridViewFestivals.SelectedRows.Count > 0) {
                 var selectedRow = gunaDataGridViewFestivals.SelectedRows[0];
-
-                // Obtener el ID del ingrediente seleccionado
                 int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
 
-                // Confirmar eliminación
                 var confirmResult = MessageBox.Show(
                     "¿Estás seguro de que deseas eliminar esta fiesta o tradición?\n\n" +
                     "Esta acción no se puede deshacer y eliminará permanentemente la fiesta o tradición seleccionada de la lista.\n\n" +
@@ -104,28 +101,91 @@ namespace vila_tour_di {
 
                 if (confirmResult == DialogResult.Yes) {
                     FestivalService.DeleteFestival(id);
-                    gunaDataGridViewFestivals.DataSource = loadFestivalsData();
+                    gunaDataGridViewFestivals.DataSource = loadFestivalsData(festivals);
                 }
-
             } else {
                 MessageBox.Show("No se ha seleccionado ninguna fiesta o tradición");
             }
         }
 
         private void btnDetailsFestival_Click(object sender, EventArgs e) {
-            if (gunaDataGridViewFestivals.SelectedRows.Count > 0) {
-                var selectedRow = gunaDataGridViewFestivals.SelectedRows[0];
+            FormReport formReports = new FormReport(festivals);
+            formReports.StartPosition = FormStartPosition.CenterParent;
+            formReports.ShowDialog();
+        }
 
-                int id = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+        private void gunaDataGridViewFestivals_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (gunaDataGridViewFestivals.CurrentRow != null && gunaDataGridViewFestivals.CurrentRow.Index >= 0) {
+                int festivalId = Convert.ToInt32(gunaDataGridViewFestivals.CurrentRow.Cells["Id"].Value);
+                Festival selectedFestival = FestivalService.GetFestivalById(festivalId);
 
-                Festival selectedFestival = FestivalService.GetFestivalById(id);
-
-                FormAddEditFestival formDetails = new FormAddEditFestival(selectedFestival, false);
-                formDetails.StartPosition = FormStartPosition.CenterParent;
-                formDetails.ShowDialog();
-            } else {
-                MessageBox.Show("No se ha seleccionado ningún festival para ver los detalles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FormAddEditFestival formAddEditFestival = new FormAddEditFestival(selectedFestival, false);
+                formAddEditFestival.ShowDialog();
             }
+        }
+
+        private void loadCategories() {
+            List<string> categories = new List<string>
+            {
+                "Nombre",
+                "Descripción",
+                "Fecha Inicio",
+                "Fecha Final",
+                "Creador",
+                "Lugar"
+            };
+
+            comboBoxCategories.Items.Clear();
+            comboBoxCategories.Items.Add("Todos");
+            foreach (var category in categories) {
+                comboBoxCategories.Items.Add(category);
+            }
+
+            comboBoxCategories.SelectedIndex = 0;  // "Todos" por defecto
+        }
+
+        private void filterFestivals() {
+            string selectedCategory = comboBoxCategories.SelectedItem.ToString();
+            string searchText = textBoxSearch.Text.ToLower();
+
+            List<Festival> filteredFestivals = festivals;
+
+            if (selectedCategory != "Todos") {
+                switch (selectedCategory) {
+                    case "Nombre":
+                        filteredFestivals = festivals.Where(f => f.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Descripción":
+                        filteredFestivals = festivals.Where(f => f.description.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Fecha Inicio":
+                        if (DateTime.TryParse(searchText, out DateTime startDate)) {
+                            filteredFestivals = festivals.Where(f => f.startDate.Date == startDate.Date).ToList();
+                        }
+                        break;
+                    case "Fecha Final":
+                        if (DateTime.TryParse(searchText, out DateTime endDate)) {
+                            filteredFestivals = festivals.Where(f => f.endDate.Date == endDate.Date).ToList();
+                        }
+                        break;
+                    case "Creador":
+                        filteredFestivals = festivals.Where(f => f.creator.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                    case "Lugar":
+                        filteredFestivals = festivals.Where(f => f.coordinate.name.ToLower().Contains(searchText)).ToList();
+                        break;
+                }
+            }
+
+            loadFestivalsInGridView(filteredFestivals);
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e) {
+            filterFestivals();
+        }
+
+        private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e) {
+            filterFestivals();
         }
     }
 }

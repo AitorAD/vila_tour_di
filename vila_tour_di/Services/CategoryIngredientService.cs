@@ -6,7 +6,7 @@ using System.Net.Http;
 namespace vila_tour_di.Services {
     class CategoryIngredientService {
 
-        private static string baseUrl = "http://127.0.0.1:8080/categories";
+        private static string baseUrl = Config.baseURL + "categories";
 
         public static List<CategoryIngredient> GetCategoriesIngredient() {
             return ApiService.Get<List<CategoryIngredient>>(baseUrl) ?? new List<CategoryIngredient>();
