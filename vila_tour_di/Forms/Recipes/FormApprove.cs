@@ -62,27 +62,6 @@ namespace vila_tour_di.Forms.Recipes {
             tblUnapprovedRecipes.Refresh();
         }
 
-        private void btnDetails_Click(object sender, EventArgs e) {
-            if (tblUnapprovedRecipes.CurrentRow != null && tblUnapprovedRecipes.CurrentRow.Index >= 0) {
-                // Obtener la receta asociada a la fila seleccionada
-                int recipeId = Convert.ToInt32(tblUnapprovedRecipes.CurrentRow.Cells["Id"].Value);
-
-                // Obtener la receta usando el servicio
-                Recipe selectedRecipe = RecipeService.GetRecipeById(recipeId);
-
-                // Crear una instancia del formulario para agregar/editar recetas
-                FormAddEditRecipe formAddEditRecipe = new FormAddEditRecipe(selectedRecipe, false);
-
-                // Mostrar el formulario
-                formAddEditRecipe.ShowDialog(); // Mostrar como formulario modal
-            } else {
-                MessageBox.Show("Por favor, seleccione una fila antes de realizar esta acción.",
-                    "Advertencia",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
-        }
-
         private void btnApprove_Click(object sender, EventArgs e) {
             if (tblUnapprovedRecipes.CurrentRow != null && tblUnapprovedRecipes.CurrentRow.Index >= 0) {
                 int recipeId = Convert.ToInt32(tblUnapprovedRecipes.CurrentRow.Cells["Id"].Value);

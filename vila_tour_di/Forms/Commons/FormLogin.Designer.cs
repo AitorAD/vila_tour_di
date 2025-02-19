@@ -35,6 +35,7 @@ namespace vila_tour_di {
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHelp = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVilaTour = new System.Windows.Forms.Label();
@@ -120,7 +121,7 @@ namespace vila_tour_di {
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(254, 26);
-            this.txtPassword.TabIndex = 0;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // flowLayoutPanel2
@@ -176,6 +177,7 @@ namespace vila_tour_di {
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.btnHelp, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -184,6 +186,35 @@ namespace vila_tour_di {
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(794, 106);
             this.tableLayoutPanel3.TabIndex = 14;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelp.Animated = true;
+            this.btnHelp.AutoRoundedCorners = true;
+            this.btnHelp.BackColor = System.Drawing.Color.Transparent;
+            this.btnHelp.BorderColor = System.Drawing.Color.Transparent;
+            this.btnHelp.BorderRadius = 16;
+            this.btnHelp.BorderThickness = 2;
+            this.btnHelp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHelp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHelp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHelp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHelp.FillColor = System.Drawing.Color.Azure;
+            this.btnHelp.FocusedColor = System.Drawing.Color.White;
+            this.btnHelp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.Color.Black;
+            this.btnHelp.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnHelp.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnHelp.HoverState.FillColor = System.Drawing.Color.PowderBlue;
+            this.btnHelp.Location = new System.Drawing.Point(744, 15);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(15);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.PressedColor = System.Drawing.Color.White;
+            this.btnHelp.Size = new System.Drawing.Size(35, 35);
+            this.btnHelp.TabIndex = 15;
+            this.btnHelp.Text = "?";
+            this.btnHelp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHelp_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -245,12 +276,12 @@ namespace vila_tour_di {
             this.btnSettings.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnSettings.HoverState.FillColor = System.Drawing.Color.PowderBlue;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.Location = new System.Drawing.Point(747, 400);
+            this.btnSettings.Location = new System.Drawing.Point(750, 400);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(15);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.PressedColor = System.Drawing.Color.White;
-            this.btnSettings.Size = new System.Drawing.Size(38, 35);
-            this.btnSettings.TabIndex = 17;
+            this.btnSettings.Size = new System.Drawing.Size(35, 35);
+            this.btnSettings.TabIndex = 4;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // gunaBtnEntrar
@@ -277,7 +308,7 @@ namespace vila_tour_di {
             this.gunaBtnEntrar.Name = "gunaBtnEntrar";
             this.gunaBtnEntrar.PressedColor = System.Drawing.Color.White;
             this.gunaBtnEntrar.Size = new System.Drawing.Size(236, 35);
-            this.gunaBtnEntrar.TabIndex = 18;
+            this.gunaBtnEntrar.TabIndex = 3;
             this.gunaBtnEntrar.Text = "Iniciar";
             this.gunaBtnEntrar.Click += new System.EventHandler(this.gunaBtnEntrar_Click);
             // 
@@ -325,6 +356,7 @@ namespace vila_tour_di {
         private System.Windows.Forms.Label lblVilaTour;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button gunaBtnEntrar;
+        private Guna.UI2.WinForms.Guna2Button btnHelp;
     }
 }
 

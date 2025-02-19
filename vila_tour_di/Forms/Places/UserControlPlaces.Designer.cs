@@ -32,8 +32,9 @@ namespace vila_tour_di {
             this.gunaDataGridViewPlaces = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxSearchUsers = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.comboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
@@ -139,39 +140,60 @@ namespace vila_tour_di {
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.textBoxSearchUsers, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 1, 0);
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxSearch, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxCategories, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 45);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // textBoxSearchUsers
-            // 
-            this.textBoxSearchUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSearchUsers.Location = new System.Drawing.Point(3, 12);
-            this.textBoxSearchUsers.Name = "textBoxSearchUsers";
-            this.textBoxSearchUsers.Size = new System.Drawing.Size(743, 20);
-            this.textBoxSearchUsers.TabIndex = 13;
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(763, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxSearch.Location = new System.Drawing.Point(82, 12);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(473, 20);
+            this.textBoxSearch.TabIndex = 13;
+            this.guna2HtmlToolTip1.SetToolTip(this.textBoxSearch, "Término a buscar");
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
+            // comboBoxCategories
+            // 
+            this.comboBoxCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxCategories.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxCategories.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategories.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCategories.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCategories.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxCategories.ItemHeight = 30;
+            this.comboBoxCategories.Location = new System.Drawing.Point(608, 4);
+            this.comboBoxCategories.Name = "comboBoxCategories";
+            this.comboBoxCategories.Size = new System.Drawing.Size(140, 36);
+            this.comboBoxCategories.TabIndex = 16;
+            this.guna2HtmlToolTip1.SetToolTip(this.comboBoxCategories, "Categoria");
+            this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -232,7 +254,7 @@ namespace vila_tour_di {
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(50, 50);
             this.btnDetails.TabIndex = 2;
-            this.guna2HtmlToolTip1.SetToolTip(this.btnDetails, "Ver detalles");
+            this.guna2HtmlToolTip1.SetToolTip(this.btnDetails, "Generar informe");
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnEdit
@@ -340,11 +362,12 @@ namespace vila_tour_di {
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox textBoxSearchUsers;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
         private Guna.UI2.WinForms.Guna2DataGridView gunaDataGridViewPlaces;
         private Guna.UI2.WinForms.Guna2Button btnCategoriesPlace;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxCategories;
     }
 }
