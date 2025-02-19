@@ -26,7 +26,6 @@ namespace vila_tour_di.Forms.Routes {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddEditRoute));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCloseForm = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddRoute = new Guna.UI2.WinForms.Guna2Button();
@@ -41,14 +40,15 @@ namespace vila_tour_di.Forms.Routes {
             this.radBtnCar = new Guna.UI2.WinForms.Guna2RadioButton();
             this.radBtnWalk = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2ComboBoxPlaces = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.gMapControl = new GMap.NET.WindowsForms.GMapControl();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtDesc = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -86,19 +86,6 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(864, 575);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(42, 0);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(87, 27);
-            this.guna2HtmlLabel4.TabIndex = 1;
-            this.guna2HtmlLabel4.Text = "Lugares:";
-            this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
             // 
             // tableLayoutPanel16
             // 
@@ -351,6 +338,19 @@ namespace vila_tour_di.Forms.Routes {
             this.guna2ComboBoxPlaces.Size = new System.Drawing.Size(145, 36);
             this.guna2ComboBoxPlaces.TabIndex = 1;
             // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(42, 0);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(42, 0, 0, 0);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(87, 20);
+            this.guna2HtmlLabel4.TabIndex = 1;
+            this.guna2HtmlLabel4.Text = "Lugares:";
+            this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -378,9 +378,21 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 56);
             this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(39, 14);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(84, 27);
+            this.guna2HtmlLabel3.TabIndex = 2;
+            this.guna2HtmlLabel3.Text = "Nombre:";
             // 
             // guna2TextBoxName
             // 
@@ -431,18 +443,6 @@ namespace vila_tour_di.Forms.Routes {
             this.gMapControl.TabIndex = 20;
             this.gMapControl.Zoom = 0D;
             // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(1, 19);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(122, 27);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Descripcíon:";
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -458,18 +458,6 @@ namespace vila_tour_di.Forms.Routes {
             this.tableLayoutPanel6.Size = new System.Drawing.Size(308, 66);
             this.tableLayoutPanel6.TabIndex = 21;
             // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(39, 14);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(84, 27);
-            this.guna2HtmlLabel3.TabIndex = 2;
-            this.guna2HtmlLabel3.Text = "Nombre:";
-            // 
             // txtDesc
             // 
             this.txtDesc.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -484,13 +472,25 @@ namespace vila_tour_di.Forms.Routes {
             this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDesc.Location = new System.Drawing.Point(139, 15);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDesc.MaxLength = 40;
+            this.txtDesc.MaxLength = 500;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.PasswordChar = '\0';
             this.txtDesc.PlaceholderText = "";
             this.txtDesc.SelectedText = "";
             this.txtDesc.Size = new System.Drawing.Size(166, 36);
             this.txtDesc.TabIndex = 2;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(1, 19);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(122, 27);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Descripción:";
             // 
             // FormAddEditRoute
             // 
